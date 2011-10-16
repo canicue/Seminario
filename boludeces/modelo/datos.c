@@ -34,9 +34,11 @@ scanf("%s",&columnas[i]->nombre);
 
 for(i=0;i<ncols;i++)
 {
-	printf("%s",columnas[i]->nombre);
+	printf("%s",&columnas[i]->nombre);
 
 }
+return columnas;
+
 }
 
 
