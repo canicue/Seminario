@@ -1,9 +1,11 @@
 #include <curses.h>
 #include <string.h>
-WIN *win;
+WINDOW *win=NULL;
+int startx,starty,width;
 int main() {    int length, x, y;                                                                            
     float temp;                                                                                   
-                                                                                                  
+	char *string="dios";
+    int color=222;                                                                                              
     if(win == NULL)                                                                               
         win = stdscr;                                                                             
     getyx(win, y, x);                                                                             
@@ -21,4 +23,5 @@ int main() {    int length, x, y;
     mvwprintw(win, y, x, "%s", string);                                                           
     wattroff(win, color);                                                                         
     refresh();                                                                                    
+	getch();
 }                                                                                                 

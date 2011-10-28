@@ -122,7 +122,7 @@ CREATE TABLE producto_terminado (
   CONSTRAINT producto_terminado_ibfk_1 FOREIGN KEY (id_producto) REFERENCES RMP (producto_id),
   CONSTRAINT producto_terminado_ibfk_2 FOREIGN KEY (id_orden_produccion) REFERENCES orden_produccion (orden_produccion_id)
 ); 
-
+--casi listo (revisar)
 CREATE TABLE programa_produccion (
   programa_produccion_id TEXT NOT NULL,
   id_orden_produccion TEXT NOT NULL,
@@ -137,7 +137,7 @@ CREATE TABLE programa_produccion (
   CONSTRAINT af FOREIGN KEY (id_orden_produccion) REFERENCES orden_produccion (orden_produccion_id),
   CONSTRAINT programa_produccion_ibfk_1 FOREIGN KEY (id_cliente) REFERENCES cliente (cliente_id)
 ); 
-
+--listo
 CREATE TABLE proveedor (
   proveedor_id TEXT NOT NULL,
   nombre TEXT CHARACTER SET ucs2 NOT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE proveedor (
   email TEXT NOT NULL,
   PRIMARY KEY (proveedor_id)
 ); 
-
+--listo
 CREATE TABLE tecnico (
   tecnico_id TEXT NOT NULL,
   nombre TEXT NOT NULL,
