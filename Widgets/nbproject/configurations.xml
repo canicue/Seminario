@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>interfaz/config.h</itemPath>
+      <itemPath>interfaz/dialogo.h</itemPath>
+      <itemPath>interfaz/info.h</itemPath>
+      <itemPath>interfaz/label.h</itemPath>
+      <itemPath>interfaz/menu.h</itemPath>
+      <itemPath>interfaz/popup.h</itemPath>
+      <itemPath>interfaz/scroll.h</itemPath>
+      <itemPath>interfaz/utils.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>interfaz/dialogo.c</itemPath>
+      <itemPath>interfaz/info.c</itemPath>
+      <itemPath>interfaz.c</itemPath>
+      <itemPath>interfaz/label.c</itemPath>
+      <itemPath>main.c</itemPath>
+      <itemPath>interfaz/menu.c</itemPath>
+      <itemPath>popup.c</itemPath>
+      <itemPath>interfaz/scroll.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandlineTool>gcc</commandlineTool>
+          <incDir>
+            <pElem>/usr/lib/cdk</pElem>
+          </incDir>
+          <commandLine>-lcdk -lncurses -lsqlite3 -lpanel -lmenu</commandLine>
+        </cTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>cdk</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>
