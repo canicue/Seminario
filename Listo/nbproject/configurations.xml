@@ -10,6 +10,7 @@
       <itemPath>datos/insumos.h</itemPath>
       <itemPath>vista/login.h</itemPath>
       <itemPath>datos/proveedores.h</itemPath>
+      <itemPath>datos/rmps.h</itemPath>
       <itemPath>datos/tecnicos.h</itemPath>
       <itemPath>datos/tipos.h</itemPath>
     </logicalFolder>
@@ -22,8 +23,12 @@
                    projectFiles="true">
       <itemPath>datos/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>
+      <itemPath>datos/insumos.c</itemPath>
       <itemPath>vista/login.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>datos/proveedores.c</itemPath>
+      <itemPath>datos/rmps.c</itemPath>
+      <itemPath>datos/tecnicos.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

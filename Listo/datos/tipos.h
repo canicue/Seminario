@@ -21,51 +21,27 @@ typedef struct t_cliente
   // PRIMARY KEY (cliente_id)
 } CLIENTE;
 
-/*
- *
- *
+
 typedef struct t_producto_terminado {
-  char* producto_terminado_id[15];
-  char* lote[255]; 
-  char* material[255]; 
+  char producto_terminado_id[15];
+  char lote[255]; 
+  char material[255]; 
   int cantidad;
-  char* IR[255]; 
-  RMP TEXT NOT NULL,
-  CC TEXT NOT NULL,
-  IO TEXT NOT NULL,
-  id_producto TEXT NOT NULL,
-  descripcion TEXT NOT NULL,
-  id_orden_produccion TEXT NOT NULL,
-  emision_area_productiva TEXT NOT NULL,
-  responsable_area_productiva TEXT NOT NULL,
-  emision_area_tecnica TEXT NOT NULL,
-  responsable_area_tecnica TEXT NOT NULL,
-  vencimiento TEXT NOT NULL,
-  PRIMARY KEY (producto_terminado_id),
-  KEY id_producto (id_producto),
-  KEY id_orden_produccion (id_orden_produccion),
-  CONSTRAINT producto_terminado_ibfk_1 FOREIGN KEY (id_producto) REFERENCES RMP (producto_id),
-  CONSTRAINT producto_terminado_ibfk_2 FOREIGN KEY (id_orden_produccion) REFERENCES orden_produccion (orden_produccion_id)
-); 
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- * */
-typedef struct t_producto
-{
+  char IR[255]; 
+  char RMP[15] ;
+  char CC[255];
+  char IO[255] ;
+  char id_producto[15] ;
+  char descripcion [510];
+  char id_orden_produccion[15];
+  char emision_area_productiva[510];
+  char responsable_area_productiva[15];
+  char emision_area_tecnica[255];
+  char responsable_area_tecnica[15];
+  char vencimiento[31] ;
+} PRODUCTO_TERMINADO;
 
 
-
-
-};
- 
 
 typedef struct t_programa_produccion {
   char programa_produccion_id[15];

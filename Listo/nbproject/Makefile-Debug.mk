@@ -31,8 +31,12 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/datos/proveedores.o \
+	${OBJECTDIR}/datos/insumos.o \
 	${OBJECTDIR}/datos/clientes.o \
 	${OBJECTDIR}/datos/datos.o \
+	${OBJECTDIR}/datos/tecnicos.o \
+	${OBJECTDIR}/datos/rmps.o \
 	${OBJECTDIR}/vista/login.o \
 	${OBJECTDIR}/main.o
 
@@ -60,6 +64,16 @@ dist/Debug/GNU-Linux-x86/listo: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/GNU-Linux-x86
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/listo ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/datos/proveedores.o: nbproject/Makefile-${CND_CONF}.mk datos/proveedores.c 
+	${MKDIR} -p ${OBJECTDIR}/datos
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/proveedores.o datos/proveedores.c
+
+${OBJECTDIR}/datos/insumos.o: nbproject/Makefile-${CND_CONF}.mk datos/insumos.c 
+	${MKDIR} -p ${OBJECTDIR}/datos
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/insumos.o datos/insumos.c
+
 ${OBJECTDIR}/datos/clientes.o: nbproject/Makefile-${CND_CONF}.mk datos/clientes.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
@@ -69,6 +83,16 @@ ${OBJECTDIR}/datos/datos.o: nbproject/Makefile-${CND_CONF}.mk datos/datos.c
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/datos.o datos/datos.c
+
+${OBJECTDIR}/datos/tecnicos.o: nbproject/Makefile-${CND_CONF}.mk datos/tecnicos.c 
+	${MKDIR} -p ${OBJECTDIR}/datos
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/tecnicos.o datos/tecnicos.c
+
+${OBJECTDIR}/datos/rmps.o: nbproject/Makefile-${CND_CONF}.mk datos/rmps.c 
+	${MKDIR} -p ${OBJECTDIR}/datos
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/rmps.o datos/rmps.c
 
 ${OBJECTDIR}/vista/login.o: nbproject/Makefile-${CND_CONF}.mk vista/login.c 
 	${MKDIR} -p ${OBJECTDIR}/vista
