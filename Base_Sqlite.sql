@@ -151,7 +151,7 @@ CREATE TABLE programa_produccion (
 CREATE TABLE proveedor (
   proveedor_id TEXT NOT NULL,
   nombre TEXT CHARACTER SET ucs2 NOT NULL,
-  telefon int(11) NOT NULL,
+  telefono int(11) NOT NULL,
   direccion TEXT NOT NULL,
   email TEXT NOT NULL,
   PRIMARY KEY (proveedor_id)

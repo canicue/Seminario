@@ -95,8 +95,8 @@ CREATE TABLE orden_produccion (
   --KEY fk (id_programa_produccion),
   --KEY fk_ot (responsable_area_tecnica),
   CONSTRAINT fk_ot FOREIGN KEY (responsable_area_tecnica) REFERENCES tecnico (tecnico_id),
-  CONSTRAINT fk FOREIGN KEY (id_programa_produccion) REFERENCES programa_produccion (programa_produccion_id),
-  CONSTRAINT fka FOREIGN KEY (id_producto) REFERENCES RMP (producto_id)
+  CONSTRAINT fk_op FOREIGN KEY (id_programa_produccion) REFERENCES programa_produccion (programa_produccion_id),
+  CONSTRAINT fk_opp FOREIGN KEY (id_producto) REFERENCES RMP (producto_id)
 );
 
 CREATE TABLE producto_terminado (
@@ -120,7 +120,9 @@ CREATE TABLE producto_terminado (
   --KEY id_producto (id_producto),
   --KEY id_orden_produccion (id_orden_produccion),
   CONSTRAINT producto_terminado_ibfk_1 FOREIGN KEY (id_producto) REFERENCES RMP (producto_id),
-  CONSTRAINT producto_terminado_ibfk_2 FOREIGN KEY (id_orden_produccion) REFERENCES orden_produccion (orden_produccion_id)
+  CONSTRAINT producto_terminado_ibfk_2 FOREIGN KEY (id_orden_produccion) REFERENCES orden_produccion (orden_produccion_id),
+   CONSTRAINT fk_pt FOREIGN KEY (responsable_area_tecnica) REFERENCES tecnico (tecnico_id),
+   CONSTRAINT fk_pt2 FOREIGN KEY (responsable_area_productiva) REFERENCES tecnico (tecnico_id)
 );
 ----
 
