@@ -8,6 +8,10 @@
 #ifndef _TECNICOS_H
 #define	_TECNICOS_H
 
+#include "tipos.h"
+
+void agregar_tecnico(TECNICO *tecnico);
+void borrar_tecnico(int tecnico_id);
 #ifdef	__cplusplus
 extern "C" {
 #endif
