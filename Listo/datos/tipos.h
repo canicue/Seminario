@@ -101,6 +101,49 @@ typedef struct t_rmp
 
 } RMP;
 
+/*
+ CREATE TABLE insumo (
+  IR TEXT NOT NULL,
+  materia_prima tinyint(1) NOT NULL,
+  insumo_productivo tinyint(1) NOT NULL,
+  producto_semi_elaborado tinyint(1) NOT NULL,
+  fecha_ingreso TEXT NOT NULL,
+  descripcion TEXT NOT NULL,
+  cantidad int(11) NOT NULL,
+  obsevacion_simple_vista TEXT NOT NULL,
+  embalaje TEXT NOT NULL,
+  transporte TEXT NOT NULL,
+  documentos_maerial_adjunto TEXT NOT NULL,
+  fecha_de _control TEXT NOT NULL,
+  responsable TEXT NOT NULL,
+  id_proveedor TEXT NOT NULL,
+  PRIMARY KEY (IR),
+  KEY id_proveedor (id_proveedor),
+  KEY fk_it (responsable),
+  CONSTRAINT fk_it FOREIGN KEY (responsable) REFERENCES tecnico (tecnico_id),
+  CONSTRAINT insumo_ibfk_1 FOREIGN KEY (id_proveedor) REFERENCES proveedor (proveedor_id)
+);
+
+
+ */
+typedef struct t_insumo{
+    char IR[15];
+    int insumo_productivo;
+     int producto_semi_elaborado;
+  char fecha_ingreso[31];
+  char descripcion[510];
+  int cantidad;
+  char obsevacion_simple_vista[510];
+  char embalaje[255];
+  char transporte[255];
+  char documentos_material_adjunto[255];
+  char fecha_de_control[31];
+  char responsable[15];
+  char id_proveedor[15];
+
+} INSUMO;
+
+
 #ifdef	__cplusplus
 extern "C"
 {

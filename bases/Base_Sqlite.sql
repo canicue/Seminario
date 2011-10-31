@@ -33,7 +33,7 @@ CREATE TABLE insumo (
   obsevacion_simple_vista TEXT NOT NULL,
   embalaje TEXT NOT NULL,
   transporte TEXT NOT NULL,
-  documentos_maerial_adjunto TEXT NOT NULL,
+  documentos_material_adjunto TEXT NOT NULL,
   fecha_de _control TEXT NOT NULL,
   responsable TEXT NOT NULL,
   id_proveedor TEXT NOT NULL,

@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: Base
 -- ------------------------------------------------------
--- Server version	5.1.58-1
+-- Server version   5.1.58-1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -90,7 +90,7 @@ CREATE TABLE `insumo` (
   `obsevacion_simple_vista` varchar(255) NOT NULL,
   `embalaje` varchar(255) NOT NULL,
   `transporte` varchar(255) NOT NULL,
-  `documentos_maerial_adjunto` varchar(255) NOT NULL,
+  `documentos_material_adjunto` varchar(255) NOT NULL,
   `fecha_de _control` varchar(255) NOT NULL,
   `responsable` varchar(255) NOT NULL,
   `id_proveedor` varchar(255) NOT NULL,

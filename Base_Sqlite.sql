@@ -11,7 +11,7 @@ CREATE TABLE RMP (
   descripcion_insumo_productivo TEXT NOT NULL,
   descripcion_producto_semielaborado TEXT NOT NULL,
   PRIMARY KEY (producto_id)
-); 
+);
 
 CREATE TABLE cliente (
   cliente_id TEXT NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE cliente (
   direccion TEXT NOT NULL,
   email TEXT NOT NULL,
   PRIMARY KEY (cliente_id)
-); 
+);
 
 CREATE TABLE insumo (
   IR TEXT NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE insumo (
   obsevacion_simple_vista TEXT NOT NULL,
   embalaje TEXT NOT NULL,
   transporte TEXT NOT NULL,
-  documentos_maerial_adjunto TEXT NOT NULL,
+  documentos_material_adjunto TEXT NOT NULL,
   fecha_de _control TEXT NOT NULL,
   responsable TEXT NOT NULL,
   id_proveedor TEXT NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE insumo (
   KEY fk_it (responsable),
   CONSTRAINT fk_it FOREIGN KEY (responsable) REFERENCES tecnico (tecnico_id),
   CONSTRAINT insumo_ibfk_1 FOREIGN KEY (id_proveedor) REFERENCES proveedor (proveedor_id)
-); 
+);
 
 CREATE TABLE orden_pedido_producto (
   orden_pedido_producto_id TEXT NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE orden_pedido_producto (
   CONSTRAINT fk_sdf FOREIGN KEY (id_cliente) REFERENCES cliente (cliente_id),
   CONSTRAINT orden_pedido_producto_ibfk_1 FOREIGN KEY (id_cliente) REFERENCES cliente (cliente_id),
   CONSTRAINT orden_pedido_producto_ibfk_2 FOREIGN KEY (id_producto) REFERENCES RMP (producto_id)
-); 
+);
 
 CREATE TABLE orden_pedido_proveedor (
   orden_pedido_proveedor_id TEXT NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE orden_pedido_proveedor (
   PRIMARY KEY (orden_pedido_proveedor_id),
   KEY id_orden_pedido_producto (id_orden_pedido_producto),
   CONSTRAINT orden_pedido_proveedor_ibfk_1 FOREIGN KEY (id_orden_pedido_producto) REFERENCES orden_pedido_producto (orden_pedido_producto_id)
-); 
+);
 
 CREATE TABLE orden_produccion (
   orden_produccion_id TEXT NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE orden_produccion (
   CONSTRAINT fk_ot FOREIGN KEY (responsable_area_tecnica) REFERENCES tecnico (tecnico_id),
   CONSTRAINT fk FOREIGN KEY (id_programa_produccion) REFERENCES programa_produccion (programa_produccion_id),
   CONSTRAINT fka FOREIGN KEY (id_producto) REFERENCES RMP (producto_id)
-); 
+);
 
 CREATE TABLE producto_terminado (
   producto_terminado_id TEXT NOT NULL,
@@ -121,8 +121,17 @@ CREATE TABLE producto_terminado (
   KEY id_orden_produccion (id_orden_produccion),
   CONSTRAINT producto_terminado_ibfk_1 FOREIGN KEY (id_producto) REFERENCES RMP (producto_id),
   CONSTRAINT producto_terminado_ibfk_2 FOREIGN KEY (id_orden_produccion) REFERENCES orden_produccion (orden_produccion_id)
-); 
---casi listo (revisar)
+);
+----
+
+
+
+
+
+
+
+----
+-- listo
 CREATE TABLE programa_produccion (
   programa_produccion_id TEXT NOT NULL,
   id_orden_produccion TEXT NOT NULL,
@@ -135,8 +144,9 @@ CREATE TABLE programa_produccion (
   KEY af (id_orden_produccion),
   KEY id_cliente (id_cliente),
   CONSTRAINT af FOREIGN KEY (id_orden_produccion) REFERENCES orden_produccion (orden_produccion_id),
-  CONSTRAINT programa_produccion_ibfk_1 FOREIGN KEY (id_cliente) REFERENCES cliente (cliente_id)
-); 
+  CONSTRAINT programa_produccion_ibfk_1 FOREIGN KEY (id_cliente) REFERENCES cliente (cliente_id),
+  CONSTRAINT responsable_fk FOREIGN KEY (responsable) REFERENCES tecnico(tecnico_id)
+);
 --listo
 CREATE TABLE proveedor (
   proveedor_id TEXT NOT NULL,
@@ -145,7 +155,7 @@ CREATE TABLE proveedor (
   direccion TEXT NOT NULL,
   email TEXT NOT NULL,
   PRIMARY KEY (proveedor_id)
-); 
+);
 --listo
 CREATE TABLE tecnico (
   tecnico_id TEXT NOT NULL,
@@ -155,4 +165,4 @@ CREATE TABLE tecnico (
   email TEXT NOT NULL,
   area TEXT NOT NULL,
   PRIMARY KEY (tecnico_id)
-); 
+);
