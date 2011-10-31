@@ -7,7 +7,8 @@
 
 #ifndef _PROVEEDORES_H
 #define	_PROVEEDORES_H
-
+void agregar_proveedor(PROVEEDOR *proveedor);
+void borrar_proveedor(int proveedor_id);
 #ifdef	__cplusplus
 extern "C" {
 #endif

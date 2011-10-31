@@ -68,13 +68,13 @@ typedef struct t_producto
  
 
 typedef struct t_programa_produccion {
-  char* programa_produccion_id[15];
-  char* id_orden_produccion[15];
+  char programa_produccion_id[15];
+  char id_orden_produccion[15];
   int cantidad ;
-  char* fecha_comprometida[15];
-  char* id_cliente[15];
-  char* responsable[255] ;//TEXT NOT NULL, //ver esto
-  char* produccion[255]; 
+  char fecha_comprometida[15];
+  char id_cliente[15];
+  char responsable[255] ;//TEXT NOT NULL, //ver esto
+  char produccion[255]; 
 //  PRIMARY KEY (programa_produccion_id),
  // KEY af (id_orden_produccion),
  // KEY id_cliente (id_cliente),
@@ -84,23 +84,23 @@ typedef struct t_programa_produccion {
 
 typedef struct t_proveedor
 {
-  char *proveedor_id[15];
-  char *nombre[255];
-  char *telefono[15];
-  char *direccion[255];
-  char *email[63];
+  char proveedor_id[15];
+  char nombre[255];
+  char telefono[15];
+  char direccion[255];
+  char email[63];
   //PRIMARY KEY (proveedor_id)
 } PROVEEDOR;
 
 typedef struct t_tecnico
 {
-  char *tecnico_id[15];
-  char *nombre[255];
-  char *telefono[15];
-  char *direccion[255];
-  char *email[63];
+  char tecnico_id[15];
+  char nombre[255];
+  char telefono[15];
+  char direccion[255];
+  char email[63];
 
-  char *area[255];
+  char area[255];
 
 } TECNICO;
 
@@ -112,16 +112,16 @@ typedef struct t_tecnico
 
 typedef struct t_rmp
 {
-  char *producto_id[15];
-  char *referencias[255];
-  char *control_calidad[255];
-  char *instruccion_operativa[255];
-  char *descripcion[255];
+  char producto_id[15];
+  char referencias[255];
+  char control_calidad[255];
+  char instruccion_operativa[255];
+  char descripcion[255];
   int cantidad_materia_prima;
-  char *descripcion_materia_prima[255];
+  char descripcion_materia_prima[255];
   int cantidad_insumo;
-  char *descripcion_insumo_productivo[255];
-  char *descripcion_producto_semielaborado[255];
+  char descripcion_insumo_productivo[255];
+  char descripcion_producto_semielaborado[255];
 
 } RMP;
 

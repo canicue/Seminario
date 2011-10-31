@@ -18,3 +18,8 @@ void agregar_cliente(CLIENTE *cliente)
    sqlite3_exec(conexion,consulta,mostrar,NULL,&error);
    
 }
+void borrar_cliente(int cliente_id)
+{
+
+
+}
