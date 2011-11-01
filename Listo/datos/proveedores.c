@@ -18,9 +18,11 @@ void agregar_proveedor(PROVEEDOR *proveedor)
    printf("%s",error);
 
 }
-void borrar_proveedor(int proveedor_id)
+void borrar_proveedor(char *proveedor_id)
 {
-
+    char *error;
+    char consulta[255]="";
+    sprintf(consulta,BORRAR_PROVEEDOR,proveedor_id);
 
 }
 void buscar_proveedor(char *campo,char *valor){}

@@ -10,8 +10,8 @@
 #include "tipos.h"
 
 void agregar_rmp(RMP *rmp);
-void borrar_rmp(int rmp_id);
-void modificar_rmp(int rmp_id);
+void borrar_rmp(char *rmp_id);
+void modificar_rmp(char *rmp_id);
 void buscar_rmp(char *campo,char *valor);
 #ifdef	__cplusplus
 extern "C" {

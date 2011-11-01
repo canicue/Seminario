@@ -39,7 +39,7 @@ void agregar_cliente(CLIENTE *cliente)
    printf("%s",error);
    //desconectar();
 }
-void borrar_cliente(int cliente_id)
+void borrar_cliente(char *cliente_id)
 {
 
 

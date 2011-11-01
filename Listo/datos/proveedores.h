@@ -15,8 +15,8 @@
   email TEXT NOT NULL,*/
 
 void agregar_proveedor(PROVEEDOR *proveedor);
-void borrar_proveedor(int proveedor_id);
-void modificar_proveedor(int proveedor_id);
+void borrar_proveedor(char *proveedor_id);
+void modificar_proveedor(char *proveedor_id);
 void buscar_proveedor(char *campo,char *valor);
 #ifdef	__cplusplus
 extern "C" {
