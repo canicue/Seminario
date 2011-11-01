@@ -16,13 +16,15 @@
 /*
  * 
  */
+
+
 void prueba_clientes()
 {
 CLIENTE *cliente;
 cliente=(CLIENTE*)malloc(sizeof(CLIENTE));
-strcpy(cliente->cliente_id,"NULL");
+strcpy(cliente->cliente_id,"N0ULL");
 strcpy(cliente->direccion,"dios");
-strcpy(cliente->email,"asdf@dfdf");
+strcpy(cliente->email,"asdf \\@dfdf");
 strcpy(cliente->nombre,"nombre");
 strcpy(cliente->telefono,"444555");
 agregar_cliente(cliente);

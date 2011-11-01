@@ -37,8 +37,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/datos/datos.o \
 	${OBJECTDIR}/datos/tecnicos.o \
 	${OBJECTDIR}/datos/rmps.o \
-	${OBJECTDIR}/vista/login.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/vista/login.o
 
 # C Compiler Flags
 CFLAGS=
@@ -94,15 +94,15 @@ ${OBJECTDIR}/datos/rmps.o: nbproject/Makefile-${CND_CONF}.mk datos/rmps.c
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/rmps.o datos/rmps.c
 
-${OBJECTDIR}/vista/login.o: nbproject/Makefile-${CND_CONF}.mk vista/login.c 
-	${MKDIR} -p ${OBJECTDIR}/vista
-	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/login.o vista/login.c
-
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/vista/login.o: nbproject/Makefile-${CND_CONF}.mk vista/login.c 
+	${MKDIR} -p ${OBJECTDIR}/vista
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/login.o vista/login.c
 
 # Subprojects
 .build-subprojects:

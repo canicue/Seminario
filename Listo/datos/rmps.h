@@ -8,9 +8,10 @@
 #ifndef _RMPS_H
 #define	_RMPS_H
 #include "tipos.h"
+
 void agregar_rmp(RMP *rmp);
 void borrar_rmp(int rmp_id);
-
+void modificar_rmp(int rmp_id);
 #ifdef	__cplusplus
 extern "C" {
 #endif

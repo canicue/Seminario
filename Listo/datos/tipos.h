@@ -18,6 +18,7 @@ typedef struct t_cliente
   char direccion[255];
 
   char email[63];
+ 
   // PRIMARY KEY (cliente_id)
 } CLIENTE;
 

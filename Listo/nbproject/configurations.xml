@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>cdk_test.h</itemPath>
       <itemPath>datos/clientes.h</itemPath>
+      <itemPath>datos/consultas.h</itemPath>
       <itemPath>datos/datos.h</itemPath>
       <itemPath>datos/insumos.h</itemPath>
       <itemPath>vista/login.h</itemPath>

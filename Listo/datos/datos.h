@@ -7,9 +7,17 @@
 
 #ifndef _DATOS_H
 #define	_DATOS_H
+#ifndef _CONSULTAS_H
+#include "consultas.h"
+#endif
 #include <sqlite3.h>
 #define BASE "base.sqlite"
+static sqlite3 *conexion;
 sqlite3 *conectar(char* nombre);
+void desconectar();
+void buscar_registro(char *tabla,char *nombre,char *valor);
+void borrar_registro(char *tabla,char *id);
+static int callback(void *NotUsed, int argc, char **argv, char **azColName);
 
 #ifdef	__cplusplus
 extern "C" {
