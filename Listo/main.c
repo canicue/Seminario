@@ -12,6 +12,7 @@
 #include "datos/datos.h"
 #include "datos/tipos.h"
 #include "datos/clientes.h"
+#include "vista/scroll.h"
 
 /*
  * 
@@ -31,7 +32,9 @@ agregar_cliente(cliente);
 }
 int main(int argc, char** argv) {
 
-    prueba_clientes();
+//    prueba_clientes();
+ login(argc,argv);
+ menu_scroll(cdkScreen);
 
 /*esto va
     conectar("basesita.sqlite");

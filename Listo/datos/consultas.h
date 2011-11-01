@@ -9,6 +9,7 @@
 #define	_CONSULTAS_H
 //GENERAL
 #define BUSCAR_REGISTRO "SELECT * FROM %s WHERE %s='%s'"
+#define MODIFICAR_REGISTRO_CHAR "UPDATE %s SET %s='%s' WHERE %s='%s'"
 //CLIENTES
 
 #define AGREGAR_CLIENTE "INSERT INTO CLIENTE(cliente_id,nombre,telefono,direccion,email) VALUES('%s','%s','%s','%s','%s')"

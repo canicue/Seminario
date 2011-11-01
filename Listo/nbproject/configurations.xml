@@ -6,14 +6,19 @@
                    projectFiles="true">
       <itemPath>cdk_test.h</itemPath>
       <itemPath>datos/clientes.h</itemPath>
+      <itemPath>vista/config.h</itemPath>
       <itemPath>datos/consultas.h</itemPath>
       <itemPath>datos/datos.h</itemPath>
+      <itemPath>vista/info.h</itemPath>
       <itemPath>datos/insumos.h</itemPath>
       <itemPath>vista/login.h</itemPath>
+      <itemPath>vista/principal.h</itemPath>
       <itemPath>datos/proveedores.h</itemPath>
       <itemPath>datos/rmps.h</itemPath>
+      <itemPath>vista/scroll.h</itemPath>
       <itemPath>datos/tecnicos.h</itemPath>
       <itemPath>datos/tipos.h</itemPath>
+      <itemPath>vista/utils.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -24,11 +29,15 @@
                    projectFiles="true">
       <itemPath>datos/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>
+      <itemPath>hacedor.c</itemPath>
+      <itemPath>vista/info.c</itemPath>
       <itemPath>datos/insumos.c</itemPath>
       <itemPath>vista/login.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>vista/principal.c</itemPath>
       <itemPath>datos/proveedores.c</itemPath>
       <itemPath>datos/rmps.c</itemPath>
+      <itemPath>vista/scroll.c</itemPath>
       <itemPath>datos/tecnicos.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"

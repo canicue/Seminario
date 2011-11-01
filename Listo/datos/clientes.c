@@ -41,12 +41,18 @@ void agregar_cliente(CLIENTE *cliente)
 }
 void borrar_cliente(char *cliente_id)
 {
-
+    char *error;
+    char consulta[255]="";
+    int res;
+    sprintf(consulta,BORRAR_CLIENTE,cliente_id);
+    res=sqlite3_exec(conexion,consulta,0,0,&error);
 
 }
-void modificar_cliente(int cliente_id)
+void modificar_cliente(char *cliente_id,CLIENTE *nuevo)
 {
-
+    char *error;
+    char consulta[255]="";
+    sprintf(consulta,MODIFICAR_REGISTRO_CHAR,"cliente");
 
 }
 
