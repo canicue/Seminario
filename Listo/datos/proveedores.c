@@ -6,7 +6,7 @@
 void agregar_proveedor(PROVEEDOR *proveedor)
 {
   char *error;
-    char *consulta[255];
+    char consulta[255]="";
 
   sprintf(consulta,AGREGAR_PROVEEDOR,proveedor->proveedor_id,
           proveedor->nombre,proveedor->telefono,

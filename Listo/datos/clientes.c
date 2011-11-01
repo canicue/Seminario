@@ -34,7 +34,7 @@ void agregar_cliente(CLIENTE *cliente)
    printf(consulta);*/
    conexion=conectar(BASE);
 //   consulta="SELECT * FROM cliente";
-   int res=  sqlite3_exec(conexion,&consulta,vuelta,0,&error);
+   int res=  sqlite3_exec(conexion,consulta,vuelta,0,&error);
    //  sqlite3_exec(conexion,consulta,0,0,&error);
    printf("%s",error);
    //desconectar();
