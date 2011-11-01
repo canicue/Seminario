@@ -49,3 +49,5 @@ void modificar_cliente(int cliente_id)
 
 
 }
+
+void buscar_cliente(char *campo,char *valor){}

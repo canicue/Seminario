@@ -12,6 +12,7 @@
 void agregar_cliente(CLIENTE *cliente);
 void borrar_cliente(int cliente_id);
 void modificar_cliente(int cliente_id);
+void buscar_cliente(char *campo,char *valor);
 
 #ifdef	__cplusplus
 extern "C" {

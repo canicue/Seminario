@@ -23,3 +23,4 @@ void borrar_proveedor(int proveedor_id)
 
 
 }
+void buscar_proveedor(char *campo,char *valor){}
