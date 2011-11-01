@@ -6,6 +6,7 @@
 //#include "cdk_test.h"
 #include <cdk/cdk.h>
 #include "login.h"
+#include "principal.h"
 #ifdef HAVE_XCURSES
 char *XCursesProgramName = "buttonbox_ex";
 #endif
@@ -34,7 +35,7 @@ int login()
     if (validar_usuario(usuario,password))
     {
 
-        printf("bien");
+        entrada();
 
     }
     else
@@ -77,7 +78,7 @@ char *pedir_datos (char *tipo)
  else
  {
    entry = newCDKEntry (cdkscreen, CENTER, CENTER,
-            "<C>Contrasenia:", "Name ", A_INVIS, '.', vMIXED,
+            "<C>Contrasenia:", "", A_INVIS, '.', vMIXED,
             40, 0, 256, TRUE, FALSE);
 
 
