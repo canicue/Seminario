@@ -56,4 +56,4 @@ void modificar_cliente(char *cliente_id,CLIENTE *nuevo)
 
 }
 
-void buscar_cliente(char *campo,char *valor){}
+CLIENTE *buscar_cliente(char *campo,char *valor){}

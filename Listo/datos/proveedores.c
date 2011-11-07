@@ -25,4 +25,4 @@ void borrar_proveedor(char *proveedor_id)
     sprintf(consulta,BORRAR_PROVEEDOR,proveedor_id);
 
 }
-void buscar_proveedor(char *campo,char *valor){}
+PROVEEDOR *buscar_proveedor(char *campo,char *valor){}

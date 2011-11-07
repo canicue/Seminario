@@ -12,7 +12,7 @@
 void agregar_rmp(RMP *rmp);
 void borrar_rmp(char *rmp_id);
 void modificar_rmp(char *rmp_id);
-void buscar_rmp(char *campo,char *valor);
+RMP *buscar_rmp(char *campo,char *valor);
 #ifdef	__cplusplus
 extern "C" {
 #endif

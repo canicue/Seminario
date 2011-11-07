@@ -17,7 +17,7 @@
 void agregar_proveedor(PROVEEDOR *proveedor);
 void borrar_proveedor(char *proveedor_id);
 void modificar_proveedor(char *proveedor_id);
-void buscar_proveedor(char *campo,char *valor);
+PROVEEDOR *buscar_proveedor(char *campo,char *valor);
 #ifdef	__cplusplus
 extern "C" {
 #endif
