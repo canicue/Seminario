@@ -1,9 +1,9 @@
 
 /* $Id: buttonbox_ex.c,v 1.18 2005/12/30 09:50:48 tom Exp $ */
 
-//#include <cdk_test.h>
+
 #include <string.h>
-//#include "cdk_test.h"
+
 #include <cdk/cdk.h>
 #include "login.h"
 #include "principal.h"
@@ -15,9 +15,7 @@ char *buttons[]      = {" OK ", " Cancel "};
 CDKSCREEN *cdkscreen     = 0;
  
 
-char* pedir_datos(char* tipo);
-static BINDFN_PROTO (entryCB);
-boolean validar_usuario(char* usuario,char* password);
+
 
 
 /*
@@ -45,7 +43,7 @@ int login()
         printf("mal");
     }
 printf("usuario=%s pass=%s",usuario,password);
-
+return 0;
     }
 
 char *pedir_datos (char *tipo)
@@ -61,7 +59,8 @@ char *pedir_datos (char *tipo)
    /* Set up CDK. */
    cursesWin = initscr ();
    cdkscreen = initCDKScreen (cursesWin);
-	box(cursesWin,0,0);
+	
+      //   box(cursesWin,0,0);
    /* Start color. */
    initCDKColor ();
 
@@ -127,7 +126,15 @@ char *pedir_datos (char *tipo)
    drawCDKButtonbox (buttonWidget, TRUE);
    info = copyChar (activateCDKEntry (entry, 0));
    selection = buttonWidget->currentButton;
+   if(selection==1)
+   {
 
+       endCDK();
+       exit(0);
+
+   }
+   box(cursesWin,0,0);
+   refreshCDKScreen(cdkscreen);
    /* Clean up. */
    destroyCDKButtonbox (buttonWidget);
    destroyCDKEntry (entry);
@@ -159,8 +166,9 @@ boolean validar_usuario(char *usuario,char* password)
 void error_login()
 
 {
+    char *buttons[]      = {" OK "};
      char *message[10], *mesg[3], temp[100];
-     message[0] = "<C></U>Dialog Widget Demo";
+     message[0] = "<C>Login Incorrecto";
    message[1]   = " ";
    message[2]   = "<C>The dialog widget allows the programmer to create";
    message[3]   = "<C>a popup dialog box with buttons. The dialog box";
@@ -185,11 +193,12 @@ void error_login()
  * */
    CDKSCREEN *cdkscreen;
    cdkscreen=initCDKScreen(stdscr);
+  
   CDKDIALOG *question = 0;
    question = newCDKDialog (cdkscreen,
                 CENTER,
                  CENTER,
-                message, 7, buttons, 2,
+                message, 7, buttons, 1,
                 COLOR_PAIR(2)|A_REVERSE,
                 TRUE,
                  TRUE,
@@ -230,7 +239,7 @@ void error_login()
    destroyCDKDialog (question);
    destroyCDKScreen (cdkscreen);
 
-
+   endCDK();
 
 
 

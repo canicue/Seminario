@@ -8,6 +8,10 @@
 #ifndef _LOGIN_H
 #define	_LOGIN_H
 void error_login();
+char* pedir_datos(char* tipo);
+static BINDFN_PROTO (entryCB);
+boolean validar_usuario(char* usuario,char* password);
+int login();
 #ifdef	__cplusplus
 extern "C" {
 #endif

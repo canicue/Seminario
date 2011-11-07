@@ -6,6 +6,8 @@
  */
 
 #include <stdio.h>
+
+#include "vista/info.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -33,8 +35,13 @@ agregar_cliente(cliente);
 int main(int argc, char** argv) {
 
 //    prueba_clientes();
- login(argc,argv);
- menu_scroll(cdkScreen);
+    //mostrar_info(cdkScreen);
+    box(stdscr,0,0);
+    refresh();
+    //refreshCDKScreen(cdkScreen);
+    login();
+// mostrar_scroll(cdkScreen);
+ //menu_scroll(cdkScreen);
 
 /*esto va
     conectar("basesita.sqlite");

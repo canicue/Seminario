@@ -45,6 +45,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>vista/clientes/clientes.c</itemPath>
+    <itemPath>vista/clientes/clientes.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>interfaz</Elem>

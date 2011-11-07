@@ -1,6 +1,7 @@
 #include "scroll.h"
+#include "principal.h"
 
-void menu_scroll()
+void menu_scroll(CDKSCREEN *cdkScreen)
 
 {
 
@@ -11,19 +12,56 @@ void menu_scroll()
     wrefresh
             (scrollwin);*/
    // refresh();
-    char *opciones[]={"uno","dos"};
-CDKSCROLL *scroll=newCDKScroll (cdkScreen, 2, 2, RIGHT,10, 20,
-				     "Scroll",
+    char *opciones[]={"Proveedores","Tecnicos","Clientes","salir"};
+CDKSCROLL *scroll;
+  int elegido;
+do{
+scroll=newCDKScroll (cdkScreen, 2, 2, RIGHT,10, 20,
+				     "<C>Menu",
         opciones
 				     ,
-                                     2,
+                                     4,
 
 				     TRUE,
 				     A_REVERSE,
 				     TRUE,
 				     FALSE);
-activateCDKScroll(scroll,0);
-refreshCDKScreen(cdkScreen);
+elegido=activateCDKScroll(scroll,0);
+//refreshCDKScreen(cdkScreen);
+//
+//refresh();
+
+switch(elegido)
+{
+    case 0:
+      
+produccion();
+        break;
+    case 1:
+        administracion();
+        break;
+
+    case 2:
+      //        mvwaddstr(cdkScreen->window,2,2,"dios");
+    // wrefresh(cdkScreen->window);
+    // getch();
+          clientes();
+        break;
+    case 3:
+        endCDK();
+
+        exit(0);
+
+}
+
+
+
+
+
+
+
+
+}while(elegido!=3);
 getch();
 }
 
@@ -76,13 +114,13 @@ do
 
     popupLabel(cdkScreen,&lista[elegido],1);
 
-    hacer(elegido);
+  //  hacer(elegido);
    // break;
 
 
 } while((salir=(getch())!='q'));
      destroyCDKScroll (menucito);
-     mostrar_info(cdkScreen);
-    hacer(elegido);
+ //    mostrar_info(cdkScreen);
+   // hacer(elegido);
      endCDK();
 }
