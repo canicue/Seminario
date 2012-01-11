@@ -8,6 +8,7 @@
 #ifndef _CONFIG_H
 #define	_CONFIG_H
 #include <cdk/cdk.h>
+#include <cdk/cdk_util.h>
 
 static CDKSCREEN *cdkScreen;
 #include "utils.h"
