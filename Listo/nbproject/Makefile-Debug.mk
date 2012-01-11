@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/vista/login.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/datos/proveedores.o \
+	${OBJECTDIR}/pruebas.o \
 	${OBJECTDIR}/vista/clientes/clientes.o \
 	${OBJECTDIR}/datos/insumos.o \
 	${OBJECTDIR}/vista/info.o \
@@ -108,6 +109,11 @@ ${OBJECTDIR}/datos/proveedores.o: nbproject/Makefile-${CND_CONF}.mk datos/provee
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/proveedores.o datos/proveedores.c
+
+${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/pruebas.o pruebas.c
 
 ${OBJECTDIR}/vista/clientes/clientes.o: nbproject/Makefile-${CND_CONF}.mk vista/clientes/clientes.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/clientes

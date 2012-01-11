@@ -14,6 +14,7 @@
       <itemPath>vista/login.h</itemPath>
       <itemPath>vista/principal.h</itemPath>
       <itemPath>datos/proveedores.h</itemPath>
+      <itemPath>pruebas.h</itemPath>
       <itemPath>datos/rmps.h</itemPath>
       <itemPath>vista/scroll.h</itemPath>
       <itemPath>datos/tecnicos.h</itemPath>
@@ -36,6 +37,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>vista/principal.c</itemPath>
       <itemPath>datos/proveedores.c</itemPath>
+      <itemPath>pruebas.c</itemPath>
       <itemPath>datos/rmps.c</itemPath>
       <itemPath>vista/scroll.c</itemPath>
       <itemPath>datos/tecnicos.c</itemPath>
