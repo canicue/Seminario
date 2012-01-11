@@ -2,7 +2,10 @@
 #include <string.h>
 WINDOW *win=NULL;
 int startx,starty,width;
-int main() {    int length, x, y;                                                                            
+int main() {   
+	   
+initscr();	
+		int length, x, y;                                                                            
     float temp;                                                                                   
 	char *string="dios";
     int color=222;                                                                                              

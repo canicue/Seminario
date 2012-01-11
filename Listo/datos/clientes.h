@@ -13,6 +13,7 @@ void agregar_cliente(CLIENTE *cliente);
 void borrar_cliente(char *cliente_id);
 void modificar_cliente(char *cliente_id,CLIENTE *nuevo);
 CLIENTE *buscar_cliente(char *campo,char *valor);
+CLIENTE *listar_clientes();
 
 #ifdef	__cplusplus
 extern "C" {

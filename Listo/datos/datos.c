@@ -4,10 +4,10 @@
 sqlite3 *conectar(char* nombre)
 {
     int err=0;
-    sqlite3 *db;
-    sqlite3_open(nombre,&db);
-    printf("%d",err);
-    return db;
+   
+    sqlite3_open(nombre,&conexion);
+    //printf("%d",err);
+    return conexion;
 ;
 
 }
