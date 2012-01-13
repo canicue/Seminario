@@ -33,15 +33,13 @@ elegido=activateCDKScroll(scroll,0);
 
 switch(elegido)
 {
-    case 0:
-      
-produccion();
-        break;
-    case 1:
-        administracion();
-        break;
-
-    case 2:
+        case 0:
+            produccion();
+            break;
+        case 1:
+            administracion();
+            break;
+        case 2:
       //        mvwaddstr(cdkScreen->window,2,2,"dios");
     // wrefresh(cdkScreen->window);
     // getch();
