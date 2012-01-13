@@ -7,7 +7,13 @@
 
 #ifndef _TECNICOS_H
 #define	_TECNICOS_H
+#include <cdk/cdk.h>
+#include "../config.h"
 
+void menu_tecnicos(CDKSCREEN *cdkScreen);
+void alta_tecnico(CDKSCREEN *pantalla);
+void baja_tecnico(CDKSCREEN *pantalla);
+void tecnicos();
 #ifdef	__cplusplus
 extern "C" {
 #endif
