@@ -71,6 +71,7 @@ int main(int argc, char** argv) {
  //   mostrar_info(cdkScreen);
 
     probador();
+    endCDK();
   //  login();
 
 
