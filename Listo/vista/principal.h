@@ -11,7 +11,7 @@
 #include <cdk/cdk.h>
 #include "config.h"
 void entrada();
-void clientes();
+//void clientes();
 void produccion();
 void administracion();
 

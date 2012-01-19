@@ -77,7 +77,7 @@ char *pedir_datos (char *tipo)
  else
  {
    entry = newCDKEntry (cdkscreen, CENTER, CENTER,
-            "<C>Contrasenia:", "", A_INVIS, '.', vMIXED,
+            "<C>Contraseña:", "", A_INVIS, '.', vMIXED,
             40, 0, 256, TRUE, FALSE);
 
 

@@ -1,6 +1,8 @@
 #include <curses.h>
 #include "principal.h"
 #include "scroll.h"
+#include "proveedores/form_prov.h"
+#include "tecnicos/form_tec.h"
 void entrada()
 {
     initscr();
@@ -15,27 +17,22 @@ void entrada()
 
 
 }
-void clientes()
+
+
+void probador()
 {
-
-   // endCDK();
-
-    CDKSCREEN *pantalla_clientes;
-    pantalla_clientes=initCDKScreen(stdscr);
-    box(stdscr,0,0);
-    refreshCDKWindow(stdscr);
-
-
-    menu_clientes(pantalla_clientes);
-    char *mensaje[]={"cli0entes","tecagas"};
-    popupLabel(pantalla_clientes,mensaje,2);
-
-    cdkScreen=pantalla_clientes;
-    refresh();
-
-
-
+    
+    CDKSCREEN *pantalla;
+    initscr();
+    noecho();
+    curs_set(0);
+    pantalla=initCDKScreen(stdscr);
+  //  form_prov(pantalla);
+ //   form_tec(pantalla);
+    form_cli(pantalla);
 }
+
+
 
 void produccion()
 {

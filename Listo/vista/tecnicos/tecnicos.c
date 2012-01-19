@@ -29,18 +29,65 @@ void tecnicos()
 
 
  void alta_tecnico(CDKSCREEN *pantalla){
-
+     char *mm="asd";
        char *msg[]={"no","si"};
    WINDOW *subWindow;
    subWindow = newwin (LINES-5, COLS-10, 2, 5);
-    cdkScreen = initCDKScreen (subWindow);
+
+   waddstr(subWindow,mm);
+   cdkScreen = initCDKScreen (subWindow);
 
    /* Box our window. */
    box (subWindow, ACS_VLINE, ACS_HLINE);
+   //
+   eraseCDKScreen(pantalla);
   // raiseCDKObject(vSWINDOW,(void*)subWindow);
    wrefresh (subWindow);
    refreshCDKScreen(cdkScreen);
-   getch();
+
+
+   ///
+        char elegido;
+    do{
+
+
+
+        elegido=getch();
+//refreshCDKScreen(cdkScreen);
+//
+//refresh();
+
+switch(elegido)
+{
+        case 'a':
+            proveedores();
+            //produccion();
+            break;
+        case 1:
+            waddstr(subWindow,"asdf");
+            tecnicos();
+            //administracion();
+            break;
+        case 2:
+      //        mvwaddstr(cdkScreen->window,2,2,"dios");
+    // wrefresh(cdkScreen->window);
+    // getch();
+          clientes();
+          break;
+        case 3:
+        endCDK();
+
+        exit(0);
+
+}
+
+
+}while(elegido!='q');
+
+
+   ///
+
+ //  getch();
 
 
 
@@ -96,7 +143,6 @@ elegido=activateCDKScroll(scroll,0);
 switch(elegido)
 {
     case 0:
-
         alta_tecnico(pantalla);
         break;
     case 1:

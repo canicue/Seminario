@@ -13,19 +13,18 @@ void menu_scroll(CDKSCREEN *cdkScreen)
             (scrollwin);*/
    // refresh();
     char *opciones[]={"Proveedores","Tecnicos","Clientes","salir"};
-CDKSCROLL *scroll;
-  int elegido;
-do{
-scroll=newCDKScroll (cdkScreen, 2, 2, RIGHT,10, 20,
+    CDKSCROLL *scroll;
+    int elegido;
+    do{
+        scroll=newCDKScroll (cdkScreen, 2, 2, RIGHT,10, 20,
 				     "<C>Menu",
-        opciones
-				     ,
-                                     4,
-
-				     TRUE,
-				     A_REVERSE,
-				     TRUE,
-				     FALSE);
+                                        opciones,
+                                                4,
+        				     TRUE,
+                			     A_REVERSE,
+                        		     TRUE,
+                                	     FALSE
+                            );
 elegido=activateCDKScroll(scroll,0);
 //refreshCDKScreen(cdkScreen);
 //
@@ -34,29 +33,26 @@ elegido=activateCDKScroll(scroll,0);
 switch(elegido)
 {
         case 0:
-            produccion();
+            proveedores();
+            //produccion();
             break;
         case 1:
-            administracion();
+            
+            tecnicos();
+            //administracion();
             break;
         case 2:
       //        mvwaddstr(cdkScreen->window,2,2,"dios");
     // wrefresh(cdkScreen->window);
     // getch();
           clientes();
-        break;
-    case 3:
+          break;
+        case 3:
         endCDK();
 
         exit(0);
 
 }
-
-
-
-
-
-
 
 
 }while(elegido!=3);

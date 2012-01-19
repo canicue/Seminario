@@ -30,6 +30,12 @@
                    projectFiles="true">
       <itemPath>datos/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>
+      <itemPath>vista/clientes/form_cli.c</itemPath>
+      <itemPath>vista/clientes/form_cli.h</itemPath>
+      <itemPath>vista/proveedores/form_prov.c</itemPath>
+      <itemPath>vista/tecnicos/form_tec.c</itemPath>
+      <itemPath>vista/tecnicos/form_tec.h</itemPath>
+      <itemPath>vista/formularios.h</itemPath>
       <itemPath>hacedor.c</itemPath>
       <itemPath>vista/info.c</itemPath>
       <itemPath>datos/insumos.c</itemPath>
@@ -37,10 +43,13 @@
       <itemPath>main.c</itemPath>
       <itemPath>vista/principal.c</itemPath>
       <itemPath>datos/proveedores.c</itemPath>
+      <itemPath>vista/proveedores/proveedores.c</itemPath>
       <itemPath>pruebas.c</itemPath>
       <itemPath>datos/rmps.c</itemPath>
       <itemPath>vista/scroll.c</itemPath>
       <itemPath>datos/tecnicos.c</itemPath>
+      <itemPath>vista/tecnicos/tecnicos.c</itemPath>
+      <itemPath>vista/tecnicos/tecnicos.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -49,6 +58,8 @@
     </logicalFolder>
     <itemPath>vista/clientes/clientes.c</itemPath>
     <itemPath>vista/clientes/clientes.h</itemPath>
+    <itemPath>vista/proveedores/form_prov.h</itemPath>
+    <itemPath>vista/proveedores/proveedores.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>interfaz</Elem>

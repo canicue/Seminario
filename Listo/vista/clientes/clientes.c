@@ -2,15 +2,19 @@
 
    void alta_cliente(CDKSCREEN *pantalla){
 
+       char *msg[]={"no","si"};
    WINDOW *subWindow;
    subWindow = newwin (LINES-5, COLS-10, 2, 5);
     cdkScreen = initCDKScreen (subWindow);
-
+    
    /* Box our window. */
    box (subWindow, ACS_VLINE, ACS_HLINE);
   // raiseCDKObject(vSWINDOW,(void*)subWindow);
    wrefresh (subWindow);
-
+   refreshCDKScreen(cdkScreen);
+   getch();
+   
+   
  
 
 
@@ -24,9 +28,40 @@
 
 
    }
-   void baja_cliente(CDKSCREEN *pantalla){char *mensaje[]={"BAJA","CLIENTE"};
+   void baja_cliente(CDKSCREEN *pantalla)
+   {char *mensaje[]={"BAJA","CLIENTE"};
     popupLabel(pantalla,mensaje,2);}
-void menu_clientes(CDKSCREEN *pantalla)
+
+   void clientes()
+{
+
+   // endCDK();
+
+    CDKSCREEN *pantalla_clientes;
+    pantalla_clientes=initCDKScreen(stdscr);
+    box(stdscr,0,0);
+    refreshCDKWindow(stdscr);
+
+
+    menu_clientes(pantalla_clientes);
+  //  char *mensaje[]={"cli0entes","tecagas"};
+  //  popupLabel(pantalla_clientes,mensaje,2);
+
+    cdkScreen=pantalla_clientes;
+    refresh();
+
+
+
+}
+
+
+
+
+
+
+
+
+   void menu_clientes(CDKSCREEN *pantalla)
 
 {
    
