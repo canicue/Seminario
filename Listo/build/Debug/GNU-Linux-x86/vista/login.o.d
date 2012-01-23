@@ -1,10 +1,13 @@
-build/Debug/GNU-Linux-x86/vista/login.o: vista/login.c vista/login.h \
- vista/principal.h vista/config.h vista/utils.h
+build/Debug/GNU-Linux-x86/vista/login.o: vista/login.c \
+ /usr/include/cdk/cdk.h vista/login.h vista/../controlador/principal.h \
+ vista/../controlador/config.h /usr/include/cdk/cdk_util.h
+
+/usr/include/cdk/cdk.h:
 
 vista/login.h:
 
-vista/principal.h:
+vista/../controlador/principal.h:
 
-vista/config.h:
+vista/../controlador/config.h:
 
-vista/utils.h:
+/usr/include/cdk/cdk_util.h:

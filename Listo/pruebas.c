@@ -41,7 +41,7 @@ void lista_clientes()
    
    
 }
-void ver_tabla(char *tabla)
+void ver_tablas(char *tabla)
 {
     char *error;
     conexion=conectar(BASE);

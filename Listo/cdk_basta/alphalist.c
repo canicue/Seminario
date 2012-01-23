@@ -13,7 +13,7 @@ int main(int argc, const char *argv[])
 		noecho();
 pantalla=		initCDKScreen(stdscr);
 	
- alphaList = newCDKAlphalist (pantalla,CENTER, CENTER, 0, 0, title, label, lista , 2,'_', A_REVERSE, TRUE, FALSE);
+ alphaList = newCDKAlphalist (pantalla,CENTER, CENTER, 0, 40, title, label, lista , 2,'_', A_REVERSE, TRUE, FALSE);
  palabra=activateCDKAlphalist(alphaList,0);
 
   if (alphaList->exitType == vESCAPE_HIT)

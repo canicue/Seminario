@@ -1,6 +1,11 @@
-build/Debug/GNU-Linux-x86/hacedor.o: hacedor.c vista/config.h \
- vista/utils.h
+build/Debug/GNU-Linux-x86/hacedor.o: hacedor.c \
+ /usr/include/cdk/cdkscreen.h controlador/config.h /usr/include/cdk/cdk.h \
+ /usr/include/cdk/cdk_util.h
 
-vista/config.h:
+/usr/include/cdk/cdkscreen.h:
 
-vista/utils.h:
+controlador/config.h:
+
+/usr/include/cdk/cdk.h:
+
+/usr/include/cdk/cdk_util.h:

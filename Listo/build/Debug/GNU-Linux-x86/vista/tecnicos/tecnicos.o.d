@@ -1,9 +1,12 @@
 build/Debug/GNU-Linux-x86/vista/tecnicos/tecnicos.o: \
  vista/tecnicos/tecnicos.c vista/tecnicos/tecnicos.h \
- vista/tecnicos/../config.h vista/tecnicos/../utils.h
+ /usr/include/cdk/cdk.h vista/tecnicos/../../controlador/config.h \
+ /usr/include/cdk/cdk_util.h
 
 vista/tecnicos/tecnicos.h:
 
-vista/tecnicos/../config.h:
+/usr/include/cdk/cdk.h:
 
-vista/tecnicos/../utils.h:
+vista/tecnicos/../../controlador/config.h:
+
+/usr/include/cdk/cdk_util.h:
