@@ -33,11 +33,16 @@ elegido=activateCDKScroll(scroll,0);
 switch(elegido)
 {
         case 0:
-            proveedores();
+            destroyCDKScroll(scroll);
+            //unregisterCDKObject(vSCROLL,scroll);
+           // refreshCDKScreen(cdkScreen);
+            //getch();
+              proveedores();
+          //  registerCDKObject(cdkScreen,vSCROLL,scroll);
             //produccion();
             break;
         case 1:
-            
+            destroyCDKScroll(scroll);
             tecnicos();
             //administracion();
             break;

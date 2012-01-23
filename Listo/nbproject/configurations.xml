@@ -19,7 +19,6 @@
       <itemPath>vista/scroll.h</itemPath>
       <itemPath>datos/tecnicos.h</itemPath>
       <itemPath>datos/tipos.h</itemPath>
-      <itemPath>vista/utils.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -56,10 +55,19 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>vista/alpha.c</itemPath>
+    <itemPath>vista/alpha.h</itemPath>
+    <itemPath>vista/clientes/alpha_cli.c</itemPath>
+    <itemPath>vista/clientes/alpha_cli.h</itemPath>
+    <itemPath>vista/proveedores/alpha_pro.h</itemPath>
+    <itemPath>vista/tecnicos/alpha_tec.c</itemPath>
+    <itemPath>vista/tecnicos/alpha_tec.h</itemPath>
     <itemPath>vista/clientes/clientes.c</itemPath>
     <itemPath>vista/clientes/clientes.h</itemPath>
     <itemPath>vista/proveedores/form_prov.h</itemPath>
     <itemPath>vista/proveedores/proveedores.h</itemPath>
+    <itemPath>vista/utils.c</itemPath>
+    <itemPath>vista/utils.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>interfaz</Elem>

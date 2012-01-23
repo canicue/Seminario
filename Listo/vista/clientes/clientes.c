@@ -29,8 +29,12 @@
 
    }
    void baja_cliente(CDKSCREEN *pantalla)
-   {char *mensaje[]={"BAJA","CLIENTE"};
-    popupLabel(pantalla,mensaje,2);}
+   {
+       char *mensaje[]={"BAJA","CLIENTE"};
+   
+       popupLabel(pantalla,mensaje,2);
+   
+   }
 
    void clientes()
 {
@@ -103,7 +107,6 @@ switch(elegido)
         break;
 
     case 2:
-
           clientes();
         break;
     case 3:
@@ -124,3 +127,5 @@ switch(elegido)
 }while(elegido!=3);
 //getch(); mierda!!!!
 }
+
+

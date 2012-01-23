@@ -5,7 +5,7 @@
 #include <curses.h>
 #include <cdk/cdkscreen.h>
 #include "vista/config.h"
-//extern CDKSCREEN *cdkScreen;
+extern CDKSCREEN *cdkScreen;
 void hacer(int opcion)
 {
 

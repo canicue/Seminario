@@ -13,7 +13,9 @@
 void menu_clientes(CDKSCREEN *cdkScreen);
 void alta_cliente(CDKSCREEN *pantalla);
 void baja_cliente(CDKSCREEN *pantalla);
+
 void clientes();
+
 #ifdef	__cplusplus
 extern "C" {
 #endif

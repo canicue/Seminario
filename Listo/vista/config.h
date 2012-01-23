@@ -9,9 +9,9 @@
 #define	_CONFIG_H
 #include <cdk/cdk.h>
 #include <cdk/cdk_util.h>
+//#include "utils.h"  ver esto!!!
 
 static CDKSCREEN *cdkScreen;
-#include "utils.h"
 #ifdef	__cplusplus
 extern "C" {
 #endif

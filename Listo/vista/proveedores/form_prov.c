@@ -38,10 +38,20 @@ activateCDKMatrix (matrix_prov, 0);
       mesg[1] = "",
       mesg[2] = "<C>Press any key to continue.";
       popupLabel (cdkScreen, mesg, 3);
+      destroyCDKMatrix(matrix_prov);
    }
    else if (matrix_prov->exitType == vNORMAL)
    {
-      char temp[80];
+      // matrix_prov->r
+      
+    //   info_matriz(matrix_prov);
+
+     //  validar_matriz(matrix_prov,cdkScreen);
+
+       destroyCDKMatrix(matrix_prov);
+       refreshCDKScreen(cdkScreen);
+       refreshCDKScreen((ScreenOf(matrix_prov)));
+       /*     char temp[80];
 
       sprintf(temp, "Current cell (%d,%d)", matrix_prov->crow, matrix_prov->ccol);
       mesg[0] = "<L>You exited the matrix normally.";
@@ -51,7 +61,7 @@ activateCDKMatrix (matrix_prov, 0);
       mesg[4] = getCDKMatrixCell(matrix_prov, matrix_prov->crow, matrix_prov->ccol);
       mesg[5] = "";
       mesg[6] = "<C>Press any key to continue.";
-      popupLabel (cdkScreen, mesg, 7);
+      popupLabel (cdkScreen, mesg, 7);*/
    }
 
 

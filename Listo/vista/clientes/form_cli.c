@@ -36,6 +36,16 @@ activateCDKMatrix (matrix_cli, 0);
    }
    else if (matrix_cli->exitType == vNORMAL)
    {
+
+
+ //      char **asa=info_matriz(ScreenOf(matrix_cli));
+       
+    //   char *asa[]={"dios","diablo"};
+   popupLabel(ScreenOf(matrix_cli),(char**)info_matriz(ScreenOf(matrix_cli)),1);
+       //info_matriz(ScreenOf(matrix_cli));
+   //    char *hola[]={"aca","noes"};
+    //   popupLabel(ScreenOf(matrix_cli),hola,2);
+       /*
       char temp[80];
 
       sprintf(temp, "Current cell (%d,%d)", matrix_cli->crow, matrix_cli->ccol);
@@ -46,7 +56,7 @@ activateCDKMatrix (matrix_cli, 0);
       mesg[4] = getCDKMatrixCell(matrix_cli, matrix_cli->crow, matrix_cli->ccol);
       mesg[5] = "";
       mesg[6] = "<C>Press any key to continue.";
-      popupLabel (cdkScreen, mesg, 7);
+      popupLabel (cdkScreen, mesg, 7);*/
    }
 
 
