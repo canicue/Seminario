@@ -14,8 +14,9 @@
 #define BASE "base.sqlite"
 static sqlite3 *conexion;
 sqlite3 *conectar(char* nombre);
+char *error;
 void desconectar();
-void buscar_registro(char *tabla,char *nombre,char *valor);
+void buscar_registro(char *tabla,char *nombre,char *valor,void *callback,void *extra);
 void borrar_registro(char *tabla,char *id);
 static int callback(void *NotUsed, int argc, char **argv, char **azColName);
 

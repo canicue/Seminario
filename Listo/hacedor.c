@@ -3,8 +3,8 @@
 
 
 #include <curses.h>
-#include <cdk/cdkscreen.h>
-#include "vista/config.h"
+#include <cdkscreen.h>
+#include "controlador/config.h"
 extern CDKSCREEN *cdkScreen;
 void hacer(int opcion)
 {

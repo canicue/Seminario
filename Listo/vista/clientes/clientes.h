@@ -7,9 +7,8 @@
 
 #ifndef _CLIENTES_H
 #define	_CLIENTES_H
-#include <cdk/cdk.h>
-#include "../config.h"
-
+#include <cdk.h>
+#include "../../controlador/config.h"
 void menu_clientes(CDKSCREEN *cdkScreen);
 void alta_cliente(CDKSCREEN *pantalla);
 void baja_cliente(CDKSCREEN *pantalla);

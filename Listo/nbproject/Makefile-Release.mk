@@ -37,6 +37,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/vista/alpha.o \
 	${OBJECTDIR}/datos/clientes.o \
 	${OBJECTDIR}/vista/clientes/alpha_cli.o \
+	${OBJECTDIR}/controlador/callbacks.o \
+	${OBJECTDIR}/controlador/listados.o \
 	${OBJECTDIR}/pruebas.o \
 	${OBJECTDIR}/datos/insumos.o \
 	${OBJECTDIR}/vista/clientes/clientes.o \
@@ -52,8 +54,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/datos/proveedores.o \
 	${OBJECTDIR}/vista/proveedores/proveedores.o \
-	${OBJECTDIR}/vista/info.o \
-	${OBJECTDIR}/vista/principal.o
+	${OBJECTDIR}/controlador/principal.o \
+	${OBJECTDIR}/controlador/formularios.o \
+	${OBJECTDIR}/vista/info.o
 
 # C Compiler Flags
 CFLAGS=
@@ -108,6 +111,16 @@ ${OBJECTDIR}/vista/clientes/alpha_cli.o: nbproject/Makefile-${CND_CONF}.mk vista
 	${MKDIR} -p ${OBJECTDIR}/vista/clientes
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/clientes/alpha_cli.o vista/clientes/alpha_cli.c
+
+${OBJECTDIR}/controlador/callbacks.o: nbproject/Makefile-${CND_CONF}.mk controlador/callbacks.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/callbacks.o controlador/callbacks.c
+
+${OBJECTDIR}/controlador/listados.o: nbproject/Makefile-${CND_CONF}.mk controlador/listados.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/listados.o controlador/listados.c
 
 ${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -184,15 +197,20 @@ ${OBJECTDIR}/vista/proveedores/proveedores.o: nbproject/Makefile-${CND_CONF}.mk 
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/proveedores/proveedores.o vista/proveedores/proveedores.c
 
+${OBJECTDIR}/controlador/principal.o: nbproject/Makefile-${CND_CONF}.mk controlador/principal.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/principal.o controlador/principal.c
+
+${OBJECTDIR}/controlador/formularios.o: nbproject/Makefile-${CND_CONF}.mk controlador/formularios.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/formularios.o controlador/formularios.c
+
 ${OBJECTDIR}/vista/info.o: nbproject/Makefile-${CND_CONF}.mk vista/info.c 
 	${MKDIR} -p ${OBJECTDIR}/vista
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/info.o vista/info.c
-
-${OBJECTDIR}/vista/principal.o: nbproject/Makefile-${CND_CONF}.mk vista/principal.c 
-	${MKDIR} -p ${OBJECTDIR}/vista
-	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/principal.o vista/principal.c
 
 # Subprojects
 .build-subprojects:

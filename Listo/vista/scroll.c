@@ -1,5 +1,5 @@
 #include "scroll.h"
-#include "principal.h"
+#include "../controlador/principal.h"
 
 void menu_scroll(CDKSCREEN *cdkScreen)
 

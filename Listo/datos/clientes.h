@@ -12,9 +12,9 @@
 void agregar_cliente(CLIENTE *cliente);
 void borrar_cliente(char *cliente_id);
 void modificar_cliente(char *cliente_id,CLIENTE *nuevo);
-CLIENTE *buscar_cliente(char *campo,char *valor);
+void buscar_cliente(char *campo,char *valor);
 CLIENTE *listar_clientes();
-
+int mostrar(void *NotUsed, int argc, char **argv, char **azColName);
 #ifdef	__cplusplus
 extern "C" {
 #endif

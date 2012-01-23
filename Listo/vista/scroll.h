@@ -7,7 +7,7 @@
 
 #ifndef _SCROLL_H
 #define	_SCROLL_H
-#include "config.h"
+#include "../controlador/config.h"
 void menu_scroll(CDKSCREEN *cdkScreen);
 void mostrar_scroll(CDKSCREEN *cdkScreen);
 #ifdef	__cplusplus

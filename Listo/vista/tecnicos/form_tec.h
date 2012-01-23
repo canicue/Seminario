@@ -8,7 +8,7 @@
 #ifndef _FORM_TEC_H
 #define	_FORM_TEC_H
 
-#include "../formularios.h"
+#include "../../controlador/formularios.h"
 
 CDKMATRIX *matrix_tec;
 char *titulo;

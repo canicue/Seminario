@@ -3,12 +3,21 @@
 
 #include "clientes.h"
 #include "datos.h"
-int mostrar()
+int mostrar(void *NotUsed, int argc, char **argv, char **azColName)
 {
+       printf("%d-------------",argc);
+    int i=0;
+    for(  i=0; i<argc;i++){
+        printf("%s  \n", argv[i] ? argv[i] : "NULL");
+    }
+    printf("%d",sizeof(argv[0]));
+    printf("\n");
+
     printf("mostrando");
+    return 0;
 }
  int vuelta(void *NotUsed, int argc, char **argv, char **azColName){
-     printf("asdfadsf");
+    
     printf("%d-------------",argc);
     int i=0;
     for(  i=0; i<argc;i++){
@@ -67,13 +76,16 @@ void modificar_cliente(char *cliente_id,CLIENTE *nuevo)
 
 }
 
-CLIENTE *buscar_cliente(char *campo,char *valor){
+void buscar_cliente(char *campo,char *valor){
 
+    //printf("mierdacarao");
     char *error;
     char consulta[255]="";
+    int res;
     sprintf(consulta,BUSCAR_REGISTRO,"cliente",campo,valor);
-
-
+    printf(consulta);
+    res=sqlite3_exec(conexion,consulta,mostrar,0,&error);
+    printf("error=%c",error);
 
 
 }

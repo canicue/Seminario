@@ -8,7 +8,7 @@
 #ifndef _FORM_CLI_H
 #define	_FORM_CLI_H
 
-#include "../formularios.h"
+#include "../../controlador/formularios.h"
 
 CDKMATRIX *matrix_cli;
 char *titulo;

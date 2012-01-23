@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include <cdk/cdk.h>
+#include <cdk.h>
 #include "login.h"
-#include "principal.h"
+#include "../controlador/principal.h"
 #ifdef HAVE_XCURSES
 char *XCursesProgramName = "buttonbox_ex";
 #endif

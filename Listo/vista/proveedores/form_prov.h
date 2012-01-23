@@ -8,7 +8,7 @@
 #ifndef _FORM_PROV_H
 #define	_FORM_PROV_H
 
-#include "../formularios.h"
+#include "../../controlador/formularios.h"
 
 CDKMATRIX *matrix_prov;
 char *titulo;

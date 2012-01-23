@@ -17,10 +17,12 @@ void desconectar()
     sqlite3_close(conexion);
 
 }
-void buscar_registro(char *tabla,char *nombre,char *valor)
+void buscar_registro(char *tabla,char *nombre,char *valor,void *callback,void *extra)
 {
-
-
+    conectar(BASE);
+    char consulta[255];
+    sprintf(consulta,BUSCAR_REGISTRO,tabla,nombre,valor);
+    sqlite3_exec(conexion,consulta,callback,0,&error);
 
 
 }

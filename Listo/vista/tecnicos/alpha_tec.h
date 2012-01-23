@@ -7,7 +7,10 @@
 
 #ifndef _ALPHA_TEC_H
 #define	_ALPHA_TEC_H
-
+#include <cdk.h>
+CDKALPHALIST *lista_tecnicos;
+CDKSCREEN *pantalla;
+void alpha_tecnicos(CDKSCREEN *pantalla);
 #ifdef	__cplusplus
 extern "C" {
 #endif

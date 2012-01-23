@@ -7,8 +7,8 @@
 
 #ifndef _TECNICOS_H
 #define	_TECNICOS_H
-#include <cdk/cdk.h>
-#include "../config.h"
+#include <cdk.h>
+#include "../../controlador/config.h"
 
 void menu_tecnicos(CDKSCREEN *cdkScreen);
 void alta_tecnico(CDKSCREEN *pantalla);

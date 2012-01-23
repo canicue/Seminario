@@ -7,8 +7,8 @@
 
 #ifndef _PROVEEDORES_H
 #define	_PROVEEDORES_H
-#include <cdk/cdk.h>
-#include "../config.h"
+#include <cdk.h>
+#include "../../controlador/config.h"
 
 void menu_proveedores(CDKSCREEN *cdkScreen);
 void alta_proveedor(CDKSCREEN *pantalla);
