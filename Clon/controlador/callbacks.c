@@ -7,7 +7,7 @@
 int callback_lista(void *nombre, int argc, char **argv, char **azColName){
     CDKSCREEN *pantalla=initCDKScreen(stdscr);
 
-    listado=newCDKAlphalist(pantalla,CENTER, CENTER, 0, 0, nombre, nombre, argv , argc,'_', A_REVERSE, TRUE, FALSE);
+    listado=newCDKAlphalist(pantalla,CENTER, CENTER, 0, 0, (char*)nombre, (char*)nombre, argv , argc,'_', A_REVERSE, TRUE, FALSE);
 
     return 0;
 

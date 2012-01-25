@@ -125,9 +125,10 @@ switch(elegido)
     case 1:
 
         listado_proveedores();
-  CDKALPHALIST *lista=listado_proveedores();
+  CDKALPHALIST *lista=(CDKALPHALIST*)listado_proveedores();
   activateCDKAlphalist(lista,0);
-        //  baja_proveedor(pantalla);
+  destroyCDKAlphalist(lista);
+  //  baja_proveedor(pantalla);
         break;
 
     case 2:
