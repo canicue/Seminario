@@ -123,9 +123,9 @@ switch(elegido)
  destroyCDKMatrix(mat_prov);
         break;
     case 1:
-
-        listado_proveedores();
-  CDKALPHALIST *lista=(CDKALPHALIST*)listado_proveedores();//Otra vez casteo cabron
+destroyCDKScroll(scroll);
+    //    listado_proveedores();
+  CDKALPHALIST *lista=(CDKALPHALIST*)listados("proveedor");//Otra vez casteo cabron
   activateCDKAlphalist(lista,0);
   destroyCDKAlphalist(lista);
   //  baja_proveedor(pantalla);

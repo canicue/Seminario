@@ -10,6 +10,7 @@
 #include "../datos/datos.h"
 void listar(char *tabla);
 void leer_registro(char *tabla,char *campo,char *valor);
+CDKALPHALIST *listados(char *tabla);
 #ifdef	__cplusplus
 extern "C" {
 #endif

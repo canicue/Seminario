@@ -143,15 +143,36 @@ elegido=activateCDKScroll(scroll,0);
 switch(elegido)
 {
     case 0:
-        alta_tecnico(pantalla);
+      //  alta_tecnico(pantalla);
+
+         destroyCDKScroll(scroll);
+      //  alta_proveedor(pantalla);
+
+// cdkScreen=initCDKScreen(stdscr);
+
+
+ CDKMATRIX *mat_tec=(CDKMATRIX*)formulario("tecnico");
+ destroyCDKMatrix(mat_tec);
+
+
         break;
     case 1:
-      //  baja_tecnico(pantalla);
+     destroyCDKScroll(scroll);
+    //    listado_proveedores();
+  CDKALPHALIST *lista_tec=(CDKALPHALIST*)listados("tecnico");//Otra vez casteo cabron
+  activateCDKAlphalist(lista_tec,0);
+  destroyCDKAlphalist(lista_tec);
+
+        //  baja_tecnico(pantalla);
         break;
 
     case 2:
-
-          tecnicos();
+     destroyCDKScroll(scroll);
+    //    listado_proveedores();
+  CDKALPHALIST *lis_tec=(CDKALPHALIST*)listados("tecnico");//Otra vez casteo cabron
+  activateCDKAlphalist(lis_tec,0);
+  destroyCDKAlphalist(lis_tec);
+          //tecnicos();
         break;
     case 3:
         cdkScreen=pantalla;
