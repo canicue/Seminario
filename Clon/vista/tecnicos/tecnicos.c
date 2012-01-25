@@ -1,6 +1,8 @@
 #include "../clientes/clientes.h"
 #include "../tecnicos/tecnicos.h"
 #include "../proveedores/proveedores.h"
+#include "../../controlador/formularios.h"
+#include "../../controlador/listados.h"
 void tecnicos()
 {
 

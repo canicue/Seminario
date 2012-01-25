@@ -1,5 +1,6 @@
 #include "clientes.h"
-
+#include "../../controlador/formularios.h"
+#include "../../controlador/listados.h"
    void alta_cliente(CDKSCREEN *pantalla){
 
     //   char *msg[]={"no","si"};

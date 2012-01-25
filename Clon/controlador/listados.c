@@ -20,8 +20,8 @@ void leer_registro(char *tabla,char *campo,char *valor)
 
 }
 CDKALPHALIST *listados(char *tabla){
-    char *nombre="sdf";
-    char *argv[]={"asdf","sdfasdf"};
+ //   char *nombre="sdf";
+  //  char *argv[]={"asdf","sdfasdf"};
  //   initscr();
 //    cdkScreen=initCDKScreen(stdscr);
    // popupDialog(cdkScreen,argv,2,argv,2);

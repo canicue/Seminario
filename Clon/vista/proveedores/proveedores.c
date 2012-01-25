@@ -1,6 +1,6 @@
 #include "proveedores.h"
 #include "form_prov.h"
-
+#include "../../controlador/listados.h"
 void proveedores()
 {
 
@@ -130,7 +130,11 @@ destroyCDKScroll(scroll);
   destroyCDKAlphalist(lista);
   //  baja_proveedor(pantalla);
         break;
-
+destroyCDKScroll(scroll);
+    //    listado_proveedores();
+  CDKALPHALIST *lista_prov=(CDKALPHALIST*)listados("proveedor");//Otra vez casteo cabron
+  activateCDKAlphalist(lista_prov,0);
+  destroyCDKAlphalist(lista_prov);
     case 2:
 
           proveedores();

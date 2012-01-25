@@ -93,6 +93,7 @@
             <pElem>/usr/include/cdk</pElem>
           </incDir>
           <commandLine>-lsqlite3 -lcdk -lncurses</commandLine>
+          <warningLevel>2</warningLevel>
         </cTool>
         <linkerTool>
           <linkerAddLib>

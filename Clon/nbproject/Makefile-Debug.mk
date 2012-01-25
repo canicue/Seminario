@@ -86,137 +86,137 @@ dist/Debug/GNU-Linux-x86/clon: ${OBJECTFILES}
 ${OBJECTDIR}/vista/proveedores/form_prov.o: nbproject/Makefile-${CND_CONF}.mk vista/proveedores/form_prov.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/proveedores
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/proveedores/form_prov.o vista/proveedores/form_prov.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/proveedores/form_prov.o vista/proveedores/form_prov.c
 
 ${OBJECTDIR}/vista/tecnicos/alpha_tec.o: nbproject/Makefile-${CND_CONF}.mk vista/tecnicos/alpha_tec.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/tecnicos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/tecnicos/alpha_tec.o vista/tecnicos/alpha_tec.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/tecnicos/alpha_tec.o vista/tecnicos/alpha_tec.c
 
 ${OBJECTDIR}/vista/scroll.o: nbproject/Makefile-${CND_CONF}.mk vista/scroll.c 
 	${MKDIR} -p ${OBJECTDIR}/vista
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/scroll.o vista/scroll.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/scroll.o vista/scroll.c
 
 ${OBJECTDIR}/vista/alpha.o: nbproject/Makefile-${CND_CONF}.mk vista/alpha.c 
 	${MKDIR} -p ${OBJECTDIR}/vista
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/alpha.o vista/alpha.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/alpha.o vista/alpha.c
 
 ${OBJECTDIR}/datos/clientes.o: nbproject/Makefile-${CND_CONF}.mk datos/clientes.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/clientes.o datos/clientes.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/clientes.o datos/clientes.c
 
 ${OBJECTDIR}/vista/clientes/alpha_cli.o: nbproject/Makefile-${CND_CONF}.mk vista/clientes/alpha_cli.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/clientes
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/clientes/alpha_cli.o vista/clientes/alpha_cli.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/clientes/alpha_cli.o vista/clientes/alpha_cli.c
 
 ${OBJECTDIR}/controlador/callbacks.o: nbproject/Makefile-${CND_CONF}.mk controlador/callbacks.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/callbacks.o controlador/callbacks.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/callbacks.o controlador/callbacks.c
 
 ${OBJECTDIR}/controlador/listados.o: nbproject/Makefile-${CND_CONF}.mk controlador/listados.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/listados.o controlador/listados.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/listados.o controlador/listados.c
 
 ${OBJECTDIR}/controlador/drivers.o: nbproject/Makefile-${CND_CONF}.mk controlador/drivers.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/drivers.o controlador/drivers.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/drivers.o controlador/drivers.c
 
 ${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/pruebas.o pruebas.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/pruebas.o pruebas.c
 
 ${OBJECTDIR}/datos/insumos.o: nbproject/Makefile-${CND_CONF}.mk datos/insumos.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/insumos.o datos/insumos.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/insumos.o datos/insumos.c
 
 ${OBJECTDIR}/vista/clientes/clientes.o: nbproject/Makefile-${CND_CONF}.mk vista/clientes/clientes.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/clientes
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/clientes/clientes.o vista/clientes/clientes.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/clientes/clientes.o vista/clientes/clientes.c
 
 ${OBJECTDIR}/vista/utils.o: nbproject/Makefile-${CND_CONF}.mk vista/utils.c 
 	${MKDIR} -p ${OBJECTDIR}/vista
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/utils.o vista/utils.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/utils.o vista/utils.c
 
 ${OBJECTDIR}/datos/datos.o: nbproject/Makefile-${CND_CONF}.mk datos/datos.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/datos.o datos/datos.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/datos.o datos/datos.c
 
 ${OBJECTDIR}/vista/clientes/form_cli.o: nbproject/Makefile-${CND_CONF}.mk vista/clientes/form_cli.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/clientes
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/clientes/form_cli.o vista/clientes/form_cli.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/clientes/form_cli.o vista/clientes/form_cli.c
 
 ${OBJECTDIR}/vista/tecnicos/form_tec.o: nbproject/Makefile-${CND_CONF}.mk vista/tecnicos/form_tec.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/tecnicos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/tecnicos/form_tec.o vista/tecnicos/form_tec.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/tecnicos/form_tec.o vista/tecnicos/form_tec.c
 
 ${OBJECTDIR}/hacedor.o: nbproject/Makefile-${CND_CONF}.mk hacedor.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/hacedor.o hacedor.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/hacedor.o hacedor.c
 
 ${OBJECTDIR}/datos/tecnicos.o: nbproject/Makefile-${CND_CONF}.mk datos/tecnicos.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/tecnicos.o datos/tecnicos.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/tecnicos.o datos/tecnicos.c
 
 ${OBJECTDIR}/datos/rmps.o: nbproject/Makefile-${CND_CONF}.mk datos/rmps.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/rmps.o datos/rmps.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/rmps.o datos/rmps.c
 
 ${OBJECTDIR}/vista/tecnicos/tecnicos.o: nbproject/Makefile-${CND_CONF}.mk vista/tecnicos/tecnicos.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/tecnicos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/tecnicos/tecnicos.o vista/tecnicos/tecnicos.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/tecnicos/tecnicos.o vista/tecnicos/tecnicos.c
 
 ${OBJECTDIR}/vista/login.o: nbproject/Makefile-${CND_CONF}.mk vista/login.c 
 	${MKDIR} -p ${OBJECTDIR}/vista
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/login.o vista/login.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/login.o vista/login.c
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
 
 ${OBJECTDIR}/datos/proveedores.o: nbproject/Makefile-${CND_CONF}.mk datos/proveedores.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/proveedores.o datos/proveedores.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/proveedores.o datos/proveedores.c
 
 ${OBJECTDIR}/vista/proveedores/proveedores.o: nbproject/Makefile-${CND_CONF}.mk vista/proveedores/proveedores.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/proveedores
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/proveedores/proveedores.o vista/proveedores/proveedores.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/proveedores/proveedores.o vista/proveedores/proveedores.c
 
 ${OBJECTDIR}/controlador/principal.o: nbproject/Makefile-${CND_CONF}.mk controlador/principal.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/principal.o controlador/principal.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/principal.o controlador/principal.c
 
 ${OBJECTDIR}/controlador/formularios.o: nbproject/Makefile-${CND_CONF}.mk controlador/formularios.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/formularios.o controlador/formularios.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/formularios.o controlador/formularios.c
 
 ${OBJECTDIR}/vista/info.o: nbproject/Makefile-${CND_CONF}.mk vista/info.c 
 	${MKDIR} -p ${OBJECTDIR}/vista
 	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/info.o vista/info.c
+	$(COMPILE.c) -g -Wall -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/vista/info.o vista/info.c
 
 # Subprojects
 .build-subprojects:
