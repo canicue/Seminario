@@ -125,7 +125,7 @@ switch(elegido)
     case 1:
 
         listado_proveedores();
-  CDKALPHALIST *lista=(CDKALPHALIST*)listado_proveedores();
+  CDKALPHALIST *lista=(CDKALPHALIST*)listado_proveedores();//Otra vez casteo cabron
   activateCDKAlphalist(lista,0);
   destroyCDKAlphalist(lista);
   //  baja_proveedor(pantalla);
