@@ -51,7 +51,7 @@ char *pedir_datos (char *tipo)
    /* Declare variables. */
    CDKBUTTONBOX *buttonWidget   = 0;
    CDKENTRY *entry      = 0;
-   CDKENTRY *pass       = 0;
+//   CDKENTRY *pass       = 0;
    WINDOW *cursesWin        = 0;
    char *info           = 0;
 
@@ -77,7 +77,7 @@ char *pedir_datos (char *tipo)
  else
  {
    entry = newCDKEntry (cdkscreen, CENTER, CENTER,
-            "<C>Contraseña:", "", A_INVIS, '.', vMIXED,
+            "<C>Contraseña:", "<C>Password:", A_INVIS, '.', vMIXED,
             40, 0, 256, TRUE, FALSE);
 
 

@@ -10,12 +10,12 @@
 #include  <cdk/cdk.h>
 #include "../datos/datos.h"
 #define set_col(n, width, string) \
-coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vUMIXED
+coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED//vUMIXED
 #define set_row(n, string) \
    rowtitle[n] = "</B/6>" string
 #define  vcols  1
 
-CDKMATRIX *matriz;
+
 int filas;
 int columnas ;
 int vrows ;
@@ -25,7 +25,7 @@ int colwidth[10], colvalue[10];
 //void ver_columnas(char *tabla);
 
 void ver_tabla(char *nombre);
-
+CDKMATRIX *formulario(char *tabla);
 
 
 #ifdef	__cplusplus

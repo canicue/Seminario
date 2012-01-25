@@ -32,13 +32,13 @@ int mostrar(void *NotUsed, int argc, char **argv, char **azColName)
  {
  char *error;
  char consulta[255]="";
- CLIENTE *lista;
+ CLIENTE *lista=NULL;
  sprintf(consulta,LISTAR_REGISTROS,"cliente");
  int res;
  conexion=conectar(BASE);
- int argumento;
+ //int argumento;
  res=sqlite3_exec(conexion,consulta,vuelta,0,&error);
- 
+ if (res==SQLITE_OK){};
  return lista;
  }
 
@@ -56,6 +56,8 @@ void agregar_cliente(CLIENTE *cliente)
 //   consulta="SELECT * FROM cliente";
    int res=  sqlite3_exec(conexion,consulta,vuelta,0,&error);
    //  sqlite3_exec(conexion,consulta,0,0,&error);
+
+   if(res==SQLITE_OK){}
    printf("%s",error);
    //desconectar();
 }
@@ -66,13 +68,14 @@ void borrar_cliente(char *cliente_id)
     int res;
     sprintf(consulta,BORRAR_CLIENTE,cliente_id);
     res=sqlite3_exec(conexion,consulta,0,0,&error);
-
+    if(res==SQLITE_OK){}
 }
 void modificar_cliente(char *cliente_id,CLIENTE *nuevo)
 {
-    char *error;
+   // char *error;
     char consulta[255]="";
-    sprintf(consulta,MODIFICAR_REGISTRO_CHAR,"cliente");
+    char *tipo="cliente";
+    sprintf(consulta,MODIFICAR_REGISTRO_CHAR,tipo);
 
 }
 
@@ -85,7 +88,8 @@ void buscar_cliente(char *campo,char *valor){
     sprintf(consulta,BUSCAR_REGISTRO,"cliente",campo,valor);
     printf(consulta);
     res=sqlite3_exec(conexion,consulta,mostrar,0,&error);
-    printf("error=%c",error);
+     if(res==SQLITE_OK){
+    printf("error=%s",error);}
 
 
 }

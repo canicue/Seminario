@@ -1,8 +1,9 @@
 #include <curses.h>
 #include "principal.h"
-#include "scroll.h"
+#include "../vista/scroll.h"
 #include "../vista/proveedores/form_prov.h"
 #include "../vista/tecnicos/form_tec.h"
+#include "../vista/clientes/form_cli.h"
 void entrada()
 {
     initscr();

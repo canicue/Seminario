@@ -30,6 +30,7 @@
                    projectFiles="true">
       <itemPath>datos/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>
+      <itemPath>controlador/drivers.h</itemPath>
       <itemPath>vista/clientes/form_cli.c</itemPath>
       <itemPath>vista/clientes/form_cli.h</itemPath>
       <itemPath>vista/proveedores/form_prov.c</itemPath>
@@ -66,6 +67,7 @@
     <itemPath>controlador/callbacks.c</itemPath>
     <itemPath>vista/clientes/clientes.c</itemPath>
     <itemPath>vista/clientes/clientes.h</itemPath>
+    <itemPath>controlador/drivers.c</itemPath>
     <itemPath>vista/proveedores/form_prov.h</itemPath>
     <itemPath>controlador/formularios.h</itemPath>
     <itemPath>controlador/listados.c</itemPath>

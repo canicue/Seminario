@@ -32,7 +32,7 @@ void proveedores()
 
 
      curs_set(0);
-     char *msg[]={"no","si"};
+ //    char *msg[]={"no","si"};
      WINDOW *subWindow;
  //    CDKENTRY *id_prov;
 
@@ -42,8 +42,12 @@ void proveedores()
   //   CDKENTRY *mail_prov;
      subWindow = newwin (LINES-5, COLS-10, 2, 5);
      cdkScreen = initCDKScreen (subWindow);
-     form_prov(cdkScreen);
-   /* Box our window. */
+     
+     //formulario("proveedor");
+      form_prov(cdkScreen);
+
+
+     /* Box our window. */
      box (subWindow, ACS_VLINE, ACS_HLINE);
   // raiseCDKObject(vSWINDOW,(void*)subWindow);
     wrefresh (subWindow);
@@ -110,11 +114,20 @@ switch(elegido)
 {
     case 0:
  destroyCDKScroll(scroll);
-        alta_proveedor(pantalla);
-       
+      //  alta_proveedor(pantalla);
+
+// cdkScreen=initCDKScreen(stdscr);
+
+
+ CDKMATRIX *mat_prov=formulario("proveedor");
+ destroyCDKMatrix(mat_prov);
         break;
     case 1:
-      //  baja_proveedor(pantalla);
+
+        listado_proveedores();
+  CDKALPHALIST *lista=listado_proveedores();
+  activateCDKAlphalist(lista,0);
+        //  baja_proveedor(pantalla);
         break;
 
     case 2:

@@ -1,14 +1,14 @@
 #include "utils.h"
-
+/*
 char **leer_matriz(CDKMATRIX *matriz)
 {
 
 
-
+    char *toma[]={"asdf"};
 //matriz.cell;
-    return (texto);
+    return toma;
 
-}
+}*/
 char **info_matriz(CDKMATRIX *matriz)
 {
    
@@ -36,9 +36,9 @@ char **info_matriz(CDKMATRIX *matriz)
 }
 boolean validar_matriz(CDKMATRIX matriz,CDKSCREEN *cdkScreen)
 {
-char* texto[]={"asdf"};
-popupLabel(cdkScreen,texto,1);
+//char* texto[]={"asdf"};
+//popupLabel(cdkScreen,texto,1);
  
 
-
+return 0;
 }

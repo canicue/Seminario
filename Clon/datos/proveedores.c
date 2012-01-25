@@ -20,9 +20,9 @@ void agregar_proveedor(PROVEEDOR *proveedor)
 }
 void borrar_proveedor(char *proveedor_id)
 {
-    char *error;
+//    char *error;
     char consulta[255]="";
     sprintf(consulta,BORRAR_PROVEEDOR,proveedor_id);
 
 }
-PROVEEDOR *buscar_proveedor(char *campo,char *valor){}
+PROVEEDOR *buscar_proveedor(char *campo,char *valor){return 0;}

@@ -1,4 +1,5 @@
 #include "form_cli.h"
+#include "../utils.h"
 void form_cli(CDKSCREEN *cdkScreen)
 {
 set_col(1, 17, "<L></B/5>Cliente");
@@ -41,7 +42,7 @@ activateCDKMatrix (matrix_cli, 0);
  //      char **asa=info_matriz(ScreenOf(matrix_cli));
        
     //   char *asa[]={"dios","diablo"};
-   popupLabel(ScreenOf(matrix_cli),(char**)info_matriz(ScreenOf(matrix_cli)),1);
+   popupLabel(ScreenOf(matrix_cli),(char**)info_matriz(matrix_cli),1);
        //info_matriz(ScreenOf(matrix_cli));
    //    char *hola[]={"aca","noes"};
     //   popupLabel(ScreenOf(matrix_cli),hola,2);

@@ -12,9 +12,9 @@
 
 CDKMATRIX *matrix_cli;
 char *titulo;
-#define  filas 6
+//#define  filas 6
 #define columnas 1
-#define vrows 6
+//#define vrows 6
 #define  vcols  1
 char *coltitle[10], *rowtitle[10], *mesg[10];
 int colwidth[10], colvalue[10];

@@ -11,7 +11,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "datos/datos.h"
-#include "datos/tipos.h"
+//#include "datos/tipos.h"
 #include "datos/clientes.h"
 #include "vista/scroll.h"
 #include "pruebas.h"
@@ -39,11 +39,13 @@ agregar_cliente(cliente);
 
 int main(int argc, char** argv) {
 
-  
 
+    entrada();
+    formulario("cliente");
+ //   formulario("proveedor");
+  //  login();
 
-
-    //   prueba_clientes();
+//       prueba_clientes();
 
  //-------------------------PRUEBAS-----------------------------//
 
@@ -56,11 +58,18 @@ int main(int argc, char** argv) {
     // prueba_struct();
   //  lista_clientes();
 //    ver_tabla("proveedor");
-//    formulario("cliente");
- //   formulario("RMP");
+  //  formulario("cliente");
+ //matriz=        formulario("RMP");
+//	buscar_registro("cliente","Cliente_id","C003",callback_registro,NULL);
  //-------------------------PRUEBAS-----------------------------//
 
-//    prueba_clientes();
+//    formulario("insumo");
+matriz= formulario("cliente");
+// buscar_registro("cliente","Cliente_id","C002",callback_registro,NULL);
+ //matrix=formulario("insumo");
+// buscar_registro("insumo","IR","I001",callback_registro,NULL);
+//activateCDKMatrix(matrix,0);
+    //    prueba_clientes();
     //mostrar_info(cdkScreen);
 
 //----------------IBA------------------------------//
@@ -77,11 +86,11 @@ int main(int argc, char** argv) {
 
  //   mostrar_info(cdkScreen);
 //    entrada();
-    buscar_registro("cliente","cliente_id","C001",callback_reg,NULL);
+ //   buscar_registro("cliente","cliente_id","C001",callback_registro,NULL);
  // buscar_cliente("cliendte_id","C001");
  // listar_clientes();
 //    probador();
-    formulario("proveedor");
+//    formulario("proveedor");
 
 
 
@@ -101,6 +110,7 @@ int main(int argc, char** argv) {
 //esto va
  //   conectar("basesita.sqlite");
   //  login(argc,argv);
+    endCDK();
     return (EXIT_SUCCESS);
 }
 

@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <cdk/alphalist.h>
 
 
 #include "datos.h"
 sqlite3 *conectar(char* nombre)
 {
-    int err=0;
+   // int err=0;
    
     sqlite3_open(nombre,&conexion);
     //printf("%d",err);
@@ -22,8 +23,9 @@ void buscar_registro(char *tabla,char *nombre,char *valor,void *callback,void *e
     conectar(BASE);
     char consulta[255];
     sprintf(consulta,BUSCAR_REGISTRO,tabla,nombre,valor);
-    sqlite3_exec(conexion,consulta,callback,0,&error);
-
+    printf(consulta);
+      sqlite3_exec(conexion,consulta,callback,extra,&error);
+      desconectar();
 
 }
 void borrar_registro(char *tabla,char *id)
@@ -33,8 +35,17 @@ void borrar_registro(char *tabla,char *id)
 
 
 }
+void listar_registros(char *tabla,void *callback,void *extra)
+{
 
-static int callback(void *NotUsed, int argc, char **argv, char **azColName){
+    conectar(BASE);
+    char consulta[255];
+    sprintf(consulta,LISTAR_REGISTROS,tabla);
+    sqlite3_exec(conexion,consulta,callback,extra,&error);
+    desconectar();
+   
+}
+/*static int callback(void *NotUsed, int argc, char **argv, char **azColName){
 
     printf("%d-------------",argc);
     int i=0;
@@ -44,4 +55,4 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName){
     printf("%d",sizeof(argv[0]));
     printf("\n");
     return 0;
-}
+}*/

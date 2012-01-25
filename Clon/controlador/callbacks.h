@@ -7,16 +7,22 @@
 
 #ifndef _CALLBACKS_H
 #define	_CALLBACKS_H
-#include <cdk/cdk.h>
+#include <cdk/matrix.h>
+#include <cdk/alphalist.h>
 #include "../datos/datos.h"
 #define set_col(n, width, string) \
-coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vUMIXED
+coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED
 #define set_row(n, string) \
    rowtitle[n] = "</B/6>" string
 #define  vcols  1
+CDKMATRIX *matriz;
+CDKALPHALIST *listado;
 int callback_reg(void *NotUsed, int argc, char **argv, char **azColName);
 int call_columnas(void *NotUsed, int argc, char **argv, char **azColName);
 int call_tabla(void *nombre, int argc, char **argv, char **azColName);
+int callback_registro(void *nombre, int argc, char **argv, char **azColName);
+int callback_lista(void *nombre, int argc, char **argv, char **azColName);
+
 #ifdef	__cplusplus
 extern "C" {
 #endif

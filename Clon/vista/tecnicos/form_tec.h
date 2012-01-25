@@ -14,7 +14,7 @@ CDKMATRIX *matrix_tec;
 char *titulo;
 #define  filas 5
 #define columnas 1
-#define vrows 5
+//#define vrows 5
 #define  vcols  1
 char *coltitle[10], *rowtitle[10], *mesg[10];
 int colwidth[10], colvalue[10];

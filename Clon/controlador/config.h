@@ -11,7 +11,7 @@
 #include <cdk_util.h>
 //#include "utils.h"  ver esto!!!
 
-static CDKSCREEN *cdkScreen;
+CDKSCREEN *cdkScreen;
 #ifdef	__cplusplus
 extern "C" {
 #endif

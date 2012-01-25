@@ -1,8 +1,9 @@
 //#include <sqlite3.h>
-#include "formularios.h"
+#include "../controlador/formularios.h"
 #include <stdio.h>
 #include <cdk.h>
-#include "callbacks.h"
+#include "../controlador/callbacks.h"
+#include "config.h"
 //#define set_col(n, width, string)  coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vUMIXED
 //#define set_row(n, string)  rowtitle[n] = "</B/6>" string
 
@@ -16,20 +17,27 @@ return db;
 }*/
 void ver_tabla(char *nombre)
 {
-char *error;
-sqlite3 *db=conectar(BASE);
+/*char *error;
+conectar(BASE);
 char *plantilla="SELECT * FROM '%s' limit 1";
 char consulta[255];
 sprintf(consulta,plantilla,nombre);
 //printf(consulta);
-sqlite3_exec(db,consulta,call_tabla,nombre,&error);
+sqlite3_exec(conexion,consulta,call_tabla,nombre,&error);*/
 }
 
-void formulario(char *tabla)
+CDKMATRIX *formulario(char *tabla)
 {
 
-ver_tabla(tabla);
+char *error;
+conectar(BASE);
+char *plantilla="SELECT * FROM '%s' limit 1";
+char consulta[255];
+sprintf(consulta,plantilla,tabla);
+//printf(consulta);
+sqlite3_exec(conexion,consulta,call_tabla,tabla,&error);
 
+return matriz;
 
 }/*
 void ver_columnas(char *tabla)
@@ -41,8 +49,8 @@ void ver_columnas(char *tabla)
 	char consulta[255];
 //	sprintf(consulta,plantilla,tabla);
 	sprintf(consulta,"select * from '%s' limit 1",tabla);
-	db=conectar("base.sqlite");
-	res=sqlite3_exec(db,consulta,call_columnas,tabla,&error);
+	conectar(BASE);
+	res=sqlite3_exec(conexion,consulta,call_columnas,tabla,&error);
 
 }*/
 /*int main(int argc, const char *argv[])

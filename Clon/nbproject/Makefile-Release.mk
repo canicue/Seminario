@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/vista/clientes/alpha_cli.o \
 	${OBJECTDIR}/controlador/callbacks.o \
 	${OBJECTDIR}/controlador/listados.o \
+	${OBJECTDIR}/controlador/drivers.o \
 	${OBJECTDIR}/pruebas.o \
 	${OBJECTDIR}/datos/insumos.o \
 	${OBJECTDIR}/vista/clientes/clientes.o \
@@ -76,11 +77,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	${MAKE}  -f nbproject/Makefile-Release.mk dist/Release/GNU-Linux-x86/listo
+	${MAKE}  -f nbproject/Makefile-Release.mk dist/Release/GNU-Linux-x86/clon
 
-dist/Release/GNU-Linux-x86/listo: ${OBJECTFILES}
+dist/Release/GNU-Linux-x86/clon: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/GNU-Linux-x86
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/listo ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/clon ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/vista/proveedores/form_prov.o: nbproject/Makefile-${CND_CONF}.mk vista/proveedores/form_prov.c 
 	${MKDIR} -p ${OBJECTDIR}/vista/proveedores
@@ -121,6 +122,11 @@ ${OBJECTDIR}/controlador/listados.o: nbproject/Makefile-${CND_CONF}.mk controlad
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/listados.o controlador/listados.c
+
+${OBJECTDIR}/controlador/drivers.o: nbproject/Makefile-${CND_CONF}.mk controlador/drivers.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/drivers.o controlador/drivers.c
 
 ${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -218,7 +224,7 @@ ${OBJECTDIR}/vista/info.o: nbproject/Makefile-${CND_CONF}.mk vista/info.c
 # Clean Targets
 .clean-conf:
 	${RM} -r build/Release
-	${RM} dist/Release/GNU-Linux-x86/listo
+	${RM} dist/Release/GNU-Linux-x86/clon
 
 # Subprojects
 .clean-subprojects:

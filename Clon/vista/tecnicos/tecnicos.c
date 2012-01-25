@@ -1,6 +1,6 @@
-
-#include "tecnicos.h"
-
+#include "../clientes/clientes.h"
+#include "../tecnicos/tecnicos.h"
+#include "../proveedores/proveedores.h"
 void tecnicos()
 {
 
@@ -30,7 +30,7 @@ void tecnicos()
 
  void alta_tecnico(CDKSCREEN *pantalla){
      char *mm="asd";
-       char *msg[]={"no","si"};
+ //      char *msg[]={"no","si"};
    WINDOW *subWindow;
    subWindow = newwin (LINES-5, COLS-10, 2, 5);
 

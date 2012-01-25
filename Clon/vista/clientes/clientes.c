@@ -2,7 +2,7 @@
 
    void alta_cliente(CDKSCREEN *pantalla){
 
-       char *msg[]={"no","si"};
+    //   char *msg[]={"no","si"};
    WINDOW *subWindow;
    subWindow = newwin (LINES-5, COLS-10, 2, 5);
     cdkScreen = initCDKScreen (subWindow);

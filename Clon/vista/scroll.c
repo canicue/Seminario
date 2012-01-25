@@ -1,6 +1,8 @@
 #include "scroll.h"
 #include "../controlador/principal.h"
-
+#include "../vista/proveedores/proveedores.h"
+#include "../vista/tecnicos/tecnicos.h"
+#include "../vista/clientes/clientes.h"
 void menu_scroll(CDKSCREEN *cdkScreen)
 
 {
@@ -12,7 +14,7 @@ void menu_scroll(CDKSCREEN *cdkScreen)
     wrefresh
             (scrollwin);*/
    // refresh();
-    char *opciones[]={"Proveedores","Tecnicos","Clientes","salir"};
+    char *opciones[]={"Proveedores</B>","Tecnicos</B>","Clientes</B>","Salir</B>"};
     CDKSCROLL *scroll;
     int elegido;
     do{
