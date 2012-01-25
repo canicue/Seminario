@@ -9,7 +9,7 @@
 #define	_UTILS_H
 #include <cdk.h>
 //char **leer_matriz(CDKMATRIX *matriz);
-boolean validar_matriz(CDKMATRIX matriz,CDKSCREEN *cdkScreen);
+boolean validar_matriz(CDKMATRIX matriz, CDKSCREEN *cdkScreen);
 char **info_matriz(CDKMATRIX *matriz);
 //char* texto[]={"asdf"};
 char *buffer[100];
