@@ -1,0 +1,5 @@
+INSERT INTO `orden_pedido_producto` (`orden_pedido_producto_id`,`id_cliente`,`cantidad`,`id_producto`,`fecha`,`fecha_estimada_entrega`,`observacion`) VALUES ('1000','1000','35','8','06/19/12','06/29/11','mi, ac');
+INSERT INTO `orden_pedido_producto` (`orden_pedido_producto_id`,`id_cliente`,`cantidad`,`id_producto`,`fecha`,`fecha_estimada_entrega`,`observacion`) VALUES ('1001','1004','28','18','08/26/12','01/20/13','mauris. Integer');
+INSERT INTO `orden_pedido_producto` (`orden_pedido_producto_id`,`id_cliente`,`cantidad`,`id_producto`,`fecha`,`fecha_estimada_entrega`,`observacion`) VALUES ('1002','1005','14','21','07/15/12','04/03/11','tincidunt dui');
+INSERT INTO `orden_pedido_producto` (`orden_pedido_producto_id`,`id_cliente`,`cantidad`,`id_producto`,`fecha`,`fecha_estimada_entrega`,`observacion`) VALUES ('1003','1005','38','23','07/09/11','06/14/12','Etiam gravida');
+INSERT INTO `orden_pedido_producto` (`orden_pedido_producto_id`,`id_cliente`,`cantidad`,`id_producto`,`fecha`,`fecha_estimada_entrega`,`observacion`) VALUES ('1004','1005','47','10','07/09/12','06/17/12','Phasellus elit');
