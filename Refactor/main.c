@@ -19,7 +19,11 @@ void vale()
 void test()
 {
   //  formulario_alta("cliente");
-    alta_cliente();
+   
+    formulario_modificacion("cliente","Cliente_id","C001");
+     formulario_modificacion("proveedor","Proveedor_id","P001");
+      formulario_modificacion("tecnico","Tecnico_id","T001");
+  //  alta_cliente();
 }
 int main(int argc, char** argv) {
 //    formulario_alta("cliente");
@@ -27,6 +31,7 @@ int main(int argc, char** argv) {
   //  initscr();
   //  CDKSCREEN    *cdkScreen=initCDKScreen(stdscr);
    // test();
+
     vale();
 //    while(TRUE)
  //   {entrada();}

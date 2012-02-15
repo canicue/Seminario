@@ -3,7 +3,7 @@
 #include "clientes.h"
 #include <cdk/matrix.h>
 void alta_cliente(){
-    CDKMATRIX *matriz=formulario_alta("cliente");
+    CDKMATRIX *matriz=(CDKMATRIX*)formulario_alta("cliente");
 
     activateCDKMatrix(matriz,0);
 

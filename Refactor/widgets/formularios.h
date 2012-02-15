@@ -22,6 +22,7 @@ char *coltitle[10], *rowtitle[10], *mesg[10];
 int colwidth[10], colvalue[10];
 
 CDKMATRIX *formulario_alta(char *tabla);
+CDKMATRIX *formulario_modificacion(char *tabla,char *columna,char* valor);
 #ifdef	__cplusplus
 extern "C" {
 #endif

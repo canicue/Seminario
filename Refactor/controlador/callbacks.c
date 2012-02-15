@@ -33,7 +33,7 @@ int call_alta(void *nombre, int argc, char **argv, char **azColName)
             "", rowtitle, coltitle, colwidth, colvalue, -1, -1, '.', COL, TRUE, FALSE, FALSE
 
             );
-    activateCDKMatrix(matriz, 0);
+    //activateCDKMatrix(matriz, 0);
     //  	for(i=0;i<argc;i++)
     //        {
     //                printf("->%s: %s\n",azColName[i],argv[i]);
@@ -45,29 +45,31 @@ int call_alta(void *nombre, int argc, char **argv, char **azColName)
 
 
 }
+
+
 int call_modificacion(void *nombre, int argc, char **argv, char **azColName)
- {
+{
+   
+
+
+    call_alta(nombre,argc,argv,azColName);
+    int lencols[5];
     int i;
-    //printf("%s\n",argv[1]);
-    //int columnas[122];
- //iba//   matriz = formulario((char*) nombre); //Ver porque se quejaba sin el castting yasta
-    //printf("longitud argv= %d  matriz->rows=%d",matriz->rows);
-    //printf("longitud argv= %d  matriz->rows=%d",lenCharList(argv),matriz->rows);
-    //getch();
-    //activateCDKMatrix(matriz,0);
-
-
-    for (i = 0; i < argc; i++) {
-        printf("%s\n", argv[i]);
-        setCDKMatrixCell(matriz, i + 1, 1, argv[i]);
+    for(i=0;i<argc;i++)
+    {
+        setCDKMatrixCell(matriz,i+1,1,argv[i]);
+        lencols[i]=10;
     }
-    /*  for(i=0;i<matriz->rows;i++)
-        {
-            columnas[i]=90;
-      setCDKMatrixCells(matriz,argv,lenCharList(argv),1,columnas);
-      }*/
+    
+    
+    //setCDKMatrixCells(matriz,argv,lenCharList(argv),1,lencols);
+    activateCDKMatrix(matriz,0);
 
+    popupLabel(ScreenOf(matriz),argv,argc);
 
-    activateCDKMatrix(matriz, 0);
+ 
+
     return 0;
+
+
 }

@@ -1,3 +1,5 @@
+
+
 #include "principal.h"
 #include "clientes.h"
 
@@ -26,8 +28,10 @@ login ()
   if (validar_usuario (usuario, password))
     {
       endCDK ();
-      while(TRUE)
-	  {  entrada ();}
+      while (TRUE)
+	{
+	  entrada ();
+	}
 
 
     }
@@ -54,7 +58,7 @@ pedir_datos (char *tipo)
 
   /* Set up CDK. */
   cursesWin = initscr ();
-  echo();
+  curs_set (0);
   cdkscreen = initCDKScreen (cursesWin);
 
   box (cursesWin, 0, 0);
@@ -242,17 +246,18 @@ error_login ()
 void
 entrada ()
 {
-  char *opciones[] = { "Administrativa</B>", "Técnica</B>","Salir</B>" };
+  char *opciones[] = { "Administrativa</B>", "Técnica</B>", "Salir</B>" };
   //  endCDK();
   initscr ();
-  
+
   CDKSCREEN *pantalla = initCDKScreen (stdscr);
-  initCDKColor();
+  initCDKColor ();
   CDKBUTTONBOX *botonera = newCDKButtonbox (pantalla,
 					    CENTER,
 					    TOP,
-					    4, COLS ,
-					    "<C></32>Elegir Area\n</B/!32>", 1, 3,
+					    4, COLS,
+					    "<C></32>Elegir Area\n</B/!32>",
+					    1, 3,
 					    opciones, 3, A_REVERSE,
 					    TRUE, FALSE);
 
@@ -266,16 +271,16 @@ entrada ()
       area_tecnica ();
     }
 
-  if(rta==2)
-  {
+  if (rta == 2)
+    {
 
 
-	destroyCDKScreen(pantalla);
-	
-      endCDK();
-      exit(0);
+      destroyCDKScreen (pantalla);
 
-  }
+      endCDK ();
+      exit (0);
+
+    }
   else
     {
       destroyCDKButtonbox (botonera);
@@ -358,7 +363,7 @@ area_tecnica ()
   while (elegido != 3);
 
 
- // getch ();
+  // getch ();
 
 }
 
@@ -394,25 +399,25 @@ area_administrativa ()
 	  popupLabel (pantalla, opciones, 3);
 
 
-	
+
 	  break;
 	case 1:
-           
-            
-            //popupLabel (pantalla, opciones, 3);
-	
+
+
+	  //popupLabel (pantalla, opciones, 3);
+
 	  break;
 	case 2:
-            
-            destroyCDKScroll(scroll);
-            eraseCDKScreen(pantalla);
-            refreshCDKScreen(pantalla);
-            menu_clientes();
-            //popupLabel (pantalla, opciones, 3);
-	
+
+	  destroyCDKScroll (scroll);
+	  eraseCDKScreen (pantalla);
+	  refreshCDKScreen (pantalla);
+	  menu_clientes ();
+	  //popupLabel (pantalla, opciones, 3);
+
 	  break;
 	case 3:
-	
+
 	  destroyCDKScroll (scroll);
 	  break;
 	  //  exit (0);
@@ -424,7 +429,7 @@ area_administrativa ()
   while (elegido != 3);
 
 
- // getch ();
+  // getch ();
 
 }
 
