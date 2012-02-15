@@ -28,6 +28,7 @@ char consulta[255];
 sprintf(consulta,plantilla,tabla,columna,valor);
 //printf(consulta);
 sqlite3_exec(conexion,consulta,call_modificacion,tabla,&error);
+//printf("%s------------",error);
 desconectar();
 return matriz;
 

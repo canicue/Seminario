@@ -396,14 +396,18 @@ area_administrativa ()
 
 	  //  destroyCDKScroll(scroll);
 
-	  popupLabel (pantalla, opciones, 3);
-
-
+	//  popupLabel (pantalla, opciones, 3);
+  destroyCDKScroll (scroll);
+	  eraseCDKScreen (pantalla);
+	  refreshCDKScreen (pantalla);
+          menu_proveedores();
 
 	  break;
 	case 1:
-
-
+  destroyCDKScroll (scroll);
+	  eraseCDKScreen (pantalla);
+	  refreshCDKScreen (pantalla);
+            menu_tecnicos();
 	  //popupLabel (pantalla, opciones, 3);
 
 	  break;

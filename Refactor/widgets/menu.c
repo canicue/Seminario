@@ -13,7 +13,7 @@ void menu_clientes() {
     int elegido;
     do {
         scroll = newCDKScroll(pantalla, 2, 2, RIGHT, 10, 35,
-                "<C>Menu",
+                "<C></32>Clientes<!32>",
                 opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
         elegido = activateCDKScroll(scroll, 0);
         //refreshCDKScreen(cdkScreen);
@@ -65,7 +65,7 @@ void menu_proveedores() {
     int elegido;
     do {
         scroll = newCDKScroll(pantalla, 2, 2, RIGHT, 10, 35,
-                "<C>Menu",
+                "<C></32>Proveedores<!32>",
                 opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
         elegido = activateCDKScroll(scroll, 0);
 
@@ -111,7 +111,7 @@ void menu_tecnicos() {
     int elegido;
     do {
         scroll = newCDKScroll(pantalla, 2, 2, RIGHT, 10, 35,
-                "<C>Menu",
+                "<C></32>Técnicos<!32>",
                 opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
         elegido = activateCDKScroll(scroll, 0);
 

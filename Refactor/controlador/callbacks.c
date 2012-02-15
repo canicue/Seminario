@@ -25,7 +25,7 @@ int call_alta(void *nombre, int argc, char **argv, char **azColName)
         //        printf(tmp);
         //	set_row(i+1,azColName[i]);
     }
-    set_col(1, 57, titulo);
+    set_col(1, 77, titulo);
     matriz = newCDKMatrix(
             pantalla,
             CENTER, CENTER,
@@ -49,20 +49,30 @@ int call_alta(void *nombre, int argc, char **argv, char **azColName)
 
 int call_modificacion(void *nombre, int argc, char **argv, char **azColName)
 {
-   
 
-
-    call_alta(nombre,argc,argv,azColName);
-    int lencols[5];
+    
     int i;
+    
+    
     for(i=0;i<argc;i++)
     {
+        printf("%s\n",azColName[i]);
+
+    }
+       call_alta(nombre,argc,argv,azColName);
+    
+    
+    for(i=0;i<argc;i++)
+    {
+
+       printf("%s= %s\n",azColName[i],argv[i]) ;
         setCDKMatrixCell(matriz,i+1,1,argv[i]);
-        lencols[i]=10;
+        
+    
     }
     
     
-    //setCDKMatrixCells(matriz,argv,lenCharList(argv),1,lencols);
+    
     activateCDKMatrix(matriz,0);
 
     popupLabel(ScreenOf(matriz),argv,argc);
