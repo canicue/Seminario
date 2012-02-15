@@ -8,6 +8,9 @@
 #ifndef _MENU_H
 #define	_MENU_H
 #include <cdk.h>
+#include "../controlador/clientes.h"
+#include "../controlador/proveedores.h"
+#include "../controlador/tecnicos.h"
 void menu_clientes();
 void menu_proveedores();
 void menu_tecnicos();

@@ -11,6 +11,8 @@
       <itemPath>widgets/formularios.h</itemPath>
       <itemPath>widgets/menu.h</itemPath>
       <itemPath>controlador/principal.h</itemPath>
+      <itemPath>controlador/proveedores.h</itemPath>
+      <itemPath>controlador/tecnicos.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -26,6 +28,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>widgets/menu.c</itemPath>
       <itemPath>controlador/principal.c</itemPath>
+      <itemPath>controlador/proveedores.c</itemPath>
+      <itemPath>controlador/tecnicos.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

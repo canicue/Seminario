@@ -31,7 +31,7 @@ void menu_clientes() {
             case 1:
                 //   destroyCDKScroll(scroll);
                 popupLabel(pantalla, opciones, 3);
-
+                baja_cliente();
                 break;
             case 2:
                 popupLabel(pantalla, opciones, 3);
@@ -42,6 +42,7 @@ void menu_clientes() {
             case 3:
 
                 destroyCDKScroll(scroll);
+                mod_cliente();
                 break;
                 //  exit (0);
 
@@ -73,19 +74,23 @@ void menu_proveedores() {
         switch (elegido) {
             case 0:
                 destroyCDKScroll(scroll);
-                alta_cliente();
+                alta_proveedor();
 
 
 
                 break;
             case 1:
-                //   destroyCDKScroll(scroll);
-                popupLabel(pantalla, opciones, 3);
+                   destroyCDKScroll(scroll);
+
+                   baja_proveedor();
+                   popupLabel(pantalla, opciones, 3);
                 //             tecnicos();
                 //administracion();
                 break;
             case 2:
-                popupLabel(pantalla, opciones, 3);
+                mod_proveedor();
+
+                //popupLabel(pantalla, opciones, 3);
 
                 break;
             case 3:
@@ -119,17 +124,19 @@ void menu_tecnicos() {
         switch (elegido) {
             case 0:
                 destroyCDKScroll(scroll);
-                alta_cliente();
+                alta_tecnico();
 
 
 
                 break;
             case 1:
-
+                baja_tecnico();
                 popupLabel(pantalla, opciones, 3);
 
                 break;
             case 2:
+
+                mod_tecnico();
                 popupLabel(pantalla, opciones, 3);
 
                 break;

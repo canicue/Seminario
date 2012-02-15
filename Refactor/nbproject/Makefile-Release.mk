@@ -33,7 +33,9 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/controlador/clientes.o \
 	${OBJECTDIR}/controlador/principal.o \
+	${OBJECTDIR}/controlador/tecnicos.o \
 	${OBJECTDIR}/widgets/menu.o \
+	${OBJECTDIR}/controlador/proveedores.o \
 	${OBJECTDIR}/datos/datos.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/controlador/callbacks.o \
@@ -73,10 +75,20 @@ ${OBJECTDIR}/controlador/principal.o: nbproject/Makefile-${CND_CONF}.mk controla
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/principal.o controlador/principal.c
 
+${OBJECTDIR}/controlador/tecnicos.o: nbproject/Makefile-${CND_CONF}.mk controlador/tecnicos.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/tecnicos.o controlador/tecnicos.c
+
 ${OBJECTDIR}/widgets/menu.o: nbproject/Makefile-${CND_CONF}.mk widgets/menu.c 
 	${MKDIR} -p ${OBJECTDIR}/widgets
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/menu.o widgets/menu.c
+
+${OBJECTDIR}/controlador/proveedores.o: nbproject/Makefile-${CND_CONF}.mk controlador/proveedores.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/proveedores.o controlador/proveedores.c
 
 ${OBJECTDIR}/datos/datos.o: nbproject/Makefile-${CND_CONF}.mk datos/datos.c 
 	${MKDIR} -p ${OBJECTDIR}/datos
