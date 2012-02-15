@@ -1,0 +1,36 @@
+/* 
+ * File:   callbacks.h
+ * Author: canicue
+ *
+ * Created on 14 de febrero de 2012, 23:43
+ */
+
+#ifndef _CALLBACKS_H
+#define	_CALLBACKS_H
+#include <matrix.h>
+int call_alta(void *nombre, int argc, char **argv, char **azColName);
+int call_modificacion(void *nombre, int argc, char **argv, char **azColName);
+
+#define set_col(n, width, string) \
+coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED//vUMIXED
+#define set_row(n, string) \
+   rowtitle[n] = "</B/6>" string
+
+
+CDKMATRIX *matriz;
+
+
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+
+
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* _CALLBACKS_H */
+
