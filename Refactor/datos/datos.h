@@ -17,7 +17,8 @@ void desconectar();
 void buscar_registro(char *tabla,char *nombre,char *valor,void *callback,void *extra);
 void borrar_registro(char *tabla,char *columna,char *valor);
 void listar_registros(char *tabla,void* callback,void *extra);
-void ver_tabla(char *nombre,int limite,char *visible);
+//void ver_tabla(char *nombre,int limite,char *visible);
+void ver_tabla(char *nombre,int limite,char *visible,void* callback,void *extra);
 #ifdef	__cplusplus
 extern "C" {
 #endif

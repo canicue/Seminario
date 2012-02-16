@@ -14,7 +14,7 @@ sqlite3 *conectar(char* nombre)
     sqlite3_open(nombre,&conexion);
     //printf("%d",err);
     return conexion;
-sqlite3_stmt *stmt;
+//sqlite3_stmt *stmt;
 
 
 }
@@ -50,11 +50,16 @@ void listar_registros(char *tabla,void *callback,void *extra)
     desconectar();
 
 }
-void ver_tabla(char *nombre,int limite,char *visible)
+void ver_tabla(char *nombre,int limite,char *visible,void* callback,void *extra)
 {
     conectar(BASE);
-    char *consulta[256];
-
+    sqlite3_stmt *stmt;
+    char consulta[256];
+    sprintf(consulta,LISTAR_REGISTROS,nombre);
+    sqlite3_exec(conexion,consulta,callback,extra,&error);
+    
+    //sqlite3_prepare(conexion, consulta, -1, &stmt, NULL);
+    desconectar();
 
 
 }

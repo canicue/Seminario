@@ -10,6 +10,7 @@
 void alta_cliente();
 void baja_cliente();
 void mod_cliente();
+
 #ifdef	__cplusplus
 extern "C" {
 #endif

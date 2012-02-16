@@ -32,6 +32,8 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/controlador/clientes.o \
+	${OBJECTDIR}/widgets/listados.o \
+	${OBJECTDIR}/pruebas.o \
 	${OBJECTDIR}/controlador/principal.o \
 	${OBJECTDIR}/controlador/tecnicos.o \
 	${OBJECTDIR}/widgets/menu.o \
@@ -69,6 +71,16 @@ ${OBJECTDIR}/controlador/clientes.o: nbproject/Makefile-${CND_CONF}.mk controlad
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/clientes.o controlador/clientes.c
+
+${OBJECTDIR}/widgets/listados.o: nbproject/Makefile-${CND_CONF}.mk widgets/listados.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/listados.o widgets/listados.c
+
+${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/pruebas.o pruebas.c
 
 ${OBJECTDIR}/controlador/principal.o: nbproject/Makefile-${CND_CONF}.mk controlador/principal.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador

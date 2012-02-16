@@ -249,6 +249,7 @@ entrada ()
   char *opciones[] = { "Administrativa</B>", "Técnica</B>", "Salir</B>" };
   //  endCDK();
   initscr ();
+  curs_set (0);
 
   CDKSCREEN *pantalla = initCDKScreen (stdscr);
   initCDKColor ();
