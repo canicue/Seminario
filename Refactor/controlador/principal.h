@@ -9,21 +9,21 @@
 #define	_PRINCIPAL_H
 #include <string.h>
 #include <cdk.h>
-void login();
-char *pedir_datos(char *tipo);
-void entrada();
-void error_login();
-void area_tecnica();
-void menu_administrativa();
-void menu_tecnica();
-void area_administrativa();
+void login ();
+char *pedir_datos (char *tipo);
+void entrada ();
+void error_login ();
+void area_tecnica ();
+void menu_administrativa ();
+void menu_tecnica ();
+void area_administrativa ();
 
 
-static int entryCB(EObjectType cdktype GCC_UNUSED,
-        void *object GCC_UNUSED,
-        void *clientData, chtype key);
+static int entryCB (EObjectType cdktype GCC_UNUSED,
+		    void *object GCC_UNUSED, void *clientData, chtype key);
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -33,5 +33,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _PRINCIPAL_H */
-
+#endif				/* _PRINCIPAL_H */

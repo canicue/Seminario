@@ -10,11 +10,11 @@ void alta_cliente(){
 
 }
 void baja_cliente(){
-  CDKSCROLL *lista=listado("cliente","cliente_id");
+  CDKSCROLL *lista=(CDKSCROLL*)listado("cliente","cliente_id");
     activateCDKScroll(lista,0);
 }
 void mod_cliente(){
-  CDKSCROLL *lista=listado("cliente","cliente_id");
+  CDKSCROLL *lista=(CDKSCROLL*)listado("cliente","cliente_id");
     activateCDKScroll(lista,0);
 
 }

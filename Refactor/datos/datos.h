@@ -11,16 +11,19 @@
 #include <sqlite3.h>
 #define BASE "base.sqlite"
 sqlite3 *conexion;
-sqlite3 *conectar(char* nombre);
+sqlite3 *conectar (char *nombre);
 char *error;
-void desconectar();
-void buscar_registro(char *tabla,char *nombre,char *valor,void *callback,void *extra);
-void borrar_registro(char *tabla,char *columna,char *valor);
-void listar_registros(char *tabla,void* callback,void *extra);
+void desconectar ();
+void buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
+		      void *extra);
+void borrar_registro (char *tabla, char *columna, char *valor);
+void listar_registros (char *tabla, void *callback, void *extra);
 //void ver_tabla(char *nombre,int limite,char *visible);
-void ver_tabla(char *nombre,int limite,char *visible,void* callback,void *extra);
+void ver_tabla (char *nombre, int limite, char *visible, void *callback,
+		void *extra);
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -30,5 +33,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _DATOS_H */
-
+#endif				/* _DATOS_H */

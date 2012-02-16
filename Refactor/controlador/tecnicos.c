@@ -8,12 +8,12 @@ void alta_tecnico(){
 
 }
 void baja_tecnico(){
- CDKSCROLL *lista=listado("tecnico","tecnico_id");
+ CDKSCROLL *lista=(CDKSCROLL*)listado("tecnico","tecnico_id");
     activateCDKScroll(lista,0);
 
 }
 void mod_tecnico(){
- CDKSCROLL *lista=listado("tecnico","tecnico_id");
+ CDKSCROLL *lista=(CDKSCROLL*)listado("tecnico","tecnico_id");
     activateCDKScroll(lista,0);
 
 }

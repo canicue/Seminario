@@ -9,7 +9,7 @@ void alta_proveedor(){
 }
 void baja_proveedor(){
 
-    CDKSCROLL *lista=listado("proveedor","provedor_id");
+    CDKSCROLL *lista=(CDKSCROLL*)listado("proveedor","provedor_id");
     activateCDKScroll(lista,0);
 
 
@@ -17,7 +17,7 @@ void baja_proveedor(){
 }
 void mod_proveedor(){
 
-  CDKSCROLL *lista=listado("proveedor","provedor_id");
+  CDKSCROLL *lista=(CDKSCROLL*)listado("proveedor","provedor_id");
     activateCDKScroll(lista,0);
 
 

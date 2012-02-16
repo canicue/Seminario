@@ -39,7 +39,8 @@ id_proveedor VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',
 #define BORRAR_INSUMO "DELETE FROM INSUMO WHERE IR='%s"
 
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -49,5 +50,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _CONSULTAS_H */
-
+#endif				/* _CONSULTAS_H */

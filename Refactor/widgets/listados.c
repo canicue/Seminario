@@ -13,7 +13,7 @@ CDKSCROLL *listado(char *tabla,char *columna)
     CDKSCREEN *pantalla=initCDKScreen(stdscr);
    lista_scroll = newCDKScroll(pantalla, 2, 2, RIGHT, 10, 5,
                 titulo,
-                NULL, NULL, TRUE, A_REVERSE, TRUE, FALSE);
+                NULL, 0, TRUE, A_REVERSE, TRUE, FALSE);
 
    ver_tabla(tabla,NULL,columna,call_lista,NULL);
 
