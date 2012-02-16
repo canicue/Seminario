@@ -34,9 +34,10 @@ int main(int argc, char** argv) {
  //   formulario_alta("RMP");
   //  initscr();
   //  CDKSCREEN    *cdkScreen=initCDKScreen(stdscr);
-    test();
 
-    //vale();
+    //test();
+
+    vale();
 //    while(TRUE)
  //   {entrada();}
 

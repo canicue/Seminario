@@ -83,11 +83,13 @@ void menu_proveedores() {
                    destroyCDKScroll(scroll);
 
                    baja_proveedor();
-                   popupLabel(pantalla, opciones, 3);
-                //             tecnicos();
-                //administracion();
+                  // popupLabel(pantalla, opciones, 3);
+                
+                
                 break;
             case 2:
+                 destroyCDKScroll(scroll);
+
                 mod_proveedor();
 
                 //popupLabel(pantalla, opciones, 3);
@@ -130,14 +132,16 @@ void menu_tecnicos() {
 
                 break;
             case 1:
+
+                 destroyCDKScroll(scroll);
                 baja_tecnico();
-                popupLabel(pantalla, opciones, 3);
+           //     popupLabel(pantalla, opciones, 3);
 
                 break;
             case 2:
-
+ destroyCDKScroll(scroll);
                 mod_tecnico();
-                popupLabel(pantalla, opciones, 3);
+                //popupLabel(pantalla, opciones, 3);
 
                 break;
             case 3:
