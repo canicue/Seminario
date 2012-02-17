@@ -1,10 +1,22 @@
 
 
 #include "clientes.h"
+#include "drivers.h"
+
 #include <matrix.h>
 #include <scroll.h>
 void alta_cliente(){
     CDKMATRIX *matriz=(CDKMATRIX*)formulario_alta("cliente");
+   // setCDKMatrixPreProcess(matriz,prueba_binding,0);
+    if(matriz->exitType==vNORMAL)
+    {
+    
+        guardar_cliente(matriz);
+    
+    }
+
+
+    bindCDKObject(vMATRIX,matriz,'g',prueba_binding,0);
 
     activateCDKMatrix(matriz,0);
 

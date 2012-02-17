@@ -1,2 +1,0 @@
-void alpha_cli()
-{}

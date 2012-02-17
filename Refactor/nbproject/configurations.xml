@@ -8,9 +8,11 @@
       <itemPath>controlador/clientes.h</itemPath>
       <itemPath>datos/consultas.h</itemPath>
       <itemPath>datos/datos.h</itemPath>
+      <itemPath>controlador/drivers.h</itemPath>
       <itemPath>widgets/formularios.h</itemPath>
       <itemPath>widgets/listados.h</itemPath>
       <itemPath>widgets/menu.h</itemPath>
+      <itemPath>controlador/persistencia.h</itemPath>
       <itemPath>controlador/principal.h</itemPath>
       <itemPath>controlador/proveedores.h</itemPath>
       <itemPath>pruebas.h</itemPath>
@@ -26,10 +28,12 @@
       <itemPath>controlador/callbacks.c</itemPath>
       <itemPath>controlador/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>
+      <itemPath>controlador/drivers.c</itemPath>
       <itemPath>widgets/formularios.c</itemPath>
       <itemPath>widgets/listados.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>widgets/menu.c</itemPath>
+      <itemPath>controlador/persistencia.c</itemPath>
       <itemPath>controlador/principal.c</itemPath>
       <itemPath>controlador/proveedores.c</itemPath>
       <itemPath>pruebas.c</itemPath>

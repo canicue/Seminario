@@ -24,13 +24,10 @@ void menu_clientes() {
             case 0:
                 destroyCDKScroll(scroll);
                 alta_cliente();
-
-
-
                 break;
             case 1:
-                //   destroyCDKScroll(scroll);
-                popupLabel(pantalla, opciones, 3);
+                destroyCDKScroll(scroll);
+                //popupLabel(pantalla, opciones, 3);
                 baja_cliente();
                 break;
             case 2:
@@ -139,7 +136,7 @@ void menu_tecnicos() {
 
                 break;
             case 2:
- destroyCDKScroll(scroll);
+                destroyCDKScroll(scroll);
                 mod_tecnico();
                 //popupLabel(pantalla, opciones, 3);
 

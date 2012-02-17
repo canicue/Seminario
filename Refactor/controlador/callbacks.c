@@ -5,7 +5,7 @@
 int call_alta(void *nombre, int argc, char **argv, char **azColName)
 {
     char tmp[255];
-    char *formato = "<L></B/5>%s";
+    char *formato = "<L></B>%s";
     char *coltitle[10], *rowtitle[10];
     //  char *mesg[10];
     int colwidth[10], colvalue[10];
