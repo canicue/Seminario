@@ -80,6 +80,8 @@ void menu_proveedores() {
                    destroyCDKScroll(scroll);
 
                    baja_proveedor();
+
+
                   // popupLabel(pantalla, opciones, 3);
                 
                 

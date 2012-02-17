@@ -9,9 +9,12 @@
 #define	_CALLBACKS_H
 #include <matrix.h>
 #include <scroll.h>
+#include <dialog.h>
 int call_alta(void *nombre, int argc, char **argv, char **azColName);
 int call_modificacion(void *nombre, int argc, char **argv, char **azColName);
 int call_lista(void *nombre, int argc, char **argv, char **azColName);
+int call_borrado(void *nombre, int argc, char **argv, char **azColName);
+
 #define set_col(n, width, string) \
 coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED//vUMIXED
 #define set_row(n, string) \
@@ -20,6 +23,7 @@ coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED//vUMIXED
 
 CDKMATRIX *matriz;
 CDKSCROLL *lista_scroll;
+CDKDIALOG *dialogo;
 
 
 #ifdef	__cplusplus

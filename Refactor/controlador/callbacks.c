@@ -1,5 +1,9 @@
 
 
+
+
+
+
 #include "callbacks.h"
 
 int call_alta(void *nombre, int argc, char **argv, char **azColName)
@@ -25,7 +29,7 @@ int call_alta(void *nombre, int argc, char **argv, char **azColName)
         //        printf(tmp);
         //	set_row(i+1,azColName[i]);
     }
-    set_col(1, 77, titulo);
+    set_col(1, 44, titulo); // habia un 77 pero no anda en netbook
     matriz = newCDKMatrix(
             pantalla,
             CENTER, CENTER,
@@ -54,18 +58,14 @@ int call_modificacion(void *nombre, int argc, char **argv, char **azColName)
     int i;
     
     
-    for(i=0;i<argc;i++)
-    {
-        printf("%s\n",azColName[i]);
-
-    }
+  
        call_alta(nombre,argc,argv,azColName);
     
     
     for(i=0;i<argc;i++)
     {
 
-       printf("%s= %s\n",azColName[i],argv[i]) ;
+     //  printf("%s= %s\n",azColName[i],argv[i]) ;
         setCDKMatrixCell(matriz,i+1,1,argv[i]);
         
     
@@ -91,5 +91,22 @@ int call_lista(void *nombre, int argc, char **argv, char **azColName)
    addCDKScrollItem(lista_scroll,argv[0]);
 
     return 0;
+
+}
+int call_borrado(void *nombre, int argc, char **argv, char **azColName)
+{
+    char *BORRAR_CANCELAR[]={"BORRAR","CANCELAR"};
+    initscr();
+    curs_set(0);
+    CDKSCREEN *pantalla=initCDKScreen(stdscr);
+
+     dialogo=newCDKDialog (pantalla,
+			   CENTER,
+			   CENTER,
+			   argv, argc, BORRAR_CANCELAR, 2,
+			   COLOR_PAIR (2) | A_REVERSE, TRUE, TRUE, FALSE);
+
+
+
 
 }

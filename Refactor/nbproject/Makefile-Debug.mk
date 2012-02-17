@@ -32,14 +32,15 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/controlador/tecnicos.o \
+	${OBJECTDIR}/widgets/dialogos.o \
 	${OBJECTDIR}/widgets/menu.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/controlador/callbacks.o \
 	${OBJECTDIR}/widgets/formularios.o \
 	${OBJECTDIR}/controlador/clientes.o \
 	${OBJECTDIR}/widgets/listados.o \
-	${OBJECTDIR}/pruebas.o \
 	${OBJECTDIR}/controlador/drivers.o \
+	${OBJECTDIR}/pruebas.o \
 	${OBJECTDIR}/controlador/principal.o \
 	${OBJECTDIR}/controlador/proveedores.o \
 	${OBJECTDIR}/datos/datos.o \
@@ -74,6 +75,11 @@ ${OBJECTDIR}/controlador/tecnicos.o: nbproject/Makefile-${CND_CONF}.mk controlad
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/tecnicos.o controlador/tecnicos.c
 
+${OBJECTDIR}/widgets/dialogos.o: nbproject/Makefile-${CND_CONF}.mk widgets/dialogos.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/dialogos.o widgets/dialogos.c
+
 ${OBJECTDIR}/widgets/menu.o: nbproject/Makefile-${CND_CONF}.mk widgets/menu.c 
 	${MKDIR} -p ${OBJECTDIR}/widgets
 	${RM} $@.d
@@ -104,15 +110,15 @@ ${OBJECTDIR}/widgets/listados.o: nbproject/Makefile-${CND_CONF}.mk widgets/lista
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/listados.o widgets/listados.c
 
-${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/pruebas.o pruebas.c
-
 ${OBJECTDIR}/controlador/drivers.o: nbproject/Makefile-${CND_CONF}.mk controlador/drivers.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/drivers.o controlador/drivers.c
+
+${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/pruebas.o pruebas.c
 
 ${OBJECTDIR}/controlador/principal.o: nbproject/Makefile-${CND_CONF}.mk controlador/principal.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
