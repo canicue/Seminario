@@ -24,7 +24,7 @@ int call_alta(void *nombre, int argc, char **argv, char **azColName)
     sprintf(titulo, formato, nombre);
     for (i = 0; i < argc; i++) {
         sprintf(tmp, formato, azColName[i]);
-        rowtitle[i + 1] =copyChar(tmp);
+        rowtitle[i + 1] =(char*)copyChar(tmp);
 
         //        printf(tmp);
         //	set_row(i+1,azColName[i]);

@@ -112,7 +112,7 @@ int guardar_cosa(char *tabla,char** columnas,char **valores,int nro)
     conectar(BASE);
     sqlite3_exec (conexion, consulta, NULL,NULL, &error);
     desconectar();
-    return(error);
+    return((int)error);
 
    
 

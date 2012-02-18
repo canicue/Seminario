@@ -11,7 +11,7 @@ void alta_cliente(){
     if(matriz->exitType==vNORMAL)
     {
     
-        guardar_cliente(matriz);
+        guardar_matriz(matriz);
     
     }
 

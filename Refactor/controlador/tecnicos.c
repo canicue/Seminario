@@ -4,7 +4,20 @@
 void alta_tecnico(){
     CDKMATRIX *matriz=(CDKMATRIX*)formulario_alta("tecnico");
 
-    activateCDKMatrix(matriz,0);
+    if(matriz->exitType==vNORMAL)
+    {
+
+        guardar_matriz(matriz);
+        
+       
+    
+    }
+
+
+    destroyCDKMatrix(matriz);
+
+
+    //activateCDKMatrix(matriz,0);
 
 }
 void baja_tecnico(){

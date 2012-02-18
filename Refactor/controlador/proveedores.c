@@ -19,7 +19,7 @@ void alta_proveedor(){
     if(matriz->exitType==vNORMAL)
     {
 
-        guardar_proveedor(matriz);
+        guardar_matriz(matriz);
         
        
     
