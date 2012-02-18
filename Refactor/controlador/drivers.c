@@ -25,3 +25,24 @@ int prueba_preprocess(EObjectType cdkType GCC_UNUSED, void *object, void *client
 
 
 }
+
+
+ int driver_borrado (EObjectType cdktype GCC_UNUSED,
+		    void *object GCC_UNUSED,
+		    void *clientData, chtype key)
+{
+
+     char *mierda[]={"MIERDA ","CARAJO"};
+
+     
+
+     CDKBUTTONBOX *buttonbox = (CDKBUTTONBOX *) clientData;
+   popupLabel(ScreenOf(buttonbox),mierda,2);
+     injectCDKButtonbox (buttonbox, key);
+   return (TRUE);
+}
+
+
+
+
+

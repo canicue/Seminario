@@ -7,7 +7,9 @@
 
 #ifndef _PERSISTENCIA_H
 #define	_PERSISTENCIA_H
+#include <string.h>
 #include <cdk.h>
+
     int guardar_cliente(CDKMATRIX *matriz);
     int guardar_tecnico(CDKMATRIX *matriz);
     int guardar_proveedor(CDKMATRIX *matriz);

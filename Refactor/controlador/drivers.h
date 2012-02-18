@@ -10,6 +10,9 @@
 #include <cdk.h>
 int prueba_binding(EObjectType cdkType GCC_UNUSED, void *object, void *clientData GCC_UNUSED, chtype input);
 int prueba_preprocess(EObjectType cdkType GCC_UNUSED, void *object, void *clientData GCC_UNUSED, chtype input);
+int driver_borrado (EObjectType cdktype GCC_UNUSED,
+		    void *object GCC_UNUSED,
+		    void *clientData, chtype key);
 #ifdef	__cplusplus
 extern "C" {
 #endif

@@ -61,21 +61,21 @@ int call_modificacion(void *nombre, int argc, char **argv, char **azColName)
   
        call_alta(nombre,argc,argv,azColName);
     
-    
+       
     for(i=0;i<argc;i++)
     {
 
      //  printf("%s= %s\n",azColName[i],argv[i]) ;
         setCDKMatrixCell(matriz,i+1,1,argv[i]);
         
-    
+
     }
     
     
     
-    activateCDKMatrix(matriz,0);
+  //  activateCDKMatrix(matriz,0);
 
-    popupLabel(ScreenOf(matriz),argv,argc);
+  //  popupLabel(ScreenOf(matriz),argv,argc);
 
  
 

@@ -88,3 +88,32 @@ ver_tabla (char *nombre, int limite, char *visible, void *callback,
     printf("\n");
     return 0;
 }*/
+int guardar_cosa(char *tabla,char** columnas,char **valores,int nro)
+{
+
+
+    int i;
+    char tmp[1024]="INSERT INTO %s (";
+    char *consulta;
+    for(i=0;i<nro;i++)
+    {
+        strcat(tmp,columnas[i]);
+       // strcat(tmp,", ");
+     i==nro-1? strcat(tmp,") VALUES ('"):strcat(tmp,", ");
+    }
+    //strcat(tmp,") VALUES (");
+    for (i=0;i<nro;i++)
+    {
+        strcat(tmp,valores[i]);
+       i==nro-1? strcat(tmp,"') "):strcat(tmp,"','");
+    }
+
+    sprintf(consulta,tmp,tabla);
+    conectar(BASE);
+    sqlite3_exec (conexion, consulta, NULL,NULL, &error);
+    desconectar();
+    return(error);
+
+   
+
+}

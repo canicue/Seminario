@@ -1,16 +1,26 @@
 #include "proveedores.h"
+#include "callbacks.h"
+#include "drivers.h"
+#include "persistencia.h"
 #include <matrix.h>
 #include <scroll.h>
-#include <cdk/matrix.h>
+#include <matrix.h>
+#include <buttonbox.h>
+#include <cdk.h>
+#include <curdefs.h>
+
+
 CDKMATRIX *matriz;
+CDKBUTTONBOX *botones;
 void alta_proveedor(){
     matriz=(CDKMATRIX*)formulario_alta("proveedor");
 
-    activateCDKMatrix(matriz,0);
+ //   activateCDKMatrix(matriz,0);
     if(matriz->exitType==vNORMAL)
     {
-        char *a[]={"normal"};
-        popupLabel(ScreenOf(matriz),a,1);
+
+        guardar_proveedor(matriz);
+        
        
     
     }
@@ -21,7 +31,7 @@ void alta_proveedor(){
 }
 void baja_proveedor(){
 
-   
+    char *boton[]={"BORRAR","CANCELAR"};
     char *columna="proveedor_id";
     char *cosa[1];
     CDKSCROLL *lista=(CDKSCROLL*)listado("proveedor",columna);
@@ -32,10 +42,26 @@ void baja_proveedor(){
         matriz=(CDKMATRIX*)formulario_modificacion("proveedor","proveedor_id",chtype2Char(lista->item[elegido]));
   
 
-   //     cosa[0]=chtype2Char(lista->item[elegido]);
+        botones= newCDKButtonbox (ScreenOf(matriz),
+				  getbegx (matriz->win),
+				  getbegy (matriz->win) + matriz->boxHeight - 1,
+				  1, matriz->boxWidth - 1,
+				 0, 1, 2,
+				  boton, 2, A_REVERSE, TRUE, FALSE);
+
+
+
+        //     cosa[0]=chtype2Char(lista->item[elegido]);
 
     }
-       if (matriz->exitType==vNORMAL)
+    bindCDKObject (vMATRIX, matriz,KEY_TAB, driver_borrado, botones);
+    //activateCDKMatrix(matriz,0);
+    drawCDKMatrix(matriz,TRUE);
+int elegido=    activateCDKButtonbox(botones,0);
+    //drawCDKButtonbox(botones,TRUE);
+   // traverseCDKScreen(ScreenOf(botones));
+   // raiseCDKObject(vBUTTONBOX,botones);
+ /*   if (matriz->exitType==vNORMAL)
     {
 
 
@@ -44,8 +70,18 @@ void baja_proveedor(){
         popupLabel(ScreenOf(matriz),a,1);
 
 
-    }
-   destroyCDKMatrix(matriz);
+    }*/
+
+if(elegido==0)
+{
+
+    exit(0);
+
+}
+
+destroyCDKButtonbox(botones);
+
+    destroyCDKMatrix(matriz);
  //   popupLabel(ScreenOf(lista),cosa,1);
 
 
@@ -59,7 +95,7 @@ void mod_proveedor(){
     {
      int elegido=getCDKScrollCurrentItem(lista);
    matriz=(CDKMATRIX*)     formulario_modificacion("proveedor","proveedor_id",chtype2Char(lista->item[elegido]));
-
+   activateCDKMatrix(matriz,0);
 
    //     cosa[0]=chtype2Char(lista->item[elegido]);
 

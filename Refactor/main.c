@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 
+#include "pruebas.h"
+
 #include "widgets/dialogos.h"
 
 #include<cdk.h>
@@ -37,9 +39,14 @@ test ()
 }
 void prueba()
 {
-    dialogo_borrado("cliente","cliente_id","C001");
-    activateCDKDialog(dialogo,0);
+//    dialogo_borrado("cliente","cliente_id","C001");
+//    activateCDKDialog(dialogo,0);
+ char *texto_prueba[]={"f"};//,"prueba","asdfa","dfdf"};
+    initscr();
+    CDKSCREEN *pantalla=initCDKScreen(stdscr);
+    ventanita_info(pantalla,texto_prueba);
 
+    
 }
 int
 main (int argc, char **argv)
@@ -50,8 +57,10 @@ main (int argc, char **argv)
   //  CDKSCREEN    *cdkScreen=initCDKScreen(stdscr);
 
   //test();
-    prueba();
-//  vale ();
+  //  prueba();
+
+
+    vale ();
 //    while(TRUE)
   //   {entrada();}
 

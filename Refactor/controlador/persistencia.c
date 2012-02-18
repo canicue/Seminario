@@ -1,3 +1,5 @@
+
+
 #include "persistencia.h"
 
 int guardar_cliente(CDKMATRIX *matriz){
@@ -7,6 +9,7 @@ int guardar_cliente(CDKMATRIX *matriz){
     int i;
     for(i=0;i<matriz->rows;i++)
     {
+        
         datos[i]=getCDKMatrixCell(matriz,i,1);
         columnas[i]=chtype2Char(matriz->rowtitle[i]);
     }
@@ -35,19 +38,25 @@ char *datos[matriz->rows];
 
 }
 int guardar_proveedor(CDKMATRIX *matriz){
-
+    
+    
+     char *columnas[matriz->rows];
 char *datos[matriz->rows];
     int i;
     for(i=0;i<matriz->rows;i++)
     {
-        datos[i]=getCDKMatrixCell(matriz,i,1);
+       // datos[i]=(char*)malloc(256);
+       // strcpy(datos[i],getCDKMatrixCell(matriz,i+1,1));
+        datos[i]=getCDKMatrixCell(matriz,i+1,1);
+        columnas[i]=chtype2Char(matriz->rowtitle[i+1]);
 
     }
 
+    
 
 
     popupLabel(ScreenOf(matriz),datos,matriz->rows);
-
+    guardar_cosa("proveedor",columnas,datos,matriz->rows);
 
 }
 int guardar_insumo(CDKMATRIX *matriz){
