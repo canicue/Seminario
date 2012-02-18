@@ -10,11 +10,13 @@
 #include <fselect.h>
 #include<viewer.h>
 CDKFSELECT *selector;
-char *title = "Seleccione Archivo";
-char *label = "VEREMOS";
-char *button[] = { "OK", "CANCEL" };
 
-char *path = "/../";
+//char *labela = "VEREMOS";
+
+char **contenido;
+
+int lineas;
+char titulo_archivo[256];
 CDKVIEWER *visor_archivo;
 CDKFSELECT *seleccionar_archivo ();
 CDKVIEWER *ver_archivo ();
