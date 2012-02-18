@@ -1,23 +1,27 @@
 
 #include "drivers.h"
-int prueba_binding(EObjectType cdkType GCC_UNUSED, void *object, void *clientData GCC_UNUSED, chtype input)
+int
+prueba_binding (EObjectType cdkType GCC_UNUSED, void *object,
+		void *clientData GCC_UNUSED, chtype input)
 {
 
-    CDKMATRIX *mat=(CDKMATRIX*)object;
-    char *aa[]={"asd","asdf"};
-    if(input=='g')
+  CDKMATRIX *mat = (CDKMATRIX *) object;
+  char *aa[] = { "asd", "asdf" };
+  if (input == 'g')
     {
-        popupLabel(ScreenOf(mat),aa,2);
+      popupLabel (ScreenOf (mat), aa, 2);
 
-       // getch();
+      // getch();
     }
 
-    return 1;
+  return 1;
 
 }
 
 
-int prueba_preprocess(EObjectType cdkType GCC_UNUSED, void *object, void *clientData GCC_UNUSED, chtype input)
+int
+prueba_preprocess (EObjectType cdkType GCC_UNUSED, void *object,
+		   void *clientData GCC_UNUSED, chtype input)
 {
 
 
@@ -27,22 +31,17 @@ int prueba_preprocess(EObjectType cdkType GCC_UNUSED, void *object, void *client
 }
 
 
- int driver_borrado (EObjectType cdktype GCC_UNUSED,
-		    void *object GCC_UNUSED,
-		    void *clientData, chtype key)
+int
+driver_borrado (EObjectType cdktype GCC_UNUSED,
+		void *object GCC_UNUSED, void *clientData, chtype key)
 {
 
-     char *mierda[]={"MIERDA ","CARAJO"};
+  char *mierda[] = { "MIERDA ", "CARAJO" };
 
-     
 
-     CDKBUTTONBOX *buttonbox = (CDKBUTTONBOX *) clientData;
-   popupLabel(ScreenOf(buttonbox),mierda,2);
-     injectCDKButtonbox (buttonbox, key);
-   return (TRUE);
+
+  CDKBUTTONBOX *buttonbox = (CDKBUTTONBOX *) clientData;
+  popupLabel (ScreenOf (buttonbox), mierda, 2);
+  injectCDKButtonbox (buttonbox, key);
+  return (TRUE);
 }
-
-
-
-
-

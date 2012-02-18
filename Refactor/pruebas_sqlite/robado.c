@@ -28,52 +28,56 @@ http://prdownloads.sourceforge.net/cpearls/sqlite_examples.tar.gz?download
 #define STMLEN 1024
 
 //sqlite3_column_count(sqlite3_stmt *pStmt);
-int print_col(sqlite3_stmt * pTableInfo, int col)
+int
+print_col (sqlite3_stmt * pTableInfo, int col)
 {
 
-    switch (sqlite3_column_type(pTableInfo, col)) {
+  switch (sqlite3_column_type (pTableInfo, col))
+    {
     case SQLITE_INTEGER:
-        printf("%d ", sqlite3_column_int(pTableInfo, col));
-        break;
+      printf ("%d ", sqlite3_column_int (pTableInfo, col));
+      break;
     case SQLITE_FLOAT:
-        printf("%f ", sqlite3_column_double(pTableInfo, col));
-        break;
+      printf ("%f ", sqlite3_column_double (pTableInfo, col));
+      break;
     case SQLITE_TEXT:
-        printf("%s ", sqlite3_column_text(pTableInfo, col));
-        break;
-    case SQLITE_BLOB:   //printf("%s",sqlite3_column_blob(pTableInfo, col));
-        break;
+      printf ("%s ", sqlite3_column_text (pTableInfo, col));
+      break;
+    case SQLITE_BLOB:		//printf("%s",sqlite3_column_blob(pTableInfo, col));
+      break;
     case SQLITE_NULL:
-        printf("Null ");
-        break;
+      printf ("Null ");
+      break;
     default:
-        printf(" *Cannot determine SQLITE TYPE* col=%d ", col);
+      printf (" *Cannot determine SQLITE TYPE* col=%d ", col);
     }
 
-    return 0;
+  return 0;
 }
 
-int main(int argc, char **argv)
+int
+main (int argc, char **argv)
 {
-    sqlite3 *db;
-    sqlite3_stmt *plineInfo = 0;
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t read;
+  sqlite3 *db;
+  sqlite3_stmt *plineInfo = 0;
+  char *line = NULL;
+  size_t len = 0;
+  ssize_t read;
 
-    //  char *zErrMsg = 0;
-    int rc, i;
+  //  char *zErrMsg = 0;
+  int rc, i;
 
-    if (argc < 2) {
-        fprintf(stderr, "Usage: %s DATABASE < SQL-STATEMENT(S)\n",
-            argv[0]);
-        exit(1);
+  if (argc < 2)
+    {
+      fprintf (stderr, "Usage: %s DATABASE < SQL-STATEMENT(S)\n", argv[0]);
+      exit (1);
     }
 
-    if (sqlite3_open(argv[1], &db) != SQLITE_OK) {
-        fprintf(stderr, "Can't open database: \n");
-        sqlite3_close(db);
-        exit(1);
+  if (sqlite3_open (argv[1], &db) != SQLITE_OK)
+    {
+      fprintf (stderr, "Can't open database: \n");
+      sqlite3_close (db);
+      exit (1);
     }
 
 
@@ -82,31 +86,31 @@ int main(int argc, char **argv)
 
 
 
-    while ((read = getline(&line, &len, stdin)) != -1) {
+  while ((read = getline (&line, &len, stdin)) != -1)
+    {
 
-        rc = sqlite3_prepare(db, line, -1, &plineInfo, 0);
-        if (rc == SQLITE_OK && plineInfo != NULL ) {
-            while ((rc =
-                sqlite3_step(plineInfo)) == SQLITE_ROW) {
-                //
-                for (i = 0;
-                     i < sqlite3_column_count(plineInfo);
-                     ++i)
-                    print_col(plineInfo, i);
+      rc = sqlite3_prepare (db, line, -1, &plineInfo, 0);
+      if (rc == SQLITE_OK && plineInfo != NULL)
+	{
+	  while ((rc = sqlite3_step (plineInfo)) == SQLITE_ROW)
+	    {
+	      //
+	      for (i = 0; i < sqlite3_column_count (plineInfo); ++i)
+		print_col (plineInfo, i);
 
-                printf("\n");
+	      printf ("\n");
 
-            }
-            rc = sqlite3_finalize(plineInfo);
-        }
+	    }
+	  rc = sqlite3_finalize (plineInfo);
+	}
 
 
-        fprintf(stderr, "Total Changes %d\n",
-            sqlite3_total_changes(db));
+      fprintf (stderr, "Total Changes %d\n", sqlite3_total_changes (db));
     }
-    if (line) {
-        free(line);
+  if (line)
+    {
+      free (line);
     }
-    sqlite3_close(db);
-    return 0;
+  sqlite3_close (db);
+  return 0;
 }

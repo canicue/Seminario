@@ -25,7 +25,7 @@ vale ()
 void
 test ()
 {
-  CDKSCROLL *sc = (CDKSCROLL*)listado ("cliente", "cliente_id");
+  CDKSCROLL *sc = (CDKSCROLL *) listado ("cliente", "cliente_id");
   activateCDKScroll (sc, 0);
   //  formulario_alta("cliente");
   //   formulario_modificacion("producto_terminado","producto_terminado_id","PT001");
@@ -37,17 +37,20 @@ test ()
 			   "orden_pedido_producto_id", "OPP");
   //  alta_cliente();
 }
-void prueba()
+
+void
+prueba ()
 {
 //    dialogo_borrado("cliente","cliente_id","C001");
 //    activateCDKDialog(dialogo,0);
- char *texto_prueba[]={"f"};//,"prueba","asdfa","dfdf"};
-    initscr();
-    CDKSCREEN *pantalla=initCDKScreen(stdscr);
-    ventanita_info(pantalla,texto_prueba);
+  char *texto_prueba[] = { "f" };	//,"prueba","asdfa","dfdf"};
+  initscr ();
+  CDKSCREEN *pantalla = initCDKScreen (stdscr);
+  ventanita_info (pantalla, texto_prueba);
 
-    
+
 }
+
 int
 main (int argc, char **argv)
 {
@@ -60,7 +63,7 @@ main (int argc, char **argv)
   //  prueba();
 
 
-    vale ();
+  vale ();
 //    while(TRUE)
   //   {entrada();}
 
