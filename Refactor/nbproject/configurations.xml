@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>widgets/archivos.h</itemPath>
       <itemPath>controlador/callbacks.h</itemPath>
       <itemPath>controlador/clientes.h</itemPath>
       <itemPath>datos/consultas.h</itemPath>
@@ -26,6 +27,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>widgets/archivos.c</itemPath>
       <itemPath>controlador/callbacks.c</itemPath>
       <itemPath>controlador/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>

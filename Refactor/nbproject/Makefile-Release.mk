@@ -31,6 +31,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/widgets/archivos.o \
 	${OBJECTDIR}/controlador/tecnicos.o \
 	${OBJECTDIR}/widgets/dialogos.o \
 	${OBJECTDIR}/widgets/menu.o \
@@ -69,6 +70,11 @@ LDLIBSOPTIONS=-lcdk -lsqlite3 -lncurses
 dist/Release/GNU-Linux-x86/refactor: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/GNU-Linux-x86
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/refactor ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/widgets/archivos.o: nbproject/Makefile-${CND_CONF}.mk widgets/archivos.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/archivos.o widgets/archivos.c
 
 ${OBJECTDIR}/controlador/tecnicos.o: nbproject/Makefile-${CND_CONF}.mk controlador/tecnicos.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
