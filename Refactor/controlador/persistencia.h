@@ -9,14 +9,15 @@
 #define	_PERSISTENCIA_H
 #include <string.h>
 #include <cdk.h>
-int guardar_matriz(CDKMATRIX* matriz);
-    int guardar_cliente(CDKMATRIX *matriz);
-    int guardar_tecnico(CDKMATRIX *matriz);
-    int guardar_proveedor(CDKMATRIX *matriz);
-    int guardar_insumo(CDKMATRIX *matriz);
+int guardar_matriz (CDKMATRIX * matriz);
+int guardar_cliente (CDKMATRIX * matriz);
+int guardar_tecnico (CDKMATRIX * matriz);
+int guardar_proveedor (CDKMATRIX * matriz);
+int guardar_insumo (CDKMATRIX * matriz);
 
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -25,5 +26,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _PERSISTENCIA_H */
-
+#endif				/* _PERSISTENCIA_H */

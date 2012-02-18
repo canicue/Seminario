@@ -7,11 +7,12 @@
 
 #ifndef _PROVEEDORES_H
 #define	_PROVEEDORES_H
-void alta_proveedor();
-void baja_proveedor();
-void mod_proveedor();
+void alta_proveedor ();
+void baja_proveedor ();
+void mod_proveedor ();
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -21,5 +22,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _PROVEEDORES_H */
-
+#endif				/* _PROVEEDORES_H */

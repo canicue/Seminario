@@ -9,10 +9,11 @@
 #define	_LISTADOS_H
 
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 #include "../controlador/callbacks.h"
-CDKSCROLL *listado(char *tabla,char *columna);
+  CDKSCROLL *listado (char *tabla, char *columna);
 
 
 
@@ -20,5 +21,4 @@ CDKSCROLL *listado(char *tabla,char *columna);
 }
 #endif
 
-#endif	/* _LISTADOS_H */
-
+#endif				/* _LISTADOS_H */

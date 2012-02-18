@@ -16,15 +16,16 @@
 
 
 int filas;
-int columnas ;
-int vrows ;
+int columnas;
+int vrows;
 char *coltitle[10], *rowtitle[10], *mesg[10];
 int colwidth[10], colvalue[10];
 
-CDKMATRIX *formulario_alta(char *tabla);
-CDKMATRIX *formulario_modificacion(char *tabla,char *columna,char* valor);
+CDKMATRIX *formulario_alta (char *tabla);
+CDKMATRIX *formulario_modificacion (char *tabla, char *columna, char *valor);
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -34,5 +35,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _FORMULARIOS_H */
-
+#endif				/* _FORMULARIOS_H */

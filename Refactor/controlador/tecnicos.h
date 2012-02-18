@@ -7,11 +7,12 @@
 
 #ifndef _TECNICOS_H
 #define	_TECNICOS_H
-void alta_tecnico();
-void baja_tecnico();
-void mod_tecnico();
+void alta_tecnico ();
+void baja_tecnico ();
+void mod_tecnico ();
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -21,5 +22,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _TECNICOS_H */
-
+#endif				/* _TECNICOS_H */

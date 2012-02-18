@@ -11,13 +11,14 @@
 #include "../controlador/clientes.h"
 #include "../controlador/proveedores.h"
 #include "../controlador/tecnicos.h"
-void menu_clientes();
-void menu_proveedores();
-void menu_tecnicos();
+void menu_clientes ();
+void menu_proveedores ();
+void menu_tecnicos ();
 char *opciones[] =
-    { "Alta</B>", "Baja</B>", "Modificación</B>", "Volver</B>" };
+  { "Alta</B>", "Baja</B>", "Modificación</B>", "Volver</B>" };
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -27,5 +28,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _MENU_H */
-
+#endif				/* _MENU_H */

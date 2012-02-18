@@ -8,13 +8,15 @@
 #ifndef _DRIVERS_H
 #define	_DRIVERS_H
 #include <cdk.h>
-int prueba_binding(EObjectType cdkType GCC_UNUSED, void *object, void *clientData GCC_UNUSED, chtype input);
-int prueba_preprocess(EObjectType cdkType GCC_UNUSED, void *object, void *clientData GCC_UNUSED, chtype input);
-int driver_borrado (EObjectType cdktype GCC_UNUSED,
-		    void *object GCC_UNUSED,
+int prueba_binding (EObjectType cdkType GCC_UNUSED, void *object,
+		    void *clientData GCC_UNUSED, chtype input);
+int prueba_preprocess (EObjectType cdkType GCC_UNUSED, void *object,
+		       void *clientData GCC_UNUSED, chtype input);
+int driver_borrado (EObjectType cdktype GCC_UNUSED, void *object GCC_UNUSED,
 		    void *clientData, chtype key);
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -24,5 +26,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _DRIVERS_H */
-
+#endif				/* _DRIVERS_H */

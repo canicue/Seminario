@@ -8,12 +8,13 @@
 #ifndef _CLIENTES_H
 #define	_CLIENTES_H
 #include "persistencia.h"
-void alta_cliente();
-void baja_cliente();
-void mod_cliente();
+void alta_cliente ();
+void baja_cliente ();
+void mod_cliente ();
 
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -23,5 +24,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _CLIENTES_H */
-
+#endif				/* _CLIENTES_H */

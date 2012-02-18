@@ -10,13 +10,13 @@
 #include <matrix.h>
 #include <scroll.h>
 #include <dialog.h>
-int call_alta(void *nombre, int argc, char **argv, char **azColName);
-int call_modificacion(void *nombre, int argc, char **argv, char **azColName);
-int call_lista(void *nombre, int argc, char **argv, char **azColName);
-int call_borrado(void *nombre, int argc, char **argv, char **azColName);
+int call_alta (void *nombre, int argc, char **argv, char **azColName);
+int call_modificacion (void *nombre, int argc, char **argv, char **azColName);
+int call_lista (void *nombre, int argc, char **argv, char **azColName);
+int call_borrado (void *nombre, int argc, char **argv, char **azColName);
 
 #define set_col(n, width, string) \
-coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED//vUMIXED
+coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED	//vUMIXED
 #define set_row(n, string) \
    rowtitle[n] = "</B/6>" string
 
@@ -27,7 +27,8 @@ CDKDIALOG *dialogo;
 
 
 #ifdef	__cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 
@@ -37,5 +38,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* _CALLBACKS_H */
-
+#endif				/* _CALLBACKS_H */
