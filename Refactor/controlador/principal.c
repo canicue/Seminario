@@ -1,11 +1,5 @@
-
-
 #include "principal.h"
 #include "clientes.h"
-
-
-
-
 
 int selection;
 char *buttons[] = { " OK ", " Cancel " };

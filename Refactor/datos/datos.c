@@ -1,12 +1,7 @@
 #include "datos.h"
-
-
-
 #include <stdio.h>
 #include <alphalist.h>
 
-
-#include "datos.h"
 sqlite3 *
 conectar (char *nombre)
 {

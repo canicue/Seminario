@@ -1,6 +1,6 @@
 /* 
  * File:   dialogos.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 17 de febrero de 2012, 14:04
  */

@@ -1,6 +1,5 @@
-
-
 #include "pruebas.h"
+
 void
 ventanita_info (CDKSCREEN * pantalla, char **msg)
 {

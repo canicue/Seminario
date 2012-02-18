@@ -1,6 +1,6 @@
 /* 
  * File:   main.c
- * Author: canicue
+ * Author: charlie
  *
  * Created on 14 de octubre de 2011, 18:16
  */
@@ -16,6 +16,7 @@
 #include "controlador/principal.h"
 #include "widgets/formularios.h"
 #include "controlador/clientes.h"
+#include "widgets/archivos.h"
 void
 vale ()
 {
@@ -25,17 +26,18 @@ vale ()
 void
 test ()
 {
-  CDKSCROLL *sc = (CDKSCROLL *) listado ("cliente", "cliente_id");
-  activateCDKScroll (sc, 0);
+//  CDKSCROLL *sc = (CDKSCROLL *) listado ("cliente", "cliente_id");
+//  activateCDKScroll (sc, 0);
   //  formulario_alta("cliente");
   //   formulario_modificacion("producto_terminado","producto_terminado_id","PT001");
   //    formulario_modificacion("RMP","producto_id","RMP002");
   //  formulario_modificacion("cliente","Cliente_id","C001");
   //   formulario_modificacion("proveedor","Proveedor_id","P001");
   //    formulario_modificacion("tecnico","Tecnico_id","T001");
-  formulario_modificacion ("orden_pedido_producto",
-			   "orden_pedido_producto_id", "OPP");
+//  formulario_modificacion ("orden_pedido_producto",                      "orden_pedido_producto_id", "OPP");
   //  alta_cliente();
+  seleccionar_archivo ();
+  ver_archivo ("prueba.h");
 }
 
 void
@@ -63,10 +65,10 @@ main (int argc, char **argv)
   //  prueba();
 
 
-  vale ();
+  // vale ();
 //    while(TRUE)
   //   {entrada();}
-
+  test ();
   endCDK ();
   return (EXIT_SUCCESS);
 }

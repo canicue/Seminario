@@ -1,5 +1,5 @@
-
 #include "drivers.h"
+
 int
 prueba_binding (EObjectType cdkType GCC_UNUSED, void *object,
 		void *clientData GCC_UNUSED, chtype input)

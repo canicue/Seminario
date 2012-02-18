@@ -1,6 +1,6 @@
 /* 
  * File:   menu.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 15 de febrero de 2012, 01:16
  */

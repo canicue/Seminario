@@ -1,9 +1,3 @@
-
-
-
-
-
-
 #include "callbacks.h"
 
 int

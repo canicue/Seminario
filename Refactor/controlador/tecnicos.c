@@ -1,6 +1,7 @@
 #include "tecnicos.h"
 #include <scroll.h>
 #include <matrix.h>
+
 void
 alta_tecnico ()
 {

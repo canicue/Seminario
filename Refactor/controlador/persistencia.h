@@ -1,6 +1,6 @@
 /* 
  * File:   persistencia.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 16 de febrero de 2012, 13:43
  */

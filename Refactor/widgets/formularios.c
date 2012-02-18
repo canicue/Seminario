@@ -1,6 +1,4 @@
-
 #include "formularios.h"
-
 
 CDKMATRIX *
 formulario_alta (char *tabla)

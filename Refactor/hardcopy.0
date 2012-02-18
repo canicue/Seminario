@@ -33,4 +33,4 @@ static CDKOBJS *make_button (CDKSCREEN *cdkscreen, int x, int y)
 
 static CDKOBJS *make_buttonbox (CDKSCREEN *cdkscreen, int x, int y)
 :q
-canicue@debian:/media/sda6/DESARROLLO/NCURSES/CDK/examples$
+charlie@debian:/media/sda6/DESARROLLO/NCURSES/CDK/examples$

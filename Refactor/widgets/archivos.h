@@ -1,6 +1,6 @@
 /* 
  * File:   archivos.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 17 de febrero de 2012, 23:07
  */
@@ -14,7 +14,6 @@ CDKFSELECT *selector;
 //char *labela = "VEREMOS";
 
 char **contenido;
-
 int lineas;
 char titulo_archivo[256];
 CDKVIEWER *visor_archivo;

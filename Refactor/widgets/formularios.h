@@ -1,6 +1,6 @@
 /* 
  * File:   formularios.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 14 de febrero de 2012, 23:39
  */
@@ -10,10 +10,7 @@
 #include <cdk.h>
 #include "../datos/datos.h"
 #include "../controlador/callbacks.h"
-
-
 #define  vcols  1
-
 
 int filas;
 int columnas;

@@ -1,5 +1,3 @@
-
-
 #include "archivos.h"
 
 
@@ -39,4 +37,5 @@ ver_archivo (char *nombre)
   setCDKViewer (visor_archivo, titulo_archivo, contenido, lineas, A_REVERSE,
 		TRUE, TRUE, TRUE);
   activateCDKViewer (visor_archivo, 0);
+  return visor_archivo;
 }

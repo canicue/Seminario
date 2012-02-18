@@ -9,7 +9,6 @@
 #include <cdk.h>
 #include <curdefs.h>
 
-
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
 void

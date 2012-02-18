@@ -1,6 +1,6 @@
 /* 
  * File:   datos.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 14 de febrero de 2012, 23:48
  */
