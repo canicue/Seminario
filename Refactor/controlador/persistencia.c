@@ -56,7 +56,7 @@ guardar_proveedor (CDKMATRIX * matriz)
       // datos[i]=(char*)malloc(256);
       // strcpy(datos[i],getCDKMatrixCell(matriz,i+1,1));
       datos[i] = getCDKMatrixCell (matriz, i + 1, 1);
-      columnas[i] = chtype2Char (matriz->rowtitle[i + 1]);
+      columnas[i] = (char *) chtype2Char (matriz->rowtitle[i + 1]);
 
     }
 
@@ -101,7 +101,7 @@ guardar_matriz (CDKMATRIX * matriz)
       // datos[i]=(char*)malloc(256);
       // strcpy(datos[i],getCDKMatrixCell(matriz,i+1,1));
       datos[i] = getCDKMatrixCell (matriz, i + 1, 1);
-      columnas[i] = chtype2Char (matriz->rowtitle[i + 1]);
+      columnas[i] = (char *) chtype2Char (matriz->rowtitle[i + 1]);
 
     }
 
@@ -122,8 +122,8 @@ borrar_matriz (CDKMATRIX * matriz)
   char *valor;
   char *tabla;
   valor = getCDKMatrixCell (matriz, 1, 1);
-  nombre = chtype2Char (matriz->rowtitle[1]);
-  tabla = chtype2Char (matriz->coltitle[1]);
+  nombre = (char *) chtype2Char (matriz->rowtitle[1]);
+  tabla = (char *) chtype2Char (matriz->coltitle[1]);
   return borrar_registro (tabla, nombre, valor, NULL);
 }
 
@@ -156,7 +156,8 @@ arrepentimiento (CDKMATRIX * matriz, int elegido)
       res = borrar_matriz (matriz);
       if (res != 0)
 	{
-	  tratar_error (ScreenOf (matriz), chtype2Char (matriz->coltitle[1]));
+	  tratar_error (ScreenOf (matriz),
+			(char *) chtype2Char (matriz->coltitle[1]));
 
 	}
 

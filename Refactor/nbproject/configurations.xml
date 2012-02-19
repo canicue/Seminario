@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>controlador/RMPS.h</itemPath>
       <itemPath>widgets/archivos.h</itemPath>
       <itemPath>controlador/callbacks.h</itemPath>
       <itemPath>controlador/clientes.h</itemPath>
@@ -12,10 +13,15 @@
       <itemPath>widgets/dialogos.h</itemPath>
       <itemPath>controlador/drivers.h</itemPath>
       <itemPath>widgets/formularios.h</itemPath>
+      <itemPath>controlador/insumos.h</itemPath>
       <itemPath>widgets/listados.h</itemPath>
       <itemPath>widgets/menu.h</itemPath>
+      <itemPath>controlador/orden_pedido_producto.h</itemPath>
+      <itemPath>controlador/orden_produccion.h</itemPath>
       <itemPath>controlador/persistencia.h</itemPath>
       <itemPath>controlador/principal.h</itemPath>
+      <itemPath>controlador/producto_terminado.h</itemPath>
+      <itemPath>controlador/programa_produccion.h</itemPath>
       <itemPath>controlador/proveedores.h</itemPath>
       <itemPath>pruebas.h</itemPath>
       <itemPath>controlador/tecnicos.h</itemPath>
@@ -27,6 +33,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>controlador/RMPS.c</itemPath>
       <itemPath>widgets/archivos.c</itemPath>
       <itemPath>controlador/callbacks.c</itemPath>
       <itemPath>controlador/clientes.c</itemPath>
@@ -34,11 +41,16 @@
       <itemPath>widgets/dialogos.c</itemPath>
       <itemPath>controlador/drivers.c</itemPath>
       <itemPath>widgets/formularios.c</itemPath>
+      <itemPath>controlador/insumos.c</itemPath>
       <itemPath>widgets/listados.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>widgets/menu.c</itemPath>
+      <itemPath>controlador/orden_pedido_producto.c</itemPath>
+      <itemPath>controlador/orden_produccion.c</itemPath>
       <itemPath>controlador/persistencia.c</itemPath>
       <itemPath>controlador/principal.c</itemPath>
+      <itemPath>controlador/producto_terminado.c</itemPath>
+      <itemPath>controlador/programa_produccion.c</itemPath>
       <itemPath>controlador/proveedores.c</itemPath>
       <itemPath>pruebas.c</itemPath>
       <itemPath>controlador/tecnicos.c</itemPath>
