@@ -7,12 +7,9 @@
 
 #ifndef _ORDEN_PRODUCCION_H
 #define	_ORDEN_PRODUCCION_H
-void
-alta_orden_produccion ();
-void
-baja_orden_produccion ();
-void
-mod_orden_produccion ();
+void alta_orden_produccion ();
+void baja_orden_produccion ();
+void mod_orden_produccion ();
 #ifdef	__cplusplus
 extern "C"
 {

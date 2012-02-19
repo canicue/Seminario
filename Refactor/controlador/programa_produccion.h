@@ -7,12 +7,9 @@
 
 #ifndef _PROGRAMA_PRODUCCION_H
 #define	_PROGRAMA_PRODUCCION_H
-void
-alta_programa_produccion ();
-void
-baja_programa_produccion ();
-void
-mod_programa_produccion ();
+void alta_programa_produccion ();
+void baja_programa_produccion ();
+void mod_programa_produccion ();
 #ifdef	__cplusplus
 extern "C"
 {

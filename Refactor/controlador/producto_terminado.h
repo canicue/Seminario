@@ -7,12 +7,9 @@
 
 #ifndef _PRODUCTO_TERMINADO_H
 #define	_PRODUCTO_TERMINADO_H
-void
-alta_producto_terminado ();
-void
-baja_producto_terminado ();
-void
-mod_producto_terminado ();
+void alta_producto_terminado ();
+void baja_producto_terminado ();
+void mod_producto_terminado ();
 #ifdef	__cplusplus
 extern "C"
 {

@@ -7,12 +7,9 @@
 
 #ifndef _ORDEN_PEDIDO_PRODUCTO_H
 #define	_ORDEN_PEDIDO_PRODUCTO_H
-void
-alta_orden_pedido_producto ();
-void
-baja_orden_pedido_producto ();
-void
-mod_orden_pedido_producto ();
+void alta_orden_pedido_producto ();
+void baja_orden_pedido_producto ();
+void mod_orden_pedido_producto ();
 #ifdef	__cplusplus
 extern "C"
 {

@@ -7,12 +7,9 @@
 
 #ifndef _INSUMOS_H
 #define	_INSUMOS_H
-void
-alta_insumo ();
-void
-baja_insumo ();
-void
-mod_insumo ();
+void alta_insumo ();
+void baja_insumo ();
+void mod_insumo ();
 #ifdef	__cplusplus
 extern "C"
 {

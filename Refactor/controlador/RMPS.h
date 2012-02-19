@@ -7,12 +7,9 @@
 
 #ifndef _RMP_H
 #define	_RMP_H
-void
-alta_RMP ();
-void
-baja_RMP ();
-void
-mod_RMP ();
+void alta_RMP ();
+void baja_RMP ();
+void mod_RMP ();
 #ifdef	__cplusplus
 extern "C"
 {
