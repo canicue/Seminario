@@ -36,15 +36,15 @@ buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
 }
 
 int
-borrar_registro (char *tabla, char *columna, char *valor,void *callback)
+borrar_registro (char *tabla, char *columna, char *valor, void *callback)
 {
-    conectar(BASE);
-    char consulta[255];
-    sprintf(consulta,BORRAR_REGISTRO,tabla,columna,valor);
-    sqlite3_exec(conexion,consulta,callback,0,&error);
+  conectar (BASE);
+  char consulta[255];
+  sprintf (consulta, BORRAR_REGISTRO, tabla, columna, valor);
+  sqlite3_exec (conexion, consulta, callback, 0, &error);
 
 
-    return (int)error;
+  return (int) error;
 }
 
 void

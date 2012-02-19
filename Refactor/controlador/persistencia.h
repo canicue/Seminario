@@ -9,12 +9,14 @@
 #define	_PERSISTENCIA_H
 #include <string.h>
 #include <cdk.h>
+#include <matrix.h>
 int guardar_matriz (CDKMATRIX * matriz);
 int guardar_cliente (CDKMATRIX * matriz);
 int guardar_tecnico (CDKMATRIX * matriz);
 int guardar_proveedor (CDKMATRIX * matriz);
 int guardar_insumo (CDKMATRIX * matriz);
-void  tratar_error(CDKSCREEN *pantalla,char* tabla);
+void tratar_error (CDKSCREEN * pantalla, char *tabla);
+void arrepentimiento (CDKMATRIX * matriz, int elegido);
 
 #ifdef	__cplusplus
 extern "C"

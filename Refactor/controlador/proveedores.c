@@ -11,7 +11,7 @@
 
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
- CDKSCROLL *lista;
+CDKSCROLL *lista;
 void
 alta_proveedor ()
 {
@@ -65,39 +65,9 @@ baja_proveedor ()
   //activateCDKMatrix(matriz,0);
   drawCDKMatrix (matriz, TRUE);
   int elegido = activateCDKButtonbox (botones, 0);
-  //drawCDKButtonbox(botones,TRUE);
-  // traverseCDKScreen(ScreenOf(botones));
-  // raiseCDKObject(vBUTTONBOX,botones);
-  /*   if (matriz->exitType==vNORMAL)
-     {
 
+  arrepentimiento (matriz, elegido);
 
-
-     char *a[]={"asdfsdf"};
-     popupLabel(ScreenOf(matriz),a,1);
-
-
-     } */
-
-  if (elegido == 1)
-    {
-
-      exit (0);
-
-    }
-
-  if(elegido==0)
-  {
-
-      int res;
-    res= borrar_matriz(matriz);
-    if(res!=0)
-    {
-        tratar_error(ScreenOf(matriz),chtype2Char(matriz->coltitle[1]));
-
-    }
-
-  }
   destroyCDKButtonbox (botones);
 
   destroyCDKMatrix (matriz);

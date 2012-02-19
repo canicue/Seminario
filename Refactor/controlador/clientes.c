@@ -8,23 +8,23 @@ CDKBUTTONBOX *botones;
 void
 alta_cliente ()
 {
-    int error;
+  int error;
   CDKMATRIX *matriz = (CDKMATRIX *) formulario_alta ("cliente");
   // setCDKMatrixPreProcess(matriz,prueba_binding,0);
   if (matriz->exitType == vNORMAL)
     {
 
-     error= guardar_matriz (matriz);
+      error = guardar_matriz (matriz);
 
-     
+
 
     }
 
-  if(error)
-  {
-      tratar_error(ScreenOf(matriz),"cliente");
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "cliente");
 
-  }
+    }
   bindCDKObject (vMATRIX, matriz, 'g', prueba_binding, 0);
 
   activateCDKMatrix (matriz, 0);
@@ -35,10 +35,10 @@ void
 baja_cliente ()
 {
 //  CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", "cliente_id");
- // activateCDKScroll (lista, 0);
+  // activateCDKScroll (lista, 0);
 
 
-      char *boton[] = { "BORRAR", "CANCELAR" };
+  char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "cliente_id";
   char *cosa[1];
   CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", columna);
@@ -67,26 +67,9 @@ baja_cliente ()
   //activateCDKMatrix(matriz,0);
   drawCDKMatrix (matriz, TRUE);
   int elegido = activateCDKButtonbox (botones, 0);
-  //drawCDKButtonbox(botones,TRUE);
-  // traverseCDKScreen(ScreenOf(botones));
-  // raiseCDKObject(vBUTTONBOX,botones);
-  /*   if (matriz->exitType==vNORMAL)
-     {
 
 
-
-     char *a[]={"asdfsdf"};
-     popupLabel(ScreenOf(matriz),a,1);
-
-
-     } */
-
-  if (elegido == 0)
-    {
-
-      exit (0);
-
-    }
+  arrepentimiento (matriz, elegido);
 
   destroyCDKButtonbox (botones);
 

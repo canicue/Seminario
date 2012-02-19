@@ -36,7 +36,7 @@ test ()
   //    formulario_modificacion("tecnico","Tecnico_id","T001");
 //  formulario_modificacion ("orden_pedido_producto",                      "orden_pedido_producto_id", "OPP");
   //  alta_cliente();
-  CDKFSELECT *archivo=seleccionar_archivo ();
+  CDKFSELECT *archivo = seleccionar_archivo ();
 
   //popupLabel(ScreenOf(archivo),&archivo->pathname,1);
   ver_archivo (archivo->pathname);
@@ -69,9 +69,11 @@ main (int argc, char **argv)
 
   // vale ();
 
-    //sin login
-    while(TRUE)
-     {entrada();}
+  //sin login
+  while (TRUE)
+    {
+      entrada ();
+    }
   test ();
   endCDK ();
   return (EXIT_SUCCESS);

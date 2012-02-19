@@ -1,10 +1,11 @@
 #include "tecnicos.h"
 #include "drivers.h"
+#include "persistencia.h"
 #include <scroll.h>
-#include <matrix.h>
+
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
- CDKSCROLL *lista;
+CDKSCROLL *lista;
 void
 alta_tecnico ()
 {
@@ -33,7 +34,7 @@ baja_tecnico ()
 //  CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
 //  activateCDKScroll (lista, 0);
 
-          char *boton[] = { "BORRAR", "CANCELAR" };
+  char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "cliente_id";
   char *cosa[1];
   CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", columna);
@@ -76,13 +77,7 @@ baja_tecnico ()
 
      } */
 
-  if (elegido == 0)
-    {
-
-      exit (0);
-
-    }
-
+  arrepentimiento (matriz, elegido);
   destroyCDKButtonbox (botones);
 
   destroyCDKMatrix (matriz);
@@ -100,10 +95,10 @@ baja_tecnico ()
 void
 mod_tecnico ()
 {
- // CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
+  // CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
 //  activateCDKScroll (lista, 0);
 
-     lista = (CDKSCROLL *) listado ("proveedor", "provedor_id");
+  lista = (CDKSCROLL *) listado ("proveedor", "provedor_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
