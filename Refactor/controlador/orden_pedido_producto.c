@@ -48,8 +48,8 @@ baja_orden_pedido_producto ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
 					       "orden_pedido_producto_id",
-					       chtype2Char (lista->
-							    item[elegido]));
+					       chtype2Char (lista->item
+							    [elegido]));
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -92,8 +92,8 @@ mod_orden_pedido_producto ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
 					       "orden_pedido_producto_id",
-					       chtype2Char (lista->
-							    item[elegido]));
+					       chtype2Char (lista->item
+							    [elegido]));
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

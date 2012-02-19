@@ -45,7 +45,7 @@ baja_insumo ()
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("insumo", "insumo_id",
+	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
 					       chtype2Char (lista->item
 							    [elegido]));
 

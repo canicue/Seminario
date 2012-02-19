@@ -14,6 +14,8 @@
 void menu_clientes ();
 void menu_proveedores ();
 void menu_tecnicos ();
+void menu_abm (char *titulo, void (*alta) (), void (*baja) (),
+	       void (*modificacion) ());
 char *opciones[] =
   { "Alta</B>", "Baja</B>", "Modificación</B>", "Volver</B>" };
 #ifdef	__cplusplus

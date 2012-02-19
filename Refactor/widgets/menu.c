@@ -168,3 +168,60 @@ menu_tecnicos ()
     }
   while (elegido != 3);
 }
+
+
+void
+menu_abm (char *titulo, void (*alta) (), void (*baja) (),
+	  void (*modificacion) ())
+{
+  initscr ();
+  CDKSCREEN *pantalla = initCDKScreen (stdscr);
+  char title[128];
+  char *formato = "<C></32>%s<!32>";
+  sprintf (title, formato, titulo);
+
+  CDKSCROLL *scroll;
+  int elegido;
+
+  do
+    {
+      scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 35,
+			     title,
+			     opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
+      elegido = activateCDKScroll (scroll, 0);
+
+
+      switch (elegido)
+	{
+	case 0:
+	  destroyCDKScroll (scroll);
+	  alta ();
+
+
+
+	  break;
+	case 1:
+
+	  destroyCDKScroll (scroll);
+	  baja ();
+	  //     popupLabel(pantalla, opciones, 3);
+
+	  break;
+	case 2:
+	  destroyCDKScroll (scroll);
+	  modificacion ();
+	  //popupLabel(pantalla, opciones, 3);
+
+	  break;
+	case 3:
+
+	  destroyCDKScroll (scroll);
+	  break;
+
+
+	}
+
+
+    }
+  while (elegido != 3);
+}

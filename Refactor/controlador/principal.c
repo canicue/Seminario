@@ -1,5 +1,10 @@
 #include "principal.h"
 #include "clientes.h"
+#include "proveedores.h"
+#include "insumos.h"
+#include "producto_terminado.h"
+#include "programa_produccion.h"
+#include "orden_pedido_producto.h"
 
 int selection;
 char *buttons[] = { " OK ", " Cancel " };
@@ -303,14 +308,15 @@ area_tecnica ()
 
 
   char *opciones[] =
-    { "Insumos</B>", "Tecnicos</B>", "Clientes</B>", "Volver</B>" };
+    { "Insumos</B>", "Producto terminado</B>", "Programa de producción</B>",
+"Orden de pedido</B>", "Volver</B>" };
   CDKSCROLL *scroll;
   int elegido;
   do
     {
-      scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 20,
+      scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 35,
 			     "<C>Menu",
-			     opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
+			     opciones, 5, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
       //
@@ -322,7 +328,9 @@ area_tecnica ()
 
 	  //  destroyCDKScroll(scroll);
 
-	  popupLabel (pantalla, opciones, 3);
+	  menu_abm ("INSUMOS", alta_insumo, baja_insumo, mod_insumo);
+
+	  //  popupLabel (pantalla, opciones, 3);
 
 
 	  //unregisterCDKObject(vSCROLL,scroll);
@@ -334,18 +342,32 @@ area_tecnica ()
 	  break;
 	case 1:
 	  //   destroyCDKScroll(scroll);
-	  popupLabel (pantalla, opciones, 3);
+
+	  menu_abm ("PRODUCTOS", alta_producto_terminado,
+		    baja_producto_terminado, mod_producto_terminado);
+
+	  //  popupLabel (pantalla, opciones, 3);
 	  //             tecnicos();
 	  //administracion();
 	  break;
 	case 2:
-	  popupLabel (pantalla, opciones, 3);
+
+	  menu_abm ("PROGRAMA", alta_programa_produccion,
+		    baja_programa_produccion, mod_programa_produccion);
+
+
+	  //popupLabel (pantalla, opciones, 3);
 	  //        mvwaddstr(cdkScreen->window,2,2,"dios");
 	  // wrefresh(cdkScreen->window);
 	  // getch();
 	  //           clientes();
 	  break;
 	case 3:
+	  menu_abm ("ORDEN PEDIDO", alta_orden_pedido_producto,
+		    baja_orden_pedido_producto, mod_orden_pedido_producto);
+	  break;
+
+	case 4:
 	  // endCDK ();
 	  destroyCDKScroll (scroll);
 	  break;
@@ -355,7 +377,7 @@ area_tecnica ()
 
 
     }
-  while (elegido != 3);
+  while (elegido != 4);
 
 
   // getch ();
@@ -395,8 +417,10 @@ area_administrativa ()
 	  destroyCDKScroll (scroll);
 	  eraseCDKScreen (pantalla);
 	  refreshCDKScreen (pantalla);
-	  menu_proveedores ();
 
+	  // menu_proveedores ();
+	  menu_abm ("PROVEEDORES", alta_proveedor, baja_proveedor,
+		    mod_proveedor);
 	  break;
 	case 1:
 	  destroyCDKScroll (scroll);
