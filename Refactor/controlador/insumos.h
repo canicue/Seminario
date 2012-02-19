@@ -1,6 +1,6 @@
 /* 
  * File:   insumos.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 19 de febrero de 2012, 18:04
  */

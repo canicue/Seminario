@@ -1,6 +1,6 @@
 /* 
  * File:   orden_produccion.h
- * Author: canicue
+ * Author: charlie
  *
  * Created on 19 de febrero de 2012, 18:19
  */
