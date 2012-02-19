@@ -145,7 +145,7 @@ arrepentimiento (CDKMATRIX * matriz, int elegido)
   if (elegido == 1)
     {
 
-      exit (0);
+      ;
 
     }
 

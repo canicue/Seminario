@@ -308,16 +308,15 @@ area_tecnica ()
 
 
 
-  char *opciones[] =
-    { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
-"Programa de producción</B>",
+  char *opciones[] = { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
+    "Programa de producción</B>",
     "Orden de pedido</B>", "Volver</B>"
   };
   CDKSCROLL *scroll;
   int elegido;
   do
     {
-      scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 35,
+      scroll = newCDKScroll (pantalla, 2, 2, CENTER, 10, 45,
 			     "<C>Menu",
 			     opciones, 6, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
@@ -328,11 +327,12 @@ area_tecnica ()
       switch (elegido)
 	{
 	case 0:
+	  destroyCDKScroll (scroll);
 	  menu_abm ("RMP", alta_RMP, baja_RMP, mod_RMP);
 	  break;
 	case 1:
 
-	  //  destroyCDKScroll(scroll);
+	  destroyCDKScroll (scroll);
 
 	  menu_abm ("INSUMOS", alta_insumo, baja_insumo, mod_insumo);
 
@@ -347,7 +347,7 @@ area_tecnica ()
 	  //produccion();
 	  break;
 	case 2:
-	  //   destroyCDKScroll(scroll);
+	  destroyCDKScroll (scroll);
 
 	  menu_abm ("PRODUCTOS", alta_producto_terminado,
 		    baja_producto_terminado, mod_producto_terminado);
@@ -357,7 +357,7 @@ area_tecnica ()
 	  //administracion();
 	  break;
 	case 3:
-
+	  destroyCDKScroll (scroll);
 	  menu_abm ("PROGRAMA", alta_programa_produccion,
 		    baja_programa_produccion, mod_programa_produccion);
 
@@ -369,6 +369,7 @@ area_tecnica ()
 	  //           clientes();
 	  break;
 	case 4:
+	  destroyCDKScroll (scroll);
 	  menu_abm ("ORDEN PEDIDO", alta_orden_pedido_producto,
 		    baja_orden_pedido_producto, mod_orden_pedido_producto);
 	  break;
