@@ -9,7 +9,7 @@ listado (char *tabla, char *columna)
   sprintf (titulo, formato, tabla);
   initscr ();
   CDKSCREEN *pantalla = initCDKScreen (stdscr);
-  lista_scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 5,
+  lista_scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 15,
 			       titulo, NULL, 0, TRUE, A_REVERSE, TRUE, FALSE);
 
   ver_tabla (tabla, NULL, columna, call_lista, NULL);

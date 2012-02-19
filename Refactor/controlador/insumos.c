@@ -37,7 +37,7 @@ baja_insumo ()
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "insumo_id";
+  char *columna = "IR";
   char *cosa[1];
   CDKSCROLL *lista = (CDKSCROLL *) listado ("insumo", columna);
   activateCDKScroll (lista, 0);
@@ -80,14 +80,14 @@ void
 mod_insumo ()
 {
 
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("insumo", "insumo_id");
+  CDKSCROLL *lista = (CDKSCROLL *) listado ("insumo", "IR");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("insumo", "insumo_id",
+	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
 					       chtype2Char (lista->item
 							    [elegido]));
       activateCDKMatrix (matriz, 0);
