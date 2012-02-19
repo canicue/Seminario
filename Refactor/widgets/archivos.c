@@ -21,8 +21,9 @@ seleccionar_archivo ()
   setCDKFselectDirectory (selector, path);
 
   activateCDKFselect (selector, 0);
-
+  
   return selector;
+
 }
 
 CDKVIEWER *
@@ -30,6 +31,7 @@ ver_archivo (char *nombre)
 {
   char *button[] = { "OK", "CANCEL" };
   initscr ();
+  curs_set(0);
   CDKSCREEN *pantalla = initCDKScreen (stdscr);
   visor_archivo = newCDKViewer (pantalla, CENTER, CENTER, 20, -2,
 				button, 2, A_REVERSE, TRUE, FALSE);
