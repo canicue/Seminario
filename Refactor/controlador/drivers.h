@@ -8,6 +8,7 @@
 #ifndef _DRIVERS_H
 #define	_DRIVERS_H
 #include <cdk.h>
+#include <curdefs.h>
 int prueba_binding (EObjectType cdkType GCC_UNUSED, void *object,
 		    void *clientData GCC_UNUSED, chtype input);
 int prueba_preprocess (EObjectType cdkType GCC_UNUSED, void *object,

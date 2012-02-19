@@ -7,10 +7,11 @@
 #include <matrix.h>
 #include <buttonbox.h>
 #include <cdk.h>
-#include <curdefs.h>
+
 
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
+ CDKSCROLL *lista;
 void
 alta_proveedor ()
 {
@@ -78,13 +79,25 @@ baja_proveedor ()
 
      } */
 
-  if (elegido == 0)
+  if (elegido == 1)
     {
 
       exit (0);
 
     }
 
+  if(elegido==0)
+  {
+
+      int res;
+    res= borrar_matriz(matriz);
+    if(res!=0)
+    {
+        tratar_error(ScreenOf(matriz),chtype2Char(matriz->coltitle[1]));
+
+    }
+
+  }
   destroyCDKButtonbox (botones);
 
   destroyCDKMatrix (matriz);

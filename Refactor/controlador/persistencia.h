@@ -14,6 +14,7 @@ int guardar_cliente (CDKMATRIX * matriz);
 int guardar_tecnico (CDKMATRIX * matriz);
 int guardar_proveedor (CDKMATRIX * matriz);
 int guardar_insumo (CDKMATRIX * matriz);
+void  tratar_error(CDKSCREEN *pantalla,char* tabla);
 
 #ifdef	__cplusplus
 extern "C"

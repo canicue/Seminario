@@ -1,3 +1,5 @@
+#include <cdk/matrix.h>
+
 #include "persistencia.h"
 
 int
@@ -107,8 +109,25 @@ guardar_matriz (CDKMATRIX * matriz)
 
 
   popupLabel (ScreenOf (matriz), datos, matriz->rows);
-  guardar_cosa (chtype2Char (matriz->coltitle[1]), columnas, datos,
+return  guardar_cosa (chtype2Char (matriz->coltitle[1]), columnas, datos,
 		matriz->rows);
+
+
+}
+int borrar_matriz(CDKMATRIX *matriz)
+{
+    char *nombre;
+    char *valor;
+    char *tabla;
+    valor=getCDKMatrixCell(matriz,1,1);
+    nombre=chtype2Char(matriz->rowtitle[1]);
+    tabla=chtype2Char(matriz->coltitle[1]);
+    return borrar_registro(tabla,nombre,valor,NULL);
+}
+void  tratar_error(CDKSCREEN *pantalla,char* tabla)
+{
+    char* msg[]={"Se produjo","un error"};
+    popupLabel(pantalla,msg,2);
 
 
 }

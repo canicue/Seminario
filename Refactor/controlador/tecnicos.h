@@ -7,7 +7,7 @@
 
 #ifndef _TECNICOS_H
 #define	_TECNICOS_H
-
+#include<buttonbox.h>
 void alta_tecnico ();
 void baja_tecnico ();
 void mod_tecnico ();
