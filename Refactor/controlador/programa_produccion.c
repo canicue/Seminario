@@ -16,7 +16,7 @@ CDKSCROLL *lista;
 void
 alta_programa_produccion ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("programa_produccion");
+  matriz = (CDKMATRIX *) formulario_alta ("programa_produccion", NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -49,7 +49,7 @@ baja_programa_produccion ()
 	(CDKMATRIX *) formulario_modificacion ("programa_produccion",
 					       "programa_produccion_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -93,7 +93,7 @@ mod_programa_produccion ()
 	(CDKMATRIX *) formulario_modificacion ("programa_produccion",
 					       "programa_produccion_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

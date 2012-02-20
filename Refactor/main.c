@@ -7,11 +7,15 @@
 
 #include <stdio.h>
 
+#include "controlador/drivers.h"
+
 #include "pruebas.h"
 
 #include "widgets/dialogos.h"
 
 #include<cdk.h>
+#include <cdk/matrix.h>
+#include <ncursesw/ncurses.h>
 
 #include "controlador/principal.h"
 #include "widgets/formularios.h"
@@ -70,11 +74,20 @@ main (int argc, char **argv)
   // vale ();
 
   //sin login
+
+
+
+
+
+
+
+  // bindCDKObject(vMATRIX,matriz,'g',prueba_preprocess,0);
+
   while (TRUE)
     {
       entrada ();
     }
-  test ();
+  // test ();
   endCDK ();
   return (EXIT_SUCCESS);
 }

@@ -15,7 +15,7 @@ CDKSCROLL *lista;
 void
 alta_insumo ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("insumo");
+  matriz = (CDKMATRIX *) formulario_alta ("insumo", NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -47,7 +47,7 @@ baja_insumo ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -89,7 +89,7 @@ mod_insumo ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

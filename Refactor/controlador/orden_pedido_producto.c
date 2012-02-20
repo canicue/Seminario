@@ -16,7 +16,7 @@ CDKSCROLL *lista;
 void
 alta_orden_pedido_producto ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("orden_pedido_producto");
+  matriz = (CDKMATRIX *) formulario_alta ("orden_pedido_producto", NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -49,7 +49,7 @@ baja_orden_pedido_producto ()
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
 					       "orden_pedido_producto_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -93,7 +93,7 @@ mod_orden_pedido_producto ()
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
 					       "orden_pedido_producto_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

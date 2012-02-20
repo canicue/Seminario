@@ -1,7 +1,7 @@
 #include "formularios.h"
 
 CDKMATRIX *
-formulario_alta (char *tabla)
+formulario_alta (char *tabla, PROCESSFN prep)
 {
 
   char *error;
@@ -11,14 +11,17 @@ formulario_alta (char *tabla)
   sprintf (consulta, plantilla, tabla);
 //printf(consulta);
   sqlite3_exec (conexion, consulta, call_alta, tabla, &error);
+  setCDKMatrixPreProcess (matriz, (PROCESSFN) prep, 0);
   activateCDKMatrix (matriz, 0);
+
   desconectar ();
   return matriz;
 
 }
 
 CDKMATRIX *
-formulario_modificacion (char *tabla, char *columna, char *valor)
+formulario_modificacion (char *tabla, char *columna, char *valor,
+			 PROCESSFN * prep)
 {
 
   char *error;

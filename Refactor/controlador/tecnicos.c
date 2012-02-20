@@ -9,7 +9,7 @@ CDKSCROLL *lista;
 void
 alta_tecnico ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("tecnico");
+  matriz = (CDKMATRIX *) formulario_alta ("tecnico", NULL);
 
   if (matriz->exitType == vNORMAL)
     {

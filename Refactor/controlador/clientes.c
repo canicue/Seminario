@@ -2,15 +2,30 @@
 #include "drivers.h"
 #include <matrix.h>
 #include <scroll.h>
+#include <ncursesw/ncurses.h>
 
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
+int
+pruebab (EObjectType cdkType GCC_UNUSED, void *object,
+	 void *clientData GCC_UNUSED, chtype input)
+{
+
+
+  exit (1);
+
+  return 1;
+
+
+}
+
 void
 alta_cliente ()
 {
   int error;
-  CDKMATRIX *matriz = (CDKMATRIX *) formulario_alta ("cliente");
-  // setCDKMatrixPreProcess(matriz,prueba_binding,0);
+  CDKMATRIX *matriz = (CDKMATRIX *) formulario_alta ("cliente", NULL);
+  setCDKMatrixPreProcess (matriz, pruebab, 0);
+  bindCDKObject (vMATRIX, matriz, '?', pruebab, 0);
   if (matriz->exitType == vNORMAL)
     {
 
@@ -25,7 +40,10 @@ alta_cliente ()
       tratar_error (ScreenOf (matriz), "cliente");
 
     }
-  bindCDKObject (vMATRIX, matriz, 'g', prueba_binding, 0);
+
+
+
+  //
 
   activateCDKMatrix (matriz, 0);
 
@@ -49,7 +67,7 @@ baja_cliente ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("cliente", "cliente_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),

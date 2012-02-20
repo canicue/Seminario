@@ -246,7 +246,7 @@ error_login ()
 void
 entrada ()
 {
-  char *opciones[] = { "Administrativa</B>", "Técnica</B>", "Salir</B>" };
+  char *opciones[] = { "ADMINISTRATIVA</B>", "TECNICA</B>", "SALIR</B>" };
   //  endCDK();
   initscr ();
   curs_set (0);
@@ -257,7 +257,7 @@ entrada ()
 					    CENTER,
 					    TOP,
 					    4, COLS,
-					    "<C></32>Elegir Area\n</B/!32>",
+					    "<C></32>SELECCIONAR AREA\n</B/!32>",
 					    1, 3,
 					    opciones, 3, A_REVERSE,
 					    TRUE, FALSE);

@@ -34,15 +34,15 @@ menu_clientes ()
 	  baja_cliente ();
 	  break;
 	case 2:
-	  popupLabel (pantalla, opciones, 3);
+	  //  popupLabel (pantalla, opciones, 3);
 	  //        mvwaddstr(cdkScreen->window,2,2,"dios");
-
-
-	  break;
-	case 3:
 
 	  destroyCDKScroll (scroll);
 	  mod_cliente ();
+	  break;
+	case 3:
+	  destroyCDKScroll (scroll);
+
 	  break;
 	  //  exit (0);
 

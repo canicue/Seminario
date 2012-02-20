@@ -16,7 +16,7 @@ CDKSCROLL *lista;
 void
 alta_RMP ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("RMP");
+  matriz = (CDKMATRIX *) formulario_alta ("RMP", NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -48,7 +48,7 @@ baja_RMP ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("RMP", "producto_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -90,7 +90,7 @@ mod_RMP ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("RMP", "producto_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);
