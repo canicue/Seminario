@@ -15,6 +15,11 @@ int prueba_preprocess (EObjectType cdkType GCC_UNUSED, void *object,
 		       void *clientData GCC_UNUSED, chtype input);
 int driver_borrado (EObjectType cdktype GCC_UNUSED, void *object GCC_UNUSED,
 		    void *clientData, chtype key);
+int  driver_referencias_insumo(EObjectType cdktype GCC_UNUSED,
+		void *object GCC_UNUSED, void *clientData, chtype input);
+int
+driver_referencias_producto_terminado(EObjectType cdktype GCC_UNUSED,
+		void *object GCC_UNUSED, void *clientData, chtype input);
 #ifdef	__cplusplus
 extern "C"
 {

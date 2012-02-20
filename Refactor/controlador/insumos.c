@@ -15,7 +15,7 @@ CDKSCROLL *lista;
 void
 alta_insumo ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("insumo", NULL);
+  matriz = (CDKMATRIX *) formulario_alta ("insumo",driver_referencias_insumo);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)

@@ -15,7 +15,7 @@ CDKSCROLL *lista;
 void
 alta_proveedor ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("proveedor", prueba_preprocess);
+  matriz = (CDKMATRIX *) formulario_alta ("proveedor",NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
