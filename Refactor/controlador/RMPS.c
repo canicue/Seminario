@@ -1,7 +1,8 @@
 
 #include "RMPS.h"
 #include "callbacks.h"
-#include "drivers.h"
+#include "drivers_pre.h"
+#include "drivers_post.h"
 #include "persistencia.h"
 #include <matrix.h>
 #include <scroll.h>
@@ -16,7 +17,7 @@ CDKSCROLL *lista;
 void
 alta_RMP ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("RMP", NULL);
+  matriz = (CDKMATRIX *) formulario_alta ("RMP", NULL, NULL);
   setear_id (matriz);
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)

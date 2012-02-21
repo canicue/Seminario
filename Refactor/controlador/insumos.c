@@ -1,6 +1,6 @@
 #include "insumos.h"
 #include "callbacks.h"
-#include "drivers.h"
+#include "drivers_pre.h"
 #include "persistencia.h"
 #include <matrix.h>
 #include <scroll.h>
@@ -16,7 +16,7 @@ CDKSCROLL *lista;
 void
 alta_insumo ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("insumo", driver_insumo_pre);
+  matriz = (CDKMATRIX *) formulario_alta ("insumo", driver_insumo_pre, NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)

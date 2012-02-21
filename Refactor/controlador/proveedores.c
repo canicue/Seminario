@@ -1,6 +1,7 @@
 #include "proveedores.h"
 #include "callbacks.h"
-#include "drivers.h"
+#include "drivers_pre.h"
+#include "drivers_post.h"
 #include "persistencia.h"
 #include <matrix.h>
 #include <scroll.h>
@@ -15,7 +16,9 @@ CDKSCROLL *lista;
 void
 alta_proveedor ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("proveedor", NULL);
+  matriz =
+    (CDKMATRIX *) formulario_alta ("proveedor", NULL,
+				   driver_proveedores_post);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -90,7 +93,8 @@ mod_proveedor ()
 	(CDKMATRIX *) formulario_modificacion ("proveedor", "proveedor_id",
 					       chtype2Char (lista->item
 							    [elegido]),
-					       driver_proveedores);
+					       driver_proveedores,
+					       driver_proveedores_post);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

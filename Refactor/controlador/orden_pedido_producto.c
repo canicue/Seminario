@@ -1,7 +1,8 @@
 
 #include "orden_pedido_producto.h"
 #include "callbacks.h"
-#include "drivers.h"
+#include "drivers_pre.h"
+#include "drivers_post.h"
 #include "persistencia.h"
 #include <matrix.h>
 #include <scroll.h>
@@ -18,7 +19,7 @@ alta_orden_pedido_producto ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("orden_pedido_producto", "orden_pedido_id",
-				   driver_orden_pedido_pre);
+				   driver_orden_pedido_pre, NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)

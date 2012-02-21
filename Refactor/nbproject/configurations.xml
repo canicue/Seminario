@@ -11,7 +11,8 @@
       <itemPath>datos/consultas.h</itemPath>
       <itemPath>datos/datos.h</itemPath>
       <itemPath>widgets/dialogos.h</itemPath>
-      <itemPath>controlador/drivers.h</itemPath>
+      <itemPath>controlador/drivers_post.h</itemPath>
+      <itemPath>controlador/drivers_pre.h</itemPath>
       <itemPath>widgets/formularios.h</itemPath>
       <itemPath>controlador/insumos.h</itemPath>
       <itemPath>widgets/listados.h</itemPath>
@@ -41,7 +42,8 @@
       <itemPath>controlador/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>
       <itemPath>widgets/dialogos.c</itemPath>
-      <itemPath>controlador/drivers.c</itemPath>
+      <itemPath>controlador/drivers_post.c</itemPath>
+      <itemPath>controlador/drivers_pre.c</itemPath>
       <itemPath>widgets/formularios.c</itemPath>
       <itemPath>controlador/insumos.c</itemPath>
       <itemPath>widgets/listados.c</itemPath>

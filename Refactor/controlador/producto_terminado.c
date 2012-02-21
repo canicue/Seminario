@@ -1,6 +1,7 @@
 #include "producto_terminado.h"
 #include "callbacks.h"
-#include "drivers.h"
+#include "drivers_pre.h"
+#include "drivers_post.h"
 #include "persistencia.h"
 #include <matrix.h>
 #include <scroll.h>
@@ -17,7 +18,7 @@ alta_producto_terminado ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("producto_terminado",
-				   driver_producto_terminado_pre);
+				   driver_producto_terminado_pre, NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)

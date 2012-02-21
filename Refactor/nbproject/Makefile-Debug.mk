@@ -33,27 +33,28 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/controlador/insumos.o \
 	${OBJECTDIR}/widgets/archivos.o \
+	${OBJECTDIR}/controlador/drivers_pre.o \
 	${OBJECTDIR}/controlador/utils.o \
 	${OBJECTDIR}/controlador/producto_terminado.o \
 	${OBJECTDIR}/controlador/tecnicos.o \
 	${OBJECTDIR}/widgets/dialogos.o \
-	${OBJECTDIR}/widgets/menu.o \
-	${OBJECTDIR}/controlador/orden_pedido_producto.o \
-	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/controlador/callbacks.o \
 	${OBJECTDIR}/widgets/formularios.o \
-	${OBJECTDIR}/controlador/clientes.o \
-	${OBJECTDIR}/widgets/listados.o \
 	${OBJECTDIR}/pruebas.o \
-	${OBJECTDIR}/controlador/drivers.o \
-	${OBJECTDIR}/controlador/principal.o \
 	${OBJECTDIR}/controlador/orden_produccion.o \
 	${OBJECTDIR}/controlador/RMPS.o \
 	${OBJECTDIR}/controlador/proveedores.o \
 	${OBJECTDIR}/datos/datos.o \
+	${OBJECTDIR}/controlador/drivers_post.o \
 	${OBJECTDIR}/widgets/templates.o \
 	${OBJECTDIR}/controlador/persistencia.o \
-	${OBJECTDIR}/controlador/programa_produccion.o
+	${OBJECTDIR}/controlador/programa_produccion.o \
+	${OBJECTDIR}/widgets/menu.o \
+	${OBJECTDIR}/controlador/orden_pedido_producto.o \
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/controlador/clientes.o \
+	${OBJECTDIR}/widgets/listados.o \
+	${OBJECTDIR}/controlador/principal.o
 
 # C Compiler Flags
 CFLAGS=
@@ -89,6 +90,11 @@ ${OBJECTDIR}/widgets/archivos.o: nbproject/Makefile-${CND_CONF}.mk widgets/archi
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/archivos.o widgets/archivos.c
 
+${OBJECTDIR}/controlador/drivers_pre.o: nbproject/Makefile-${CND_CONF}.mk controlador/drivers_pre.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/drivers_pre.o controlador/drivers_pre.c
+
 ${OBJECTDIR}/controlador/utils.o: nbproject/Makefile-${CND_CONF}.mk controlador/utils.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
@@ -109,21 +115,6 @@ ${OBJECTDIR}/widgets/dialogos.o: nbproject/Makefile-${CND_CONF}.mk widgets/dialo
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/dialogos.o widgets/dialogos.c
 
-${OBJECTDIR}/widgets/menu.o: nbproject/Makefile-${CND_CONF}.mk widgets/menu.c 
-	${MKDIR} -p ${OBJECTDIR}/widgets
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/menu.o widgets/menu.c
-
-${OBJECTDIR}/controlador/orden_pedido_producto.o: nbproject/Makefile-${CND_CONF}.mk controlador/orden_pedido_producto.c 
-	${MKDIR} -p ${OBJECTDIR}/controlador
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/orden_pedido_producto.o controlador/orden_pedido_producto.c
-
-${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
-
 ${OBJECTDIR}/controlador/callbacks.o: nbproject/Makefile-${CND_CONF}.mk controlador/callbacks.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
@@ -134,30 +125,10 @@ ${OBJECTDIR}/widgets/formularios.o: nbproject/Makefile-${CND_CONF}.mk widgets/fo
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/formularios.o widgets/formularios.c
 
-${OBJECTDIR}/controlador/clientes.o: nbproject/Makefile-${CND_CONF}.mk controlador/clientes.c 
-	${MKDIR} -p ${OBJECTDIR}/controlador
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/clientes.o controlador/clientes.c
-
-${OBJECTDIR}/widgets/listados.o: nbproject/Makefile-${CND_CONF}.mk widgets/listados.c 
-	${MKDIR} -p ${OBJECTDIR}/widgets
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/listados.o widgets/listados.c
-
 ${OBJECTDIR}/pruebas.o: nbproject/Makefile-${CND_CONF}.mk pruebas.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/pruebas.o pruebas.c
-
-${OBJECTDIR}/controlador/drivers.o: nbproject/Makefile-${CND_CONF}.mk controlador/drivers.c 
-	${MKDIR} -p ${OBJECTDIR}/controlador
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/drivers.o controlador/drivers.c
-
-${OBJECTDIR}/controlador/principal.o: nbproject/Makefile-${CND_CONF}.mk controlador/principal.c 
-	${MKDIR} -p ${OBJECTDIR}/controlador
-	${RM} $@.d
-	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/principal.o controlador/principal.c
 
 ${OBJECTDIR}/controlador/orden_produccion.o: nbproject/Makefile-${CND_CONF}.mk controlador/orden_produccion.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
@@ -179,6 +150,11 @@ ${OBJECTDIR}/datos/datos.o: nbproject/Makefile-${CND_CONF}.mk datos/datos.c
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/datos.o datos/datos.c
 
+${OBJECTDIR}/controlador/drivers_post.o: nbproject/Makefile-${CND_CONF}.mk controlador/drivers_post.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/drivers_post.o controlador/drivers_post.c
+
 ${OBJECTDIR}/widgets/templates.o: nbproject/Makefile-${CND_CONF}.mk widgets/templates.c 
 	${MKDIR} -p ${OBJECTDIR}/widgets
 	${RM} $@.d
@@ -193,6 +169,36 @@ ${OBJECTDIR}/controlador/programa_produccion.o: nbproject/Makefile-${CND_CONF}.m
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
 	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/programa_produccion.o controlador/programa_produccion.c
+
+${OBJECTDIR}/widgets/menu.o: nbproject/Makefile-${CND_CONF}.mk widgets/menu.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/menu.o widgets/menu.c
+
+${OBJECTDIR}/controlador/orden_pedido_producto.o: nbproject/Makefile-${CND_CONF}.mk controlador/orden_pedido_producto.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/orden_pedido_producto.o controlador/orden_pedido_producto.c
+
+${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/controlador/clientes.o: nbproject/Makefile-${CND_CONF}.mk controlador/clientes.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/clientes.o controlador/clientes.c
+
+${OBJECTDIR}/widgets/listados.o: nbproject/Makefile-${CND_CONF}.mk widgets/listados.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/listados.o widgets/listados.c
+
+${OBJECTDIR}/controlador/principal.o: nbproject/Makefile-${CND_CONF}.mk controlador/principal.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -g -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/principal.o controlador/principal.c
 
 # Subprojects
 .build-subprojects:

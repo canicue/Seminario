@@ -1,5 +1,6 @@
 #include "tecnicos.h"
-#include "drivers.h"
+#include "drivers_pre.h"
+#include "drivers_post.h"
 #include "persistencia.h"
 #include <scroll.h>
 
