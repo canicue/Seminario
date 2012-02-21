@@ -116,3 +116,19 @@ guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
 
 
 }
+
+char *
+buscar_ultimo (char *tabla, char *nombre, void *callback)
+{
+  char *ultimo;
+  conectar (BASE);
+  char consulta[256];
+  sprintf (consulta, ULTIMO_ID, nombre, tabla, nombre);
+  //printf(consulta);
+  sqlite3_exec (conexion, consulta, callback, ultimo, &error);
+  // printf ("aaaaaaaa---->%s\n", ultimo);
+
+  desconectar ();
+  return ultimo;
+  return "C11";
+}

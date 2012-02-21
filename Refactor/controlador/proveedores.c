@@ -15,7 +15,7 @@ CDKSCROLL *lista;
 void
 alta_proveedor ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("proveedor",NULL);
+  matriz = (CDKMATRIX *) formulario_alta ("proveedor", NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -27,7 +27,7 @@ alta_proveedor ()
 
     }
 
-
+  activateCDKMatrix (matriz, 0);
   destroyCDKMatrix (matriz);
 
 }
@@ -47,7 +47,7 @@ baja_proveedor ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("proveedor", "proveedor_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -89,7 +89,8 @@ mod_proveedor ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("proveedor", "proveedor_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]),
+					       driver_proveedores);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

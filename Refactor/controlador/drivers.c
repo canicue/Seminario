@@ -1,6 +1,9 @@
 #include <matrix.h>
+
 #include <scroll.h>
 #include <buttonbox.h>
+
+
 #include "drivers.h"
 CDKSCROLL *lista;
 int
@@ -65,67 +68,189 @@ driver_borrado (EObjectType cdktype GCC_UNUSED,
   injectCDKButtonbox (buttonbox, key);
   return (TRUE);
 }
-int 
-driver_referencias_insumo(EObjectType cdktype GCC_UNUSED,
-		void *object GCC_UNUSED, void *clientData, chtype input) {
+
+int
+driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
+		   void *object GCC_UNUSED, void *clientData, chtype input)
+{
+
 
   CDKMATRIX *matriz = (CDKMATRIX *) object;
 
-
-  if (getCDKMatrixRow (matriz) == 14)
+  int row = getCDKMatrixRow (matriz);
+  int elegido;
+  if (input != KEY_UP && input != KEY_DOWN)
     {
-
-      if (input == 'g')
+      switch (row)
 	{
+	case 14:
+	  lista = (CDKSCROLL *) listado ("proveedor", "proveedor_id");
 
-	  endCDK ();
-	  printf ("mierda");
-	  exit (0);
+	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
+	  elegido = activateCDKScroll (lista, 0);
+	  setCDKMatrixCell (matriz, 5, 1,
+			    (char *) chtype2Char (lista->item[elegido]));
+	  drawCDKMatrix (matriz, TRUE);
+
+
+
+	  break;
+	case 13:
+	  lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
+
+	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
+	  elegido = activateCDKScroll (lista, 0);
+	  setCDKMatrixCell (matriz, 5, 1,
+			    (char *) chtype2Char (lista->item[elegido]));
+	  drawCDKMatrix (matriz, TRUE);
+
+
+	  break;
+	case 10:
+
+	  break;
+
+
 
 
 	}
-    }
 
+    }
 
 
   return 1;
 
 }
+
 int
-driver_referencias_producto_terminado(EObjectType cdktype GCC_UNUSED,
-		void *object GCC_UNUSED, void *clientData, chtype input) {
+driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
+			       void *object GCC_UNUSED,
+			       void *clientData, chtype input)
+{
 
   CDKMATRIX *matriz = (CDKMATRIX *) object;
 
-  int row=getCDKMatrixRow (matriz);
-  switch (row)
-  {
-      case 5:
-     lista=(CDKSCROLL*)listado("RMP","producto_id");
-    
-     moveCDKScroll (
-                      lista,
-                       CENTER,
-                       CENTER,
-                      FALSE,
-                     TRUE);
- int elegido=activateCDKScroll(lista,0);
+  int row = getCDKMatrixRow (matriz);
+  int elegido;
+  if (input != KEY_UP && input != KEY_DOWN)
+    {
+      switch (row)
+	{
+	case 5:
+	  lista = (CDKSCROLL *) listado ("insumo", "IR");
 
- drawCDKMatrix(matriz,TRUE);
-
-
-
-          break;
-      case 6:
-          break;
-      case 10:
-
-          break;
+	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
+	  elegido = activateCDKScroll (lista, 0);
+	  setCDKMatrixCell (matriz, 5, 1,
+			    (char *) chtype2Char (lista->item[elegido]));
+	  drawCDKMatrix (matriz, TRUE);
 
 
 
+	  break;
+	case 6:
+	  lista = (CDKSCROLL *) listado ("RMP", "producto_id");
 
-  }
+	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
+	  elegido = activateCDKScroll (lista, 0);
+	  setCDKMatrixCell (matriz, 5, 1,
+			    (char *) chtype2Char (lista->item[elegido]));
+	  drawCDKMatrix (matriz, TRUE);
+
+
+	  break;
+	case 10:
+
+	  break;
+
+
+
+
+	}
+
+    }
+  return 1;
+
+}
+
+int
+driver_proveedores (EObjectType cdktype GCC_UNUSED,
+		    void *object GCC_UNUSED, void *clientData, chtype input)
+{
+  CDKMATRIX *matriz = (CDKMATRIX *) object;
+
+
+  if (input != KEY_DOWN || input != KEY_UP)
+    {
+
+      if (matriz->crow == 1)
+	{
+
+	  char *msg[] = { "<C>NO", "<C>EDITABLE" };
+	  popupLabel (ScreenOf (matriz), msg, 2);
+
+	  //  setCDKMatrixCell(matriz,1,1,getCDKMatrixCell(matriz,1,1));
+
+
+	}
+    }
+  return 1;
+
+}
+
+
+
+
+
+
+int
+driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
+			 void *object GCC_UNUSED, void *clientData,
+			 chtype input)
+{
+
+
+  CDKMATRIX *matriz = (CDKMATRIX *) object;
+
+  int row = getCDKMatrixRow (matriz);
+  int elegido;
+  if (input != KEY_UP && input != KEY_DOWN)
+    {
+      switch (row)
+	{
+	case 2:
+	  lista = (CDKSCROLL *) listado ("cliente", "cliente_id");
+
+	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
+	  elegido = activateCDKScroll (lista, 0);
+	  setCDKMatrixCell (matriz, 5, 1,
+			    (char *) chtype2Char (lista->item[elegido]));
+	  drawCDKMatrix (matriz, TRUE);
+
+
+
+	  break;
+	case 3:
+	  lista = (CDKSCROLL *) listado ("producto", "producto_id");
+
+	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
+	  elegido = activateCDKScroll (lista, 0);
+	  setCDKMatrixCell (matriz, 5, 1,
+			    (char *) chtype2Char (lista->item[elegido]));
+	  drawCDKMatrix (matriz, TRUE);
+
+
+	  break;
+	case 10:
+
+	  break;
+
+
+
+
+	}
+
+    }
 
 
   return 1;

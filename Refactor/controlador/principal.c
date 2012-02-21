@@ -6,6 +6,7 @@
 #include "programa_produccion.h"
 #include "orden_pedido_producto.h"
 #include "RMPS.h"
+#include "tecnicos.h"
 
 int selection;
 char *buttons[] = { " OK ", " Cancel " };
@@ -433,7 +434,10 @@ area_administrativa ()
 	  destroyCDKScroll (scroll);
 	  eraseCDKScreen (pantalla);
 	  refreshCDKScreen (pantalla);
-	  menu_tecnicos ();
+
+	  menu_abm ("TECNICOS", alta_tecnico, baja_tecnico, mod_tecnico);
+
+	  //menu_tecnicos ();
 	  //popupLabel (pantalla, opciones, 3);
 
 	  break;
@@ -442,7 +446,9 @@ area_administrativa ()
 	  destroyCDKScroll (scroll);
 	  eraseCDKScreen (pantalla);
 	  refreshCDKScreen (pantalla);
-	  menu_clientes ();
+
+	  menu_abm ("CLIENTES", alta_cliente, baja_cliente, mod_cliente);
+	  // menu_clientes ();
 	  //popupLabel (pantalla, opciones, 3);
 
 	  break;

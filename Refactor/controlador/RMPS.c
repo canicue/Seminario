@@ -17,7 +17,7 @@ void
 alta_RMP ()
 {
   matriz = (CDKMATRIX *) formulario_alta ("RMP", NULL);
-
+  setear_id (matriz);
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
     {
@@ -28,7 +28,7 @@ alta_RMP ()
 
     }
 
-
+  activateCDKMatrix (matriz, 0);
   destroyCDKMatrix (matriz);
 
 }

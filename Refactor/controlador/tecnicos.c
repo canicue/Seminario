@@ -3,13 +3,18 @@
 #include "persistencia.h"
 #include <scroll.h>
 
+
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
 CDKSCROLL *lista;
 void
 alta_tecnico ()
 {
+
   matriz = (CDKMATRIX *) formulario_alta ("tecnico", NULL);
+  setear_id (matriz);
+
+  activateCDKMatrix (matriz, 0);
 
   if (matriz->exitType == vNORMAL)
     {
@@ -19,7 +24,7 @@ alta_tecnico ()
 
 
     }
-
+  activateCDKMatrix (matriz, 0);
 
   destroyCDKMatrix (matriz);
 
@@ -35,17 +40,17 @@ baja_tecnico ()
 //  activateCDKScroll (lista, 0);
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "cliente_id";
+  char *columna = "tecnico_id";
   char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", columna);
+  CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("cliente", "cliente_id",
+	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido]), NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -98,16 +103,17 @@ mod_tecnico ()
   // CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
 //  activateCDKScroll (lista, 0);
 
-  lista = (CDKSCROLL *) listado ("proveedor", "provedor_id");
+  lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("proveedor", "proveedor_id",
+	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
 					       chtype2Char (lista->item
-							    [elegido]));
+							    [elegido], NULL),
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

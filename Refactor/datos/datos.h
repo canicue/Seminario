@@ -8,8 +8,11 @@
 #ifndef _DATOS_H
 #define	_DATOS_H
 #include "consultas.h"
+
 #include <sqlite3.h>
-#define BASE "base.sqlite"
+
+#define BASE "base_2.sqlite"
+//#define BASE "base.sqlite"
 sqlite3 *conexion;
 sqlite3 *conectar (char *nombre);
 char *error;
@@ -22,6 +25,7 @@ void listar_registros (char *tabla, void *callback, void *extra);
 void ver_tabla (char *nombre, int limite, char *visible, void *callback,
 		void *extra);
 int guardar_cosa (char *tabla, char **columnas, char **valores, int nro);
+char *buscar_ultimo (char *tabla, char *nombre, void *callback);
 #ifdef	__cplusplus
 extern "C"
 {

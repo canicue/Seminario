@@ -20,7 +20,7 @@ int colwidth[10], colvalue[10];
 
 CDKMATRIX *formulario_alta (char *tabla, PROCESSFN prep);
 CDKMATRIX *formulario_modificacion (char *tabla, char *columna, char *valor,
-				    PROCESSFN * prep);
+				    PROCESSFN prep);
 #ifdef	__cplusplus
 extern "C"
 {

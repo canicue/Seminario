@@ -12,6 +12,7 @@
 #define LISTAR_REGISTROS "SELECT * FROM %s "
 #define MODIFICAR_REGISTRO_CHAR "UPDATE %s SET %s='%s' WHERE %s='%s'"
 #define  VER_TABLA "SELECT * FROM %s LIMIT=%d "
+#define ULTIMO_ID "SELECT %s FROM %s ORDER BY %s DESC LIMIT 1"
 //CLIENTES
 
 #define AGREGAR_CLIENTE "INSERT INTO CLIENTE(cliente_id,nombre,telefono,direccion,email) VALUES('%s','%s','%s','%s','%s')"

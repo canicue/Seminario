@@ -9,13 +9,14 @@
 #include <cdk.h>
 
 
+
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
 CDKSCROLL *lista;
 void
 alta_insumo ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("insumo",driver_referencias_insumo);
+  matriz = (CDKMATRIX *) formulario_alta ("insumo", driver_insumo_pre);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -26,7 +27,7 @@ alta_insumo ()
 
 
     }
-
+  activateCDKMatrix (matriz, 0);
 
   destroyCDKMatrix (matriz);
 

@@ -1,3 +1,9 @@
+
+
+
+#include <cdk/cdk.h>
+#include <cdk/matrix.h>
+
 #include "callbacks.h"
 
 int
@@ -5,9 +11,11 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
 {
   char tmp[255];
   char *formato = "<L></B>%s";
-  char *coltitle[10], *rowtitle[10];
+  char *coltitle[argc], *rowtitle[argc];
   //  char *mesg[10];
-  int colwidth[10], colvalue[10];
+  int colwidth[argc], colvalue[argc];
+  colvalue[3] = vUCHAR;
+
   int i = 0;
   //char *titulo="<L></B/5>%s";
   char titulo[255];
@@ -17,6 +25,8 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
   pantalla = initCDKScreen (stdscr);
   // CDKMATRIX *matriz;
   sprintf (titulo, formato, nombre);
+  // armar_prefijo(nombre,argv[0]);
+
   for (i = 0; i < argc; i++)
     {
       sprintf (tmp, formato, azColName[i]);
@@ -25,12 +35,24 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
       //        printf(tmp);
       //      set_row(i+1,azColName[i]);
     }
+
+
+  //setCDKMatrixCell (matriz,1,1,argv[0]);
   set_col (1, 44, titulo);	// habia un 77 pero no anda en netbook
+  // set_readonly(1,44,titulo);
+
   matriz = newCDKMatrix (pantalla,
-			 CENTER, CENTER,
-			 argc, 1, argc, 1,
-			 "", rowtitle, coltitle, colwidth, colvalue, -1, -1,
-			 '.', COL, TRUE, FALSE, FALSE);
+			 CENTER,
+			 CENTER,
+			 argc,
+			 1,
+			 argc,
+			 1,
+			 "",
+			 rowtitle,
+			 coltitle,
+			 colwidth,
+			 colvalue, -1, -1, '.', COL, TRUE, FALSE, FALSE);
   //activateCDKMatrix(matriz, 0);
   //          for(i=0;i<argc;i++)
   //        {
@@ -56,13 +78,14 @@ call_modificacion (void *nombre, int argc, char **argv, char **azColName)
 
   call_alta (nombre, argc, argv, azColName);
 
+//  char **copia=copyCharList(argv);
 
   for (i = 0; i < argc; i++)
     {
-
+      // i==0?armar_prefijo(nombre,argv[0]):
       //  printf("%s= %s\n",azColName[i],argv[i]) ;
+      //setCDKMatrixCell (matriz, i + 1, 1, copia[i]);
       setCDKMatrixCell (matriz, i + 1, 1, argv[i]);
-
 
     }
 
@@ -105,6 +128,17 @@ call_borrado (void *nombre, int argc, char **argv, char **azColName)
 			  COLOR_PAIR (2) | A_REVERSE, TRUE, TRUE, FALSE);
 
 
+
+
+}
+
+int
+call_id (void *ultimo, int argc, char **argv, char **azColName)
+{
+
+  strcpy (ultimo, argv[0]);
+  // printf(ultimo);
+  return 0;
 
 
 }

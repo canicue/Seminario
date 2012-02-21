@@ -6,17 +6,11 @@
  */
 
 #include <stdio.h>
-
 #include "controlador/drivers.h"
-
 #include "pruebas.h"
-
 #include "widgets/dialogos.h"
-
 #include<cdk.h>
-#include <cdk/matrix.h>
 #include <ncursesw/ncurses.h>
-
 #include "controlador/principal.h"
 #include "widgets/formularios.h"
 #include "controlador/clientes.h"
@@ -71,7 +65,7 @@ main (int argc, char **argv)
   //  prueba();
 
 
-  // vale ();
+   vale ();
 
   //sin login
 
@@ -83,10 +77,17 @@ main (int argc, char **argv)
 
   // bindCDKObject(vMATRIX,matriz,'g',prueba_preprocess,0);
 
-  while (TRUE)
+
+  //  buscar_ultimo("cliente","cliente_id",call_id);
+//    generar_id("cC","cliente","cliente_id");
+
+  //   printf("%d",strlen("dios"));
+  //  printf ("%s-----", generar_id ("C", "cliente", "cliente_id"));
+
+ /* while (TRUE)
     {
       entrada ();
-    }
+    }*/
   // test ();
   endCDK ();
   return (EXIT_SUCCESS);

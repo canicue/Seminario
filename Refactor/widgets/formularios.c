@@ -12,7 +12,7 @@ formulario_alta (char *tabla, PROCESSFN prep)
 //printf(consulta);
   sqlite3_exec (conexion, consulta, call_alta, tabla, &error);
   setCDKMatrixPreProcess (matriz, (PROCESSFN) prep, 0);
-  activateCDKMatrix (matriz, 0);
+  // activateCDKMatrix (matriz, 0);
 
   desconectar ();
   return matriz;
@@ -21,7 +21,7 @@ formulario_alta (char *tabla, PROCESSFN prep)
 
 CDKMATRIX *
 formulario_modificacion (char *tabla, char *columna, char *valor,
-			 PROCESSFN * prep)
+			 PROCESSFN prep)
 {
 
   char *error;
@@ -33,6 +33,9 @@ formulario_modificacion (char *tabla, char *columna, char *valor,
   sqlite3_exec (conexion, consulta, call_modificacion, tabla, &error);
 //printf("%s------------",error);
   desconectar ();
+  char *aa[] = { "asdf" };
+
+  setCDKMatrixPreProcess (matriz, prep, aa);
   return matriz;
 
 }

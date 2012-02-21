@@ -14,9 +14,12 @@ int call_alta (void *nombre, int argc, char **argv, char **azColName);
 int call_modificacion (void *nombre, int argc, char **argv, char **azColName);
 int call_lista (void *nombre, int argc, char **argv, char **azColName);
 int call_borrado (void *nombre, int argc, char **argv, char **azColName);
-
+int call_id (void *ultimo, int argc, char **argv, char **azColName);
 #define set_col(n, width, string) \
-coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vMIXED	//vUMIXED
+coltitle[n] = string;   colwidth[n] = width	//; colvalue[n] = vVIEWONLY //vUMIXED
+#define set_readonly(n, width, string) \
+coltitle[n] = string;   colwidth[n] = width ; colvalue[n] = vVIEWONLY
+
 #define set_row(n, string) \
    rowtitle[n] = "</B/6>" string
 

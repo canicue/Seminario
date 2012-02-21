@@ -33,6 +33,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/controlador/insumos.o \
 	${OBJECTDIR}/widgets/archivos.o \
+	${OBJECTDIR}/controlador/utils.o \
 	${OBJECTDIR}/controlador/producto_terminado.o \
 	${OBJECTDIR}/controlador/tecnicos.o \
 	${OBJECTDIR}/widgets/dialogos.o \
@@ -50,6 +51,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/controlador/RMPS.o \
 	${OBJECTDIR}/controlador/proveedores.o \
 	${OBJECTDIR}/datos/datos.o \
+	${OBJECTDIR}/widgets/templates.o \
 	${OBJECTDIR}/controlador/persistencia.o \
 	${OBJECTDIR}/controlador/programa_produccion.o
 
@@ -86,6 +88,11 @@ ${OBJECTDIR}/widgets/archivos.o: nbproject/Makefile-${CND_CONF}.mk widgets/archi
 	${MKDIR} -p ${OBJECTDIR}/widgets
 	${RM} $@.d
 	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/archivos.o widgets/archivos.c
+
+${OBJECTDIR}/controlador/utils.o: nbproject/Makefile-${CND_CONF}.mk controlador/utils.c 
+	${MKDIR} -p ${OBJECTDIR}/controlador
+	${RM} $@.d
+	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/utils.o controlador/utils.c
 
 ${OBJECTDIR}/controlador/producto_terminado.o: nbproject/Makefile-${CND_CONF}.mk controlador/producto_terminado.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
@@ -171,6 +178,11 @@ ${OBJECTDIR}/datos/datos.o: nbproject/Makefile-${CND_CONF}.mk datos/datos.c
 	${MKDIR} -p ${OBJECTDIR}/datos
 	${RM} $@.d
 	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/datos/datos.o datos/datos.c
+
+${OBJECTDIR}/widgets/templates.o: nbproject/Makefile-${CND_CONF}.mk widgets/templates.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/templates.o widgets/templates.c
 
 ${OBJECTDIR}/controlador/persistencia.o: nbproject/Makefile-${CND_CONF}.mk controlador/persistencia.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador

@@ -15,7 +15,9 @@ CDKSCROLL *lista;
 void
 alta_producto_terminado ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("producto_terminado", driver_referencias_producto_terminado);
+  matriz =
+    (CDKMATRIX *) formulario_alta ("producto_terminado",
+				   driver_producto_terminado_pre);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -27,6 +29,7 @@ alta_producto_terminado ()
 
     }
 
+  activateCDKMatrix (matriz, 0);
 
   destroyCDKMatrix (matriz);
 
