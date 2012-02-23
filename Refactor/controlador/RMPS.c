@@ -17,8 +17,8 @@ CDKSCROLL *lista;
 void
 alta_RMP ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("RMP", NULL, NULL);
-  setear_id (matriz);
+  matriz = (CDKMATRIX *) formulario_alta ("RMP", "producto_id", NULL, NULL);
+//  setear_id (matriz);
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
     {
@@ -41,7 +41,7 @@ baja_RMP ()
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "producto_id";
   char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("RMP", columna);
+  lista = (CDKSCROLL *) listado ("RMP", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
@@ -81,17 +81,18 @@ baja_RMP ()
 void
 mod_RMP ()
 {
-
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("RMP", "provedor_id");
+  char *columna = "producto_id";
+  lista = (CDKSCROLL *) listado ("RMP", columna);
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("RMP", "producto_id",
+	(CDKMATRIX *) formulario_modificacion ("RMP", columna,
 					       chtype2Char (lista->item
-							    [elegido]), NULL);
+							    [elegido]), NULL,
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

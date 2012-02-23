@@ -48,9 +48,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/controlador/drivers_post.o \
 	${OBJECTDIR}/widgets/templates.o \
 	${OBJECTDIR}/controlador/persistencia.o \
-	${OBJECTDIR}/controlador/programa_produccion.o \
+	${OBJECTDIR}/controlador/orden_pedido_proveedor.o \
 	${OBJECTDIR}/widgets/menu.o \
 	${OBJECTDIR}/controlador/orden_pedido_producto.o \
+	${OBJECTDIR}/widgets/calendario.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/controlador/clientes.o \
 	${OBJECTDIR}/widgets/listados.o \
@@ -165,10 +166,10 @@ ${OBJECTDIR}/controlador/persistencia.o: nbproject/Makefile-${CND_CONF}.mk contr
 	${RM} $@.d
 	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/persistencia.o controlador/persistencia.c
 
-${OBJECTDIR}/controlador/programa_produccion.o: nbproject/Makefile-${CND_CONF}.mk controlador/programa_produccion.c 
+${OBJECTDIR}/controlador/orden_pedido_proveedor.o: nbproject/Makefile-${CND_CONF}.mk controlador/orden_pedido_proveedor.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
-	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/programa_produccion.o controlador/programa_produccion.c
+	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/orden_pedido_proveedor.o controlador/orden_pedido_proveedor.c
 
 ${OBJECTDIR}/widgets/menu.o: nbproject/Makefile-${CND_CONF}.mk widgets/menu.c 
 	${MKDIR} -p ${OBJECTDIR}/widgets
@@ -179,6 +180,11 @@ ${OBJECTDIR}/controlador/orden_pedido_producto.o: nbproject/Makefile-${CND_CONF}
 	${MKDIR} -p ${OBJECTDIR}/controlador
 	${RM} $@.d
 	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/controlador/orden_pedido_producto.o controlador/orden_pedido_producto.c
+
+${OBJECTDIR}/widgets/calendario.o: nbproject/Makefile-${CND_CONF}.mk widgets/calendario.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/calendario.o widgets/calendario.c
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
 	${MKDIR} -p ${OBJECTDIR}

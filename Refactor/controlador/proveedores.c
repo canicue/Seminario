@@ -16,7 +16,9 @@ CDKSCROLL *lista;
 void
 alta_proveedor ()
 {
-  matriz = (CDKMATRIX *) formulario_alta ("proveedor", NULL, NULL);
+  matriz =
+    (CDKMATRIX *) formulario_alta ("proveedor", "proveedor_id", NULL,
+				   driver_proveedores_post);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -80,15 +82,15 @@ baja_proveedor ()
 void
 mod_proveedor ()
 {
-
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("proveedor", "provedor_id");
+  char *columna = "proveedor_id";
+  lista = (CDKSCROLL *) listado ("proveedor", columna);
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("proveedor", "proveedor_id",
+	(CDKMATRIX *) formulario_modificacion ("proveedor", columna,
 					       chtype2Char (lista->item
 							    [elegido]),
 					       driver_proveedores,

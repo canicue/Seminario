@@ -12,7 +12,7 @@ listado (char *tabla, char *columna)
   lista_scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 15,
 			       titulo, NULL, 0, TRUE, A_REVERSE, TRUE, FALSE);
 
-  ver_tabla (tabla, NULL, columna, call_lista, NULL);
+  ver_tabla (tabla, NULL, columna, call_lista, columna);
 
   return lista_scroll;
 

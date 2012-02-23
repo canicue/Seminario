@@ -64,7 +64,7 @@ ver_tabla (char *nombre, int limite, char *visible, void *callback,
 	   void *extra)
 {
   conectar (BASE);
-  sqlite3_stmt *stmt;
+//  sqlite3_stmt *stmt;
   char consulta[256];
   sprintf (consulta, LISTAR_REGISTROS, nombre);
   sqlite3_exec (conexion, consulta, callback, extra, &error);
@@ -117,7 +117,8 @@ guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
 
 }
 
-char *
+int tmp;
+int
 buscar_ultimo (char *tabla, char *nombre, void *callback)
 {
   char *ultimo;
@@ -127,8 +128,20 @@ buscar_ultimo (char *tabla, char *nombre, void *callback)
   //printf(consulta);
   sqlite3_exec (conexion, consulta, callback, ultimo, &error);
   // printf ("aaaaaaaa---->%s\n", ultimo);
-
+  tmp = atoi (copyChar (ultimo));
   desconectar ();
-  return ultimo;
-  return "C11";
+  return tmp + 1;
+//  return "C11";
+}
+
+int
+ultimo_id (char *tabla, char *nombre)
+{
+  char consulta[128];
+  char *plantilla = "SELECT max(%s) FROM %s";
+  sprintf (consulta, plantilla, nombre, tabla);
+  conectar (BASE);
+  sqlite3_exec (conexion, consulta, NULL, NULL, &error);
+  return 7;
+
 }

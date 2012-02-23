@@ -1,4 +1,6 @@
 
+
+
 #include "orden_pedido_producto.h"
 #include "callbacks.h"
 #include "drivers_pre.h"
@@ -18,8 +20,8 @@ void
 alta_orden_pedido_producto ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("orden_pedido_producto", "orden_pedido_id",
-				   driver_orden_pedido_pre, NULL);
+    (CDKMATRIX *) formulario_alta ("orden_pedido_producto",
+				   "orden_pedido_producto_id", NULL, NULL);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -30,8 +32,8 @@ alta_orden_pedido_producto ()
 
 
     }
-  activateCDKMatrix (matriz, 0);
 
+activateCDKMatrix(matriz,0);
   destroyCDKMatrix (matriz);
 
 }
@@ -43,7 +45,8 @@ baja_orden_pedido_producto ()
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "orden_pedido_producto_id";
   char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("orden_pedido_producto", columna);
+  CDKSCROLL *lista =
+    (CDKSCROLL *) listado ("orden_pedido_producto", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
@@ -52,8 +55,8 @@ baja_orden_pedido_producto ()
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
 					       "orden_pedido_producto_id",
 					       chtype2Char (lista->item
-							    [elegido]),
-					       driver_orden_pedido_pre);
+							    [elegido]), NULL,
+					       NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -97,8 +100,8 @@ mod_orden_pedido_producto ()
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
 					       "orden_pedido_producto_id",
 					       chtype2Char (lista->item
-							    [elegido]),
-					       driver_orden_pedido_pre);
+							    [elegido]), NULL,
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

@@ -12,10 +12,11 @@ void
 alta_tecnico ()
 {
 
-  matriz = (CDKMATRIX *) formulario_alta ("tecnico", NULL);
-  setear_id (matriz);
+  matriz =
+    (CDKMATRIX *) formulario_alta ("tecnico", "tecnico_id", NULL, NULL);
+//  setear_id (matriz);
 
-  activateCDKMatrix (matriz, 0);
+//  activateCDKMatrix (matriz, 0);
 
   if (matriz->exitType == vNORMAL)
     {

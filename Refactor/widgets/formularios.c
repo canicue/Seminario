@@ -1,16 +1,18 @@
 #include "formularios.h"
 
 CDKMATRIX *
-formulario_alta (char *tabla, PROCESSFN prep, PROCESSFN post)
+formulario_alta (char *tabla, char *identificador, PROCESSFN prep,
+		 PROCESSFN post)
 {
 
   char *error;
   conectar (BASE);
-  char *plantilla = "SELECT * FROM '%s' limit 1";
+  char *plantilla = "SELECT * FROM '%s' ORDER BY %s DESC LIMIT 1";
   char consulta[255];
-  sprintf (consulta, plantilla, tabla);
+  sprintf (consulta, plantilla, tabla, identificador);
 //printf(consulta);
   sqlite3_exec (conexion, consulta, call_alta, tabla, &error);
+//  setCDKMatrixCell(matriz,1,1,(char*)buscar_ultimo(tabla,identificador,call_id));
   setCDKMatrixPreProcess (matriz, (PROCESSFN) prep, 0);
   // activateCDKMatrix (matriz, 0);
   setCDKMatrixPostProcess (matriz, (PROCESSFN) post, 0);

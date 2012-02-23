@@ -3,7 +3,7 @@
 #include "drivers_post.h"
 #include <matrix.h>
 #include <scroll.h>
-#include <ncursesw/ncurses.h>
+
 
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
@@ -24,7 +24,8 @@ void
 alta_cliente ()
 {
   int error;
-  CDKMATRIX *matriz = (CDKMATRIX *) formulario_alta ("cliente", NULL);
+  CDKMATRIX *matriz =
+    (CDKMATRIX *) formulario_alta ("cliente", "cliente_id", NULL, NULL);
   setCDKMatrixPreProcess (matriz, pruebab, 0);
   bindCDKObject (vMATRIX, matriz, '?', pruebab, 0);
   if (matriz->exitType == vNORMAL)

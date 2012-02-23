@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>controlador/RMPS.h</itemPath>
       <itemPath>widgets/archivos.h</itemPath>
+      <itemPath>widgets/calendario.h</itemPath>
       <itemPath>controlador/callbacks.h</itemPath>
       <itemPath>controlador/clientes.h</itemPath>
       <itemPath>datos/consultas.h</itemPath>
@@ -22,7 +23,6 @@
       <itemPath>controlador/persistencia.h</itemPath>
       <itemPath>controlador/principal.h</itemPath>
       <itemPath>controlador/producto_terminado.h</itemPath>
-      <itemPath>controlador/programa_produccion.h</itemPath>
       <itemPath>controlador/proveedores.h</itemPath>
       <itemPath>pruebas.h</itemPath>
       <itemPath>controlador/tecnicos.h</itemPath>
@@ -38,6 +38,7 @@
                    projectFiles="true">
       <itemPath>controlador/RMPS.c</itemPath>
       <itemPath>widgets/archivos.c</itemPath>
+      <itemPath>widgets/calendario.c</itemPath>
       <itemPath>controlador/callbacks.c</itemPath>
       <itemPath>controlador/clientes.c</itemPath>
       <itemPath>datos/datos.c</itemPath>
@@ -50,11 +51,12 @@
       <itemPath>main.c</itemPath>
       <itemPath>widgets/menu.c</itemPath>
       <itemPath>controlador/orden_pedido_producto.c</itemPath>
+      <itemPath>controlador/orden_pedido_proveedor.c</itemPath>
+      <itemPath>controlador/orden_pedido_proveedor.h</itemPath>
       <itemPath>controlador/orden_produccion.c</itemPath>
       <itemPath>controlador/persistencia.c</itemPath>
       <itemPath>controlador/principal.c</itemPath>
       <itemPath>controlador/producto_terminado.c</itemPath>
-      <itemPath>controlador/programa_produccion.c</itemPath>
       <itemPath>controlador/proveedores.c</itemPath>
       <itemPath>pruebas.c</itemPath>
       <itemPath>controlador/tecnicos.c</itemPath>

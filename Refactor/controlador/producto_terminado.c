@@ -18,7 +18,8 @@ alta_producto_terminado ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("producto_terminado",
-				   driver_producto_terminado_pre, NULL);
+				   "producto_terminado_id", NULL,
+				   driver_producto_terminado_post);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)

@@ -6,11 +6,17 @@
  */
 
 #include <stdio.h>
-#include "controlador/drivers.h"
+
+
+
+
 #include "pruebas.h"
+
 #include "widgets/dialogos.h"
+
 #include<cdk.h>
-#include <ncursesw/ncurses.h>
+
+
 #include "controlador/principal.h"
 #include "widgets/formularios.h"
 #include "controlador/clientes.h"
@@ -65,7 +71,7 @@ main (int argc, char **argv)
   //  prueba();
 
 
-   vale ();
+  // vale ();
 
   //sin login
 
@@ -84,10 +90,10 @@ main (int argc, char **argv)
   //   printf("%d",strlen("dios"));
   //  printf ("%s-----", generar_id ("C", "cliente", "cliente_id"));
 
- /* while (TRUE)
+  while (TRUE)
     {
       entrada ();
-    }*/
+    }
   // test ();
   endCDK ();
   return (EXIT_SUCCESS);

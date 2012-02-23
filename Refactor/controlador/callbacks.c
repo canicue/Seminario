@@ -14,8 +14,16 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
   char *coltitle[argc], *rowtitle[argc];
   //  char *mesg[10];
   int colwidth[argc], colvalue[argc];
-  colvalue[3] = vUCHAR;
-
+//  colvalue[3] = vUCHAR;
+//  int id=atoi(copyChar(argv[0]));
+  // id++;
+  //char *elid;
+  //sprintf(elid,"%d",id);
+/*  int j;
+   for (j = 0; j < argc;j++)
+   { printf("%s",argv[j]);}
+   printf("%d",id);
+  exit(0);*/
   int i = 0;
   //char *titulo="<L></B/5>%s";
   char titulo[255];
@@ -61,6 +69,9 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
   //        printf("%s",(char*)nombre);
 
 
+//  int  ultimo=buscar_ultimo(nombre,azColName[0],call_id);
+  // ultimo=ultimo+1;
+  // setCDKMatrixCell(matriz,1,1,(char*)id);
   return 0;
 
 
@@ -106,8 +117,27 @@ int
 call_lista (void *nombre, int argc, char **argv, char **azColName)
 {
 
-  // insertCDKScrollItem(lista_scroll,argv[0]);
-  addCDKScrollItem (lista_scroll, argv[0]);
+
+
+
+
+
+  int tmp, i = 0;
+  for (i = 0; i < argc; i++)
+    {
+      if (!strcmp (((char *) nombre), azColName[i]))
+	{
+
+	  //     endCDK();
+	  //printf("nombre %s",azColName[i]);
+	  //    exit(0);
+	  tmp = i;
+
+	}
+    }
+
+  //insertCDKScrollItem(lista_scroll,nombre);
+  addCDKScrollItem (lista_scroll, argv[tmp]);
 
   return 0;
 

@@ -3,8 +3,9 @@
 #include "proveedores.h"
 #include "insumos.h"
 #include "producto_terminado.h"
-#include "programa_produccion.h"
+#include "orden_produccion.h"
 #include "orden_pedido_producto.h"
+#include "orden_pedido_proveedor.h"
 #include "RMPS.h"
 #include "tecnicos.h"
 
@@ -310,8 +311,8 @@ area_tecnica ()
 
 
   char *opciones[] = { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
-    "Programa de producción</B>",
-    "Orden de pedido</B>", "Volver</B>"
+    "Orden de producción</B>",
+    "Orden de pedido</B>", "Orden pedido proveedor","Volver</B>"
   };
   CDKSCROLL *scroll;
   int elegido;
@@ -319,7 +320,7 @@ area_tecnica ()
     {
       scroll = newCDKScroll (pantalla, 2, 2, CENTER, 10, 45,
 			     "<C>Menu",
-			     opciones, 6, TRUE, A_REVERSE, TRUE, FALSE);
+			     opciones, 7, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
       //
@@ -359,8 +360,8 @@ area_tecnica ()
 	  break;
 	case 3:
 	  destroyCDKScroll (scroll);
-	  menu_abm ("PROGRAMA", alta_programa_produccion,
-		    baja_programa_produccion, mod_programa_produccion);
+	  menu_abm ("ORDEN PRODUCCION", alta_orden_produccion,
+		    baja_orden_produccion, mod_orden_produccion);
 
 
 	  //popupLabel (pantalla, opciones, 3);
@@ -375,17 +376,18 @@ area_tecnica ()
 		    baja_orden_pedido_producto, mod_orden_pedido_producto);
 	  break;
 
-	case 5:
+	case 6:
 	  // endCDK ();
 	  destroyCDKScroll (scroll);
 	  break;
 	  //  exit (0);
+	case 5:
+	  destroyCDKScroll(scroll);
+	  menu_abm("ORDEN PEDIDO PROVEEDOR",alta_orden_pedido_proveedor,baja_orden_pedido_proveedor,mod_orden_pedido_proveedor);
+	
 
-	}
-
-
-    }
-  while (elegido != 5);
+    }}
+  while (elegido != 6);
 
 
   // getch ();
