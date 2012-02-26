@@ -1,7 +1,0 @@
-COMPILER=gcc
-CFLAGS=-lncurses -lcdk
-SALIDA=pruebita
-ARCHIVOS=prueba_chota_driver.c
-INCLUDES=-I/usr/include/cdk
-all:
-	$(COMPILER) $(ARCHIVOS) $(CFLAGS) $(INCLUDES) -o $(SALIDA)
