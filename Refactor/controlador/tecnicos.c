@@ -13,7 +13,8 @@ alta_tecnico ()
 {
 
   matriz =
-    (CDKMATRIX *) formulario_alta ("tecnico", "tecnico_id", NULL, NULL);
+    (CDKMATRIX *) formulario_alta ("tecnico", "tecnico_id", NULL,
+				   driver_tecnicos_post);
 //  setear_id (matriz);
 
 //  activateCDKMatrix (matriz, 0);
@@ -52,7 +53,8 @@ baja_tecnico ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
 					       chtype2Char (lista->item
-							    [elegido]), NULL);
+							    [elegido]), NULL,
+					       driver_tecnicos_post);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),

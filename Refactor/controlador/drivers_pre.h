@@ -9,6 +9,7 @@
 #define	_DRIVERS_H
 #include <cdk.h>
 #include <curdefs.h>
+#include <template.h>
 int prueba_binding (EObjectType cdkType GCC_UNUSED, void *object,
 		    void *clientData GCC_UNUSED, chtype input);
 int prueba_preprocess (EObjectType cdkType GCC_UNUSED, void *object,
@@ -21,9 +22,9 @@ int driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
 int driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 				   void *object GCC_UNUSED, void *clientData,
 				   chtype input);
-int driver_proveedores (EObjectType cdktype GCC_UNUSED,
-			void *object GCC_UNUSED, void *clientData,
-			chtype input);
+int driver_proveedores_pre (EObjectType cdktype GCC_UNUSED,
+			    void *object GCC_UNUSED, void *clientData,
+			    chtype input);
 int driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
 			     void *object GCC_UNUSED, void *clientData,
 			     chtype input);

@@ -31,7 +31,7 @@ alta_orden_pedido_proveedor ()
 
 
     }
-activateCDKMatrix(matriz,0);
+  activateCDKMatrix (matriz, 0);
 
   destroyCDKMatrix (matriz);
 

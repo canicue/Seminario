@@ -11,6 +11,7 @@
 #include <scroll.h>
 #include <curdefs.h>
 #include<calendar.h>
+#include<matrix.h>
 CDKSCROLL *lista_pro;
 CDKCALENDAR *calen;
 int
@@ -44,6 +45,7 @@ int
 driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
 				   void *object GCC_UNUSED,
 				   void *clientData, chtype input);
+void cuidar_id (CDKMATRIX * matriz);
 
 #ifdef	__cplusplus
 extern "C"

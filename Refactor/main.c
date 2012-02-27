@@ -6,17 +6,9 @@
  */
 
 #include <stdio.h>
-
-
-
-
 #include "pruebas.h"
-
 #include "widgets/dialogos.h"
-
 #include<cdk.h>
-
-
 #include "controlador/principal.h"
 #include "widgets/formularios.h"
 #include "controlador/clientes.h"

@@ -9,6 +9,7 @@
 #define	_ARCHIVOS_H
 #include <fselect.h>
 #include<viewer.h>
+#include<matrix.h>
 CDKFSELECT *selector;
 
 //char *labela = "VEREMOS";
@@ -19,6 +20,7 @@ char titulo_archivo[256];
 CDKVIEWER *visor_archivo;
 CDKFSELECT *seleccionar_archivo ();
 CDKVIEWER *ver_archivo ();
+void elegir_archivo (CDKMATRIX * matriz);
 #ifdef	__cplusplus
 extern "C"
 {

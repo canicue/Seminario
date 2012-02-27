@@ -19,6 +19,7 @@
       <itemPath>widgets/listados.h</itemPath>
       <itemPath>widgets/menu.h</itemPath>
       <itemPath>controlador/orden_pedido_producto.h</itemPath>
+      <itemPath>controlador/orden_pedido_proveedor.h</itemPath>
       <itemPath>controlador/orden_produccion.h</itemPath>
       <itemPath>controlador/persistencia.h</itemPath>
       <itemPath>controlador/principal.h</itemPath>
@@ -52,7 +53,6 @@
       <itemPath>widgets/menu.c</itemPath>
       <itemPath>controlador/orden_pedido_producto.c</itemPath>
       <itemPath>controlador/orden_pedido_proveedor.c</itemPath>
-      <itemPath>controlador/orden_pedido_proveedor.h</itemPath>
       <itemPath>controlador/orden_produccion.c</itemPath>
       <itemPath>controlador/persistencia.c</itemPath>
       <itemPath>controlador/principal.c</itemPath>

@@ -7,7 +7,7 @@
 
 #ifndef _FORMULARIOS_H
 #define	_FORMULARIOS_H
-#include <cdk.h>
+#include <cdk/cdk.h>
 #include "../datos/datos.h"
 #include "../controlador/callbacks.h"
 #define  vcols  1

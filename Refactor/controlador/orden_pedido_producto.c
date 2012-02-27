@@ -21,7 +21,8 @@ alta_orden_pedido_producto ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("orden_pedido_producto",
-				   "orden_pedido_producto_id", NULL, NULL);
+				   "orden_pedido_producto_id", NULL,
+				   driver_orden_pedido_producto_post);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
@@ -33,7 +34,7 @@ alta_orden_pedido_producto ()
 
     }
 
-activateCDKMatrix(matriz,0);
+  activateCDKMatrix (matriz, 0);
   destroyCDKMatrix (matriz);
 
 }
@@ -45,8 +46,7 @@ baja_orden_pedido_producto ()
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "orden_pedido_producto_id";
   char *cosa[1];
-  CDKSCROLL *lista =
-    (CDKSCROLL *) listado ("orden_pedido_producto", columna);
+  CDKSCROLL *lista = (CDKSCROLL *) listado ("orden_pedido_producto", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {

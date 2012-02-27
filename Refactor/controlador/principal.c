@@ -312,7 +312,7 @@ area_tecnica ()
 
   char *opciones[] = { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
     "Orden de producción</B>",
-    "Orden de pedido</B>", "Orden pedido proveedor","Volver</B>"
+    "Orden de pedido</B>", "Orden pedido proveedor", "Volver</B>"
   };
   CDKSCROLL *scroll;
   int elegido;
@@ -382,11 +382,13 @@ area_tecnica ()
 	  break;
 	  //  exit (0);
 	case 5:
-	  destroyCDKScroll(scroll);
-	  menu_abm("ORDEN PEDIDO PROVEEDOR",alta_orden_pedido_proveedor,baja_orden_pedido_proveedor,mod_orden_pedido_proveedor);
-	
+	  destroyCDKScroll (scroll);
+	  menu_abm ("ORDEN PEDIDO PROVEEDOR", alta_orden_pedido_proveedor,
+		    baja_orden_pedido_proveedor, mod_orden_pedido_proveedor);
 
-    }}
+
+	}
+    }
   while (elegido != 6);
 
 

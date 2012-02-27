@@ -7,7 +7,9 @@
 
 #ifndef _TEMPLATES_H
 #define	_TEMPLATES_H
-
+#include <cdk/template.h>
+CDKTEMPLATE *template;
+CDKTEMPLATE *template_mail (CDKSCREEN * pantalla);
 #ifdef	__cplusplus
 extern "C"
 {

@@ -7,6 +7,7 @@
 
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
+
 int
 pruebab (EObjectType cdkType GCC_UNUSED, void *object,
 	 void *clientData GCC_UNUSED, chtype input)
@@ -23,11 +24,12 @@ pruebab (EObjectType cdkType GCC_UNUSED, void *object,
 void
 alta_cliente ()
 {
-  int error;
+  int error = 0;
   CDKMATRIX *matriz =
-    (CDKMATRIX *) formulario_alta ("cliente", "cliente_id", NULL, NULL);
-  setCDKMatrixPreProcess (matriz, pruebab, 0);
-  bindCDKObject (vMATRIX, matriz, '?', pruebab, 0);
+    (CDKMATRIX *) formulario_alta ("cliente", "cliente_id", NULL,
+				   driver_clientes_post);
+  //  setCDKMatrixPreProcess (matriz, pruebab, 0);
+//    bindCDKObject(vMATRIX, matriz, '?', pruebab, 0);
   if (matriz->exitType == vNORMAL)
     {
 
@@ -54,10 +56,8 @@ alta_cliente ()
 void
 baja_cliente ()
 {
-//  CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", "cliente_id");
+  //  CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", "cliente_id");
   // activateCDKScroll (lista, 0);
-
-
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "cliente_id";
   char *cosa[1];
@@ -69,7 +69,8 @@ baja_cliente ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("cliente", "cliente_id",
 					       chtype2Char (lista->item
-							    [elegido]), NULL);
+							    [elegido]), NULL,
+					       NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -95,19 +96,6 @@ baja_cliente ()
 
   destroyCDKMatrix (matriz);
   //   popupLabel(ScreenOf(lista),cosa,1);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

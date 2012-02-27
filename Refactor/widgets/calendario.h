@@ -12,6 +12,7 @@
 #include <calendar.h>
 CDKCALENDAR *calendario (CDKSCREEN * pantalla);
 
+void mostrar_calendario (CDKMATRIX * matriz, CDKCALENDAR * calendario);
 CDKCALENDAR *calendar;
 #ifdef	__cplusplus
 extern "C"

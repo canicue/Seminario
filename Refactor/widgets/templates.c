@@ -1,10 +1,17 @@
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 #include "templates.h"
-#include <template.h>
+
 
 CDKTEMPLATE *
-cliente_id ()
+template_mail (CDKSCREEN * pantalla)
 {
-  char *plate = "(C#####)";
+  char *plate = "MMMMM @ MMMMMMMMM.MMMM";
+  template =
+    newCDKTemplate (pantalla, CENTER, CENTER, "</5>Mail:<!5>", "mail", plate,
+		    "_____  @  __________ .___ ", TRUE, FALSE);
+  return template;
 }
 
 CDKTEMPLATE *

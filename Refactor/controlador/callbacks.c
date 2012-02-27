@@ -1,9 +1,5 @@
-
-
-
 #include <cdk/cdk.h>
 #include <cdk/matrix.h>
-
 #include "callbacks.h"
 
 int
@@ -32,7 +28,7 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
   initscr ();
   pantalla = initCDKScreen (stdscr);
   // CDKMATRIX *matriz;
-  sprintf (titulo, formato, nombre);
+  sprintf (titulo, formato, ((char **) nombre)[0]);
   // armar_prefijo(nombre,argv[0]);
 
   for (i = 0; i < argc; i++)
@@ -45,7 +41,7 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
     }
 
 
-  //setCDKMatrixCell (matriz,1,1,argv[0]);
+
   set_col (1, 44, titulo);	// habia un 77 pero no anda en netbook
   // set_readonly(1,44,titulo);
 
@@ -61,6 +57,16 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
 			 coltitle,
 			 colwidth,
 			 colvalue, -1, -1, '.', COL, TRUE, FALSE, FALSE);
+
+  int algo = atoi (copyChar (argv[0]));
+  char *temp = (char *) malloc (sizeof (char *));
+  sprintf (temp, "%d", ++algo);
+  setCDKMatrixCell (matriz, 1, 1, temp);
+  //algo=atoi(algo);
+  // No puedo castear a int !!
+
+  // setCDKMatrixCell (matriz,1,1,argv[0]);//ver qu ehostias!!
+
   //activateCDKMatrix(matriz, 0);
   //          for(i=0;i<argc;i++)
   //        {
@@ -81,16 +87,9 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
 int
 call_modificacion (void *nombre, int argc, char **argv, char **azColName)
 {
-
-
+  ((char **) nombre)[1] = argv[0];
   int i;
-
-
-
   call_alta (nombre, argc, argv, azColName);
-
-//  char **copia=copyCharList(argv);
-
   for (i = 0; i < argc; i++)
     {
       // i==0?armar_prefijo(nombre,argv[0]):
@@ -99,28 +98,12 @@ call_modificacion (void *nombre, int argc, char **argv, char **azColName)
       setCDKMatrixCell (matriz, i + 1, 1, argv[i]);
 
     }
-
-
-
-  //  activateCDKMatrix(matriz,0);
-
-  //  popupLabel(ScreenOf(matriz),argv,argc);
-
-
-
   return 0;
-
-
 }
 
 int
 call_lista (void *nombre, int argc, char **argv, char **azColName)
 {
-
-
-
-
-
 
   int tmp, i = 0;
   for (i = 0; i < argc; i++)
@@ -136,7 +119,7 @@ call_lista (void *nombre, int argc, char **argv, char **azColName)
 	}
     }
 
-  //insertCDKScrollItem(lista_scroll,nombre);
+
   addCDKScrollItem (lista_scroll, argv[tmp]);
 
   return 0;
@@ -156,19 +139,5 @@ call_borrado (void *nombre, int argc, char **argv, char **azColName)
 			  CENTER,
 			  argv, argc, BORRAR_CANCELAR, 2,
 			  COLOR_PAIR (2) | A_REVERSE, TRUE, TRUE, FALSE);
-
-
-
-
-}
-
-int
-call_id (void *ultimo, int argc, char **argv, char **azColName)
-{
-
-  strcpy (ultimo, argv[0]);
-  // printf(ultimo);
-  return 0;
-
 
 }
