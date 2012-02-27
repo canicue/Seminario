@@ -406,7 +406,7 @@ area_administrativa ()
 
 
   char *opciones_[] =
-    { "proveedores</B>", "Tecnicos</B>", "Clientes</B>", "Volver</B>" };
+    { "Proveedores</B>", "Tecnicos</B>", "Clientes</B>", "Volver</B>" };
   CDKSCROLL *scroll;
   int elegido;
   do
