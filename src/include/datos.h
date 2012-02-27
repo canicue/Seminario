@@ -4,13 +4,10 @@
  *
  * Created on 14 de febrero de 2012, 23:48
  */
-
 #ifndef _DATOS_H
 #define	_DATOS_H
 #include "consultas.h"
-
 #include <sqlite3.h>
-
 #define BASE "base_2.sqlite"
 //#define BASE "base.sqlite"
 sqlite3 *conexion;

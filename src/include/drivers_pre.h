@@ -7,7 +7,7 @@
 
 #ifndef _DRIVERS_H
 #define	_DRIVERS_H
-#include <cdk/cdk.h>
+//#include <cdk/cdk.h>
 #include <cdk/matrix.h>
 //#include <curdefs.h>
 #include <cdk/template.h>

@@ -112,12 +112,12 @@ guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
 
   sprintf (consulta, tmp, tabla);
 
- 
+
   conectar (BASE);
   sqlite3_exec (conexion, consulta, NULL, NULL, &error);
-  endCDK();
-  printf(error);
-  exit(0);
+  endCDK ();
+  printf (error);
+  exit (0);
 
   desconectar ();
   return ((int) error);

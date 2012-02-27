@@ -17,9 +17,11 @@
 #include <config.h>
 #endif
 #include "controlador.h"
-int main(void) {
-  print_hello();
-  controlar();
-  iniciarCDK();
+int
+main (void)
+{
+  print_hello ();
+  controlar ();
+  iniciarCDK ();
   return 0;
 }

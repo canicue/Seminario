@@ -7,12 +7,12 @@
 
 #ifndef _CALENDARIO_H
 #define	_CALENDARIO_H
-#include<cdk/cdk.h>
+#include<cdk/matrix.h>
 //#include <cdkscreen.h>
 #include <cdk/calendar.h>
 CDKCALENDAR *calendario (CDKSCREEN * pantalla);
 
-void mostrar_calendario(CDKMATRIX *matriz,CDKCALENDAR *calendario);
+void mostrar_calendario (CDKMATRIX * matriz, CDKCALENDAR * calendario);
 CDKCALENDAR *calendar;
 #ifdef	__cplusplus
 extern "C"

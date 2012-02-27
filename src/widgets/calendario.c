@@ -27,19 +27,20 @@ calendario (CDKSCREEN * pantalla)
   //  activateCDKCalendar(calendar,0);
   return calendar;
 }
-void mostrar_calendario(CDKMATRIX *matriz,CDKCALENDAR *calen)
+
+void
+mostrar_calendario (CDKMATRIX * matriz, CDKCALENDAR * calen)
 {
-char *tmp[128];
+  char *tmp[128];
 
-	  calen = (CDKCALENDAR *) calendario (ScreenOf (matriz));
-	  activateCDKCalendar (calen, 0);                            
-	  if (calen->exitType == vNORMAL)
-	    {
+  calen = (CDKCALENDAR *) calendario (ScreenOf (matriz));
+  activateCDKCalendar (calen, 0);
+  if (calen->exitType == vNORMAL)
+    {
 
-	      sprintf (tmp, "%02d/%02d/%d", calen->day, calen->month,
-		       calen->year);
-	      setCDKMatrixCell (matriz, matriz->crow, 1, tmp);
-	      destroyCDKCalendar (calen);
-	      drawCDKMatrix (matriz, TRUE);
-	    }
+      sprintf (tmp, "%02d/%02d/%d", calen->day, calen->month, calen->year);
+      setCDKMatrixCell (matriz, matriz->crow, 1, tmp);
+      destroyCDKCalendar (calen);
+      drawCDKMatrix (matriz, TRUE);
+    }
 }

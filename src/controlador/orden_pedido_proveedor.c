@@ -1,8 +1,6 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
-
-
 #include "orden_pedido_proveedor.h"
 #include "callbacks.h"
 #include "drivers_pre.h"

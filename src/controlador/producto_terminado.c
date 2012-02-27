@@ -23,8 +23,8 @@ alta_producto_terminado ()
     (CDKMATRIX *) formulario_alta ("producto_terminado",
 				   "producto_terminado_id", NULL,
 				   driver_producto_terminado_post);
-char *msg="Seleccione archivo...";
-  setCDKMatrixCell(matriz,7,1,msg);
+  char *msg = "Seleccione archivo...";
+  setCDKMatrixCell (matriz, 7, 1, msg);
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
     {

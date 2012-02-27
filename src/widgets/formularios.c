@@ -34,7 +34,7 @@ formulario_modificacion (char *tabla, char *columna, char *valor,
 {
 
   char *data[2];
-  data[0] = copyChar(tabla);
+  data[0] = copyChar (tabla);
   char *error;
   conectar (BASE);
   char *plantilla = "SELECT * FROM %s WHERE %s='%s'";
@@ -50,7 +50,7 @@ formulario_modificacion (char *tabla, char *columna, char *valor,
 //  printf ("%s,%s", data[0], data[1]);
 //  exit (0);
   //char *aa = copyChar (getCDKMatrixCell (matriz, 1, 1));
-  setCDKMatrixPostProcess (matriz, post,(void*) data);
+  setCDKMatrixPostProcess (matriz, post, (void *) data);
 //  setCDKMatrixPreProcess (matriz, prep, aa);
 //  setCDKMatrixPostProcess (matriz, (PROCESSFN) post, aa);
   return matriz;

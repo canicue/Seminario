@@ -9,9 +9,6 @@ driver_proveedores_post (EObjectType cdktype GCC_UNUSED,
 {
 
 
-
-
-
   CDKMATRIX *matriz = (CDKMATRIX *) object;
 
   char *valor = copyChar (getCDKMatrixCell (matriz, 1, 1));
@@ -121,14 +118,14 @@ driver_insumos_post (EObjectType cdktype GCC_UNUSED,
       switch (row)
 
 	{
-			case 5:
+	case 5:
 
-		mostrar_calendario(matriz,calen);
-					break;
+	  mostrar_calendario (matriz, calen);
+	  break;
 	case 12:
 
 
-	mostrar_calendario(matriz,calen);
+	  mostrar_calendario (matriz, calen);
 
 
 
@@ -186,7 +183,7 @@ driver_orden_produccion_post (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista_pro->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -246,7 +243,7 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
 
 	{
 
-			case 2:
+	case 2:
 
 	  lista_pro = (CDKSCROLL *) listado ("orden_produccion", "lote");
 
@@ -257,13 +254,13 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
 	  drawCDKMatrix (matriz, TRUE);
 
 
-		    break;
+	  break;
 	case 5:
 	  lista_pro = (CDKSCROLL *) listado ("insumo", "IR");
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista_pro->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -275,14 +272,14 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista_pro->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
 
 	  break;
 	case 7:
-	elegir_archivo(matriz);
+	  elegir_archivo (matriz);
 	  break;
 
 
@@ -315,7 +312,7 @@ driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista_pro->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -327,29 +324,29 @@ driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista_pro->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
 
 	  break;
 	case 5:
-mostrar_calendario(matriz,calen);
-	  /*	  calen = (CDKCALENDAR *) calendario (ScreenOf (matriz));
-	  activateCDKCalendar (calen, 0);
-	  if (calen->exitType == vNORMAL)
-	    {
+	  mostrar_calendario (matriz, calen);
+	  /*      calen = (CDKCALENDAR *) calendario (ScreenOf (matriz));
+	     activateCDKCalendar (calen, 0);
+	     if (calen->exitType == vNORMAL)
+	     {
 
-	      sprintf (tmp, "%02d/%02d/%d", calen->day, calen->month,
-		       calen->year);
-	      setCDKMatrixCell (matriz, 6, 1, tmp);
-	      destroyCDKCalendar (calen);
-	      drawCDKMatrix (matriz, TRUE);
-	    }*/
+	     sprintf (tmp, "%02d/%02d/%d", calen->day, calen->month,
+	     calen->year);
+	     setCDKMatrixCell (matriz, 6, 1, tmp);
+	     destroyCDKCalendar (calen);
+	     drawCDKMatrix (matriz, TRUE);
+	     } */
 	  break;
 
 	case 6:
-	  mostrar_calendario(matriz,calen);
+	  mostrar_calendario (matriz, calen);
 /*	  calen = (CDKCALENDAR *) calendario (ScreenOf (matriz));
 	  activateCDKCalendar (calen, 0);
 	  if (calen->exitType == vNORMAL)

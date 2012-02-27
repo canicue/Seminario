@@ -7,7 +7,7 @@
 
 #ifndef _MENU_H
 #define	_MENU_H
-#include <cdk/cdk.h>
+//#include <cdk/cdk.h>
 #include "clientes.h"
 #include "proveedores.h"
 #include "tecnicos.h"

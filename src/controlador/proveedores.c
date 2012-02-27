@@ -24,7 +24,7 @@ alta_proveedor ()
 				   driver_proveedores_pre,
 				   driver_proveedores_post);
 
-     activateCDKMatrix(matriz,0);
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
@@ -35,7 +35,7 @@ alta_proveedor ()
 
     }
 
- 
+
   destroyCDKMatrix (matriz);
 
 }

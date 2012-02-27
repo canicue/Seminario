@@ -1,9 +1,6 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
-
-
-
 #include "orden_pedido_producto.h"
 #include "callbacks.h"
 #include "drivers_pre.h"
@@ -24,15 +21,14 @@ alta_orden_pedido_producto ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("orden_pedido_producto",
-				   "orden_pedido_producto_id", NULL, driver_orden_pedido_producto_post);
+				   "orden_pedido_producto_id", NULL,
+				   driver_orden_pedido_producto_post);
 
   //   activateCDKMatrix(matriz,0);
   if (matriz->exitType == vNORMAL)
     {
 
       guardar_matriz (matriz);
-
-
 
     }
 
@@ -56,9 +52,9 @@ baja_orden_pedido_producto ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
 					       "orden_pedido_producto_id",
-					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+					       chtype2Char (lista->
+							    item[elegido]),
+					       NULL, NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -111,22 +107,7 @@ mod_orden_pedido_producto ()
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
   destroyCDKMatrix (matriz);
-
-
-
-
 
 
 }

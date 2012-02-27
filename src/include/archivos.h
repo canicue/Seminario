@@ -7,7 +7,7 @@
 
 #ifndef _ARCHIVOS_H
 #define	_ARCHIVOS_H
-#include <cdk/cdk.h>
+//#include <cdk/cdk.h>
 #include <cdk/fselect.h>
 #include<cdk/viewer.h>
 #include<cdk/matrix.h>
@@ -21,7 +21,7 @@ char titulo_archivo[256];
 CDKVIEWER *visor_archivo;
 CDKFSELECT *seleccionar_archivo ();
 CDKVIEWER *ver_archivo ();
-void elegir_archivo(CDKMATRIX *matriz);
+void elegir_archivo (CDKMATRIX * matriz);
 #ifdef	__cplusplus
 extern "C"
 {

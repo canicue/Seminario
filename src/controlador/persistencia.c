@@ -2,7 +2,6 @@
 #include <config.h>
 #endif
 #include <cdk/matrix.h>
-
 #include "persistencia.h"
 
 int

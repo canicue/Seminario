@@ -89,7 +89,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -101,7 +101,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -142,7 +142,7 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -154,7 +154,7 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -246,7 +246,7 @@ driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 
@@ -258,7 +258,7 @@ driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz,matriz->crow, 1,
+	  setCDKMatrixCell (matriz, matriz->crow, 1,
 			    (char *) chtype2Char (lista->item[elegido]));
 	  drawCDKMatrix (matriz, TRUE);
 

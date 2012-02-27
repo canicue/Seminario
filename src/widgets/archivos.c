@@ -11,13 +11,9 @@ seleccionar_archivo ()
   selector = newCDKFselect (pantalla,
 			    CENTER,
 			    CENTER,
-			    20,
-			    65,
-			    titulo,
-			    "",
-			    A_NORMAL, '_', A_REVERSE,
-//			    "</5>", "</48>", "</N>", "</N>", TRUE, FALSE);
-			    "</5>", ".",NULL, NULL, TRUE, FALSE);
+			    20, 65, titulo, "", A_NORMAL, '_', A_REVERSE,
+//                          "</5>", "</48>", "</N>", "</N>", TRUE, FALSE);
+			    "</5>", ".", NULL, NULL, TRUE, FALSE);
   setCDKFselectDirectory (selector, path);
 //  activateCDKFselect (selector, 0);
   return selector;
@@ -40,28 +36,27 @@ ver_archivo (char *nombre)
   return visor_archivo;
 }
 
-void elegir_archivo(CDKMATRIX *matriz)
+void
+elegir_archivo (CDKMATRIX * matriz)
 {
-CDKFSELECT *sele=seleccionar_archivo();
+  CDKFSELECT *sele = seleccionar_archivo ();
 
-char *archivo=activateCDKFselect(sele,0);
-if(sele->exitType==vNORMAL)
-{
-setCDKMatrixCell(matriz,matriz->crow,1,archivo);
+  char *archivo = activateCDKFselect (sele, 0);
+  if (sele->exitType == vNORMAL)
+    {
+      setCDKMatrixCell (matriz, matriz->crow, 1, archivo);
+
+    }
+
+  destroyCDKFselect (sele);
+  drawCDKMatrix (matriz, TRUE);
+
+
+
+
+
+
+
+
 
 }
-
-destroyCDKFselect(sele);
-drawCDKMatrix(matriz,TRUE);
-
-
-
-
-
-
-
-
-
-}
-
-

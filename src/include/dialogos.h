@@ -7,7 +7,7 @@
 
 #ifndef _DIALOGOS_H
 #define	_DIALOGOS_H
-#include  <dialog.h>
+#include  <cdk/dialog.h>
 #include "datos.h"
 #include "callbacks.h"
 CDKDIALOG *dialogo_borrado (char *tabla, char *columna, char *valor);

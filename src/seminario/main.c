@@ -6,8 +6,8 @@
  */
 
 #include <stdio.h>
-#include "dialogos.h"
 #include<cdk/cdk.h>
+#include "dialogos.h"
 #include "principal.h"
 #include "formularios.h"
 #include "clientes.h"
@@ -31,10 +31,10 @@ test ()
   //    formulario_modificacion("tecnico","Tecnico_id","T001");
 //  formulario_modificacion ("orden_pedido_producto",                      "orden_pedido_producto_id", "OPP");
   //  alta_cliente();
- // CDKFSELECT *archivo = seleccionar_archivo ();
+  // CDKFSELECT *archivo = seleccionar_archivo ();
 
   //popupLabel(ScreenOf(archivo),&archivo->pathname,1);
- // ver_archivo (archivo->pathname);
+  // ver_archivo (archivo->pathname);
 }
 
 void
@@ -45,7 +45,7 @@ prueba ()
   char *texto_prueba[] = { "f" };	//,"prueba","asdfa","dfdf"};
   initscr ();
   CDKSCREEN *pantalla = initCDKScreen (stdscr);
- // ventanita_info (pantalla, texto_prueba);
+  // ventanita_info (pantalla, texto_prueba);
 
 
 }
