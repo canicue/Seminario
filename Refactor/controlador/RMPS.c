@@ -92,6 +92,21 @@ mod_RMP (CDKSCREEN * pantalla)
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);
 
+
+      int res = 0;
+      if (matriz->exitType == vNORMAL)
+	{
+	  res = modificar_matriz (matriz);
+
+
+	}
+      if (res)
+	{
+	  tratar_error (ScreenOf (matriz), "Proveedor");
+
+	}
+
+
     }
 
   destroyCDKMatrix (matriz);

@@ -106,9 +106,27 @@ mod_proveedor (CDKSCREEN * pantalla)
 							    [elegido]),
 					       driver_proveedores_pre,
 					       driver_proveedores_post);
+
+      destroyCDKScroll (lista);
+      refresh ();
+
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);
+
+      int res = 0;
+      if (matriz->exitType == vNORMAL)
+	{
+	  res = modificar_matriz (matriz);
+
+
+	}
+      if (res)
+	{
+	  tratar_error (ScreenOf (matriz), "Proveedor");
+
+	}
+
 
     }
 

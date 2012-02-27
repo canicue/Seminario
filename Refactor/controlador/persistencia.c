@@ -49,6 +49,31 @@ borrar_matriz (CDKMATRIX * matriz)
   return borrar_registro (tabla, nombre, valor, NULL);
 }
 
+int
+modificar_matriz (CDKMATRIX * matriz)
+{
+  char *columnas[matriz->rows];
+  char *nuevos[matriz->rows];
+  char *valor;
+  int i;
+  int tmp = 0;
+
+  for (i = 0; i < matriz->rows; i++)
+    {
+      // datos[i]=(char*)malloc(256);
+      // strcpy(datos[i],getCDKMatrixCell(matriz,i+1,1));
+      nuevos[i] = getCDKMatrixCell (matriz, i + 1, 1);
+      columnas[i] = (char *) chtype2Char (matriz->rowtitle[i + 1]);
+
+    }
+
+
+  valor = copyChar (getCDKMatrixCell (matriz, 1, 1));
+  return modificar_registro (chtype2Char (matriz->coltitle[1]), columnas,
+			     (char *) chtype2Char (matriz->rowtitle[1]),
+			     valor, nuevos, matriz->rows);
+
+}
 
 
 void

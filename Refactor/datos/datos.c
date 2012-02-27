@@ -78,6 +78,33 @@ ver_tabla (char *nombre, int limite, char *visible, void *callback,
 
 }
 
+int
+modificar_registro (char *tabla, char **columnas, char *identificador,
+		    char *valor, char **nuevos, int nro)
+{
+
+  conectar (BASE);
+  char consulta[1024];
+  int res = 0;
+  int i;
+  char tmp[1024] = "UPDATE %s SET ";
+  sprintf (consulta, tmp, tabla);
+  for (i = 0; i < nro; i++)
+    {
+      i == nro - 1 ? sprintf (tmp, "%s='%s' WHERE ", columnas[i],
+			      nuevos[i]) : sprintf (tmp, "%s='%s',",
+						    columnas[i], nuevos[i]);
+      strcat (consulta, tmp);
+    }
+  sprintf (tmp, "%s='%s'", identificador, valor);
+  strcat (consulta, tmp);
+  conectar (BASE);
+  res = sqlite3_exec (conexion, consulta, NULL, NULL, &error);
+  desconectar ();
+  return (res);
+
+}
+
 /*static int callback(void *NotUsed, int argc, char **argv, char **azColName){
 
     printf("%d-------------",argc);
@@ -125,6 +152,12 @@ guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
 
 
 
+}
+
+int
+modificar_cosa ()
+{
+  return 0;
 }
 
 int tmp;
