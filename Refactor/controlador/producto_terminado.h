@@ -7,9 +7,10 @@
 
 #ifndef _PRODUCTO_TERMINADO_H
 #define	_PRODUCTO_TERMINADO_H
+#include <cdk/cdk.h>
 void alta_producto_terminado ();
-void baja_producto_terminado ();
-void mod_producto_terminado ();
+void baja_producto_terminado (CDKSCREEN * pantalla);
+void mod_producto_terminado (CDKSCREEN * pantalla);
 #ifdef	__cplusplus
 extern "C"
 {

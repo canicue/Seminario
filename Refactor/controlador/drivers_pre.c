@@ -1,7 +1,10 @@
 #include <matrix.h>
 #include <scroll.h>
 #include <buttonbox.h>
+#include <cdk_util.h>
 #include "drivers_pre.h"
+#include "../widgets/listados.h"
+#include "../widgets/templates.h"
 CDKSCROLL *lista;
 
 int
@@ -71,7 +74,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
 
 
   CDKMATRIX *matriz = (CDKMATRIX *) object;
-
+/*
   int row = getCDKMatrixRow (matriz);
   int elegido;
   if (input != KEY_UP && input != KEY_DOWN)
@@ -79,7 +82,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
       switch (row)
 	{
 	case 14:
-	  lista = (CDKSCROLL *) listado ("proveedor", "proveedor_id");
+	  lista = (CDKSCROLL *) listado (ScreenOf(matriz),"proveedor", "proveedor_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -91,7 +94,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
 
 	  break;
 	case 13:
-	  lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
+	  lista = (CDKSCROLL *) listado (ScreenOf(matriz),"tecnico", "tecnico_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -110,7 +113,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
 
 	}
 
-    }
+    }*/
 
 
   return 1;
@@ -132,7 +135,7 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
       switch (row)
 	{
 	case 5:
-	  lista = (CDKSCROLL *) listado ("insumo", "IR");
+	  lista = (CDKSCROLL *) listado (ScreenOf (matriz), "insumo", "IR");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -144,7 +147,8 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 
 	  break;
 	case 6:
-	  lista = (CDKSCROLL *) listado ("RMP", "producto_id");
+	  lista =
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "producto_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -177,34 +181,34 @@ driver_proveedores_pre (EObjectType cdktype GCC_UNUSED,
   char **cosa = (char **) clientData;
   CDKMATRIX *matriz = (CDKMATRIX *) object;
   int row;
-  CDKTEMPLATE *templ;
-  if (matriz->crow == 1)
+//  CDKTEMPLATE *templ;
+/*  if (matriz->crow == 1)
     {
       moveToCDKMatrixCell (matriz, 2, 1);
       drawCDKMatrix (matriz, TRUE);
       refreshCDKScreen (ScreenOf (matriz));
-    }
-  if (input != KEY_DOWN && input != KEY_UP)
-    {
-      row = getCDKMatrixRow (matriz);
-      switch (row)
-	{
-	case 5:
-	  templ = (CDKTEMPLATE *) template_mail (ScreenOf (matriz));
-	  activateCDKTemplate (templ, 0);
-	  break;
+    }*/
+  /* if (input != KEY_DOWN && input != KEY_UP)
+     {
+     row = getCDKMatrixRow (matriz);
+     switch (row)
+     {
+     case 5:
+     templ = (CDKTEMPLATE *) template_mail (ScreenOf (matriz));
+     activateCDKTemplate (templ, 0);
+     break;
 
 
 
 
-	}
+     }
 
 
 
 
 
-    }
-  setCDKMatrixCell (matriz, 1, 1, cosa[1]);
+     }
+     setCDKMatrixCell (matriz, 1, 1, cosa[1]); */
 /*  if (input != KEY_DOWN || input != KEY_UP)
     {
 
@@ -244,7 +248,9 @@ driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
       switch (row)
 	{
 	case 2:
-	  lista = (CDKSCROLL *) listado ("cliente", "cliente_id");
+	  lista =
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "cliente",
+				   "cliente_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -256,7 +262,9 @@ driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
 
 	  break;
 	case 3:
-	  lista = (CDKSCROLL *) listado ("producto", "producto_id");
+	  lista =
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "producto",
+				   "producto_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);

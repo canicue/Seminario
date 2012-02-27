@@ -88,6 +88,7 @@
           <incDir>
             <pElem>/usr/include/cdk</pElem>
           </incDir>
+          <warningLevel>2</warningLevel>
         </cTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Refactor</output>

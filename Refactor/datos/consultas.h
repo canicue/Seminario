@@ -15,8 +15,8 @@
 #define ULTIMO_ID "SELECT %s FROM %s ORDER BY %s DESC LIMIT 1"
 //CLIENTES
 
-#define AGREGAR_CLIENTE "INSERT INTO CLIENTE(cliente_id,nombre,telefono,direccion,email) VALUES('%s','%s','%s','%s','%s')"
-#define BORRAR_CLIENTE "DELETE FROM CLIENTE WHERE cliente_id='%s'"
+#define AGREGAR_CLIENTE "INSERT INTO CLIENTE(Cliente_id,nombre,telefono,direccion,email) VALUES('%s','%s','%s','%s','%s')"
+#define BORRAR_CLIENTE "DELETE FROM CLIENTE WHERE Cliente_id='%s'"
 
 #define BORRAR_REGISTRO "DELETE FROM %s WHERE %s='%s'"
 

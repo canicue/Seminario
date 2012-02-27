@@ -7,9 +7,10 @@
 
 #ifndef _INSUMOS_H
 #define	_INSUMOS_H
+#include <cdk/cdk.h>
 void alta_insumo ();
-void baja_insumo ();
-void mod_insumo ();
+void baja_insumo (CDKSCREEN * pantalla);
+void mod_insumo (CDKSCREEN * pantalla);
 #ifdef	__cplusplus
 extern "C"
 {

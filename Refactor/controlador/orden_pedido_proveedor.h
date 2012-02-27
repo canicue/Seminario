@@ -9,9 +9,10 @@
 
 #ifndef _PROGRAMA_PRODUCCION_H
 #define	_PROGRAMA_PRODUCCION_H
+#include <cdk/cdk.h>
 void alta_orden_pedido_proveedor ();
-void baja_orden_pedido_proveedor ();
-void mod_orden_pedido_proveedor ();
+void baja_orden_pedido_proveedor (CDKSCREEN * pantalla);
+void mod_orden_pedido_proveedor (CDKSCREEN * pantalla);
 #ifdef	__cplusplus
 extern "C"
 {

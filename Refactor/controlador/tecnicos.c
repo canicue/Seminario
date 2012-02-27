@@ -2,7 +2,10 @@
 #include "drivers_pre.h"
 #include "drivers_post.h"
 #include "persistencia.h"
+#include "../widgets/formularios.h"
+#include "../widgets/listados.h"
 #include <scroll.h>
+#include <cdk_util.h>
 
 
 CDKMATRIX *matriz;
@@ -17,7 +20,7 @@ alta_tecnico ()
 				   driver_tecnicos_post);
 //  setear_id (matriz);
 
-//  activateCDKMatrix (matriz, 0);
+  activateCDKMatrix (matriz, 0);
 
   if (matriz->exitType == vNORMAL)
     {
@@ -27,7 +30,7 @@ alta_tecnico ()
 
 
     }
-  activateCDKMatrix (matriz, 0);
+  // activateCDKMatrix (matriz, 0);
 
   destroyCDKMatrix (matriz);
 
@@ -37,24 +40,25 @@ alta_tecnico ()
 }
 
 void
-baja_tecnico ()
+baja_tecnico (CDKSCREEN * pantalla)
 {
 //  CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
 //  activateCDKScroll (lista, 0);
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "tecnico_id";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", columna);
+//  char *cosa[1];
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "tecnico", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
-					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       driver_tecnicos_post);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, driver_tecnicos_post);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -102,12 +106,12 @@ baja_tecnico ()
 }
 
 void
-mod_tecnico ()
+mod_tecnico (CDKSCREEN * pantalla)
 {
   // CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
 //  activateCDKScroll (lista, 0);
 
-  lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
+  lista = (CDKSCROLL *) listado (pantalla, "tecnico", "tecnico_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
@@ -115,9 +119,10 @@ mod_tecnico ()
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
-					       chtype2Char (lista->item
-							    [elegido], NULL),
-					       NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

@@ -10,6 +10,9 @@
 #include <matrix.h>
 #include <buttonbox.h>
 #include <cdk.h>
+#include <cdk_util.h>
+#include "../widgets/listados.h"
+#include "../widgets/formularios.h"
 
 
 CDKMATRIX *matriz;
@@ -22,30 +25,28 @@ alta_orden_pedido_proveedor ()
     (CDKMATRIX *) formulario_alta ("orden_pedido_proveedor",
 				   "orden_pedido_proveedor_id", NULL, NULL);
 
-  //   activateCDKMatrix(matriz,0);
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
       guardar_matriz (matriz);
 
-
-
     }
-  activateCDKMatrix (matriz, 0);
+  // activateCDKMatrix (matriz, 0);
 
   destroyCDKMatrix (matriz);
 
 }
 
 void
-baja_orden_pedido_proveedor ()
+baja_orden_pedido_proveedor (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "orden_pedido_proveedor_id";
-  char *cosa[1];
+//  char *cosa[1];
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado ("orden_pedido_proveedor", columna);
+    (CDKSCROLL *) listado (pantalla, "orden_pedido_proveedor", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
@@ -53,9 +54,10 @@ baja_orden_pedido_proveedor ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_proveedor",
 					       "orden_pedido_proveedor_id",
-					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -85,11 +87,11 @@ baja_orden_pedido_proveedor ()
 }
 
 void
-mod_orden_pedido_proveedor ()
+mod_orden_pedido_proveedor (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado ("orden_pedido_proveedor", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "orden_pedido_proveedor", "provedor_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
@@ -98,32 +100,16 @@ mod_orden_pedido_proveedor ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("orden_pedido_proveedor",
 					       "orden_pedido_proveedor_id",
-					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
   destroyCDKMatrix (matriz);
-
-
-
-
-
 
 }

@@ -3,11 +3,14 @@
 #include "drivers_pre.h"
 #include "drivers_post.h"
 #include "persistencia.h"
+#include "../widgets/formularios.h"
+#include "../widgets/listados.h"
 #include <matrix.h>
 #include <scroll.h>
 #include <matrix.h>
 #include <buttonbox.h>
 #include <cdk.h>
+#include <cdk_util.h>
 
 
 CDKMATRIX *matriz;
@@ -36,13 +39,14 @@ alta_orden_produccion ()
 }
 
 void
-baja_orden_produccion ()
+baja_orden_produccion (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "orden_produccion_id";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("orden_produccion", columna);
+  // char *cosa[1];
+  CDKSCROLL *lista =
+    (CDKSCROLL *) listado (pantalla, "orden_produccion", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
@@ -50,8 +54,10 @@ baja_orden_produccion ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("orden_produccion",
 					       columna,
-					       chtype2Char (lista->item
-							    [elegido]), NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -81,11 +87,11 @@ baja_orden_produccion ()
 }
 
 void
-mod_orden_produccion ()
+mod_orden_produccion (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado ("orden_produccion", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "orden_produccion", "provedor_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
@@ -94,8 +100,10 @@ mod_orden_produccion ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("orden_produccion",
 					       "orden_produccion_id",
-					       chtype2Char (lista->item
-							    [elegido]), NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

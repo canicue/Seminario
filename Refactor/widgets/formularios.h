@@ -10,6 +10,7 @@
 #include <cdk/cdk.h>
 #include "../datos/datos.h"
 #include "../controlador/callbacks.h"
+
 #define  vcols  1
 
 int filas;

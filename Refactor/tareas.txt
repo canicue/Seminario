@@ -1,12 +1,28 @@
-!grep -lr -e 'canicue' * | xargs sed -i 's/charlie/charlie/g'
-!grep -lr -e 'juan' * | xargs sed -i 's/charlie/charlie/g'
+
+!grep -lr -e 'canicue' * | xargs sed -i 's/canicue/charlie/g'
+!grep -lr -e 'juan' * | xargs sed -i 's/canicue/charlie/g'
 
 !indent $(find -type f -name \*\.c)
 !indent $(find -type f -name \*\.h)
-
+!rm $(find -type f -name \*[c-h]~)
 
 GIT
 
 crear branch remota
+git checkout -b nombre_rama
+git push [-u ] origin nombre_rama //no se que hace el -u
 
-git push origin nombre_rama
+PAQUETE DEB
+Paquetes necesarios:  dh-make devscripts fakeroot gnupg
+
+mkdir temp
+$ cd temp
+$ tar xvfz ../tarball.tar.gz
+cd [dir_creado]
+$ gpg --gen-key
+$ dh_make -c gpl -e usuario@midireccion.com -s --createorig
+gpg --list-keys
+sale la clave publica pub XXXX/YYYYYY
+dpkg-buildpackage -sgpg -kYYYYYY -rfakeroot
+
+

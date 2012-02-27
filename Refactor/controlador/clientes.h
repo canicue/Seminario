@@ -9,8 +9,8 @@
 #define	_CLIENTES_H
 #include "persistencia.h"
 void alta_cliente ();
-void baja_cliente ();
-void mod_cliente ();
+void baja_cliente (CDKSCREEN * pantalla);
+void mod_cliente (CDKSCREEN * pantalla);
 
 #ifdef	__cplusplus
 extern "C"

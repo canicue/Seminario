@@ -1,5 +1,5 @@
 #include "archivos.h"
-
+#include <cdk_util.h>
 CDKFSELECT *
 seleccionar_archivo ()
 {
@@ -50,13 +50,5 @@ elegir_archivo (CDKMATRIX * matriz)
 
   destroyCDKFselect (sele);
   drawCDKMatrix (matriz, TRUE);
-
-
-
-
-
-
-
-
 
 }

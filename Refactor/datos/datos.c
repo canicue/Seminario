@@ -38,13 +38,16 @@ buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
 int
 borrar_registro (char *tabla, char *columna, char *valor, void *callback)
 {
+  int res = 0;
   conectar (BASE);
-  char consulta[255];
+  char consulta[512];
   sprintf (consulta, BORRAR_REGISTRO, tabla, columna, valor);
-  sqlite3_exec (conexion, consulta, callback, 0, &error);
 
 
-  return (int) error;
+  res = sqlite3_exec (conexion, consulta, callback, 0, &error);
+
+  desconectar ();
+  return res;
 }
 
 void
@@ -90,10 +93,10 @@ int
 guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
 {
 
-
+  int res = 0;
   int i;
   char tmp[1024] = "INSERT INTO %s (";
-  char *consulta;
+  char consulta[1024];
   for (i = 0; i < nro; i++)
     {
       strcat (tmp, columnas[i]);
@@ -108,16 +111,17 @@ guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
     }
 
   sprintf (consulta, tmp, tabla);
-
-
+//  endCDK();
+//  printf(consulta);
+//  exit(0);
   conectar (BASE);
-  sqlite3_exec (conexion, consulta, NULL, NULL, &error);
-  endCDK ();
-  printf (error);
-  exit (0);
+  res = sqlite3_exec (conexion, consulta, NULL, NULL, &error);
+  // endCDK ();
+  // printf (error);
+  // exit (0);
 
   desconectar ();
-  return ((int) error);
+  return (res);
 
 
 

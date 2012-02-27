@@ -1,5 +1,6 @@
 
 #include <matrix.h>
+#include <cdk_util.h>
 #include "utils.h"
 #include "callbacks.h"
 //#include <string.h>
@@ -7,9 +8,9 @@ char *tmp;
 char *
 generar_id (char *prefijo, char *tabla, char *columna)
 {
-  char caca[12];		//="Asdfadsfasdfadsfadsfads";
+  // char caca[12];              //="Asdfadsfasdfadsfadsfads";
   // strcpy(caca,prefijo);
-  int longitud;
+  // int longitud;
 
   // tmp = buscar_ultimo (tabla, columna, call_id);
   printf ("prefijo %s\n", tmp);

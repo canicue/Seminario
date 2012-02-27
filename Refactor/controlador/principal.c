@@ -8,7 +8,7 @@
 #include "orden_pedido_proveedor.h"
 #include "RMPS.h"
 #include "tecnicos.h"
-
+//#include "../widgets/menu.h"
 int selection;
 char *buttons[] = { " OK ", " Cancel " };
 
@@ -248,7 +248,7 @@ error_login ()
 void
 entrada ()
 {
-  char *opciones[] = { "ADMINISTRATIVA</B>", "TECNICA</B>", "SALIR</B>" };
+  char *opciones_[] = { "ADMINISTRATIVA</B>", "TECNICA</B>", "SALIR</B>" };
   //  endCDK();
   initscr ();
   curs_set (0);
@@ -261,7 +261,7 @@ entrada ()
 					    4, COLS,
 					    "<C></32>SELECCIONAR AREA\n</B/!32>",
 					    1, 3,
-					    opciones, 3, A_REVERSE,
+					    opciones_, 3, A_REVERSE,
 					    TRUE, FALSE);
 
   int rta = activateCDKButtonbox (botonera, 0);
@@ -310,7 +310,7 @@ area_tecnica ()
 
 
 
-  char *opciones[] = { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
+  char *opciones_[] = { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
     "Orden de producción</B>",
     "Orden de pedido</B>", "Orden pedido proveedor", "Volver</B>"
   };
@@ -320,7 +320,7 @@ area_tecnica ()
     {
       scroll = newCDKScroll (pantalla, 2, 2, CENTER, 10, 45,
 			     "<C>Menu",
-			     opciones, 7, TRUE, A_REVERSE, TRUE, FALSE);
+			     opciones_, 7, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
       //
@@ -405,7 +405,7 @@ area_administrativa ()
 
 
 
-  char *opciones[] =
+  char *opciones_[] =
     { "Proveedores</B>", "Tecnicos</B>", "Clientes</B>", "Volver</B>" };
   CDKSCROLL *scroll;
   int elegido;
@@ -413,7 +413,7 @@ area_administrativa ()
     {
       scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 20,
 			     "<C>Menu",
-			     opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
+			     opciones_, 4, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
       //
@@ -470,22 +470,5 @@ area_administrativa ()
 
 
   // getch ();
-
-}
-
-void
-menu_administrativa ()
-{
-
-
-}
-
-void
-menu_tecnica ()
-{
-
-
-
-
 
 }

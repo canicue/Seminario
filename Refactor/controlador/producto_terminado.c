@@ -3,11 +3,14 @@
 #include "drivers_pre.h"
 #include "drivers_post.h"
 #include "persistencia.h"
+#include  "../widgets/formularios.h"
+#include "../widgets/listados.h"
 #include <matrix.h>
 #include <scroll.h>
 #include <matrix.h>
 #include <buttonbox.h>
 #include <cdk.h>
+#include <cdk_util.h>
 
 
 CDKMATRIX *matriz;
@@ -39,13 +42,14 @@ alta_producto_terminado ()
 }
 
 void
-baja_producto_terminado ()
+baja_producto_terminado (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "producto_terminado_id";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("producto_terminado", columna);
+  // char *cosa[1];
+  CDKSCROLL *lista =
+    (CDKSCROLL *) listado (pantalla, "producto_terminado", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
@@ -53,8 +57,10 @@ baja_producto_terminado ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("producto_terminado",
 					       "producto_terminado_id",
-					       chtype2Char (lista->item
-							    [elegido]), NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -84,11 +90,11 @@ baja_producto_terminado ()
 }
 
 void
-mod_producto_terminado ()
+mod_producto_terminado (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado ("producto_terminado", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "producto_terminado", "provedor_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
@@ -97,8 +103,10 @@ mod_producto_terminado ()
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("producto_terminado",
 					       "producto_terminado_id",
-					       chtype2Char (lista->item
-							    [elegido]), NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

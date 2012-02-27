@@ -139,5 +139,5 @@ call_borrado (void *nombre, int argc, char **argv, char **azColName)
 			  CENTER,
 			  argv, argc, BORRAR_CANCELAR, 2,
 			  COLOR_PAIR (2) | A_REVERSE, TRUE, TRUE, FALSE);
-
+  return 0;
 }

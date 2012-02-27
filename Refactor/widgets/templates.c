@@ -17,5 +17,5 @@ template_mail (CDKSCREEN * pantalla)
 CDKTEMPLATE *
 proveedor_id ()
 {
-
+  return NULL;
 }

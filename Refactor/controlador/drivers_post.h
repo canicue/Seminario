@@ -45,7 +45,7 @@ int
 driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
 				   void *object GCC_UNUSED,
 				   void *clientData, chtype input);
-void cuidar_id (CDKMATRIX * matriz);
+
 
 #ifdef	__cplusplus
 extern "C"

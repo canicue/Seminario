@@ -31,14 +31,14 @@ menu_clientes ()
 	case 1:
 	  destroyCDKScroll (scroll);
 	  //popupLabel(pantalla, opciones, 3);
-	  baja_cliente ();
+	  baja_cliente (pantalla);
 	  break;
 	case 2:
 	  //  popupLabel (pantalla, opciones, 3);
 	  //        mvwaddstr(cdkScreen->window,2,2,"dios");
 
 	  destroyCDKScroll (scroll);
-	  mod_cliente ();
+	  mod_cliente (pantalla);
 	  break;
 	case 3:
 	  destroyCDKScroll (scroll);
@@ -86,8 +86,9 @@ menu_proveedores ()
 	  break;
 	case 1:
 	  destroyCDKScroll (scroll);
+	  char *hola[] = { "sdfa", "adf" };
 
-	  baja_proveedor ();
+	  baja_proveedor (pantalla);
 
 
 	  // popupLabel(pantalla, opciones, 3);
@@ -97,7 +98,7 @@ menu_proveedores ()
 	case 2:
 	  destroyCDKScroll (scroll);
 
-	  mod_proveedor ();
+	  mod_proveedor (pantalla);
 
 	  //popupLabel(pantalla, opciones, 3);
 
@@ -139,9 +140,6 @@ menu_tecnicos ()
 	case 0:
 	  destroyCDKScroll (scroll);
 	  alta_tecnico ();
-
-
-
 	  break;
 	case 1:
 
@@ -154,7 +152,6 @@ menu_tecnicos ()
 	  destroyCDKScroll (scroll);
 	  mod_tecnico ();
 	  //popupLabel(pantalla, opciones, 3);
-
 	  break;
 	case 3:
 
@@ -171,8 +168,8 @@ menu_tecnicos ()
 
 
 void
-menu_abm (char *titulo, void (*alta) (), void (*baja) (),
-	  void (*modificacion) ())
+menu_abm (char *titulo, void (*alta) (), void (*baja) (void *pantalla),
+	  void (*modificacion) (void *pantalla))
 {
   initscr ();
   CDKSCREEN *pantalla = initCDKScreen (stdscr);
@@ -196,20 +193,15 @@ menu_abm (char *titulo, void (*alta) (), void (*baja) (),
 	case 0:
 	  destroyCDKScroll (scroll);
 	  alta ();
-
-
-
 	  break;
 	case 1:
-
 	  destroyCDKScroll (scroll);
-	  baja ();
+	  baja (pantalla);
 	  //     popupLabel(pantalla, opciones, 3);
-
 	  break;
 	case 2:
 	  destroyCDKScroll (scroll);
-	  modificacion ();
+	  modificacion (pantalla);
 	  //popupLabel(pantalla, opciones, 3);
 
 	  break;

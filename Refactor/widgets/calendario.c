@@ -40,4 +40,5 @@ mostrar_calendario (CDKMATRIX * matriz, CDKCALENDAR * calen)
       destroyCDKCalendar (calen);
       drawCDKMatrix (matriz, TRUE);
     }
+
 }

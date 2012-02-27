@@ -3,11 +3,15 @@
 #include "drivers_pre.h"
 #include "drivers_post.h"
 #include "persistencia.h"
+#include "../widgets/formularios.h"
+#include "../widgets/listados.h"
 #include <matrix.h>
 #include <scroll.h>
 #include <matrix.h>
 #include <buttonbox.h>
 #include <cdk.h>
+#include <cdk_util.h>
+#include <cdk/cdkscreen.h>
 
 
 
@@ -21,7 +25,7 @@ alta_insumo ()
     (CDKMATRIX *) formulario_alta ("insumo", "IR", driver_insumo_pre,
 				   driver_insumos_post);
 
-  //   activateCDKMatrix(matriz,0);
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
@@ -37,22 +41,23 @@ alta_insumo ()
 }
 
 void
-baja_insumo ()
+baja_insumo (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "IR";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("insumo", columna);
+  // char *cosa[1];
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "insumo", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
-					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -82,10 +87,10 @@ baja_insumo ()
 }
 
 void
-mod_insumo ()
+mod_insumo (CDKSCREEN * pantalla)
 {
 
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("insumo", "IR");
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "insumo", "IR");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
@@ -93,9 +98,10 @@ mod_insumo ()
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
-					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+					       (char *) chtype2Char (lista->
+								     item
+								     [elegido]),
+					       NULL, NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);
