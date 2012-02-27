@@ -70,7 +70,7 @@ menu_proveedores ()
   do
     {
       scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 35,
-			     "<C></32>Proveedores<!32>",
+			     "<C></32>proveedores<!32>",
 			     opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
 
@@ -182,7 +182,7 @@ menu_abm (char *titulo, void (*alta) (), void (*baja) (void *pantalla),
 
   do
     {
-      scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 35,
+      scroll = newCDKScroll (pantalla, CENTER, 2, RIGHT, 10, 35,
 			     title,
 			     opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);

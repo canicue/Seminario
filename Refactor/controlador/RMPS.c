@@ -20,7 +20,7 @@ void
 alta_RMP ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("RMP", "producto_id", NULL,
+    (CDKMATRIX *) formulario_alta ("RMP", "Producto_id", NULL,
 				   driver_RMP_post);
 //  setear_id (matriz);
   activateCDKMatrix (matriz, 0);
@@ -41,7 +41,7 @@ baja_RMP (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "producto_id";
+  char *columna = "Producto_id";
   // char *cosa[1];
   lista = (CDKSCROLL *) listado (pantalla, "RMP", columna);
   activateCDKScroll (lista, 0);
@@ -49,11 +49,10 @@ baja_RMP (CDKSCREEN * pantalla)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("RMP", "producto_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL);
+	(CDKMATRIX *) formulario_modificacion ("RMP", "Producto_id",
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL);
       botones =
 	newCDKButtonbox (ScreenOf (matriz), getbegx (matriz->win),
 			 getbegy (matriz->win) + matriz->boxHeight - 1, 1,
@@ -77,7 +76,7 @@ baja_RMP (CDKSCREEN * pantalla)
 void
 mod_RMP (CDKSCREEN * pantalla)
 {
-  char *columna = "producto_id";
+  char *columna = "Producto_id";
   lista = (CDKSCROLL *) listado (pantalla, "RMP", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
@@ -85,10 +84,10 @@ mod_RMP (CDKSCREEN * pantalla)
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("RMP", columna,
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, driver_RMP_post);
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       driver_RMP_post);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

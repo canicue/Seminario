@@ -318,7 +318,7 @@ area_tecnica ()
   int elegido;
   do
     {
-      scroll = newCDKScroll (pantalla, 2, 2, CENTER, 10, 45,
+      scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 45,
 			     "<C>Menu",
 			     opciones_, 7, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
@@ -406,7 +406,7 @@ area_administrativa ()
 
 
   char *opciones_[] =
-    { "Proveedores</B>", "Tecnicos</B>", "Clientes</B>", "Volver</B>" };
+    { "proveedores</B>", "Tecnicos</B>", "Clientes</B>", "Volver</B>" };
   CDKSCROLL *scroll;
   int elegido;
   do

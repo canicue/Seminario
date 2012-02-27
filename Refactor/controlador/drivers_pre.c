@@ -82,7 +82,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
       switch (row)
 	{
 	case 14:
-	  lista = (CDKSCROLL *) listado (ScreenOf(matriz),"proveedor", "proveedor_id");
+	  lista = (CDKSCROLL *) listado (ScreenOf(matriz),"Proveedor", "Proveedor_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -135,7 +135,7 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
       switch (row)
 	{
 	case 5:
-	  lista = (CDKSCROLL *) listado (ScreenOf (matriz), "insumo", "IR");
+	  lista = (CDKSCROLL *) listado (ScreenOf (matriz), "Insumo", "IR");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -148,7 +148,7 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 	  break;
 	case 6:
 	  lista =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "producto_id");
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "Producto_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -249,8 +249,8 @@ driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
 	{
 	case 2:
 	  lista =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "cliente",
-				   "cliente_id");
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "Cliente",
+				   "Cliente_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);
@@ -264,7 +264,7 @@ driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
 	case 3:
 	  lista =
 	    (CDKSCROLL *) listado (ScreenOf (matriz), "producto",
-				   "producto_id");
+				   "Producto_id");
 
 	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista, 0);

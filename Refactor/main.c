@@ -22,15 +22,15 @@ vale ()
 void
 test ()
 {
-//  CDKSCROLL *sc = (CDKSCROLL *) listado ("cliente", "cliente_id");
+//  CDKSCROLL *sc = (CDKSCROLL *) listado ("Cliente", "Cliente_id");
 //  activateCDKScroll (sc, 0);
-  //  formulario_alta("cliente");
+  //  formulario_alta("Cliente");
   //   formulario_modificacion("producto_terminado","producto_terminado_id","PT001");
-  //    formulario_modificacion("RMP","producto_id","RMP002");
-  //  formulario_modificacion("cliente","Cliente_id","C001");
-  //   formulario_modificacion("proveedor","Proveedor_id","P001");
+  //    formulario_modificacion("RMP","Producto_id","RMP002");
+  //  formulario_modificacion("Cliente","Cliente_id","C001");
+  //   formulario_modificacion("Proveedor","Proveedor_id","P001");
   //    formulario_modificacion("tecnico","Tecnico_id","T001");
-//  formulario_modificacion ("orden_pedido_producto",                      "orden_pedido_producto_id", "OPP");
+//  formulario_modificacion ("Orden_pedido_producto",                      "Orden_pedido_Producto_id", "OPP");
   //  alta_cliente();
   CDKFSELECT *archivo = seleccionar_archivo ();
 
@@ -41,7 +41,7 @@ test ()
 void
 prueba ()
 {
-//    dialogo_borrado("cliente","cliente_id","C001");
+//    dialogo_borrado("Cliente","Cliente_id","C001");
 //    activateCDKDialog(dialogo,0);
   char *texto_prueba[] = { "f" };	//,"prueba","asdfa","dfdf"};
   initscr ();
@@ -54,7 +54,7 @@ prueba ()
 int
 main (int argc, char **argv)
 {
-//    formulario_alta("cliente");
+//    formulario_alta("Cliente");
   //   formulario_alta("RMP");
   //  initscr();
   //  CDKSCREEN    *cdkScreen=initCDKScreen(stdscr);
@@ -76,11 +76,11 @@ main (int argc, char **argv)
   // bindCDKObject(vMATRIX,matriz,'g',prueba_preprocess,0);
 
 
-  //  buscar_ultimo("cliente","cliente_id",call_id);
-//    generar_id("cC","cliente","cliente_id");
+  //  buscar_ultimo("Cliente","Cliente_id",call_id);
+//    generar_id("cC","Cliente","Cliente_id");
 
   //   printf("%d",strlen("dios"));
-  //  printf ("%s-----", generar_id ("C", "cliente", "cliente_id"));
+  //  printf ("%s-----", generar_id ("C", "Cliente", "Cliente_id"));
 
   while (TRUE)
     {

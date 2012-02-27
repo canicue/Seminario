@@ -17,7 +17,7 @@ void
 alta_proveedor ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("proveedor", "proveedor_id",
+    (CDKMATRIX *) formulario_alta ("Proveedor", "Proveedor_id",
 				   driver_proveedores_pre,
 				   driver_proveedores_post);
   int e = 0;
@@ -32,7 +32,7 @@ alta_proveedor ()
     }
   if (e)
     {
-      tratar_error (ScreenOf (matriz), "proveedor");
+      tratar_error (ScreenOf (matriz), "Proveedor");
     }
 
   destroyCDKMatrix (matriz);
@@ -45,22 +45,22 @@ baja_proveedor (CDKSCREEN * pantalla)
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   // popupLabel(pantalla,boton,2);
-  char *columna = "proveedor_id";
+  char *columna = "Proveedor_id";
 
 
   // popupLabel(pantalla,boton,2);
 
-  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "proveedor", columna);
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Proveedor", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("proveedor", "proveedor_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, driver_proveedores_post);
+	(CDKMATRIX *) formulario_modificacion ("Proveedor", "Proveedor_id",
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       driver_proveedores_post);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -92,18 +92,18 @@ baja_proveedor (CDKSCREEN * pantalla)
 void
 mod_proveedor (CDKSCREEN * pantalla)
 {
-  char *columna = "proveedor_id";
-  lista = (CDKSCROLL *) listado (pantalla, "proveedor", columna);
+  char *columna = "Proveedor_id";
+  lista = (CDKSCROLL *) listado (pantalla, "Proveedor", columna);
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("proveedor", columna,
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
+	(CDKMATRIX *) formulario_modificacion ("Proveedor", columna,
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]),
 					       driver_proveedores_pre,
 					       driver_proveedores_post);
       activateCDKMatrix (matriz, 0);

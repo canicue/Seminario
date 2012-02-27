@@ -22,7 +22,7 @@ void
 alta_insumo ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("insumo", "IR", driver_insumo_pre,
+    (CDKMATRIX *) formulario_alta ("Insumo", "IR", driver_insumo_pre,
 				   driver_insumos_post);
 
   activateCDKMatrix (matriz, 0);
@@ -47,17 +47,17 @@ baja_insumo (CDKSCREEN * pantalla)
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "IR";
   // char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "insumo", columna);
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Insumo", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, NULL);
+	(CDKMATRIX *) formulario_modificacion ("Insumo", "IR",
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -90,18 +90,18 @@ void
 mod_insumo (CDKSCREEN * pantalla)
 {
 
-  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "insumo", "IR");
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Insumo", "IR");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, NULL);
+	(CDKMATRIX *) formulario_modificacion ("Insumo", "IR",
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

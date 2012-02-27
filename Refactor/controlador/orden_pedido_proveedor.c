@@ -22,8 +22,8 @@ void
 alta_orden_pedido_proveedor ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("orden_pedido_proveedor",
-				   "orden_pedido_proveedor_id", NULL, NULL);
+    (CDKMATRIX *) formulario_alta ("Orden_pedido_proveedor",
+				   "Orden_pedido_proveedor_id", NULL, NULL);
 
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
@@ -43,21 +43,21 @@ baja_orden_pedido_proveedor (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "orden_pedido_proveedor_id";
+  char *columna = "Orden_pedido_proveedor_id";
 //  char *cosa[1];
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado (pantalla, "orden_pedido_proveedor", columna);
+    (CDKSCROLL *) listado (pantalla, "Orden_pedido_proveedor", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("orden_pedido_proveedor",
-					       "orden_pedido_proveedor_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, NULL);
+	(CDKMATRIX *) formulario_modificacion ("Orden_pedido_proveedor",
+					       "Orden_pedido_proveedor_id",
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -91,19 +91,19 @@ mod_orden_pedido_proveedor (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado (pantalla, "orden_pedido_proveedor", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "Orden_pedido_proveedor", "provedor_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("orden_pedido_proveedor",
-					       "orden_pedido_proveedor_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, NULL);
+	(CDKMATRIX *) formulario_modificacion ("Orden_pedido_proveedor",
+					       "Orden_pedido_proveedor_id",
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

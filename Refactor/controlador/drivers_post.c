@@ -131,7 +131,7 @@ driver_insumos_post (EObjectType cdktype GCC_UNUSED,
 	  mostrar_calendario (matriz, calen);
 	  break;
 	case 6:
-//        lista_pro = (CDKSCROLL *) listado ("RMP", "producto_id");
+//        lista_pro = (CDKSCROLL *) listado ("RMP", "Producto_id");
 //
 //        moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 //        elegido = activateCDKScroll (lista_pro, 0);
@@ -139,10 +139,10 @@ driver_insumos_post (EObjectType cdktype GCC_UNUSED,
 //                          (char *) chtype2Char (lista_pro->item[elegido]));
 //        drawCDKMatrix (matriz, TRUE);
 	case 13:
-	  mostrar_referencias (matriz, "tecnico", "tecnico_id");
+	  mostrar_referencias (matriz, "Tecnico", "Tecnico_id");
 	  break;
 	case 14:
-	  mostrar_referencias (matriz, "proveedor", "proveedor_id");
+	  mostrar_referencias (matriz, "Proveedor", "Proveedor_id");
 	  break;
 	}
 
@@ -168,8 +168,8 @@ driver_orden_produccion_post (EObjectType cdktype GCC_UNUSED,
       switch (row)
 	{
 	case 3:
-	  mostrar_referencias (matriz, "RMP", "producto_id");
-	  /*  lista_pro = (CDKSCROLL *) listado (ScreenOf(matriz),"RMP", "producto_id");
+	  mostrar_referencias (matriz, "RMP", "Producto_id");
+	  /*  lista_pro = (CDKSCROLL *) listado (ScreenOf(matriz),"RMP", "Producto_id");
 
 	     moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	     elegido = activateCDKScroll (lista_pro, 0);
@@ -220,8 +220,8 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
 	case 2:
 
 	  lista_pro =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "orden_produccion",
-				   "lote");
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "Orden_produccion",
+				   "Lote");
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
@@ -233,7 +233,7 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
 	  break;
 	case 5:
 	  lista_pro =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "insumo", "IR");
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "Insumo", "IR");
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
@@ -243,7 +243,7 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
 	  break;
 	case 6:
 	  lista_pro =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "producto_id");
+	    (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "Producto_id");
 
 	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
 	  elegido = activateCDKScroll (lista_pro, 0);
@@ -278,25 +278,28 @@ driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
       switch (row)
 	{
 	case 2:
-	  lista_pro =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "cliente",
-				   "cliente_id");
 
-	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
-	  elegido = activateCDKScroll (lista_pro, 0);
-	  setCDKMatrixCell (matriz, matriz->crow, 1,
-			    (char *) chtype2Char (lista_pro->item[elegido]));
-	  drawCDKMatrix (matriz, TRUE);
+	  mostrar_referencias (matriz, "Cliente", "Cliente_id");
+	  /*  lista_pro =
+	     (CDKSCROLL *) listado (ScreenOf (matriz), "Cliente",
+	     "Cliente_id");
+
+	     moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
+	     elegido = activateCDKScroll (lista_pro, 0);
+	     setCDKMatrixCell (matriz, matriz->crow, 1,
+	     (char *) chtype2Char (lista_pro->item[elegido]));
+	     drawCDKMatrix (matriz, TRUE); */
 	  break;
 	case 3:
-	  lista_pro =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "producto_id");
+	  mostrar_referencias (matriz, "RMP", "Producto_id");
+	  /*  lista_pro =
+	     (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "Producto_id");
 
-	  moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
-	  elegido = activateCDKScroll (lista_pro, 0);
-	  setCDKMatrixCell (matriz, matriz->crow, 1,
-			    (char *) chtype2Char (lista_pro->item[elegido]));
-	  drawCDKMatrix (matriz, TRUE);
+	     moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
+	     elegido = activateCDKScroll (lista_pro, 0);
+	     setCDKMatrixCell (matriz, matriz->crow, 1,
+	     (char *) chtype2Char (lista_pro->item[elegido]));
+	     drawCDKMatrix (matriz, TRUE); */
 	  break;
 	case 5:
 

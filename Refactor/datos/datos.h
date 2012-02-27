@@ -11,7 +11,7 @@
 
 #include <sqlite3.h>
 
-#define BASE "base_2.sqlite"
+#define BASE "base_3.sqlite"
 //#define BASE "base.sqlite"
 sqlite3 *conexion;
 sqlite3 *conectar (char *nombre);

@@ -57,10 +57,10 @@ baja_producto_terminado (CDKSCREEN * pantalla)
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("producto_terminado",
 					       "producto_terminado_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, NULL);
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -103,10 +103,10 @@ mod_producto_terminado (CDKSCREEN * pantalla)
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("producto_terminado",
 					       "producto_terminado_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, NULL);
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

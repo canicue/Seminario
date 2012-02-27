@@ -55,10 +55,10 @@ baja_tecnico (CDKSCREEN * pantalla)
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, driver_tecnicos_post);
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       driver_tecnicos_post);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -119,10 +119,10 @@ mod_tecnico (CDKSCREEN * pantalla)
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
-					       (char *) chtype2Char (lista->
-								     item
-								     [elegido]),
-					       NULL, NULL);
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);

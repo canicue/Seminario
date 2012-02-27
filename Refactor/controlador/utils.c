@@ -60,7 +60,7 @@ void
 armar_prefijo (char *nombre, char *destino)
 {
 
-  if (!strcasecmp (nombre, "proveedor"))
+  if (!strcasecmp (nombre, "Proveedor"))
     {
       strcat (destino, "RMP00");
       //     sprintf(tmp,"P00%s",destino);
@@ -73,7 +73,7 @@ armar_prefijo (char *nombre, char *destino)
       strcat (destino, "RMP00");
 
     }
-  else if (!strcasecmp (nombre, "cliente"))
+  else if (!strcasecmp (nombre, "Cliente"))
     {
       strcat (destino, "C00");
 
