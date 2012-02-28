@@ -31,8 +31,6 @@ alta_cliente ()
   CDKMATRIX *matriz =
     (CDKMATRIX *) formulario_alta ("cliente", "cliente_id", NULL,
 				   driver_clientes_post);
-  //  setCDKMatrixPreProcess (matriz, pruebab, 0);
-//    bindCDKObject(vMATRIX, matriz, '?', pruebab, 0);
   if (matriz->exitType == vNORMAL)
     {
 
@@ -59,8 +57,6 @@ alta_cliente ()
 void
 baja_cliente ()
 {
-  //  CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", "cliente_id");
-  // activateCDKScroll (lista, 0);
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "cliente_id";
   char *cosa[1];
@@ -84,7 +80,6 @@ baja_cliente ()
 
 
 
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
 
     }
   bindCDKObject (vMATRIX, matriz, KEY_TAB, driver_borrado, botones);
@@ -98,8 +93,6 @@ baja_cliente ()
   destroyCDKButtonbox (botones);
 
   destroyCDKMatrix (matriz);
-  //   popupLabel(ScreenOf(lista),cosa,1);
-
 
 
 }

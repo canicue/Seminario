@@ -65,13 +65,9 @@ baja_proveedor ()
 				 1, 1, matriz->boxWidth - 1, 0, 1, 2, boton,
 				 2, A_REVERSE, TRUE, FALSE);
 
-
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
     }
+
   bindCDKObject (vMATRIX, matriz, KEY_TAB, driver_borrado, botones);
-  //activateCDKMatrix(matriz,0);
   drawCDKMatrix (matriz, TRUE);
   int elegido = activateCDKButtonbox (botones, 0);
 
@@ -80,7 +76,6 @@ baja_proveedor ()
   destroyCDKButtonbox (botones);
 
   destroyCDKMatrix (matriz);
-  //   popupLabel(ScreenOf(lista),cosa,1);
 
 
 }
@@ -103,7 +98,6 @@ mod_proveedor ()
 					       driver_proveedores_post);
       activateCDKMatrix (matriz, 0);
 
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
 
     }
 

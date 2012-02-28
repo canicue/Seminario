@@ -11,36 +11,19 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
   char tmp[255];
   char *formato = "<L></B>%s";
   char *coltitle[argc], *rowtitle[argc];
-  //  char *mesg[10];
   int colwidth[argc], colvalue[argc];
-//  colvalue[3] = vUCHAR;
-//  int id=atoi(copyChar(argv[0]));
-  // id++;
-  //char *elid;
-  //sprintf(elid,"%d",id);
-/*  int j;
-   for (j = 0; j < argc;j++)
-   { printf("%s",argv[j]);}
-   printf("%d",id);
-  exit(0);*/
   int i = 0;
-  //char *titulo="<L></B/5>%s";
   char titulo[255];
-  //sprintf(&titulo,nombre);
   CDKSCREEN *pantalla;
   initscr ();
   pantalla = initCDKScreen (stdscr);
-  // CDKMATRIX *matriz;
   sprintf (titulo, formato, ((char **) nombre)[0]);
-  // armar_prefijo(nombre,argv[0]);
 
   for (i = 0; i < argc; i++)
     {
       sprintf (tmp, formato, azColName[i]);
       rowtitle[i + 1] = (char *) copyChar (tmp);
 
-      //        printf(tmp);
-      //      set_row(i+1,azColName[i]);
     }
 
 
@@ -65,22 +48,6 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
   char *temp = (char *) malloc (sizeof (char *));
   sprintf (temp, "%d", ++algo);
   setCDKMatrixCell (matriz, 1, 1, temp);
-  //algo=atoi(algo);
-  // No puedo castear a int !!
-
-  // setCDKMatrixCell (matriz,1,1,argv[0]);//ver qu ehostias!!
-
-  //activateCDKMatrix(matriz, 0);
-  //          for(i=0;i<argc;i++)
-  //        {
-  //                printf("->%s: %s\n",azColName[i],argv[i]);
-  //       }
-  //        printf("%s",(char*)nombre);
-
-
-//  int  ultimo=buscar_ultimo(nombre,azColName[0],call_id);
-  // ultimo=ultimo+1;
-  // setCDKMatrixCell(matriz,1,1,(char*)id);
   return 0;
 
 
@@ -114,9 +81,6 @@ call_lista (void *nombre, int argc, char **argv, char **azColName)
       if (!strcmp (((char *) nombre), azColName[i]))
 	{
 
-	  //     endCDK();
-	  //printf("nombre %s",azColName[i]);
-	  //    exit(0);
 	  tmp = i;
 
 	}
