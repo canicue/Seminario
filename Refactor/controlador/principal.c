@@ -256,7 +256,7 @@ entrada ()
       exit (0);
 
     }
-  else
+  if(rta==0)
     {
       destroyCDKButtonbox (botonera);
       area_administrativa ();

@@ -9,7 +9,7 @@ int
 call_alta (void *nombre, int argc, char **argv, char **azColName)
 {
   char tmp[255];
-  char *formato = "<L></B/32>%s<!32>";
+  char *formato = "<I=1></B/32>%s<!32>";
   char *coltitle[argc], *rowtitle[argc];
   int colwidth[argc], colvalue[argc];
 
@@ -57,6 +57,7 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
   setCDKMatrixCell (matriz, 1, 1, temp);
 
   return 0;
+
 
 }
 
