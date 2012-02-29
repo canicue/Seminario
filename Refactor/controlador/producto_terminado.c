@@ -20,22 +20,28 @@ void
 alta_producto_terminado ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("producto_terminado",
-				   "producto_terminado_id", NULL,
+    (CDKMATRIX *) formulario_alta ("Producto_terminado",
+				   "Producto_terminado_id",
+				   driver_producto_terminado_pre,
 				   driver_producto_terminado_post);
   char *msg = "Seleccione archivo...";
   setCDKMatrixCell (matriz, 7, 1, msg);
+  setCDKMatrixCell (matriz, 8, 1, msg);
   //   activateCDKMatrix(matriz,0);
+  int error = 0;
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
 
 
     }
-
-  activateCDKMatrix (matriz, 0);
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Producto_terminado");
+    }
 
   destroyCDKMatrix (matriz);
 
@@ -46,17 +52,17 @@ baja_producto_terminado (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "producto_terminado_id";
+  char *columna = "Producto_terminado_id";
   // char *cosa[1];
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado (pantalla, "producto_terminado", columna);
+    (CDKSCROLL *) listado (pantalla, "Producto_terminado", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("producto_terminado",
-					       "producto_terminado_id",
+	(CDKMATRIX *) formulario_modificacion ("Producto_terminado",
+					       "Producto_terminado_id",
 					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
@@ -94,15 +100,16 @@ mod_producto_terminado (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado (pantalla, "producto_terminado", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "Producto_terminado",
+			   "Producto_terminado_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("producto_terminado",
-					       "producto_terminado_id",
+	(CDKMATRIX *) formulario_modificacion ("Producto_terminado",
+					       "Producto_terminado_id",
 					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,

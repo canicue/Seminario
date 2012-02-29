@@ -46,6 +46,7 @@
       <itemPath>widgets/dialogos.c</itemPath>
       <itemPath>controlador/drivers_post.c</itemPath>
       <itemPath>controlador/drivers_pre.c</itemPath>
+      <itemPath>widgets/etiqueta.c</itemPath>
       <itemPath>widgets/formularios.c</itemPath>
       <itemPath>controlador/insumos.c</itemPath>
       <itemPath>widgets/listados.c</itemPath>
@@ -88,7 +89,6 @@
           <incDir>
             <pElem>/usr/include/cdk</pElem>
           </incDir>
-          <warningLevel>2</warningLevel>
         </cTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Refactor</output>

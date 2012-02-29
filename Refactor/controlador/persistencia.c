@@ -26,10 +26,10 @@ guardar_matriz (CDKMATRIX * matriz)
 
 
 
-  popupLabel (ScreenOf (matriz), datos, matriz->rows);
+//  popupLabel (ScreenOf (matriz), datos, matriz->rows);
 
-  popupLabel (ScreenOf (matriz), datos, matriz->rows);
-  popupLabel (ScreenOf (matriz), columnas, matriz->rows);
+  // popupLabel (ScreenOf (matriz), datos, matriz->rows);
+//  popupLabel (ScreenOf (matriz), columnas, matriz->rows);
 
   tmp = guardar_cosa (chtype2Char (matriz->coltitle[1]), columnas, datos,
 		      matriz->rows);

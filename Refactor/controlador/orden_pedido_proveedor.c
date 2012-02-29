@@ -23,19 +23,26 @@ alta_orden_pedido_proveedor ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("Orden_pedido_proveedor",
-				   "Orden_pedido_proveedor_id", NULL, NULL);
+				   "Orden_pedido_proveedor_id",
+				   driver_orden_pedido_proveedor_pre,
+				   driver_orden_pedido_proveedor_post);
 
+  int error = 0;
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
+
+      error = guardar_matriz (matriz);
+
 
     }
-  // activateCDKMatrix (matriz, 0);
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Orden_pedido_proveedor");
+    }
 
   destroyCDKMatrix (matriz);
-
 }
 
 void
@@ -117,7 +124,7 @@ mod_orden_pedido_proveedor (CDKSCREEN * pantalla)
 	}
       if (res)
 	{
-	  tratar_error (ScreenOf (matriz), "Proveedor");
+	  tratar_error (ScreenOf (matriz), "Orden_pedido_proveedor");
 
 	}
 

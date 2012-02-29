@@ -23,22 +23,26 @@ alta_orden_pedido_producto ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("Orden_pedido_producto",
-				   "Orden_pedido_Producto_id", NULL,
+				   "Orden_pedido_producto_id",
+				   driver_orden_pedido_producto_pre,
 				   driver_orden_pedido_producto_post);
 
+  int error = 0;
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
 
 
     }
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
+    }
 
-  activateCDKMatrix (matriz, 0);
   destroyCDKMatrix (matriz);
-
 }
 
 void
@@ -94,7 +98,8 @@ mod_orden_pedido_producto (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado (pantalla, "Orden_pedido_producto", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "Orden_pedido_producto",
+			   "Orden_pedido_producto_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
@@ -102,7 +107,7 @@ mod_orden_pedido_producto (CDKSCREEN * pantalla)
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("Orden_pedido_producto",
-					       "Orden_pedido_Producto_id",
+					       "Orden_pedido_producto_id",
 					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
@@ -119,7 +124,7 @@ mod_orden_pedido_producto (CDKSCREEN * pantalla)
 	}
       if (res)
 	{
-	  tratar_error (ScreenOf (matriz), "Proveedor");
+	  tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
 
 	}
 

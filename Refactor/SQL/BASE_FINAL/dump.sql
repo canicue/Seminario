@@ -42,7 +42,7 @@ INSERT INTO "RMP" VALUES(6,'Integer aliquam adipiscing lacus. Ut nec urna et arc
 INSERT INTO "RMP" VALUES(7,'Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec','varius','nulla. Donec non justo. Proin non massa non ante bibendum','velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat,',148,122,17,'a, magna. Lorem ipsum dolor sit amet, consectetuer','In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus.','Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc');
 INSERT INTO "RMP" VALUES(8,'','','','','','','','','','');
 CREATE TABLE Orden_pedido_producto (
-  Orden_pedido_Producto_id INTEGER PRIMARY KEY NOT NULL,
+  Orden_pedido_producto_id INTEGER PRIMARY KEY NOT NULL,
   Id_cliente INTEGER NOT NULL,
   Id_producto INTEGER NOT NULL,
   Cantidad INTEGER NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE Orden_pedido_proveedor (
   Descripcion_materia_prima TEXT NOT NULL,
   Descripcion_insumo_productivo TEXT NOT NULL,
   Descripcion_producto_semielaborado TEXT NOT NULL,
-  CONSTRAINT Orden_pedido_proveedor_ibfk_1 FOREIGN KEY (Id_orden_pedido_producto) REFERENCES Orden_pedido_producto (Orden_pedido_Producto_id)
+  CONSTRAINT Orden_pedido_proveedor_ibfk_1 FOREIGN KEY (Id_orden_pedido_producto) REFERENCES Orden_pedido_producto (Orden_pedido_producto_id)
 );
 INSERT INTO "Orden_pedido_proveedor" VALUES(1,1,'3/12/99','observo',12,12,23,'asdf','un insumo','un pe');
 CREATE TABLE Orden_produccion (

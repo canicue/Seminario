@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/controlador/producto_terminado.o \
 	${OBJECTDIR}/controlador/tecnicos.o \
 	${OBJECTDIR}/widgets/dialogos.o \
+	${OBJECTDIR}/widgets/etiqueta.o \
 	${OBJECTDIR}/controlador/callbacks.o \
 	${OBJECTDIR}/widgets/formularios.o \
 	${OBJECTDIR}/pruebas.o \
@@ -115,6 +116,11 @@ ${OBJECTDIR}/widgets/dialogos.o: nbproject/Makefile-${CND_CONF}.mk widgets/dialo
 	${MKDIR} -p ${OBJECTDIR}/widgets
 	${RM} $@.d
 	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/dialogos.o widgets/dialogos.c
+
+${OBJECTDIR}/widgets/etiqueta.o: nbproject/Makefile-${CND_CONF}.mk widgets/etiqueta.c 
+	${MKDIR} -p ${OBJECTDIR}/widgets
+	${RM} $@.d
+	$(COMPILE.c) -O2 -I/usr/include/cdk -MMD -MP -MF $@.d -o ${OBJECTDIR}/widgets/etiqueta.o widgets/etiqueta.c
 
 ${OBJECTDIR}/controlador/callbacks.o: nbproject/Makefile-${CND_CONF}.mk controlador/callbacks.c 
 	${MKDIR} -p ${OBJECTDIR}/controlador

@@ -6,6 +6,7 @@
 #include <matrix.h>
 #include <scroll.h>
 #include <cdk/scroll.h>
+#include <cdk/cdk.h>
 
 
 CDKMATRIX *matriz;
@@ -17,28 +18,26 @@ alta_cliente ()
 {
   int error = 0;
   CDKMATRIX *matriz =
-    (CDKMATRIX *) formulario_alta ("Cliente", "Cliente_id", NULL,
+    (CDKMATRIX *) formulario_alta ("Cliente", "Cliente_id",
+				   driver_clientes_pre,
 				   driver_clientes_post);
+
+
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
+
       error = guardar_matriz (matriz);
 
 
-
     }
-
   if (error)
     {
       tratar_error (ScreenOf (matriz), "Cliente");
-
     }
 
   destroyCDKMatrix (matriz);
-
-  //
-
 
 
 }
@@ -122,7 +121,7 @@ mod_cliente (CDKSCREEN * pantalla)
 	}
       if (res)
 	{
-	  tratar_error (ScreenOf (matriz), "Proveedor");
+	  tratar_error (ScreenOf (matriz), "Cliente");
 
 	}
 

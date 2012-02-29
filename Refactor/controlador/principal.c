@@ -1,3 +1,5 @@
+#include <cdk.h>
+
 #include "principal.h"
 #include "clientes.h"
 #include "proveedores.h"
@@ -20,9 +22,6 @@ CDKSCREEN *cdkscreen = 0;
 void
 login ()
 {
-
-
-
   char *usuario;
   char *password;
   usuario = pedir_datos ("usuario");
@@ -34,8 +33,6 @@ login ()
 	{
 	  entrada ();
 	}
-
-
     }
   else
     {
@@ -53,34 +50,24 @@ pedir_datos (char *tipo)
 
   CDKBUTTONBOX *buttonWidget = 0;
   CDKENTRY *entry = 0;
-
   WINDOW *cursesWin = 0;
   char *info = 0;
 
-
-  /* Set up CDK. */
   cursesWin = initscr ();
   curs_set (0);
   cdkscreen = initCDKScreen (cursesWin);
-
   box (cursesWin, 0, 0);
-  /* Start color. */
   initCDKColor ();
-
-  /* Create the entry widget. */
-
-
-
   if (strcmp (tipo, "usuario") == 0)
     {
       entry = newCDKEntry (cdkscreen, CENTER, CENTER,
-			   "<C>Usuario", "Name ", A_NORMAL, '.', vMIXED,
+			   "<C></32>Usuario", "Name ", A_NORMAL, '.', vMIXED,
 			   40, 0, 256, TRUE, FALSE);
     }
   else
     {
       entry = newCDKEntry (cdkscreen, CENTER, CENTER,
-			   "<C>Contraseña:", "<C>Password:", A_INVIS, '.',
+			   "<C></32>Contraseña:", "Password:", A_INVIS, '.',
 			   vMIXED, 40, 0, 256, TRUE, FALSE);
 
 
@@ -96,7 +83,7 @@ pedir_datos (char *tipo)
     }
 
 
-  /* Create the button box widget. */
+
   buttonWidget = newCDKButtonbox (cdkscreen,
 				  getbegx (entry->win),
 				  getbegy (entry->win) + entry->boxHeight - 1,
@@ -118,13 +105,9 @@ pedir_datos (char *tipo)
   setCDKButtonboxULChar (buttonWidget, ACS_LTEE);
   setCDKButtonboxURChar (buttonWidget, ACS_RTEE);
 
-  /*
-   * Bind the Tab key in the entry field to send a
-   * Tab key to the button box widget.
-   */
   bindCDKObject (vENTRY, entry, KEY_TAB, entryCB, buttonWidget);
 
-  /* Activate the entry field. */
+
   drawCDKButtonbox (buttonWidget, TRUE);
   info = copyChar (activateCDKEntry (entry, 0));
   selection = buttonWidget->currentButton;
@@ -137,7 +120,6 @@ pedir_datos (char *tipo)
     }
   box (cursesWin, 0, 0);
   refreshCDKScreen (cdkscreen);
-  /* Clean up. */
   destroyCDKButtonbox (buttonWidget);
   destroyCDKEntry (entry);
   destroyCDKScreen (cdkscreen);
@@ -168,15 +150,12 @@ error_login ()
 {
   char *buttons[] = { " OK " };
   char *message[10], *mesg[3], temp[100];
-  message[0] = "<C>Login Incorrecto";
-  message[1] = " ";
-  message[2] = "<C>The dialog widget allows the programmer to create";
-  message[3] = "<C>a popup dialog box with buttons. The dialog box";
-  message[4] =
-    "<C>can contain </B/32>colours<!B!32>, </R>character attributes<!R>";
-  message[5] = "<R>and even be right justified.";
-  message[6] = "<L>and left.";
-  message[7] = "<L>and left.";
+  message[0] = "<C></B/32>Login Incorrecto<!B!32>";
+  message[1] = "<C></B>";
+  message[2] = "<C></B>Mensaje de error";
+  message[3] = "<C></B>Mensaje de error";
+
+
   /*
    *  CDKDIALOG *newCDKDialog (
    *  CDKSCREEN *cdkscreen,
@@ -199,9 +178,9 @@ error_login ()
   question = newCDKDialog (cdkscreen,
 			   CENTER,
 			   CENTER,
-			   message, 7, buttons, 1,
+			   message, 4, buttons, 1,
 			   COLOR_PAIR (2) | A_REVERSE, TRUE, TRUE, FALSE);
-  printf ("sdf2%d", (int) question);
+  //printf ("sdf2%d", (int) question);
   if (question == 0)
     {
       /* Shut down Cdk. */
@@ -217,27 +196,20 @@ error_login ()
   /* Activate the dialog box. */
   selection = activateCDKDialog (question, 0);
 
-  /* Tell them what was selected. */
-  if (question->exitType == vESCAPE_HIT)
-    {
-      mesg[0] = "<C>You hit escape. No button selected.";
-      mesg[1] = "", mesg[2] = "<C>Press any key to continue.";
-      popupLabel (cdkscreen, mesg, 3);
-    }
-  else if (question->exitType == vNORMAL)
-    {
-      sprintf (temp, "<C>You selected button #%d", selection);
-      mesg[0] = temp;
-      mesg[1] = "";
-      mesg[2] = "<C>Press any key to continue.";
-      popupLabel (cdkscreen, mesg, 3);
-    }
+  destroyCDKScreen (cdkscreen);
 
-  /* Clean up. */
   destroyCDKDialog (question);
   destroyCDKScreen (cdkscreen);
 
   endCDK ();
+
+  endCDK ();
+  exit (0);
+  /* Tell them what was selected. */
+
+
+  /* Clean up. */
+
 
 
 
@@ -319,7 +291,7 @@ area_tecnica ()
   do
     {
       scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 45,
-			     "<C>Menu",
+			     "<C></B/32>MENU<!32>",
 			     opciones_, 7, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
@@ -363,12 +335,6 @@ area_tecnica ()
 	  menu_abm ("ORDEN PRODUCCION", alta_orden_produccion,
 		    baja_orden_produccion, mod_orden_produccion);
 
-
-	  //popupLabel (pantalla, opciones, 3);
-	  //        mvwaddstr(cdkScreen->window,2,2,"dios");
-	  // wrefresh(cdkScreen->window);
-	  // getch();
-	  //           clientes();
 	  break;
 	case 4:
 	  destroyCDKScroll (scroll);
@@ -412,7 +378,7 @@ area_administrativa ()
   do
     {
       scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 20,
-			     "<C>Menu",
+			     "<C></B/32>MENU<!32>",
 			     opciones_, 4, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
@@ -423,9 +389,9 @@ area_administrativa ()
 	{
 	case 0:
 
-	  //  destroyCDKScroll(scroll);
 
-	  //  popupLabel (pantalla, opciones, 3);
+
+
 	  destroyCDKScroll (scroll);
 	  eraseCDKScreen (pantalla);
 	  refreshCDKScreen (pantalla);

@@ -24,20 +24,22 @@ alta_insumo ()
   matriz =
     (CDKMATRIX *) formulario_alta ("Insumo", "IR", driver_insumo_pre,
 				   driver_insumos_post);
-
+  int error = 0;
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
 
 
     }
-  activateCDKMatrix (matriz, 0);
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Insumo");
+    }
 
   destroyCDKMatrix (matriz);
-
 }
 
 void
@@ -115,7 +117,7 @@ mod_insumo (CDKSCREEN * pantalla)
 	}
       if (res)
 	{
-	  tratar_error (ScreenOf (matriz), "Proveedor");
+	  tratar_error (ScreenOf (matriz), "Insumo");
 
 	}
 
@@ -123,7 +125,6 @@ mod_insumo (CDKSCREEN * pantalla)
     }
 
   destroyCDKMatrix (matriz);
-
 
 
 

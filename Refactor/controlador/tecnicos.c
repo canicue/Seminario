@@ -16,45 +16,45 @@ alta_tecnico ()
 {
 
   matriz =
-    (CDKMATRIX *) formulario_alta ("tecnico", "tecnico_id", NULL,
-				   driver_tecnicos_post);
+    (CDKMATRIX *) formulario_alta ("Tecnico", "Tecnico_id",
+				   driver_tecnicos_pre, driver_tecnicos_post);
 //  setear_id (matriz);
 
+  int error = 0;
   activateCDKMatrix (matriz, 0);
-
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
 
 
     }
-  // activateCDKMatrix (matriz, 0);
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Tecnico");
+    }
 
   destroyCDKMatrix (matriz);
-
-
-  //activateCDKMatrix(matriz,0);
 
 }
 
 void
 baja_tecnico (CDKSCREEN * pantalla)
 {
-//  CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
+//  CDKSCROLL *lista = (CDKSCROLL *) listado ("Tecnico", "Tecnico_id");
 //  activateCDKScroll (lista, 0);
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "tecnico_id";
+  char *columna = "Tecnico_id";
 //  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "tecnico", columna);
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Tecnico", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
+	(CDKMATRIX *) formulario_modificacion ("Tecnico", "Tecnico_id",
 					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
@@ -108,17 +108,17 @@ baja_tecnico (CDKSCREEN * pantalla)
 void
 mod_tecnico (CDKSCREEN * pantalla)
 {
-  // CDKSCROLL *lista = (CDKSCROLL *) listado ("tecnico", "tecnico_id");
+  // CDKSCROLL *lista = (CDKSCROLL *) listado ("Tecnico", "Tecnico_id");
 //  activateCDKScroll (lista, 0);
 
-  lista = (CDKSCROLL *) listado (pantalla, "tecnico", "tecnico_id");
+  lista = (CDKSCROLL *) listado (pantalla, "Tecnico", "Tecnico_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("tecnico", "tecnico_id",
+	(CDKMATRIX *) formulario_modificacion ("Tecnico", "Tecnico_id",
 					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
@@ -135,7 +135,7 @@ mod_tecnico (CDKSCREEN * pantalla)
 	}
       if (res)
 	{
-	  tratar_error (ScreenOf (matriz), "Proveedor");
+	  tratar_error (ScreenOf (matriz), "Tecnico");
 
 	}
 

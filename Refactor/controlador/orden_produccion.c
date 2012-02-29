@@ -21,19 +21,24 @@ alta_orden_produccion ()
 {
   matriz =
     (CDKMATRIX *) formulario_alta ("Orden_produccion", "Orden_produccion_id",
-				   NULL, driver_orden_produccion_post);
+				   driver_orden_produccion_pre,
+				   driver_orden_produccion_post);
 
-  //   activateCDKMatrix(matriz,0);
+  int error = 0;
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
 
 
     }
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Orden_produccion");
+    }
 
-  activateCDKMatrix (matriz, 0);
   destroyCDKMatrix (matriz);
 
 }
@@ -115,7 +120,7 @@ mod_orden_produccion (CDKSCREEN * pantalla)
 	}
       if (res)
 	{
-	  tratar_error (ScreenOf (matriz), "Proveedor");
+	  tratar_error (ScreenOf (matriz), "Orden_produccion");
 
 	}
 

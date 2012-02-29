@@ -29,7 +29,7 @@ buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
   conectar (BASE);
   char consulta[255];
   sprintf (consulta, BUSCAR_REGISTRO, tabla, nombre, valor);
-  printf (consulta);
+//  printf (consulta);
   sqlite3_exec (conexion, consulta, callback, extra, &error);
   desconectar ();
 

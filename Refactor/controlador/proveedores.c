@@ -20,17 +20,17 @@ alta_proveedor ()
     (CDKMATRIX *) formulario_alta ("Proveedor", "Proveedor_id",
 				   driver_proveedores_pre,
 				   driver_proveedores_post);
-  int e = 0;
+  int error = 0;
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
 
-      e = guardar_matriz (matriz);
+      error = guardar_matriz (matriz);
 
 
     }
-  if (e)
+  if (error)
     {
       tratar_error (ScreenOf (matriz), "Proveedor");
     }
