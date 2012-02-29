@@ -48,7 +48,7 @@ guardar_tecnico (CDKMATRIX * matriz)
 int
 guardar_matriz (CDKMATRIX * matriz)
 {
-  guardar_matriz (matriz);
+  //guardar_matriz (matriz);
 
   char *columnas[matriz->rows];
   char *datos[matriz->rows];
