@@ -4,7 +4,7 @@ CDKMATRIX *
 formulario_alta (char *tabla, char *identificador, PROCESSFN prep,
 		 PROCESSFN post)
 {
-  int proximo = 15;
+  int proximo = 0;
   char *error;
   conectar (BASE);
   char *plantilla = "SELECT * FROM '%s' ORDER BY %s DESC LIMIT 1";
@@ -17,18 +17,9 @@ formulario_alta (char *tabla, char *identificador, PROCESSFN prep,
   tmp[1] = (char *) malloc (sizeof (char *));
   sprintf (tmp[1], "%d", proximo);
 
-//  endCDK();
-//  printf("%s  %s",tmp[0],tmp[1]);
-  // exit(0);
-//  setCDKMatrixCell(matriz,1,1,tmp[1]);
-  //setCDKMatrixCell(matriz,1,1,(char*)buscar_ultimo(tabla,identificador,call_id));
+
   setCDKMatrixPreProcess (matriz, (PROCESSFN) prep, (void *) tmp);
-  // activateCDKMatrix (matriz, 0);
-//tmp[0]=copyChar("dios");
-//tmp[1]=copyChar("caca");
-//  endCDK();
-//  printf("%s  %s",tmp[0],tmp[1]);
-  // exit(0);
+
   proximo++;
   setCDKMatrixPostProcess (matriz, (PROCESSFN) post, (void *) tmp);
   desconectar ();
