@@ -9,9 +9,9 @@ char *tmp;
 char *
 generar_id (char *prefijo, char *tabla, char *columna)
 {
-  char caca[12];		//="Asdfadsfasdfadsfadsfads";
+  // char caca[12];              //="Asdfadsfasdfadsfadsfads";
   // strcpy(caca,prefijo);
-  int longitud;
+  // int longitud;
 
   // tmp = buscar_ultimo (tabla, columna, call_id);
   printf ("prefijo %s\n", tmp);
@@ -61,7 +61,7 @@ void
 armar_prefijo (char *nombre, char *destino)
 {
 
-  if (!strcasecmp (nombre, "proveedor"))
+  if (!strcasecmp (nombre, "Proveedor"))
     {
       strcat (destino, "RMP00");
       //     sprintf(tmp,"P00%s",destino);
@@ -74,7 +74,7 @@ armar_prefijo (char *nombre, char *destino)
       strcat (destino, "RMP00");
 
     }
-  else if (!strcasecmp (nombre, "cliente"))
+  else if (!strcasecmp (nombre, "Cliente"))
     {
       strcat (destino, "C00");
 

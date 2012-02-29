@@ -7,9 +7,10 @@
 
 #ifndef _PROVEEDORES_H
 #define	_PROVEEDORES_H
+#include <cdk/cdk.h>
 void alta_proveedor ();
-void baja_proveedor ();
-void mod_proveedor ();
+void baja_proveedor (CDKSCREEN * pantalla);
+void mod_proveedor (CDKSCREEN * pantalla);
 #ifdef	__cplusplus
 extern "C"
 {

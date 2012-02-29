@@ -7,9 +7,10 @@
 
 #ifndef _ORDEN_PEDIDO_PRODUCTO_H
 #define	_ORDEN_PEDIDO_PRODUCTO_H
+#include <cdk/cdk.h>
 void alta_orden_pedido_producto ();
-void baja_orden_pedido_producto ();
-void mod_orden_pedido_producto ();
+void baja_orden_pedido_producto (CDKSCREEN * pantalla);
+void mod_orden_pedido_producto (CDKSCREEN * pantalla);
 #ifdef	__cplusplus
 extern "C"
 {

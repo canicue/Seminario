@@ -7,9 +7,11 @@
 
 #ifndef _RMP_H
 #define	_RMP_H
+#include <cdk/matrix.h>
 void alta_RMP ();
 void baja_RMP ();
 void mod_RMP ();
+void validar_cantidad (CDKMATRIX * matriz);
 #ifdef	__cplusplus
 extern "C"
 {

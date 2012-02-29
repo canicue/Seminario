@@ -20,16 +20,24 @@ void
 alta_orden_pedido_producto ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("orden_pedido_producto",
-				   "orden_pedido_producto_id", NULL,
+    (CDKMATRIX *) formulario_alta ("Orden_pedido_producto",
+				   "Orden_pedido_producto_id",
+				   driver_orden_pedido_producto_pre,
 				   driver_orden_pedido_producto_post);
 
-  //   activateCDKMatrix(matriz,0);
+  int error = 0;
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
+
+
+    }
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
     }
 
   activateCDKMatrix (matriz, 0);
@@ -38,23 +46,25 @@ alta_orden_pedido_producto ()
 }
 
 void
-baja_orden_pedido_producto ()
+baja_orden_pedido_producto (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "orden_pedido_producto_id";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("orden_pedido_producto", columna);
+  char *columna = "Orden_pedido_Producto_id";
+  //char *cosa[1];
+  CDKSCROLL *lista =
+    (CDKSCROLL *) listado (pantalla, "Orden_pedido_producto", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
-					       "orden_pedido_producto_id",
-					       chtype2Char (lista->
-							    item[elegido]),
-					       NULL, NULL);
+	(CDKMATRIX *) formulario_modificacion ("Orden_pedido_producto",
+					       "Orden_pedido_Producto_id",
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -84,25 +94,40 @@ baja_orden_pedido_producto ()
 }
 
 void
-mod_orden_pedido_producto ()
+mod_orden_pedido_producto (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado ("orden_pedido_producto", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "Orden_pedido_producto",
+			   "Orden_pedido_producto_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("orden_pedido_producto",
-					       "orden_pedido_producto_id",
+	(CDKMATRIX *) formulario_modificacion ("Orden_pedido_producto",
+					       "Orden_pedido_producto_id",
+					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
 					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);
+      int res = 0;
+      if (matriz->exitType == vNORMAL)
+	{
+	  res = modificar_matriz (matriz);
+
+
+	}
+      if (res)
+	{
+	  tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
+
+	}
+
 
     }
 

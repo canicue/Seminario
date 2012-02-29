@@ -10,39 +10,38 @@
 
 CDKMATRIX *matriz;
 CDKBUTTONBOX *botones;
-
-int
-pruebab (EObjectType cdkType GCC_UNUSED, void *object,
-	 void *clientData GCC_UNUSED, chtype input)
-{
-
-
-  exit (1);
-
-  return 1;
-
-
-}
+CDKSCROLL *lista;
 
 void
 alta_cliente ()
 {
   int error = 0;
   CDKMATRIX *matriz =
-    (CDKMATRIX *) formulario_alta ("cliente", "cliente_id", NULL,
+    (CDKMATRIX *) formulario_alta ("Cliente", "Cliente_id",
+				   driver_clientes_pre,
 				   driver_clientes_post);
+
+
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
+
 
       error = guardar_matriz (matriz);
 
 
-
+    }
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Cliente");
     }
 
   if (error)
     {
-      tratar_error (ScreenOf (matriz), "cliente");
+      tratar_error (ScreenOf (matriz), "Cliente");
+    }
+
+  destroyCDKMatrix (matriz);
 
     }
 
@@ -50,26 +49,28 @@ alta_cliente ()
 
   //
 
-  activateCDKMatrix (matriz, 0);
 
-}
 
 void
-baja_cliente ()
+baja_cliente (CDKSCREEN * pantalla)
 {
+
+//  CDKSCROLL *lista = (CDKSCROLL *) listado ("Cliente", "Cliente_id");
+  // activateCDKScroll (lista, 0);
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "cliente_id";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", columna);
+  char *columna = "Cliente_id";
+  //char *cosa[1];
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Cliente", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("cliente", "cliente_id",
+	(CDKMATRIX *) formulario_modificacion ("Cliente", "Cliente_id",
+					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
-					       NULL);
+					       driver_clientes_post);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -80,6 +81,7 @@ baja_cliente ()
 
 
 
+      //     cosa[0]=chtype2Char(lista->item[elegido]);
 
     }
   bindCDKObject (vMATRIX, matriz, KEY_TAB, driver_borrado, botones);
@@ -93,14 +95,74 @@ baja_cliente ()
   destroyCDKButtonbox (botones);
 
   destroyCDKMatrix (matriz);
-
-
+  //   popupLabel(ScreenOf(lista),cosa,1);
 }
 
 void
-mod_cliente ()
+mod_cliente (CDKSCREEN * pantalla)
 {
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("cliente", "cliente_id");
+//  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla,"Cliente", "Cliente_id");
+//  activateCDKScroll (lista, 0);
+
+  char *columna = "Cliente_id";
+  lista = (CDKSCROLL *) listado (pantalla, "Cliente", columna);
   activateCDKScroll (lista, 0);
 
+  if (lista->exitType == vNORMAL)
+    {
+      int elegido = getCDKScrollCurrentItem (lista);
+      matriz =
+	(CDKMATRIX *) formulario_modificacion ("Cliente", columna,
+					       (char *)
+					       chtype2Char (lista->item
+							    [elegido]), NULL,
+					       driver_clientes_post);
+      activateCDKMatrix (matriz, 0);
+
+      //     cosa[0]=chtype2Char(lista->item[elegido]);
+
+      int res = 0;
+      if (matriz->exitType == vNORMAL)
+	{
+	  res = modificar_matriz (matriz);
+
+
+	}
+      if (res)
+	{
+	  tratar_error (ScreenOf (matriz), "Cliente");
+
+	}
+
+
+    }
+
+  destroyCDKMatrix (matriz);
+
+
+
 }
+
+/*
+ char *columna = "Proveedor_id";
+  lista = (CDKSCROLL *) listado (pantalla,"Proveedor", columna);
+  activateCDKScroll (lista, 0);
+
+  if (lista->exitType == vNORMAL)
+    {
+      int elegido = getCDKScrollCurrentItem (lista);
+      matriz =
+	(CDKMATRIX *) formulario_modificacion ("Proveedor", columna,
+					       (char*)chtype2Char (lista->item
+							    [elegido]),
+					       driver_proveedores_pre,
+					       driver_proveedores_post);
+      activateCDKMatrix (matriz, 0);
+
+      //     cosa[0]=chtype2Char(lista->item[elegido]);
+
+    }
+
+  destroyCDKMatrix (matriz);
+
+ */

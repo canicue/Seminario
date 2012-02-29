@@ -11,10 +11,8 @@
 #include <cdk/cdk.h>
 #include <cdk/matrix.h>
 int guardar_matriz (CDKMATRIX * matriz);
-int guardar_cliente (CDKMATRIX * matriz);
-int guardar_tecnico (CDKMATRIX * matriz);
-int guardar_proveedor (CDKMATRIX * matriz);
-int guardar_insumo (CDKMATRIX * matriz);
+int modificar_matriz (CDKMATRIX * matriz);
+int borrar_matriz (CDKMATRIX * matriz);
 void tratar_error (CDKSCREEN * pantalla, char *tabla);
 void arrepentimiento (CDKMATRIX * matriz, int elegido);
 

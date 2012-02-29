@@ -1,5 +1,5 @@
 #include "archivos.h"
-
+#include <cdk/cdk_util.h>
 CDKFSELECT *
 seleccionar_archivo ()
 {

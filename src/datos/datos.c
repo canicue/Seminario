@@ -32,7 +32,7 @@ buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
   conectar (BASE);
   char consulta[255];
   sprintf (consulta, BUSCAR_REGISTRO, tabla, nombre, valor);
-  printf (consulta);
+//  printf (consulta);
   sqlite3_exec (conexion, consulta, callback, extra, &error);
   desconectar ();
 
@@ -41,13 +41,17 @@ buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
 int
 borrar_registro (char *tabla, char *columna, char *valor, void *callback)
 {
+  int res = 0;
   conectar (BASE);
-  char consulta[255];
+  char consulta[512];
   sprintf (consulta, BORRAR_REGISTRO, tabla, columna, valor);
   sqlite3_exec (conexion, consulta, callback, 0, &error);
 
 
-  return (int) error;
+  res = sqlite3_exec (conexion, consulta, callback, 0, &error);
+
+  desconectar ();
+  return res;
 }
 
 void
@@ -78,6 +82,33 @@ ver_tabla (char *nombre, int limite, char *visible, void *callback,
 
 }
 
+int
+modificar_registro (char *tabla, char **columnas, char *identificador,
+		    char *valor, char **nuevos, int nro)
+{
+
+  conectar (BASE);
+  char consulta[1024];
+  int res = 0;
+  int i;
+  char tmp[1024] = "UPDATE %s SET ";
+  sprintf (consulta, tmp, tabla);
+  for (i = 0; i < nro; i++)
+    {
+      i == nro - 1 ? sprintf (tmp, "%s='%s' WHERE ", columnas[i],
+			      nuevos[i]) : sprintf (tmp, "%s='%s',",
+						    columnas[i], nuevos[i]);
+      strcat (consulta, tmp);
+    }
+  sprintf (tmp, "%s='%s'", identificador, valor);
+  strcat (consulta, tmp);
+  conectar (BASE);
+  res = sqlite3_exec (conexion, consulta, NULL, NULL, &error);
+  desconectar ();
+  return (res);
+
+}
+
 /*static int callback(void *NotUsed, int argc, char **argv, char **azColName){
 
     printf("%d-------------",argc);
@@ -93,10 +124,10 @@ int
 guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
 {
 
-
+  int res = 0;
   int i;
   char tmp[1024] = "INSERT INTO %s (";
-  char *consulta;
+  char consulta[1024];
   for (i = 0; i < nro; i++)
     {
       strcat (tmp, columnas[i]);
@@ -111,46 +142,26 @@ guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
     }
 
   sprintf (consulta, tmp, tabla);
-
-
+//  endCDK();
+//  printf(consulta);
+//  exit(0);
   conectar (BASE);
-  sqlite3_exec (conexion, consulta, NULL, NULL, &error);
-  endCDK ();
-  printf (error);
-  exit (0);
+  res = sqlite3_exec (conexion, consulta, NULL, NULL, &error);
+  // endCDK ();
+  // printf (error);
+  // exit (0);
 
   desconectar ();
-  return ((int) error);
+  return (res);
 
 
 
-}
-
-int tmp;
-int
-buscar_ultimo (char *tabla, char *nombre, void *callback)
-{
-  char *ultimo;
-  conectar (BASE);
-  char consulta[256];
-  sprintf (consulta, ULTIMO_ID, nombre, tabla, nombre);
-  //printf(consulta);
-  sqlite3_exec (conexion, consulta, callback, ultimo, &error);
-  // printf ("aaaaaaaa---->%s\n", ultimo);
-  tmp = atoi (copyChar (ultimo));
-  desconectar ();
-  return tmp + 1;
-//  return "C11";
 }
 
 int
-ultimo_id (char *tabla, char *nombre)
+modificar_cosa ()
 {
-  char consulta[128];
-  char *plantilla = "SELECT max(%s) FROM %s";
-  sprintf (consulta, plantilla, nombre, tabla);
-  conectar (BASE);
-  sqlite3_exec (conexion, consulta, NULL, NULL, &error);
-  return 7;
-
+  return 0;
 }
+
+

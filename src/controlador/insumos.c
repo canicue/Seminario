@@ -20,38 +20,43 @@ void
 alta_insumo ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("insumo", "IR", driver_insumo_pre,
+    (CDKMATRIX *) formulario_alta ("Insumo", "IR", driver_insumo_pre,
 				   driver_insumos_post);
-
-  //   activateCDKMatrix(matriz,0);
+  int error = 0;
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
       guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
 
 
     }
-  activateCDKMatrix (matriz, 0);
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Insumo");
+    }
 
   destroyCDKMatrix (matriz);
 
 }
 
 void
-baja_insumo ()
+baja_insumo (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "IR";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("insumo", columna);
+  // char *cosa[1];
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Insumo", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
+	(CDKMATRIX *) formulario_modificacion ("Insumo", "IR",
+					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
 					       NULL);
@@ -84,23 +89,38 @@ baja_insumo ()
 }
 
 void
-mod_insumo ()
+mod_insumo (CDKSCREEN * pantalla)
 {
 
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("insumo", "IR");
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Insumo", "IR");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("insumo", "IR",
+	(CDKMATRIX *) formulario_modificacion ("Insumo", "IR",
+					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
 					       NULL);
       activateCDKMatrix (matriz, 0);
 
       //     cosa[0]=chtype2Char(lista->item[elegido]);
+
+      int res = 0;
+      if (matriz->exitType == vNORMAL)
+	{
+	  res = modificar_matriz (matriz);
+
+
+	}
+      if (res)
+	{
+	  tratar_error (ScreenOf (matriz), "Insumo");
+
+	}
+
 
     }
 

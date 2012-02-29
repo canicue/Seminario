@@ -46,13 +46,14 @@ guardar_tecnico (CDKMATRIX * matriz)
 }
 
 int
-guardar_proveedor (CDKMATRIX * matriz)
+guardar_matriz (CDKMATRIX * matriz)
 {
   guardar_matriz (matriz);
 
   char *columnas[matriz->rows];
   char *datos[matriz->rows];
   int i;
+  int tmp = 0;
   for (i = 0; i < matriz->rows; i++)
     {
       // datos[i]=(char*)malloc(256);
@@ -65,55 +66,14 @@ guardar_proveedor (CDKMATRIX * matriz)
 
 
 
-  popupLabel (ScreenOf (matriz), datos, matriz->rows);
-  guardar_cosa ("proveedor", columnas, datos, matriz->rows);
+//  popupLabel (ScreenOf (matriz), datos, matriz->rows);
 
-}
+  // popupLabel (ScreenOf (matriz), datos, matriz->rows);
+//  popupLabel (ScreenOf (matriz), columnas, matriz->rows);
 
-int
-guardar_insumo (CDKMATRIX * matriz)
-{
-
-
-  char *datos[matriz->rows];
-  int i;
-  for (i = 0; i < matriz->rows; i++)
-    {
-      datos[i] = getCDKMatrixCell (matriz, i, 1);
-
-    }
-
-
-
-  popupLabel (ScreenOf (matriz), datos, matriz->rows);
-
-
-
-}
-
-int
-guardar_matriz (CDKMATRIX * matriz)
-{
-
-  char *columnas[matriz->rows];
-  char *datos[matriz->rows];
-  int i;
-  for (i = 0; i < matriz->rows; i++)
-    {
-      // datos[i]=(char*)malloc(256);
-      // strcpy(datos[i],getCDKMatrixCell(matriz,i+1,1));
-      datos[i] = getCDKMatrixCell (matriz, i + 1, 1);
-      columnas[i] = (char *) chtype2Char (matriz->rowtitle[i + 1]);
-
-    }
-
-
-
-
-  popupLabel (ScreenOf (matriz), datos, matriz->rows);
-  return guardar_cosa (chtype2Char (matriz->coltitle[1]), columnas, datos,
-		       matriz->rows);
-
+  tmp = guardar_cosa (chtype2Char (matriz->coltitle[1]), columnas, datos,
+		      matriz->rows);
+  return tmp;
 
 }
 
@@ -129,6 +89,31 @@ borrar_matriz (CDKMATRIX * matriz)
   return borrar_registro (tabla, nombre, valor, NULL);
 }
 
+int
+modificar_matriz (CDKMATRIX * matriz)
+{
+  char *columnas[matriz->rows];
+  char *nuevos[matriz->rows];
+  char *valor;
+  int i;
+  int tmp = 0;
+
+  for (i = 0; i < matriz->rows; i++)
+    {
+      // datos[i]=(char*)malloc(256);
+      // strcpy(datos[i],getCDKMatrixCell(matriz,i+1,1));
+      nuevos[i] = getCDKMatrixCell (matriz, i + 1, 1);
+      columnas[i] = (char *) chtype2Char (matriz->rowtitle[i + 1]);
+
+    }
+
+
+  valor = copyChar (getCDKMatrixCell (matriz, 1, 1));
+  return modificar_registro (chtype2Char (matriz->coltitle[1]), columnas,
+			     (char *) chtype2Char (matriz->rowtitle[1]),
+			     valor, nuevos, matriz->rows);
+
+}
 
 
 void

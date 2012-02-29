@@ -31,7 +31,7 @@ calendario (CDKSCREEN * pantalla)
 void
 mostrar_calendario (CDKMATRIX * matriz, CDKCALENDAR * calen)
 {
-  char *tmp[128];
+  char tmp[128];
 
   calen = (CDKCALENDAR *) calendario (ScreenOf (matriz));
   activateCDKCalendar (calen, 0);
@@ -43,4 +43,5 @@ mostrar_calendario (CDKMATRIX * matriz, CDKCALENDAR * calen)
       destroyCDKCalendar (calen);
       drawCDKMatrix (matriz, TRUE);
     }
+
 }

@@ -17,8 +17,7 @@ void area_tecnica ();
 void menu_administrativa ();
 void menu_tecnica ();
 void area_administrativa ();
-
-
+boolean validar_usuario (char *usuario, char *password);
 static int entryCB (EObjectType cdktype GCC_UNUSED,
 		    void *object GCC_UNUSED, void *clientData, chtype key);
 #ifdef	__cplusplus

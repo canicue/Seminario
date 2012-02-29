@@ -26,9 +26,26 @@ int driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 int driver_proveedores_pre (EObjectType cdktype GCC_UNUSED,
 			    void *object GCC_UNUSED, void *clientData,
 			    chtype input);
-int driver_orden_pedido_pre (EObjectType cdktype GCC_UNUSED,
-			     void *object GCC_UNUSED, void *clientData,
-			     chtype input);
+int driver_orden_pedido_producto_pre (EObjectType cdktype GCC_UNUSED,
+				      void *object GCC_UNUSED,
+				      void *clientData, chtype input);
+int driver_clientes_pre (EObjectType cdktype GCC_UNUSED,
+			 void *object GCC_UNUSED, void *clientData,
+			 chtype input);
+int driver_tecnicos_pre (EObjectType cdktype GCC_UNUSED,
+			 void *object GCC_UNUSED, void *clientData,
+			 chtype input);
+int driver_RMP_pre (EObjectType cdktype GCC_UNUSED, void *object GCC_UNUSED,
+		    void *clientData, chtype input);
+
+int driver_orden_produccion_pre (EObjectType cdktype GCC_UNUSED,
+				 void *object GCC_UNUSED,
+				 void *clientData, chtype input);
+int driver_orden_pedido_proveedor_pre (EObjectType cdktype GCC_UNUSED,
+				       void *object GCC_UNUSED,
+				       void *clientData, chtype input);
+void proteger_id (CDKMATRIX * matriz);
+void columna_numerica (CDKMATRIX * matriz, int *row, int nro);
 
 #ifdef	__cplusplus
 extern "C"

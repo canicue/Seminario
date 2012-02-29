@@ -20,17 +20,24 @@ void
 alta_orden_produccion ()
 {
   matriz =
-    (CDKMATRIX *) formulario_alta ("orden_produccion", "orden_produccion_id",
-				   NULL, driver_orden_produccion_post);
+    (CDKMATRIX *) formulario_alta ("Orden_produccion", "Orden_produccion_id",
+				   driver_orden_produccion_pre,
+				   driver_orden_produccion_post);
 
-  //   activateCDKMatrix(matriz,0);
+  int error = 0;
+  activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
       guardar_matriz (matriz);
 
+      error = guardar_matriz (matriz);
 
 
+    }
+  if (error)
+    {
+      tratar_error (ScreenOf (matriz), "Orden_produccion");
     }
 
   activateCDKMatrix (matriz, 0);
@@ -39,22 +46,25 @@ alta_orden_produccion ()
 }
 
 void
-baja_orden_produccion ()
+baja_orden_produccion (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "orden_produccion_id";
-  char *cosa[1];
-  CDKSCROLL *lista = (CDKSCROLL *) listado ("orden_produccion", columna);
+  char *columna = "Orden_produccion_id";
+  // char *cosa[1];
+  CDKSCROLL *lista =
+    (CDKSCROLL *) listado (pantalla, "Orden_produccion", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("orden_produccion",
+	(CDKMATRIX *) formulario_modificacion ("Orden_produccion",
 					       columna,
+					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL);
+							    [elegido]), NULL,
+					       NULL);
 
 
       botones = newCDKButtonbox (ScreenOf (matriz),
@@ -84,24 +94,38 @@ baja_orden_produccion ()
 }
 
 void
-mod_orden_produccion ()
+mod_orden_produccion (CDKSCREEN * pantalla)
 {
 
   CDKSCROLL *lista =
-    (CDKSCROLL *) listado ("orden_produccion", "provedor_id");
+    (CDKSCROLL *) listado (pantalla, "Orden_produccion", "provedor_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)
     {
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
-	(CDKMATRIX *) formulario_modificacion ("orden_produccion",
-					       "orden_produccion_id",
+	(CDKMATRIX *) formulario_modificacion ("Orden_produccion",
+					       "Orden_produccion_id",
+					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL);
+							    [elegido]), NULL,
+					       NULL);
       activateCDKMatrix (matriz, 0);
 
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
+      int res = 0;
+      if (matriz->exitType == vNORMAL)
+	{
+	  res = modificar_matriz (matriz);
+
+
+	}
+      if (res)
+	{
+	  tratar_error (ScreenOf (matriz), "Orden_produccion");
+
+	}
+
 
     }
 

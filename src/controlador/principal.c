@@ -77,13 +77,13 @@ pedir_datos (char *tipo)
   if (strcmp (tipo, "usuario") == 0)
     {
       entry = newCDKEntry (cdkscreen, CENTER, CENTER,
-			   "<C>Usuario", "Name ", A_NORMAL, '.', vMIXED,
+			   "<C></32>Usuario", "Name ", A_NORMAL, '.', vMIXED,
 			   40, 0, 256, TRUE, FALSE);
     }
   else
     {
       entry = newCDKEntry (cdkscreen, CENTER, CENTER,
-			   "<C>Contraseña:", "<C>Password:", A_INVIS, '.',
+			   "<C></32>Contraseña:", "Password:", A_INVIS, '.',
 			   vMIXED, 40, 0, 256, TRUE, FALSE);
 
 
@@ -99,7 +99,7 @@ pedir_datos (char *tipo)
     }
 
 
-  /* Create the button box widget. */
+
   buttonWidget = newCDKButtonbox (cdkscreen,
 				  getbegx (entry->win),
 				  getbegy (entry->win) + entry->boxHeight - 1,
@@ -127,7 +127,7 @@ pedir_datos (char *tipo)
    */
   bindCDKObject (vENTRY, entry, KEY_TAB, entryCB, buttonWidget);
 
-  /* Activate the entry field. */
+
   drawCDKButtonbox (buttonWidget, TRUE);
   info = copyChar (activateCDKEntry (entry, 0));
   selection = buttonWidget->currentButton;
@@ -171,15 +171,12 @@ error_login ()
 {
   char *buttons[] = { " OK " };
   char *message[10], *mesg[3], temp[100];
-  message[0] = "<C>Login Incorrecto";
-  message[1] = " ";
-  message[2] = "<C>The dialog widget allows the programmer to create";
-  message[3] = "<C>a popup dialog box with buttons. The dialog box";
-  message[4] =
-    "<C>can contain </B/32>colours<!B!32>, </R>character attributes<!R>";
-  message[5] = "<R>and even be right justified.";
-  message[6] = "<L>and left.";
-  message[7] = "<L>and left.";
+  message[0] = "<C></B/32>Login Incorrecto<!B!32>";
+  message[1] = "<C></B>";
+  message[2] = "<C></B>Mensaje de error";
+  message[3] = "<C></B>Mensaje de error";
+
+
   /*
    *  CDKDIALOG *newCDKDialog (
    *  CDKSCREEN *cdkscreen,
@@ -202,9 +199,9 @@ error_login ()
   question = newCDKDialog (cdkscreen,
 			   CENTER,
 			   CENTER,
-			   message, 7, buttons, 1,
+			   message, 4, buttons, 1,
 			   COLOR_PAIR (2) | A_REVERSE, TRUE, TRUE, FALSE);
-  printf ("sdf2%d", (int) question);
+  //printf ("sdf2%d", (int) question);
   if (question == 0)
     {
       /* Shut down Cdk. */
@@ -220,27 +217,20 @@ error_login ()
   /* Activate the dialog box. */
   selection = activateCDKDialog (question, 0);
 
-  /* Tell them what was selected. */
-  if (question->exitType == vESCAPE_HIT)
-    {
-      mesg[0] = "<C>You hit escape. No button selected.";
-      mesg[1] = "", mesg[2] = "<C>Press any key to continue.";
-      popupLabel (cdkscreen, mesg, 3);
-    }
-  else if (question->exitType == vNORMAL)
-    {
-      sprintf (temp, "<C>You selected button #%d", selection);
-      mesg[0] = temp;
-      mesg[1] = "";
-      mesg[2] = "<C>Press any key to continue.";
-      popupLabel (cdkscreen, mesg, 3);
-    }
+  destroyCDKScreen (cdkscreen);
 
-  /* Clean up. */
   destroyCDKDialog (question);
   destroyCDKScreen (cdkscreen);
 
   endCDK ();
+
+  endCDK ();
+  exit (0);
+  /* Tell them what was selected. */
+
+
+  /* Clean up. */
+
 
 
 
@@ -251,7 +241,7 @@ error_login ()
 void
 entrada ()
 {
-  char *opciones[] = { "ADMINISTRATIVA</B>", "TECNICA</B>", "SALIR</B>" };
+  char *opciones_[] = { "ADMINISTRATIVA</B>", "TECNICA</B>", "SALIR</B>" };
   //  endCDK();
   initscr ();
   curs_set (0);
@@ -264,7 +254,7 @@ entrada ()
 					    4, COLS,
 					    "<C></32>SELECCIONAR AREA\n</B/!32>",
 					    1, 3,
-					    opciones, 3, A_REVERSE,
+					    opciones_, 3, A_REVERSE,
 					    TRUE, FALSE);
 
   int rta = activateCDKButtonbox (botonera, 0);
@@ -313,7 +303,7 @@ area_tecnica ()
 
 
 
-  char *opciones[] = { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
+  char *opciones_[] = { "RMP</B>", "Insumos</B>", "Producto terminado</B>",
     "Orden de producción</B>",
     "Orden de pedido</B>", "Orden pedido proveedor", "Volver</B>"
   };
@@ -321,9 +311,9 @@ area_tecnica ()
   int elegido;
   do
     {
-      scroll = newCDKScroll (pantalla, 2, 2, CENTER, 10, 45,
-			     "<C>Menu",
-			     opciones, 7, TRUE, A_REVERSE, TRUE, FALSE);
+      scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 45,
+			     "<C></B/32>MENU<!32>",
+			     opciones_, 7, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
       //
@@ -408,15 +398,15 @@ area_administrativa ()
 
 
 
-  char *opciones[] =
+  char *opciones_[] =
     { "Proveedores</B>", "Tecnicos</B>", "Clientes</B>", "Volver</B>" };
   CDKSCROLL *scroll;
   int elegido;
   do
     {
       scroll = newCDKScroll (pantalla, 2, 2, RIGHT, 10, 20,
-			     "<C>Menu",
-			     opciones, 4, TRUE, A_REVERSE, TRUE, FALSE);
+			     "<C></B/32>MENU<!32>",
+			     opciones_, 4, TRUE, A_REVERSE, TRUE, FALSE);
       elegido = activateCDKScroll (scroll, 0);
       //refreshCDKScreen(cdkScreen);
       //
@@ -428,7 +418,8 @@ area_administrativa ()
 
 	  //  destroyCDKScroll(scroll);
 
-	  //  popupLabel (pantalla, opciones, 3);
+
+
 	  destroyCDKScroll (scroll);
 	  eraseCDKScreen (pantalla);
 	  refreshCDKScreen (pantalla);

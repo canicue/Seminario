@@ -8,7 +8,8 @@
 #define	_DATOS_H
 #include "consultas.h"
 #include <sqlite3.h>
-#define BASE "base_2.sqlite"
+
+#define BASE "base_3.sqlite"
 //#define BASE "base.sqlite"
 sqlite3 *conexion;
 sqlite3 *conectar (char *nombre);
@@ -17,6 +18,8 @@ void desconectar ();
 void buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
 		      void *extra);
 int borrar_registro (char *tabla, char *columna, char *valor, void *callback);
+int modificar_registro (char *tabla, char **columnas, char *identificador,
+			char *valor, char **nuevos, int nro);
 void listar_registros (char *tabla, void *callback, void *extra);
 //void ver_tabla(char *nombre,int limite,char *visible);
 void ver_tabla (char *nombre, int limite, char *visible, void *callback,
