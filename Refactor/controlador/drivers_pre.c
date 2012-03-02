@@ -35,46 +35,7 @@ driver_insumo_pre (EObjectType cdktype GCC_UNUSED,
   int filas[1];
   filas[0] = 7;
   columna_numerica (matriz, filas, 1);
-/*
-  int row = getCDKMatrixRow (matriz);
-  int elegido;
-  if (input != KEY_UP && input != KEY_DOWN)
-    {
-      switch (row)
-	{
-	case 14:
-	  lista = (CDKSCROLL *) listado (ScreenOf(matriz),"Proveedor", "Proveedor_id");
 
-	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
-	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz, matriz->crow, 1,
-			    (char *) chtype2Char (lista->item[elegido]));
-	  drawCDKMatrix (matriz, TRUE);
-
-
-
-	  break;
-	case 13:
-	  lista = (CDKSCROLL *) listado (ScreenOf(matriz),"tecnico", "tecnico_id");
-
-	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
-	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz, matriz->crow, 1,
-			    (char *) chtype2Char (lista->item[elegido]));
-	  drawCDKMatrix (matriz, TRUE);
-
-
-	  break;
-	case 10:
-
-	  break;
-
-
-
-
-	}
-
-    }*/
 
 
   return 1;
@@ -95,44 +56,7 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 
   int row = getCDKMatrixRow (matriz);
   int elegido;
-  if (input != KEY_UP || input != KEY_DOWN)
-    {
-      switch (row)
-	{
-	case 5:
-	  lista = (CDKSCROLL *) listado (ScreenOf (matriz), "Insumo", "IR");
-
-	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
-	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz, matriz->crow, 1,
-			    (char *) chtype2Char (lista->item[elegido]));
-	  drawCDKMatrix (matriz, TRUE);
-
-
-
-	  break;
-	case 6:
-	  lista =
-	    (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "Producto_id");
-
-	  moveCDKScroll (lista, CENTER, CENTER, FALSE, TRUE);
-	  elegido = activateCDKScroll (lista, 0);
-	  setCDKMatrixCell (matriz, matriz->crow, 1,
-			    (char *) chtype2Char (lista->item[elegido]));
-	  drawCDKMatrix (matriz, TRUE);
-
-
-	  break;
-	case 10:
-
-	  break;
-
-
-
-
-	}
-
-    }
+ 
   return 1;
 
 }
@@ -296,7 +220,11 @@ driver_orden_pedido_proveedor_pre (EObjectType cdktype GCC_UNUSED,
 void
 proteger_id (CDKMATRIX * matriz)
 {
+    if(matriz->crow==1)
+    {
+     matriz->colvalues[1] = vVIEWONLY;
 
+    }
 
 }
 

@@ -48,7 +48,6 @@ baja_insumo (CDKSCREEN * pantalla)
 
   char *boton[] = { "BORRAR", "CANCELAR" };
   char *columna = "IR";
-  // char *cosa[1];
   CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Insumo", columna);
   activateCDKScroll (lista, 0);
   if (lista->exitType == vNORMAL)
@@ -60,8 +59,6 @@ baja_insumo (CDKSCREEN * pantalla)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
 					       NULL);
-
-
       botones = newCDKButtonbox (ScreenOf (matriz),
 				 getbegx (matriz->win),
 				 getbegy (matriz->win) + matriz->boxHeight -
@@ -69,22 +66,13 @@ baja_insumo (CDKSCREEN * pantalla)
 				 2, A_REVERSE, TRUE, FALSE);
 
 
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
     }
   bindCDKObject (vMATRIX, matriz, KEY_TAB, driver_borrado, botones);
-  //activateCDKMatrix(matriz,0);
   drawCDKMatrix (matriz, TRUE);
   int elegido = activateCDKButtonbox (botones, 0);
-
   arrepentimiento (matriz, elegido);
-
   destroyCDKButtonbox (botones);
-
   destroyCDKMatrix (matriz);
-  //   popupLabel(ScreenOf(lista),cosa,1);
-
 
 }
 
@@ -105,28 +93,17 @@ mod_insumo (CDKSCREEN * pantalla)
 							    [elegido]), NULL,
 					       NULL);
       activateCDKMatrix (matriz, 0);
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
-
-
 	}
       if (res)
 	{
 	  tratar_error (ScreenOf (matriz), "Insumo");
-
 	}
-
-
     }
 
   destroyCDKMatrix (matriz);
-
-
-
 
 }

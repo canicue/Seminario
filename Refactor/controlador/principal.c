@@ -356,7 +356,7 @@ area_tecnica ()
 	}
     }
   while (elegido != 6);
-
+//  destroyCDKScroll(scroll);
 
   // getch ();
 
@@ -434,7 +434,7 @@ area_administrativa ()
     }
   while (elegido != 3);
 
-
+ //destroyCDKScroll (scroll);
   // getch ();
 
 }

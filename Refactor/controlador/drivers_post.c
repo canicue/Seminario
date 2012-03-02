@@ -1,4 +1,4 @@
-#include <cdk/cdk.h>
+#include <cdk.h>
 
 #include "drivers_post.h"
 #include "../widgets/calendario.h"
@@ -14,29 +14,18 @@ driver_proveedores_post (EObjectType cdktype GCC_UNUSED,
   CDKMATRIX *matriz = (CDKMATRIX *) object;
   //char *valor = copyChar (getCDKMatrixCell (matriz, 1, 1));
   setCDKMatrixCell (matriz, 1, 1, cosa[1]);
-/*  if (matriz->crow == 1)
-    {
-      moveToCDKMatrixCell (matriz, 2, 1);
-      drawCDKMatrix (matriz, TRUE);
-      //  refreshCDKScreen (ScreenOf (matriz));
-    }*/
+
   int nros[1];
   nros[0] = 3;
 
   normalizar_columna (matriz, nros, 1);
 
 
-  if (input != KEY_UP && input != KEY_DOWN && input != KEY_UP)
+ if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
     {
 
 
     }
-
-
-//  popupLabel(ScreenOf(matriz),((char**)clientData),2);
-
-  //  cuidar_id(matriz);
-  //  setCDKMatrixCell(matriz,1,1,valor);
 
   return 1;
 
@@ -51,32 +40,12 @@ driver_clientes_post (EObjectType cdktype GCC_UNUSED,
 
 
   CDKMATRIX *matriz = (CDKMATRIX *) object;
-  /* if(matriz->crow!=3)
 
-     {
-     matriz->colvalues[1]=vMIXED;
-
-     }
-   */
   int nros[1];
   nros[0] = 3;
 
   normalizar_columna (matriz, nros, 1);
-//  char *valor = copyChar (getCDKMatrixCell (matriz, 1, 1));
 
-
-
-  //popupLabel(ScreenOf(matriz),(char*)clientData,1);
-
-  //  cuidar_id(matriz);
-  //  setCDKMatrixCell(matriz,1,1,valor);
-
-  // endCDK();
-  // printf("%s",valor);
-  // exit(0);
-
-
-  //popupLabel(ScreenOf(matriz),matriz->info,matriz->rows);
 
   setCDKMatrixCell (matriz, 1, 1, ((char **) clientData)[1]);
 
@@ -104,31 +73,11 @@ driver_tecnicos_post (EObjectType cdktype GCC_UNUSED,
 {
 
 
-
   CDKMATRIX *matriz = (CDKMATRIX *) object;
   setCDKMatrixCell (matriz, 1, 1, ((char **) clientData)[1]);
   int nros[1];
   nros[0] = 3;
-
   normalizar_columna (matriz, nros, 1);
-
-//  char *valor = copyChar (getCDKMatrixCell (matriz, 1, 1));
-
-
-
-  //popupLabel(ScreenOf(matriz),(char*)clientData,1);
-
-  //  cuidar_id(matriz);
-  //  setCDKMatrixCell(matriz,1,1,valor);
-
-  // endCDK();
-  // printf("%s",valor);
-  // exit(0);
-
-
-  //popupLabel(ScreenOf(matriz),matriz->info,matriz->rows);
-
-
   return 1;
 }
 
@@ -142,11 +91,8 @@ driver_insumos_post (EObjectType cdktype GCC_UNUSED,
   filas[0] = 7;
 
   normalizar_columna (matriz, filas, 1);
-//  popupLabel(ScreenOf(matriz),matriz->info,matriz->rows);
   int row = getCDKMatrixRow (matriz);
-  // int elegido;
-  // char tmp[256];
-  if (input != KEY_UP && input != KEY_DOWN && input != KEY_UP)
+  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
     {
       switch (row)
 
@@ -157,15 +103,6 @@ driver_insumos_post (EObjectType cdktype GCC_UNUSED,
 	  break;
 	case 12:
 	  mostrar_calendario (matriz, calen);
-	  break;
-	case 6:
-//        lista_pro = (CDKSCROLL *) listado ("RMP", "Producto_id");
-//
-//        moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
-//        elegido = activateCDKScroll (lista_pro, 0);
-//        setCDKMatrixCell (matriz, 5, 1,
-//                          (char *) chtype2Char (lista_pro->item[elegido]));
-//        drawCDKMatrix (matriz, TRUE);
 	  break;
 	case 13:
 	  mostrar_referencias (matriz, "Tecnico", "Tecnico_id");
@@ -198,19 +135,14 @@ driver_orden_produccion_post (EObjectType cdktype GCC_UNUSED,
   normalizar_columna (matriz, filas, 1);
 
 
-  if (input != KEY_UP && input != KEY_DOWN && input != KEY_UP)
+if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
     {
       switch (row)
 	{
 	case 3:
 	  mostrar_referencias (matriz, "RMP", "Producto_id");
 	  break;
-	case 4:
-
-
-	  break;
 	case 6:
-
 	  mostrar_referencias (matriz, "Tecnico", "Tecnico_id");
 	  break;
 	case 7:
@@ -218,14 +150,6 @@ driver_orden_produccion_post (EObjectType cdktype GCC_UNUSED,
 	  break;
 	case 8:
 	  mostrar_referencias (matriz, "Tecnico", "Tecnico_id");
-	  /*  lista_pro = (CDKSCROLL *) listado (ScreenOf(matriz),"tecnico", "tecnico_id");
-
-	     moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
-	     elegido = activateCDKScroll (lista_pro, 0);
-	     setCDKMatrixCell (matriz, 5, 1,
-	     (char *) chtype2Char (lista_pro->item[elegido]));
-	     drawCDKMatrix (matriz, TRUE);
-	   */
 	  break;
 	case 9:
 	  mostrar_calendario (matriz, calen);
@@ -249,49 +173,20 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
   normalizar_columna (matriz, filas, 1);
   int row = getCDKMatrixRow (matriz);
   int elegido;
-  if (input != KEY_UP && input != KEY_DOWN && input != KEY_UP)
+if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
     {
       switch (row)
 
 	{
 
 	case 2:
-
-	  /*  lista_pro =
-	     (CDKSCROLL *) listado (ScreenOf (matriz), "Orden_produccion",
-	     "Lote");
-
-	     moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
-	     elegido = activateCDKScroll (lista_pro, 0);
-	     setCDKMatrixCell (matriz, matriz->crow, 1,
-	     (char *) chtype2Char (lista_pro->item[elegido]));
-	     drawCDKMatrix (matriz, TRUE);
-	   */
 	  mostrar_referencias (matriz, "Orden_produccion", "Lote");
 	  break;
 	case 5:
-
 	  mostrar_referencias (matriz, "Insumo", "IR");
-	  /*lista_pro =
-	     (CDKSCROLL *) listado (ScreenOf (matriz), "Insumo", "IR");
-
-	     moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
-	     elegido = activateCDKScroll (lista_pro, 0);
-	     setCDKMatrixCell (matriz, matriz->crow, 1,
-	     (char *) chtype2Char (lista_pro->item[elegido]));
-	     drawCDKMatrix (matriz, TRUE); */
 	  break;
 	case 6:
 	  mostrar_referencias (matriz, "RMP", "Producto_id");
-	  /*  lista_pro =
-	     (CDKSCROLL *) listado (ScreenOf (matriz), "RMP", "Producto_id");
-
-	     moveCDKScroll (lista_pro, CENTER, CENTER, FALSE, TRUE);
-	     elegido = activateCDKScroll (lista_pro, 0);
-	     setCDKMatrixCell (matriz, matriz->crow, 1,
-	     (char *) chtype2Char (lista_pro->item[elegido]));
-	     drawCDKMatrix (matriz, TRUE);
-	     * */
 	  break;
 	case 7:
 	  elegir_archivo (matriz);
@@ -346,12 +241,11 @@ driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
     }
 
 
-  if (input != KEY_UP && input != KEY_DOWN && input != KEY_UP)
+if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
     {
       switch (row)
 	{
 	case 2:
-
 	  mostrar_referencias (matriz, "Cliente", "Cliente_id");
 
 	  break;
@@ -395,7 +289,7 @@ driver_orden_pedido_proveedor_post (EObjectType cdktype GCC_UNUSED,
   filas[1] = 6;
   filas[2] = 7;
   normalizar_columna (matriz, filas, 3);
-  if (input != KEY_UP && input != KEY_DOWN && input != KEY_UP)
+if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
     {
       switch (row)
 	{
@@ -422,7 +316,11 @@ void
 desproteger_id (CDKMATRIX * matriz)
 {
 
-  // if(matriz->crow!==)
+   if(matriz->crow!=1)
+   {
+    matriz->colvalues[1] = vMIXED;
+
+   }
 
 
 }
@@ -441,8 +339,5 @@ normalizar_columna (CDKMATRIX * matriz, int *row, int nro)
 	}
 
     }
-  /*   endCDK();
-     printf("%d",nro);
-     exit(0); */
 
 }
