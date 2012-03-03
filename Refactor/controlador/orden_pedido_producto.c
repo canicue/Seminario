@@ -107,27 +107,22 @@ mod_orden_pedido_producto (CDKSCREEN * pantalla)
 					       "Orden_pedido_producto_id",
 					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+							    [elegido]),
+					       driver_orden_pedido_producto_pre,
+					       driver_orden_pedido_producto_post);
       activateCDKMatrix (matriz, 0);
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
 
-
+	    }
+	  destroyCDKMatrix (matriz);
 	}
-      if (res)
-	{
-	  tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
-
-	}
-
-
     }
-
-  destroyCDKMatrix (matriz);
 
 }

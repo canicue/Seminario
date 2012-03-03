@@ -20,11 +20,11 @@ void
 alta_RMP ()
 {
   int error = 0;
-    matriz =
+  matriz =
     (CDKMATRIX *) formulario_alta ("RMP", "Producto_id", driver_RMP_pre,
 				   driver_RMP_post);
 //  setear_id (matriz);
- 
+
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
@@ -91,30 +91,23 @@ mod_RMP (CDKSCREEN * pantalla)
 	(CDKMATRIX *) formulario_modificacion ("RMP", columna,
 					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL,
+							    [elegido]),
+					       driver_RMP_pre,
 					       driver_RMP_post);
       activateCDKMatrix (matriz, 0);
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
-
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
 
-
+	    }
+	  destroyCDKMatrix (matriz);
 	}
-      if (res)
-	{
-	  tratar_error (ScreenOf (matriz), "RMP");
-
-	}
-
-
     }
-
-  destroyCDKMatrix (matriz);
 
 }
 
@@ -127,7 +120,6 @@ validar_cantidad (CDKMATRIX * matriz)
   cantidad = copyChar (getCDKMatrixCell (matriz, 4, 1));
   char *dos[2];
   dos[0] = producto_id;
-
   buscar_registro ("RMP", "Producto_id", producto_id, call_cantidad, matriz);
   //   popupLabel(ScreenOf(matriz),dos,2);
 

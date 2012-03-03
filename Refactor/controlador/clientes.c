@@ -101,54 +101,22 @@ mod_cliente (CDKSCREEN * pantalla)
 	(CDKMATRIX *) formulario_modificacion ("Cliente", columna,
 					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL,
+							    [elegido]),
+					       driver_clientes_pre,
 					       driver_clientes_post);
       activateCDKMatrix (matriz, 0);
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
 
-
+	    }
+	  destroyCDKMatrix (matriz);
 	}
-      if (res)
-	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
-
-	}
-
-
     }
-
-  destroyCDKMatrix (matriz);
-
-
 
 }
-
-/*
- char *columna = "Proveedor_id";
-  lista = (CDKSCROLL *) listado (pantalla,"Proveedor", columna);
-  activateCDKScroll (lista, 0);
-
-  if (lista->exitType == vNORMAL)
-    {
-      int elegido = getCDKScrollCurrentItem (lista);
-      matriz =
-	(CDKMATRIX *) formulario_modificacion ("Proveedor", columna,
-					       (char*)chtype2Char (lista->item
-							    [elegido]),
-					       driver_proveedores_pre,
-					       driver_proveedores_post);
-      activateCDKMatrix (matriz, 0);
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
-    }
-
-  destroyCDKMatrix (matriz);
-
- */

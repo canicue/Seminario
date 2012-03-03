@@ -109,31 +109,24 @@ mod_producto_terminado (CDKSCREEN * pantalla)
 					       "Producto_terminado_id",
 					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+							    [elegido]),
+					       driver_producto_terminado_pre,
+					       driver_producto_terminado_post);
       activateCDKMatrix (matriz, 0);
 
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
+      int res = 0;
+      if (matriz->exitType == vNORMAL)
+	{
+	  res = modificar_matriz (matriz);
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
 
+	    }
+	  destroyCDKMatrix (matriz);
+	}
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  destroyCDKMatrix (matriz);
-
-
-
-
 
 
 }

@@ -29,7 +29,7 @@ alta_orden_pedido_proveedor ()
 
   int error = 0;
   activateCDKMatrix (matriz, 0);
-   if (matriz->exitType == vNORMAL)
+  if (matriz->exitType == vNORMAL)
     {
 
       validar (matriz);
@@ -107,29 +107,22 @@ mod_orden_pedido_proveedor (CDKSCREEN * pantalla)
 					       "Orden_pedido_proveedor_id",
 					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+							    [elegido]),
+					       driver_orden_pedido_proveedor_pre,
+					       driver_orden_pedido_proveedor_post);
       activateCDKMatrix (matriz, 0);
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
 
-
+	    }
+	  destroyCDKMatrix (matriz);
 	}
-      if (res)
-	{
-	  tratar_error (ScreenOf (matriz), "Orden_pedido_proveedor");
-
-	}
-
-
     }
-
-  destroyCDKMatrix (matriz);
-
 
 }

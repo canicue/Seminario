@@ -22,7 +22,7 @@ alta_proveedor ()
 				   driver_proveedores_post);
   int error = 0;
   activateCDKMatrix (matriz, 0);
-   if (matriz->exitType == vNORMAL)
+  if (matriz->exitType == vNORMAL)
     {
 
       validar (matriz);
@@ -110,24 +110,17 @@ mod_proveedor (CDKSCREEN * pantalla)
 
       activateCDKMatrix (matriz, 0);
 
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
-
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
 
-
+	    }
+	  destroyCDKMatrix (matriz);
 	}
-      if (res)
-	{
-	  tratar_error (ScreenOf (matriz), "Proveedor");
-
-	}
-
-
     }
-
-  destroyCDKMatrix (matriz);
-
 }

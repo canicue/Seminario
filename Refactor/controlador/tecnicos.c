@@ -22,7 +22,7 @@ alta_tecnico ()
 
   int error = 0;
   activateCDKMatrix (matriz, 0);
-   if (matriz->exitType == vNORMAL)
+  if (matriz->exitType == vNORMAL)
     {
 
       validar (matriz);
@@ -119,27 +119,22 @@ mod_tecnico (CDKSCREEN * pantalla)
 	(CDKMATRIX *) formulario_modificacion ("Tecnico", "Tecnico_id",
 					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+							    [elegido]),
+					       driver_tecnicos_pre,
+					       driver_tecnicos_post);
       activateCDKMatrix (matriz, 0);
-
-      //     cosa[0]=chtype2Char(lista->item[elegido]);
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
 
-
+	    }
+	  destroyCDKMatrix (matriz);
 	}
-      if (res)
-	{
-	  tratar_error (ScreenOf (matriz), "Tecnico");
-
-	}
-
-
     }
-
-  destroyCDKMatrix (matriz);
 
 }

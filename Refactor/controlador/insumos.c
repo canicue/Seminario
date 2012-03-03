@@ -26,7 +26,7 @@ alta_insumo ()
 				   driver_insumos_post);
   int error = 0;
   activateCDKMatrix (matriz, 0);
-   if (matriz->exitType == vNORMAL)
+  if (matriz->exitType == vNORMAL)
     {
 
       validar (matriz);
@@ -88,20 +88,22 @@ mod_insumo (CDKSCREEN * pantalla)
 	(CDKMATRIX *) formulario_modificacion ("Insumo", "IR",
 					       (char *)
 					       chtype2Char (lista->item
-							    [elegido]), NULL,
-					       NULL);
+							    [elegido]),
+					       driver_insumo_pre,
+					       driver_insumos_post);
       activateCDKMatrix (matriz, 0);
       int res = 0;
       if (matriz->exitType == vNORMAL)
 	{
 	  res = modificar_matriz (matriz);
-	}
-      if (res)
-	{
-	  tratar_error (ScreenOf (matriz), "Insumo");
+	  validar (matriz);
+	  if (res)
+	    {
+	      tratar_error (ScreenOf (matriz), "Cliente");
+
+	    }
+	  destroyCDKMatrix (matriz);
 	}
     }
-
-  destroyCDKMatrix (matriz);
 
 }
