@@ -51,36 +51,41 @@ prueba ()
 
 }
 
+void
+marquee ()
+{
+  initscr ();
+  CDKSCREEN *cdkscreen = initCDKScreen (stdscr);
+  char msg[] = "</B/32>A CHARLIE'S SISTEMS PRODUCTION<!32> ";
+  CDKMARQUEE *scrollMessage = newCDKMarquee (cdkscreen,
+					     CENTER,
+					     TOP,
+					     COLS - 2,
+					     TRUE,
+					     FALSE);
+
+
+  initCDKColor ();
+  activateCDKMarquee (scrollMessage, msg, 6, 1, TRUE);
+  destroyCDKMarquee (scrollMessage);
+  destroyCDKScreen (cdkscreen);
+  endCDK ();
+
+}
+
 int
 main (int argc, char **argv)
 {
-//    formulario_alta("Cliente");
-  //   formulario_alta("RMP");
-  //  initscr();
-  //  CDKSCREEN    *cdkScreen=initCDKScreen(stdscr);
-
-  //test();
-  //  prueba();
 
 
-  // vale ();
-
-  //sin login
+  // marquee();
+//  vale ();
 
 
 
 
 
 
-
-  // bindCDKObject(vMATRIX,matriz,'g',prueba_preprocess,0);
-
-
-  //  buscar_ultimo("Cliente","Cliente_id",call_id);
-//    generar_id("cC","Cliente","Cliente_id");
-
-  //   printf("%d",strlen("dios"));
-  //  printf ("%s-----", generar_id ("C", "Cliente", "Cliente_id"));
 
   while (TRUE)
     {

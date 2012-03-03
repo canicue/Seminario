@@ -19,20 +19,25 @@ CDKSCROLL *lista;
 void
 alta_RMP ()
 {
-  matriz =
+  int error = 0;
+    matriz =
     (CDKMATRIX *) formulario_alta ("RMP", "Producto_id", driver_RMP_pre,
 				   driver_RMP_post);
 //  setear_id (matriz);
+ 
   activateCDKMatrix (matriz, 0);
   if (matriz->exitType == vNORMAL)
     {
 
-      guardar_matriz (matriz);
+      validar (matriz);
+      error = guardar_matriz (matriz);
+      if (error)
+	{
+	  tratar_error (ScreenOf (matriz), "Cliente");
+	}
 
+      destroyCDKMatrix (matriz);
     }
-
-  // activateCDKMatrix (matriz, 0);
-  destroyCDKMatrix (matriz);
 
 }
 

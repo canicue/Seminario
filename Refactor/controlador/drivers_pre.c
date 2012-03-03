@@ -56,7 +56,7 @@ driver_producto_terminado_pre (EObjectType cdktype GCC_UNUSED,
 
   int row = getCDKMatrixRow (matriz);
   int elegido;
- 
+
   return 1;
 
 }
@@ -220,9 +220,9 @@ driver_orden_pedido_proveedor_pre (EObjectType cdktype GCC_UNUSED,
 void
 proteger_id (CDKMATRIX * matriz)
 {
-    if(matriz->crow==1)
+  if (matriz->crow == 1)
     {
-     matriz->colvalues[1] = vVIEWONLY;
+      matriz->colvalues[1] = vVIEWONLY;
 
     }
 
@@ -238,6 +238,9 @@ columna_numerica (CDKMATRIX * matriz, int *row, int nro)
       if (matriz->crow == row[i])
 	{
 	  matriz->colvalues[1] = vINT;
+
+//      setCDKMatrixBackgroundAttrib(matriz,COLOR_PAIR(3)|A_BLINK);
 	}
+
     }
 }

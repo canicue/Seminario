@@ -33,17 +33,15 @@ alta_producto_terminado ()
   if (matriz->exitType == vNORMAL)
     {
 
-
+      validar (matriz);
       error = guardar_matriz (matriz);
+      if (error)
+	{
+	  tratar_error (ScreenOf (matriz), "Cliente");
+	}
 
-
+      destroyCDKMatrix (matriz);
     }
-  if (error)
-    {
-      tratar_error (ScreenOf (matriz), "Producto_terminado");
-    }
-
-  destroyCDKMatrix (matriz);
 
 }
 
@@ -99,9 +97,8 @@ void
 mod_producto_terminado (CDKSCREEN * pantalla)
 {
 
-  CDKSCROLL *lista =
-    (CDKSCROLL *) listado (pantalla, "Producto_terminado",
-			   "Producto_terminado_id");
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Producto_terminado",
+					    "Producto_terminado_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)

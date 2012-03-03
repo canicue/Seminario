@@ -216,4 +216,5 @@ menu_abm (char *titulo, void (*alta) (), void (*baja) (void *pantalla),
 
     }
   while (elegido != 3);
+//  destroyCDKScroll(scroll);
 }

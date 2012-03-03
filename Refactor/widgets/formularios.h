@@ -23,6 +23,12 @@ CDKMATRIX *formulario_alta (char *tabla, char *identificador, PROCESSFN prep,
 			    PROCESSFN post);
 CDKMATRIX *formulario_modificacion (char *tabla, char *columna, char *valor,
 				    PROCESSFN prep, PROCESSFN post);
+
+int driver_formulario (EObjectType cdktype GCC_UNUSED,
+		       void *object GCC_UNUSED,
+		       void *clientData, chtype input);
+char *validar_formulario (CDKMATRIX * matriz);
+void validar (CDKMATRIX * matriz);
 #ifdef	__cplusplus
 extern "C"
 {

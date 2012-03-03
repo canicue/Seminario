@@ -21,7 +21,8 @@ driver_proveedores_post (EObjectType cdktype GCC_UNUSED,
   normalizar_columna (matriz, nros, 1);
 
 
- if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
+  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT
+      && input != KEY_RIGHT)
     {
 
 
@@ -92,7 +93,8 @@ driver_insumos_post (EObjectType cdktype GCC_UNUSED,
 
   normalizar_columna (matriz, filas, 1);
   int row = getCDKMatrixRow (matriz);
-  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
+  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT
+      && input != KEY_RIGHT)
     {
       switch (row)
 
@@ -135,7 +137,8 @@ driver_orden_produccion_post (EObjectType cdktype GCC_UNUSED,
   normalizar_columna (matriz, filas, 1);
 
 
-if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
+  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT
+      && input != KEY_RIGHT)
     {
       switch (row)
 	{
@@ -173,7 +176,8 @@ driver_producto_terminado_post (EObjectType cdktype GCC_UNUSED,
   normalizar_columna (matriz, filas, 1);
   int row = getCDKMatrixRow (matriz);
   int elegido;
-if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
+  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT
+      && input != KEY_RIGHT)
     {
       switch (row)
 
@@ -241,7 +245,8 @@ driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
     }
 
 
-if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
+  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT
+      && input != KEY_RIGHT)
     {
       switch (row)
 	{
@@ -289,7 +294,8 @@ driver_orden_pedido_proveedor_post (EObjectType cdktype GCC_UNUSED,
   filas[1] = 6;
   filas[2] = 7;
   normalizar_columna (matriz, filas, 3);
-if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT && input !=KEY_RIGHT)
+  if (input != KEY_UP && input != KEY_DOWN && input != KEY_LEFT
+      && input != KEY_RIGHT)
     {
       switch (row)
 	{
@@ -316,11 +322,11 @@ void
 desproteger_id (CDKMATRIX * matriz)
 {
 
-   if(matriz->crow!=1)
-   {
-    matriz->colvalues[1] = vMIXED;
+  if (matriz->crow != 1)
+    {
+      matriz->colvalues[1] = vMIXED;
 
-   }
+    }
 
 
 }

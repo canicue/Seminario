@@ -50,6 +50,7 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
 			 coltitle,
 			 colwidth,
 			 colvalue, -1, -1, '.', COL, TRUE, FALSE, FALSE);
+  //Ver que onda con el dominantAttribute poniendo ROW
 
   int algo = atoi (copyChar (argv[0]));
   char *temp = (char *) malloc (sizeof (char *));
@@ -130,10 +131,10 @@ call_cantidad (void *matriz, int argc, char **argv, char **azColName)
 
   CDKMATRIX *mat = (CDKMATRIX *) matriz;
   popupLabel (ScreenOf (mat), azColName, argc);
-  CDKMATRIX *otra =
-    (CDKMATRIX *) formulario_alta ("Orden_pedido_proveedor",
-				   "Orden_pedido_proveedor_id", NULL,
-				   driver_orden_pedido_proveedor_post);
+  CDKMATRIX *otra = (CDKMATRIX *) formulario_alta ("Orden_pedido_proveedor",
+						   "Orden_pedido_proveedor_id",
+						   NULL,
+						   driver_orden_pedido_proveedor_post);
   lowerCDKObject (vMATRIX, mat);
   activateCDKMatrix (otra, 0);
   if (otra->exitType == vNORMAL)

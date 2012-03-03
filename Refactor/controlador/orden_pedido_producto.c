@@ -32,17 +32,15 @@ alta_orden_pedido_producto ()
   if (matriz->exitType == vNORMAL)
     {
 
-
+      validar (matriz);
       error = guardar_matriz (matriz);
+      if (error)
+	{
+	  tratar_error (ScreenOf (matriz), "Cliente");
+	}
 
-
+      destroyCDKMatrix (matriz);
     }
-  if (error)
-    {
-      tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
-    }
-
-  destroyCDKMatrix (matriz);
 }
 
 void
@@ -97,9 +95,8 @@ void
 mod_orden_pedido_producto (CDKSCREEN * pantalla)
 {
 
-  CDKSCROLL *lista =
-    (CDKSCROLL *) listado (pantalla, "Orden_pedido_producto",
-			   "Orden_pedido_producto_id");
+  CDKSCROLL *lista = (CDKSCROLL *) listado (pantalla, "Orden_pedido_producto",
+					    "Orden_pedido_producto_id");
   activateCDKScroll (lista, 0);
 
   if (lista->exitType == vNORMAL)

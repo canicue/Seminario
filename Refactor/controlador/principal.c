@@ -256,7 +256,7 @@ entrada ()
       exit (0);
 
     }
-  if(rta==0)
+  if (rta == 0)
     {
       destroyCDKButtonbox (botonera);
       area_administrativa ();
@@ -434,7 +434,7 @@ area_administrativa ()
     }
   while (elegido != 3);
 
- //destroyCDKScroll (scroll);
+  //destroyCDKScroll (scroll);
   // getch ();
 
 }

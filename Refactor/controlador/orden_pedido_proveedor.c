@@ -29,20 +29,18 @@ alta_orden_pedido_proveedor ()
 
   int error = 0;
   activateCDKMatrix (matriz, 0);
-  if (matriz->exitType == vNORMAL)
+   if (matriz->exitType == vNORMAL)
     {
 
-
+      validar (matriz);
       error = guardar_matriz (matriz);
+      if (error)
+	{
+	  tratar_error (ScreenOf (matriz), "Cliente");
+	}
 
-
+      destroyCDKMatrix (matriz);
     }
-  if (error)
-    {
-      tratar_error (ScreenOf (matriz), "Orden_pedido_proveedor");
-    }
-
-  destroyCDKMatrix (matriz);
 }
 
 void

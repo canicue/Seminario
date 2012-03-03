@@ -17,29 +17,24 @@ void
 alta_cliente ()
 {
   int error = 0;
-  CDKMATRIX *matriz =
-    (CDKMATRIX *) formulario_alta ("Cliente", "Cliente_id",
-				   driver_clientes_pre,
-				   driver_clientes_post);
-
+  CDKMATRIX *matriz = (CDKMATRIX *) formulario_alta ("Cliente", "Cliente_id",
+						     driver_clientes_pre,
+						     driver_clientes_post);
 
   activateCDKMatrix (matriz, 0);
+
   if (matriz->exitType == vNORMAL)
     {
 
-
+      validar (matriz);
       error = guardar_matriz (matriz);
+      if (error)
+	{
+	  tratar_error (ScreenOf (matriz), "Cliente");
+	}
 
-
+      destroyCDKMatrix (matriz);
     }
-  if (error)
-    {
-      tratar_error (ScreenOf (matriz), "Cliente");
-    }
-
-  destroyCDKMatrix (matriz);
-
-
 }
 
 void
