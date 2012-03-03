@@ -81,40 +81,17 @@ validar_formulario (CDKMATRIX * matriz)
 void
 validar (CDKMATRIX * matriz)
 {
-
-
-  //  popupLabel(ScreenOf(matriz),matriz->info,matriz->rows);ver que mierda hace esto!!!
-  char *tt = validar_formulario (matriz);
-
-  /*     if(tt)
-     {
-     char *msg[2];
-     msg[0]="<C><32>Complete el campo<!32>";
-     msg[1]=tt;
-     popupLabel(ScreenOf(matriz),msg,2);
-     activateCDKMatrix(matriz,0);
-
-
-     } */
-  //else
-
+  char *resultado = validar_formulario (matriz);
   char tmp[128];
-
-  while (tt)
+  while (resultado)
     {
       char *msg[2];
       msg[0] = "<C> Complete el campo: ";
-
-      sprintf (tmp, "<C>%s", tt);
+      sprintf (tmp, "<C>%s", resultado);
       msg[1] = tmp;
-      // msg[1]=strcat(tt,"<C>");
-      popupLabelAttrib (ScreenOf (matriz), msg, 2, COLOR_PAIR (16) | A_RIGHT);
+      popupLabelAttrib (ScreenOf (matriz), msg, 2, COLOR_PAIR (16) | A_TOP);
       activateCDKMatrix (matriz, 0);
-      tt = validar_formulario (matriz);
+      resultado = validar_formulario (matriz);
 
     }
-
-
-
-
 }
