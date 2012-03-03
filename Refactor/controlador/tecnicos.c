@@ -71,43 +71,20 @@ baja_tecnico (CDKSCREEN * pantalla)
 
     }
   bindCDKObject (vMATRIX, matriz, KEY_TAB, driver_borrado, botones);
-  //activateCDKMatrix(matriz,0);
+  
   drawCDKMatrix (matriz, TRUE);
   int elegido = activateCDKButtonbox (botones, 0);
-  //drawCDKButtonbox(botones,TRUE);
-  // traverseCDKScreen(ScreenOf(botones));
-  // raiseCDKObject(vBUTTONBOX,botones);
-  /*   if (matriz->exitType==vNORMAL)
-     {
-
-
-
-     char *a[]={"asdfsdf"};
-     popupLabel(ScreenOf(matriz),a,1);
-
-
-     } */
-
   arrepentimiento (matriz, elegido);
   destroyCDKButtonbox (botones);
-
   destroyCDKMatrix (matriz);
-  //   popupLabel(ScreenOf(lista),cosa,1);
-
-
-
-
-
-
-
 
 }
 
 void
 mod_tecnico (CDKSCREEN * pantalla)
 {
-  // CDKSCROLL *lista = (CDKSCROLL *) listado ("Tecnico", "Tecnico_id");
-//  activateCDKScroll (lista, 0);
+
+
 
   lista = (CDKSCROLL *) listado (pantalla, "Tecnico", "Tecnico_id");
   activateCDKScroll (lista, 0);
