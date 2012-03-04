@@ -29,7 +29,7 @@ alta_proveedor ()
       error = guardar_matriz (matriz);
       if (error)
 	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
+	  tratar_error (ScreenOf (matriz), "Proveedor");
 	}
 
       destroyCDKMatrix (matriz);
@@ -117,7 +117,7 @@ mod_proveedor (CDKSCREEN * pantalla)
 	  validar (matriz);
 	  if (res)
 	    {
-	      tratar_error (ScreenOf (matriz), "Cliente");
+	      tratar_error (ScreenOf (matriz), "Proveedor");
 
 	    }
 	  destroyCDKMatrix (matriz);

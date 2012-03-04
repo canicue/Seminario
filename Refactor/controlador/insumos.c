@@ -33,7 +33,7 @@ alta_insumo ()
       error = guardar_matriz (matriz);
       if (error)
 	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
+	  tratar_error (ScreenOf (matriz), "Insumo");
 	}
 
       destroyCDKMatrix (matriz);
@@ -99,7 +99,7 @@ mod_insumo (CDKSCREEN * pantalla)
 	  validar (matriz);
 	  if (res)
 	    {
-	      tratar_error (ScreenOf (matriz), "Cliente");
+	      tratar_error (ScreenOf (matriz), "Insumo");
 
 	    }
 	  destroyCDKMatrix (matriz);

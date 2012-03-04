@@ -10,7 +10,9 @@
 //#include <buttonbox.h>
 #include <cdk.h>
 #include <cdk_util.h>
+#include <cdk/cdk.h>
 #include "../widgets/listados.h"
+#include "orden_pedido_proveedor.h"
 
 
 CDKMATRIX *matriz;
@@ -33,7 +35,7 @@ alta_RMP ()
       error = guardar_matriz (matriz);
       if (error)
 	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
+	  tratar_error (ScreenOf (matriz),"RMP");
 	}
 
       destroyCDKMatrix (matriz);
@@ -102,7 +104,7 @@ mod_RMP (CDKSCREEN * pantalla)
 	  validar (matriz);
 	  if (res)
 	    {
-	      tratar_error (ScreenOf (matriz), "Cliente");
+	      tratar_error (ScreenOf (matriz), "RMP");
 
 	    }
 	  destroyCDKMatrix (matriz);
@@ -120,7 +122,66 @@ validar_cantidad (CDKMATRIX * matriz)
   cantidad = copyChar (getCDKMatrixCell (matriz, 4, 1));
   char *dos[2];
   dos[0] = producto_id;
-  buscar_registro ("RMP", "Producto_id", producto_id, call_cantidad, matriz);
+  int condicion=1;
+  if(condicion)
+  {
+      int rta=0;
+      char *argv[5];
+      argv[0]="<C>Generar Pedido";
+      argv[1]="<C>La cantidad es insuficiente";
+      argv[2]="<C>Desea realizar un pedido?";
+  char *PEDIR_CANCELAR[] = { "PEDIR", "CANCELAR" };
+ 
+ CDKDIALOG *dialogo = newCDKDialog (ScreenOf(matriz),
+			  CENTER,
+			  CENTER,
+			  argv, 3, PEDIR_CANCELAR, 2,
+			  COLOR_PAIR (2) | A_REVERSE, TRUE, TRUE, FALSE);
+
+  rta=activateCDKDialog(dialogo,0);
+ 
+
+  if(rta==0)
+  {
+   alta_orden_pedido_proveedor();
+      
+
+
+  }
+   if(rta==1)
+  {
+   borrar_matriz(matriz);
+  }
+  destroyCDKMatrix(matriz);
+  destroyCDKDialog(dialogo);
+      /*
+ 
+ // popupLabel (ScreenOf (mat), azColName, argc);
+  CDKMATRIX *otra = (CDKMATRIX *) formulario_alta ("Orden_pedido_proveedor",
+						   "Orden_pedido_proveedor_id",
+						   driver_orden_pedido_proveedor_pre,
+						   driver_orden_pedido_proveedor_post);
+        desconectar();
+  lowerCDKObject (vMATRIX, matriz);
+  activateCDKMatrix (otra, 0);
+  int error=0;
+  if (otra->exitType == vNORMAL)
+    {
+      validar(otra);
+      error=guardar_matriz(otra);
+      if(error)
+      {tratar_error(ScreenOf(otra),"Orden_pedido_proveedor");}
+      destroyCDKMatrix (otra);
+      raiseCDKObject (vMATRIX, matriz);
+      drawCDKMatrix (matriz, TRUE);
+  //    activateCDKMatrix(mat,0);
+
+  }
+
+*/
+
+  }
+//  buscar_registro ("RMP", "Producto_id", producto_id, call_cantidad, matriz);
   //   popupLabel(ScreenOf(matriz),dos,2);
 
 }

@@ -141,12 +141,16 @@ guardar_cosa (char *tabla, char **columnas, char **valores, int nro)
 //  endCDK();
 //  printf(consulta);
 //  exit(0);
-  conectar (BASE);
-  res = sqlite3_exec (conexion, consulta, NULL, NULL, &error);
-  // endCDK ();
-  // printf (error);
-  // exit (0);
 
+
+ conectar (BASE);
+
+
+  res = sqlite3_exec (conexion, consulta, NULL, NULL, &error);
+ /*  endCDK ();
+   printf (error);
+   exit (0);
+*/
   desconectar ();
   return (res);
 

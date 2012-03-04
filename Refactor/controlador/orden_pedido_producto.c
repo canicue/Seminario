@@ -33,14 +33,18 @@ alta_orden_pedido_producto ()
     {
 
       validar (matriz);
+     
       error = guardar_matriz (matriz);
       if (error)
 	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
+	  tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
 	}
-
-      destroyCDKMatrix (matriz);
+      eraseCDKMatrix(matriz);
+    //  destroyCDKMatrix (matriz);
     }
+
+ validar_cantidad(matriz);
+
 }
 
 void
@@ -48,7 +52,7 @@ baja_orden_pedido_producto (CDKSCREEN * pantalla)
 {
 
   char *boton[] = { "BORRAR", "CANCELAR" };
-  char *columna = "Orden_pedido_Producto_id";
+  char *columna = "Orden_pedido_producto_id";
   //char *cosa[1];
   CDKSCROLL *lista =
     (CDKSCROLL *) listado (pantalla, "Orden_pedido_producto", columna);
@@ -58,7 +62,7 @@ baja_orden_pedido_producto (CDKSCREEN * pantalla)
       int elegido = getCDKScrollCurrentItem (lista);
       matriz =
 	(CDKMATRIX *) formulario_modificacion ("Orden_pedido_producto",
-					       "Orden_pedido_Producto_id",
+					       "Orden_pedido_producto_id",
 					       (char *)
 					       chtype2Char (lista->item
 							    [elegido]), NULL,
@@ -118,7 +122,7 @@ mod_orden_pedido_producto (CDKSCREEN * pantalla)
 	  validar (matriz);
 	  if (res)
 	    {
-	      tratar_error (ScreenOf (matriz), "Cliente");
+	      tratar_error (ScreenOf (matriz), "Orden_pedido_producto");
 
 	    }
 	  destroyCDKMatrix (matriz);

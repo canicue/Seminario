@@ -241,7 +241,7 @@ driver_orden_pedido_producto_post (EObjectType cdktype GCC_UNUSED,
     {
 
 
-      validar_cantidad (matriz);
+   //   validar_cantidad (matriz);
     }
 
 

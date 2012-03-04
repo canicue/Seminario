@@ -15,7 +15,7 @@
 //#define BASE "base.sqlite"
 sqlite3 *conexion;
 sqlite3 *conectar (char *nombre);
-char *error;
+static char *error;
 void desconectar ();
 void buscar_registro (char *tabla, char *nombre, char *valor, void *callback,
 		      void *extra);

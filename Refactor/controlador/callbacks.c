@@ -4,10 +4,13 @@
 #include "callbacks.h"
 #include "orden_pedido_producto.h"
 #include "drivers_post.h"
+#include "persistencia.h"
+#include "drivers_pre.h"
 
 int
 call_alta (void *nombre, int argc, char **argv, char **azColName)
 {
+    desconectar();
   char tmp[255];
   char *formato = "<I=1></B/32>%s<!32>";
   char *coltitle[argc], *rowtitle[argc];
@@ -66,6 +69,7 @@ call_alta (void *nombre, int argc, char **argv, char **azColName)
 int
 call_modificacion (void *nombre, int argc, char **argv, char **azColName)
 {
+    desconectar();
   ((char **) nombre)[1] = argv[0];
   int i;
   call_alta (nombre, argc, argv, azColName);
@@ -81,24 +85,18 @@ call_modificacion (void *nombre, int argc, char **argv, char **azColName)
 int
 call_lista (void *nombre, int argc, char **argv, char **azColName)
 {
-
+    desconectar();
   int tmp, i = 0;
   for (i = 0; i < argc; i++)
     {
       if (!strcmp (((char *) nombre), azColName[i]))
 	{
 
-	  //     endCDK();
-	  //printf("nombre %s",azColName[i]);
-	  //    exit(0);
 	  tmp = i;
 
 	}
     }
-
-
   addCDKScrollItem (lista_scroll, argv[tmp]);
-
   return 0;
 
 }
@@ -110,7 +108,6 @@ call_borrado (void *nombre, int argc, char **argv, char **azColName)
   initscr ();
   curs_set (0);
   CDKSCREEN *pantalla = initCDKScreen (stdscr);
-
   dialogo = newCDKDialog (pantalla,
 			  CENTER,
 			  CENTER,
@@ -122,27 +119,27 @@ call_borrado (void *nombre, int argc, char **argv, char **azColName)
 int
 call_cantidad (void *matriz, int argc, char **argv, char **azColName)
 {
-
-
-
-
-
-
-
+desconectar();
   CDKMATRIX *mat = (CDKMATRIX *) matriz;
   popupLabel (ScreenOf (mat), azColName, argc);
   CDKMATRIX *otra = (CDKMATRIX *) formulario_alta ("Orden_pedido_proveedor",
 						   "Orden_pedido_proveedor_id",
-						   NULL,
+						   driver_orden_pedido_proveedor_pre,
 						   driver_orden_pedido_proveedor_post);
+desconectar();
   lowerCDKObject (vMATRIX, mat);
   activateCDKMatrix (otra, 0);
   if (otra->exitType == vNORMAL)
     {
+      validar(otra);
+      guardar_matriz(otra);
       destroyCDKMatrix (otra);
       raiseCDKObject (vMATRIX, mat);
       drawCDKMatrix (mat, TRUE);
-    }
+  //    activateCDKMatrix(mat,0);
+  }
+
+  return 0;
   /*  WINDOW *sub=newwin(LINES-5,COLS-10,0,0);
      CDKSCREEN *pantalla=initCDKScreen(sub);
      box(sub,0,0);
@@ -189,10 +186,6 @@ call_cantidad (void *matriz, int argc, char **argv, char **azColName)
 
 
    */
-
-
-
-
 
 
 }

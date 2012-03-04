@@ -135,10 +135,6 @@ driver_orden_pedido_producto_pre (EObjectType cdktype GCC_UNUSED,
   int filas[1];
   filas[0] = 4;
   columna_numerica (matriz, filas, 1);
-
-
-
-
   return 1;
 
 }
@@ -165,9 +161,6 @@ driver_tecnicos_pre (EObjectType cdktype GCC_UNUSED,
   filas[0] = 3;
   columna_numerica (matriz, filas, 1);
   return 1;
-
-
-
 
 }
 

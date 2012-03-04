@@ -33,7 +33,7 @@ alta_orden_produccion ()
       error = guardar_matriz (matriz);
       if (error)
 	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
+	  tratar_error (ScreenOf (matriz), "Orden_produccion");
 	}
 
       destroyCDKMatrix (matriz);
@@ -116,7 +116,7 @@ mod_orden_produccion (CDKSCREEN * pantalla)
 	  validar (matriz);
 	  if (res)
 	    {
-	      tratar_error (ScreenOf (matriz), "Cliente");
+	      tratar_error (ScreenOf (matriz), "Orden_produccion");
 
 	    }
 	  destroyCDKMatrix (matriz);

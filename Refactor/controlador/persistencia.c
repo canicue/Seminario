@@ -79,8 +79,12 @@ modificar_matriz (CDKMATRIX * matriz)
 void
 tratar_error (CDKSCREEN * pantalla, char *tabla)
 {
-  char *msg[] = { "Se produjo", "un error" };
-  popupLabel (pantalla, msg, 2);
+  
+   char *msg[3];
+   msg[0]="Se produjo";
+   msg[1]= "un error" ;
+   msg[3]=error;
+  popupLabel (pantalla, msg, 3);
 
 }
 

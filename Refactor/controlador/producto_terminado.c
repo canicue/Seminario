@@ -37,7 +37,7 @@ alta_producto_terminado ()
       error = guardar_matriz (matriz);
       if (error)
 	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
+	  tratar_error (ScreenOf (matriz), "Producto_terminado");
 	}
 
       destroyCDKMatrix (matriz);
@@ -121,7 +121,7 @@ mod_producto_terminado (CDKSCREEN * pantalla)
 	  validar (matriz);
 	  if (res)
 	    {
-	      tratar_error (ScreenOf (matriz), "Cliente");
+	      tratar_error (ScreenOf (matriz), "Producto_terminado");
 
 	    }
 	  destroyCDKMatrix (matriz);

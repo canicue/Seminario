@@ -29,7 +29,7 @@ alta_tecnico ()
       error = guardar_matriz (matriz);
       if (error)
 	{
-	  tratar_error (ScreenOf (matriz), "Cliente");
+	  tratar_error (ScreenOf (matriz), "Tecnico");
 	}
 
       destroyCDKMatrix (matriz);
@@ -107,7 +107,7 @@ mod_tecnico (CDKSCREEN * pantalla)
 	  validar (matriz);
 	  if (res)
 	    {
-	      tratar_error (ScreenOf (matriz), "Cliente");
+	      tratar_error (ScreenOf (matriz), "Tecnico");
 
 	    }
 	  destroyCDKMatrix (matriz);
